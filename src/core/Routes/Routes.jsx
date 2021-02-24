@@ -12,10 +12,10 @@ export function Routes() {
     return (
         <Switch>
             <Route path="/profile">
-                <ProfilePage></ProfilePage>
+                <ProfilePage/>
             </Route>
             <Route path="/adoptions">
-                <AdoptionsPage></AdoptionsPage>
+                <AdoptionsPage/>
             </Route>
             <Route path={"/login"}>
                 <LoginPage/>
