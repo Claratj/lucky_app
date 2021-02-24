@@ -4,12 +4,16 @@ import {
   Route
 } from "react-router-dom";
 import { AdoptionsPage } from '../../pages/AdoptionsPage/AdoptionsPage';
+import PetsPage from '../../pages/PetsPage/PetsPage';
 
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 
 export function Routes() {
     return(
         <Switch>
+        <Route path="/pets">
+         <PetsPage></PetsPage>
+          </Route>
             <Route path="/profile">
          <ProfilePage></ProfilePage>
           </Route>
