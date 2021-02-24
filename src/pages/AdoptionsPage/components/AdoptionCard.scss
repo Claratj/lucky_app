@@ -1,0 +1,41 @@
+@import '../../../styles/tools/variable.tools';
+
+.c-adoption-card {
+    border: 1px solid $color-light-blue;
+    border-radius: 4px;
+    margin: 20px;
+
+    &__link {
+        text-decoration: none;
+        color: $color-blue-text;
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        display: flex;
+        align-items: flex-end;
+        padding: 10px;
+        &__name {
+            flex: 2;
+        }
+        &__status {
+            flex: 1;
+            font-size: 14px;
+        }
+    }
+    &__details {
+        display: flex;
+        &__img {
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+        }
+        &__copy {
+            color: $color-black;
+            font-family: 'Barlow-med';
+            &--thin{
+                font-family: 'Barlow';
+            }
+        }
+    }
+}
