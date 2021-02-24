@@ -1,0 +1,27 @@
+@import '../../styles/tools/variable.tools';
+.c-card-menu {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    padding: 9px 15px;
+    min-height: 50px;
+    border: 1px solid $color-light-blue;
+    border-radius: 4pt;
+    margin-bottom: 12px;
+    &__img {
+        width: 20px;
+        flex: 1;
+    }
+    &__title {
+        flex: 9;
+        margin-left: 13pt;
+        color: $color-blue-text;
+    }
+    &__link {
+        text-decoration: none;
+        color: $color-pink;
+    }
+    &:nth-of-type(4n){
+        margin-bottom: 40px;
+    }
+}
