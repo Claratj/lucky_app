@@ -14,7 +14,9 @@ export function AdoptionCard(props) {
             }            
         </div>
         <div className="c-adoption-card__details">
-            <img src={props.img} alt="" className="c-adoption-card__details__img"/>
+            <div className="c-adoption-card__details__img-div">
+                <img src={props.img} alt="" className="c-adoption-card__details__img-div__img"/>
+            </div>
             <div className="c-adoption-card__details__copy">
                 <p>Nombre</p>
                 <p>Ciudad</p>

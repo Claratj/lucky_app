@@ -2,8 +2,8 @@
 
 .c-adoption-card {
     border: 1px solid $color-light-blue;
-    border-radius: 4px;
-    margin: 20px;
+    border-radius: 0.25rem;
+    margin: 0.8rem;
 
     &__link {
         text-decoration: none;
@@ -14,23 +14,29 @@
     &__title {
         display: flex;
         align-items: flex-end;
-        padding: 10px;
+        padding: 0.6rem;
         &__name {
             flex: 2;
         }
         &__status {
             flex: 1;
-            font-size: 14px;
+            font-size: 0.8rem;
         }
     }
     &__details {
         display: flex;
-        &__img {
-            width: 115px;
-            height: 115px;
-            border-radius: 50%;
+        &__img-div {
+            flex: 2;
+            &__img {
+                width: 7rem;
+                height: 7rem;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+
         }
         &__copy {
+            flex: 1;
             color: $color-black;
             font-family: 'Barlow-med';
             &--thin{
