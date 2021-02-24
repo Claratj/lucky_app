@@ -1,3 +1,9 @@
 $color-light-blue: #44A1A0;
+$color-blue-text: #01748e;
 $color-dark-blue: #164C56;
 $color-pink: #E08888;
+
+@font-face{
+    font-family: Barlow;
+    src: url(../../assets/fonts/Barlow-Regular.ttf);
+}
