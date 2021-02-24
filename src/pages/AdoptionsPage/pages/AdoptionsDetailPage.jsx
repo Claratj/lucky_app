@@ -18,6 +18,7 @@ export function AdoptionsDeatilPage() {
         <div className="p-adoptions-detail">
 
             <h1>Adopción de {pet.name}</h1>
+            ...
         </div>
     );
 }
