@@ -7,7 +7,6 @@ import { AdoptionsPage } from '../../pages/AdoptionsPage/AdoptionsPage';
 import PetsPage from '../../pages/PetsPage/PetsPage';
 import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDetailPage';
 
-
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 
 export function Routes() {
