@@ -1,0 +1,18 @@
+.splash-c{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &__img{
+
+    }
+    &__title{
+        font-size: 42pt;
+        font-family: Barlow-med;
+        // color: $color-blue-text;
+        flex: 1;
+    }
+
+    
+}
+
