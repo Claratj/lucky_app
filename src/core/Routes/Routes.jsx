@@ -4,11 +4,8 @@ import {
   Route
 } from "react-router-dom";
 import { AdoptionsPage } from '../../pages/AdoptionsPage/AdoptionsPage';
-<<<<<<< HEAD:src/core/Routes/Routes.jsx
 import PetsPage from '../../pages/PetsPage/PetsPage';
-=======
 import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDetailPage';
->>>>>>> b0fdf7c05592e9034152901f9ee36ba977cf66e8:src/core/routes/Routes.jsx
 
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 
