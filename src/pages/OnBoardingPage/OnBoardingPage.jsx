@@ -6,6 +6,8 @@ import imgAdopt from '../../assets/img/boarding-adoptar.svg';
 import imgAso from '../../assets/img/boarding-asociaciones.svg';
 import './OnBoardingPage.scss';
 
+// SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
 
 
 export function OnBoardingPage() {
@@ -16,7 +18,6 @@ export function OnBoardingPage() {
       <Swiper
         spaceBetween={0}
         slidesPerView={1}
-        onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}>
 
         <SwiperSlide>
