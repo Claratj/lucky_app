@@ -15,6 +15,9 @@ import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
 export function Routes() {
     return (
         <Switch>
+        <Route path="/pets/:name">
+         <PetsDetailPage></PetsDetailPage>
+          </Route>
             <Route path="/pets">
                 <PetsPage></PetsPage>
             </Route>
