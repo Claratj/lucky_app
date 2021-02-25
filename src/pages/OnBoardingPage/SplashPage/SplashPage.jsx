@@ -30,7 +30,7 @@ export function SplashPage() {
     return (
 
 
-        <div className="base-column-c">
+        <div className="base-c">
             <figure className="fig-c">
                 <img className="fig-c__img" src={img}></img>
                 <h1 className="fig-c__title">LUCKY</h1>

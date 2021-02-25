@@ -1,4 +1,4 @@
-.base-column-c{
+.base-c{
     width: 100vw;
     min-height: 100vh;
     display: flex;
@@ -16,9 +16,5 @@
         width: 15.75rem;
         margin-bottom: 1.25rem;
     }
-    &__text{
-        font-size: 25pt;
-        font-family: Barlow;
-        color: $color-blue-text;
-    }
+    
 }
