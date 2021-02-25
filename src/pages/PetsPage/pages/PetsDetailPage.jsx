@@ -15,6 +15,7 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export default function PetsDetailPage() {
     const pets = [
@@ -23,21 +24,20 @@ export default function PetsDetailPage() {
         {name: 'Charlie', img1: image1, img2: image2, img3: image3, location: 'Madrid', km: '13km', like: false},
         
     ];
+
+    
     return (
         <div className="c-petsDetailPage">
         <Swiper
       spaceBetween={50}
-      slidesPerView={1}
-     
+      slidesPerView={1}  
       pagination={{ clickable: true }}
-      
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
     >
       <SwiperSlide><img src={image1} style={{width:'400px'}}></img></SwiperSlide>
       <SwiperSlide><img src={image1} style={{width:'400px'}}></img></SwiperSlide>
       <SwiperSlide><img src={image1} style={{width:'400px'}}></img></SwiperSlide>
-     
+      
+      ...
     </Swiper>
             <h3>Detail</h3>
             <PetsTab></PetsTab>
