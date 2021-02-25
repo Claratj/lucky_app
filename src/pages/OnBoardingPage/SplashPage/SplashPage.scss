@@ -1,10 +1,22 @@
+@import '../../../styles/tools/variable.tools';
+
 .splash-c{
     width: 100vw;
     min-height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+    
+}
+
+.fig-c{
+    // width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rebeccapurple;
 
     &__img{
         width: 15.75rem;
@@ -13,10 +25,6 @@
     &__title{
         font-size: 42pt;
         font-family: Barlow-med;
-        // color: $color-blue-text;
-        flex: 1;
+        color: $color-blue-text;
     }
-
-    
 }
-
