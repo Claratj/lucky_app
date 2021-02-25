@@ -27,10 +27,10 @@ export default function PetsDetailPage() {
         <div className="c-petsDetailPage">
         <Swiper
       spaceBetween={50}
-      slidesPerView={3}
-      navigation
+      slidesPerView={1}
+     
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
+      
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
@@ -38,7 +38,6 @@ export default function PetsDetailPage() {
       <SwiperSlide><img src={image1} style={{width:'400px'}}></img></SwiperSlide>
       <SwiperSlide><img src={image1} style={{width:'400px'}}></img></SwiperSlide>
      
-      ...
     </Swiper>
             <h3>Detail</h3>
             <PetsTab></PetsTab>

@@ -1,7 +1,7 @@
 .c-petsTab{
-    box-shadow: none;
+   
     &__app{
-        box-shadow: none;
+        
     }
 
     &__tab{
@@ -10,15 +10,18 @@
         
     }
 
-    &__itemTab{
-        color: black;
-        content: 'Datos';
+    &__item{
+        color: blue;
     }
+
+    .MuiPaper-elevation4 {
+        box-shadow: none;
+    }
+
     
 }
 
-.MuiTab-wrapper{
-    color: black;
-    content: 'Datos';
-}
+
+
+
 
