@@ -8,10 +8,14 @@ import PetsPage from '../../pages/PetsPage/PetsPage';
 import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDetailPage';
 
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
+import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
 
 export function Routes() {
     return(
         <Switch>
+        <Route path="/pets/:name">
+         <PetsDetailPage></PetsDetailPage>
+          </Route>
         <Route path="/pets">
          <PetsPage></PetsPage>
           </Route>

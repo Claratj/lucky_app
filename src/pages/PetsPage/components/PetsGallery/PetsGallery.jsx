@@ -1,11 +1,12 @@
 import React from 'react'
-import image from '../../../assets/img/chinchilla.jpg';
-import favIcon from '../../../assets/img/favoritos.png';
+import { Link } from 'react-router-dom';
+import image from '../../../../assets/img/chinchilla.jpg';
+import favIcon from '../../../../assets/img/favoritos.png';
 import './PetsGallery.scss';
 
 export default function PetsGallery() {
 
-    const cards = [
+    const pets = [
         {name: 'Kiwi', img: image, location: 'Madrid', km: '1.3km', like: false},
         {name: 'Blue', img: image, location: 'Madrid', km: '1.5km', like: false},
         {name: 'Charlie', img: image, location: 'Madrid', km: '13km', like: false},
@@ -13,7 +14,8 @@ export default function PetsGallery() {
     ];
     return (
         <div className="c-galleryPets">
-        {cards.map((item, i)=>
+        {pets.map((item, i)=>
+        <Link to={"/pets/" + item.name} className="c-galleryPets__link">
             <div className="c-galleryPets__card" key={i}>
             <div className="c-galleryPets__img">
                 <img src={item.img} className="c-galleryPets__pet"></img>
@@ -29,6 +31,8 @@ export default function PetsGallery() {
             </div>
             </div>
             </div>
+        </Link>
+
         )}
             
         </div>
