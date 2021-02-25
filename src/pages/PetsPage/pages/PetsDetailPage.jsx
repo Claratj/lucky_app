@@ -30,7 +30,8 @@ export default function PetsDetailPage() {
         <div className="c-petsDetailPage">
         <Swiper
       spaceBetween={50}
-      slidesPerView={1}  
+      slidesPerView={1}
+  
       pagination={{ clickable: true }}
     >
       <SwiperSlide><img src={image1} style={{width:'400px'}}></img></SwiperSlide>
