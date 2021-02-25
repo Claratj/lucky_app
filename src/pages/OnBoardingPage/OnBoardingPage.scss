@@ -1,0 +1,19 @@
+@import '../../styles/tools/variable.tools';
+
+
+
+.fig-c {
+
+    &__text{
+        font-size: 1.8rem;
+        font-family: Barlow-med;
+        color: $color-blue-text;
+        padding: 2rem 2rem 0 2rem;
+        text-align: center;
+    }
+    &__sub-text {
+        font-size: 1.33rem;
+        text-align: center;
+        padding: 2rem 2rem 0 2rem;
+    }
+}
