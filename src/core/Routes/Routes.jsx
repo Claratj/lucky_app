@@ -4,8 +4,8 @@ import {
   Route
 } from "react-router-dom";
 import { AdoptionsPage } from '../../pages/AdoptionsPage/AdoptionsPage';
+import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDetailsPage/AdoptionsDetailPage';
 import PetsPage from '../../pages/PetsPage/PetsPage';
-import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDetailPage';
 
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 
