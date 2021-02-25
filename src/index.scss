@@ -1,5 +1,6 @@
 @import '/src/styles/imports/settings.imports';
 @import '/src/styles/imports/tools.imports';
+@import '/src/styles/imports/blocks.imports';
 
 body {
   font-family: 'Barlow';
@@ -7,4 +8,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
 

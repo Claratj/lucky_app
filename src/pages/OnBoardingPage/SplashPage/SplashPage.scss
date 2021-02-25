@@ -1,30 +1,42 @@
 @import '../../../styles/tools/variable.tools';
 
-.splash-c{
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
-    
-    
-}
-
 .fig-c{
-    // width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
 
-    &__img{
-        width: 15.75rem;
-        margin-bottom: 1.25rem;
-    }
+    // &__img{
+    //     width: 15.75rem;
+    //     margin-bottom: 1.25rem;
+    // }
     &__title{
         font-size: 42pt;
         font-family: Barlow-med;
         color: $color-blue-text;
     }
 }
+
+//transitions
+
+.fade-appear{
+    opacity:0;
+
+    &-active {
+        opacity: 1;
+        transition: opacity 300ms linear;
+    }
+}
+
+.fade-exit {
+    opacity: 1;
+
+    &-active {
+        opacity: 0;
+        transition: opacity 300ms linear;
+    }
+
+    &-done {
+        opacity: 0;
+    }
+}
+

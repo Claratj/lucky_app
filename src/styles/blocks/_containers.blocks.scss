@@ -1,0 +1,24 @@
+.base-column-c{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.fig-c{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__img{
+        width: 15.75rem;
+        margin-bottom: 1.25rem;
+    }
+    &__text{
+        font-size: 25pt;
+        font-family: Barlow;
+        color: $color-blue-text;
+    }
+}
