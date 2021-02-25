@@ -22,9 +22,6 @@ export function Routes() {
             <Route path="/profile">
          <ProfilePage></ProfilePage>
           </Route>
-          <Route path="/adoptions/:id/:more">
-         <AdoptionsDeatilPage></AdoptionsDeatilPage>
-          </Route>
           <Route path="/adoptions/:id">
          <AdoptionsDeatilPage></AdoptionsDeatilPage>
           </Route>
