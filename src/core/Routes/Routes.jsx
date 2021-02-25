@@ -6,8 +6,8 @@ import {
 import { SplashPage } from '../../pages/OnBoardingPage/SplashPage/SplashPage';
 import { OnBoardingPage } from '../../pages/OnBoardingPage/OnBoardingPage';
 import { AdoptionsPage } from '../../pages/AdoptionsPage/AdoptionsPage';
+import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDetailsPage/AdoptionsDetailPage';
 import PetsPage from '../../pages/PetsPage/PetsPage';
-import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDetailPage';
 
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
