@@ -29,6 +29,7 @@ export function ProfilePage() {
             <CardMenu icon={obj.img} title={obj.title} link={obj.link}></CardMenu>
             )}
             </div>
+            {/* aquí va el footer  */}
             {/* <Footer></Footer> */}
         </div>
     );

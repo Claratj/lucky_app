@@ -1,4 +1,56 @@
+@import '../../../styles/tools/variable.tools';
+
 .p-adoptions-detail{
     width: 100vw;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__title-div {
+        margin: 2.5rem 0;
+        display: flex;
+        width: 90%;
+        &__img {
+            width: 1rem;
+            transform: rotate(180deg);
+        }
+        &__title {
+            color: $color-black;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin: 0 auto;
+            padding-right: 1rem;
+        }
+    }
+    &__nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        &__link {
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            text-decoration: none;
+            color: $color-greyishBrown;
+            padding-bottom: 0.6rem;
+            &:hover {
+                border-bottom: 0.18rem solid $color-pink;
+            }
+            &--active {
+                border-bottom: 0.18rem solid $color-pink;
+            }
+        }
+    }
+    &__main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__hr {
+            width: 90%;
+            margin: 1.8rem 0;
+            background-color: rgb(189, 210, 214);
+        }
+    }
 }
