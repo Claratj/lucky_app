@@ -12,7 +12,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
+import './pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -38,7 +38,7 @@ export default function PetsDetailPage() {
       <SwiperSlide><img src={image1} style={{width:'400px'}}></img></SwiperSlide>
       <SwiperSlide><img src={image1} style={{width:'400px'}}></img></SwiperSlide>
       
-      ...
+    
     </Swiper>
             <h3>Detail</h3>
             <PetsTab></PetsTab>
