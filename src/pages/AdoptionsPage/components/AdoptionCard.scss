@@ -1,7 +1,7 @@
 @import '../../../styles/tools/variable.tools';
 
 .c-adoption-card {
-    border: 1px solid $color-light-blue;
+    border: 1px solid $color-cloudy-blue;
     border-radius: 0.25rem;
     margin: 0.8rem 0;
     width: 90%;
@@ -14,7 +14,7 @@
     }
     &__title {
         font-family: 'Barlow-med';
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         display: flex;
         align-items: flex-end;
         padding: 0.6rem 1.2rem 0.6rem 0.6rem;

@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBar from '../../shared/SearchBar/SearchBar';
 
 import './AdoptionsPage.scss';
 import { AdoptionCard } from './components/AdoptionCard';
@@ -41,7 +42,7 @@ export function AdoptionsPage() {
     
     return(
         <div className="p-adoptions">
-            {/* <Search></Search>  */}
+            <SearchBar></SearchBar>
             <div className="p-adoptions__main">
             {pets.map((pet, i)=>
             <AdoptionCard name={pet.name} city={pet.city} gender={pet.gender} img={pet.img} status={pet.status} id={pet.id}></AdoptionCard>
