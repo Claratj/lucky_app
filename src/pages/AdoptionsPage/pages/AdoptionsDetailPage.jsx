@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link, NavLink, useParams } from 'react-router-dom';
+import arrow from '../../../assets/img/arrow-big.png';
+import { AdoptionCard } from '../components/AdoptionCard';
 
 import './AdoptionsDetailPage.scss';
 
@@ -14,11 +17,59 @@ export function AdoptionsDeatilPage() {
             status: 'red'
         }
 
+        const param = useParams();
+        console.log(param);
+
     return(
         <div className="p-adoptions-detail">
+            <div className="p-adoptions-detail__title-div">    
+                <Link to="/adoptions"><img src={arrow} alt="" className="p-adoptions-detail__title-div__img"/></Link>
+                <h1 className="p-adoptions-detail__title-div__title">Adopción de {pet.name}</h1>
+            </div>
+            <nav className="p-adoptions-detail__nav">
+            <NavLink to={"/adoptions/" + pet.id} className="p-adoptions-detail__nav__link" exact activeClassName="p-adoptions-detail__nav__link--active">Resumen</NavLink>
+            <NavLink to={"/adoptions/" + pet.id + "/info"} className="p-adoptions-detail__nav__link" activeClassName="p-adoptions-detail__nav__link--active">Info Adicional</NavLink>
+            <NavLink to={"/adoptions/" + pet.id + "/adoption"} className="p-adoptions-detail__nav__link" activeClassName="p-adoptions-detail__nav__link--active">Adopción</NavLink>
+            </nav>
+            {/* <div className="p-adoptions-detail__main"> */}
+            {param.more && param.more === 'info' ?
 
-            <h1>Adopción de {pet.name}</h1>
-            ...
+            <div className="p-adoptions-detail__main">
+            <p>INFO</p> 
+            </div>
+            
+            
+            
+            : 
+            param.more && param.more === 'adoption' ?
+
+
+
+
+            <div className="p-adoptions-detail__main">
+            <p>ADOPCIONES</p> 
+            </div>
+            
+            
+            
+            : 
+            !param.more &&
+
+
+            <div className="p-adoptions-detail__main">
+            <AdoptionCard name={pet.name} city={pet.city} gender={pet.gender} img={pet.img} id={pet.id}></AdoptionCard>
+            <hr className="p-adoptions-detail__main__hr"/>
+            <div>
+                MAP
+            </div>
+            </div>
+
+            
+            
+            }
+
+            {/* </div> */}
+            
         </div>
     );
 }
