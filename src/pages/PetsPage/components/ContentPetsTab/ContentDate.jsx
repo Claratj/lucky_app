@@ -21,6 +21,11 @@ export default function ContentDate() {
         <h3 className="p-detailItem__title">Historia</h3>  
         <p className="p-detailItem__histo">Me lllamo Blue, soy una chinchilla muy buena, pero vi cosas que no deberia haber visto,
         que no debia haber pasadp. Por eso llamaron a Lara y vino salvarnos la vida.</p>
+        </div>
+        <div className="p-detailItem__button">
+            <button className="p-detailItem__buttonAp">Apadrinar</button>
+            <button className="p-detailItem__buttonAdop">Adoptar</button>
+
         </div>  
         </div>
     )

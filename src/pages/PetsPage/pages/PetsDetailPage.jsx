@@ -66,6 +66,7 @@ export default function PetsDetailPage() {
                 <div className="detail-tab__link activeTab" onClick={(e) => handleClick(e, 'datos')}>Datos</div>
                 <div className="detail-tab__link" onClick={(e) => handleClick(e, 'salud')}>Salud</div>
                 <div className="detail-tab__link" onClick={(e) => handleClick(e, 'adoption')}>Adopción</div>
+      
             </div>
 
             <div id="datos" className="p-pets-detail__main flex">
