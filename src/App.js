@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import { Routes } from './core/Routes/Routes';
+import './index.scss';
 
 function App() {
   return (

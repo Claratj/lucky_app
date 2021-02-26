@@ -1,5 +1,10 @@
+@import '/src/styles/tools/variable.tools';
 @import '/src/styles/imports/settings.imports';
 @import '/src/styles/imports/tools.imports';
+@import '/src/styles/settings/reset.settings';
+@import '/src/styles/components/Footer.scss';
+@import '/src/styles/components/HomeCard.scss';
+@import '/src/styles/components/HomePage.scss';
 
 body {
   font-family: 'Barlow';
