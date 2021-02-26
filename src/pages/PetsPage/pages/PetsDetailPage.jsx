@@ -56,7 +56,7 @@ export default function PetsDetailPage() {
             <p>{pets.location}</p>
           </div>
           <div className="mini-tab__img">
-          <img src={favIcon} alt="" className="mini-tab__fav"/ >
+          <img src={favIcon} alt="" className="mini-tab__fav" />
           <img src={sharedIcon} alt="" className="mini-tab__share"/>
           </div>
         </div>

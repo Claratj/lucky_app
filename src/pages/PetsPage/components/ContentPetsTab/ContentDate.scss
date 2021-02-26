@@ -16,6 +16,7 @@
        border-radius: 14px;
        padding: 0.2rem 0.3rem 0.3rem 0.8rem;
        font-weight: 800;
+       margin-top: 1rem;
     }
 
     &__title{
@@ -27,6 +28,16 @@
     &__history{
         border: 1px solid rgba(1, 116, 142, .15);
         border-radius: 5px;
+        margin-top: 2rem;
+    }
+
+    &__histo{
+        margin-top: 1rem;
+    }
+
+    &__button{
+        margin-top: 1.3rem;
+        margin-left: 1.4rem;
     }
 
     &__buttonAp, &__buttonAdop{
@@ -38,6 +49,7 @@
        color: $color-pink;
        outline: none;
         font-size: 1rem;
+        margin-left: 1rem;
        &:hover{
            background-color: $color-pink;
            color: white;
@@ -50,9 +62,10 @@
 
 .ul-item{
     list-style: none;
-
+    margin-top: -2rem;
+    margin-bottom: 2rem;
     &__li{
-        margin-left: 1rem;
+        
     }
     &__li::before{
         content: url('./../../../../assets/img/pawprint.png');
