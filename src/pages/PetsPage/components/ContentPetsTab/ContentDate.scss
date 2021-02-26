@@ -1,0 +1,18 @@
+.p-detailItem{
+    &__list{
+        margin-left: 1rem;
+    }
+}
+
+
+.ul-item{
+    list-style: none;
+
+    &__li{
+        margin-left: 1rem;
+    }
+    &__li::before{
+        content: url('./../../../../assets/img/pawprint.png');
+    }
+    
+}
