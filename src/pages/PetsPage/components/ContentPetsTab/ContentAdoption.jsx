@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ContentAdoption.scss';
 
-export default function ContentAdoption() {
+import PopUpAdoption from '../PopUpAdoption/PopUpAdoption';
+
+
+export default function ContentAdoption(props) {
+
+    const [show, setShow] = useState(false);
+
+
     return (
         <div className="p-detailAdoption">
         <div className="p-detailAdoption__require">
@@ -10,15 +17,16 @@ export default function ContentAdoption() {
         </div> 
         <div className="p-detailAdoption__tax">
         <h3 className="p-detailAdoption__title">Tasa de adopción</h3>  
-        <p className="p-detailAdoption__histo">125€</p>
+        <p className="p-detailAdoption__itemtax">125€</p>
         </div>
         <div className="p-detailAdoption__send">
         <h3 className="p-detailAdoption__title">¿Se envía a otra ciudad?</h3>  
-        <p className="p-detailAdoption__histo">No se envía a otra ciudad</p>
+        <p className="p-detailAdoption__itemsend">No se envía a otra ciudad</p>
         </div>
         <div className="p-detailAdoption__button">
             <button className="p-detailAdoption__buttonAp">Apadrinar</button>
-            <button className="p-detailAdoption__buttonAdop">Adoptar</button>
+            <button className="p-detailAdoption__buttonAdop" onClick={()=> {setShow(true); console.log(show)}}>Adoptar</button>
+            <PopUpAdoption show={show}></PopUpAdoption>
 
         </div>
         </div>
