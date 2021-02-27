@@ -3,8 +3,8 @@ import './ContentDate.scss';
 
 export default function ContentDate() {
     return (
-        <div className="p-detailItem">
-        <div className="p-detailItem__list">
+        <div className="p-detailDate">
+        <div className="p-detailDate__list">
             <ul className="ul-item">
                 <li className="ul-item__li">Especie</li>
                 <li className="ul-item__li">Fecha de nacimiento</li>
@@ -13,18 +13,18 @@ export default function ContentDate() {
                 <li className="ul-item__li">Peso</li>
             </ul>
         </div>
-        <div className="p-detailItem__personality">
-        <h3 className="p-detailItem__title">Personalidad</h3>
-        <p className="p-detailItem__person">A veces maúllo</p>
+        <div className="p-detailDate__personality">
+        <h3 className="p-detailDate__title">Personalidad</h3>
+        <p className="p-detailDate__person">A veces maúllo</p>
         </div> 
-        <div className="p-detailItem__history">
-        <h3 className="p-detailItem__title">Historia</h3>  
-        <p className="p-detailItem__histo">Me lllamo Blue, soy una chinchilla muy buena, pero vi cosas que no deberia haber visto,
+        <div className="p-detailDate__history">
+        <h3 className="p-detailDate__title">Historia</h3>  
+        <p className="p-detailDate__histo">Me lllamo Blue, soy una chinchilla muy buena, pero vi cosas que no deberia haber visto,
         que no debia haber pasadp. Por eso llamaron a Lara y vino salvarnos la vida.</p>
         </div>
-        <div className="p-detailItem__button">
-            <button className="p-detailItem__buttonAp">Apadrinar</button>
-            <button className="p-detailItem__buttonAdop">Adoptar</button>
+        <div className="p-detailDate__button">
+            <button className="p-detailDate__buttonAp">Apadrinar</button>
+            <button className="p-detailDate__buttonAdop">Adoptar</button>
 
         </div>  
         </div>

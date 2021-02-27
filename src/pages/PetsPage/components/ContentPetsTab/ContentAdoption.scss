@@ -1,43 +1,26 @@
 @import '../../../../styles/tools/variable.tools';
-.p-detailDate{
-
-    margin: 1rem;
+.p-detailAdoption{
+margin-top: -2rem;
     
-    &__list{
-        margin-left: 1rem;
-        font-weight: 600;
-        font-size: 1rem;
-    }
-
-    &__person{
-       background-color: $color-blue-text; 
-       color: white;
-       width: 37%;
-       border-radius: 14px;
-       padding: 0.2rem 0.3rem 0.3rem 0.8rem;
-       font-weight: 800;
-       margin-top: 1rem;
-    }
-
     &__title{
         font-weight: 800;
         color: $color-blue-text;
         font-size: 1rem;
     }
 
-    &__history{
+    &__require, &__tax, &__send{
         border: 1px solid rgba(1, 116, 142, .15);
         border-radius: 5px;
         margin-top: 2rem;
+        width: 125%;
+        height: 5.5rem;
+        margin-left: -1.4rem;
     }
 
-    &__histo{
-        margin-top: 1rem;
-    }
-
+    
     &__button{
-        margin-top: 1.3rem;
-        margin-left: 1.4rem;
+        margin-top: 1rem;
+        margin-left: -1rem;
     }
 
     &__buttonAp, &__buttonAdop{
