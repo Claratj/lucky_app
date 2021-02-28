@@ -1,0 +1,74 @@
+@import '../../../../styles/tools/variable.tools';
+.p-detailDate{
+
+    margin: 1rem;
+    
+    &__list{
+        margin-left: 1rem;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    &__person{
+       background-color: $color-blue-text; 
+       color: white;
+       width: 37%;
+       border-radius: 14px;
+       padding: 0.2rem 0.3rem 0.3rem 0.8rem;
+       font-weight: 800;
+       margin-top: 1rem;
+    }
+
+    &__title{
+        font-weight: 800;
+        color: $color-blue-text;
+        font-size: 1rem;
+    }
+
+    &__history{
+        border: 1px solid rgba(1, 116, 142, .15);
+        border-radius: 5px;
+        margin-top: 2rem;
+    }
+
+    &__histo{
+        margin-top: 1rem;
+    }
+
+    &__button{
+        margin-top: 1.3rem;
+        margin-left: 1.4rem;
+    }
+
+    &__buttonAp, &__buttonAdop{
+       width: 7.5rem; 
+       height: 2.3rem;
+       border-radius: 5px;
+       border: 2px solid $color-pink;
+       background-color: white;
+       color: $color-pink;
+       outline: none;
+        font-size: 1rem;
+        margin-left: 1rem;
+       &:hover{
+           background-color: $color-pink;
+           color: white;
+           transition: 0.5s;
+           font-weight: 800;
+       }
+    }
+}
+
+
+.ul-item{
+    list-style: none;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+    &__li{
+        
+    }
+    &__li::before{
+        content: url('./../../../../assets/img/pawprint.png');
+    }
+    
+}
