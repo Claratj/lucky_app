@@ -1,3 +1,5 @@
+@import '../../styles/tools/variable.tools';
+
 .c-popUp{
  position: fixed;
  left: 0;
@@ -15,9 +17,20 @@
 
     &__content{
         width: 90%;
+        border-radius: 12px;
         background: white;
         transform: translateY(-200px);
         transition: all 0.3s ease-in-out;
+    }
+
+    &__title{
+        font-size: 1.56rem;
+        text-align: center;
+        color: $color-blue-text;
+        margin-top: 2.63rem;
+        margin-bottom: 2.19rem;
+        font-weight: 600;
+        
     }
 }
 
