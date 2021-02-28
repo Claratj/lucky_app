@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { PopUpContext } from '../../../../shared/Context/PopUpContext';
 import PopUpAdoption from '../PopUpAdoption/PopUpAdoption';
 import './ContentHealth.scss';
 
 export default function ContentHealth() {
 
-    const [show, setShow] = useState(false);
+    const {show, setShow} = useContext(PopUpContext);
 
     return (
         
@@ -25,12 +26,7 @@ export default function ContentHealth() {
         </div>
         <div className="p-detailhealth__button">
             <button className="p-detailhealth__buttonh">Apadrinar</button>
-            <button className="p-detailAdoption__buttonAdop" onClick={()=> {
-                {if(show == true){
-                    setShow(false)
-                }else{
-                    setShow(true)
-                }}}}>Adoptar</button>
+            <button className="p-detailAdoption__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
             <PopUpAdoption show={show}></PopUpAdoption>
 
         </div>  

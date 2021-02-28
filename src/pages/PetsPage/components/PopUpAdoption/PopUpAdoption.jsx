@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import PopUp from '../../../../shared/PopUp/PopUp'
 import video from '../../../../assets/video/adopcion'
 import './PopUpAdoption.scss'
+import { PopUpContext } from '../../../../shared/Context/PopUpContext';
+import poster from '../../../../assets/img/logo.png'
 
 
-export default function PopUpAdoption(props) {
+export default function PopUpAdoption() {
     
-    const [show, setShow] = useState(false);
-    
+    const {show, setShow} = useContext(PopUpContext);
     
     const setDisable = ()=>{
         const video = document.querySelector('.c-popupAdoption__continue');
@@ -23,9 +24,13 @@ export default function PopUpAdoption(props) {
         }
                
     }
-    useEffect(()=>{
-        setShow(props.show)
-    },[props.show])
+
+    const stopVideo = ()=>{
+        const video = document.querySelector('video');
+        video.pause();
+        video.currentTime = 0;
+    }
+    
     
     return (
         
@@ -34,15 +39,16 @@ export default function PopUpAdoption(props) {
             <PopUp onClose={()=> setShow(false)} show={show} title="Solicitud de adopción">
                 <p className="c-popupAdoption__parra">Adoptar es un acto de amor, pero sobre todo responsabilidad de por vida</p><br></br>
                 <p className="c-popupAdoption__parra">Por éste motivo es importante que veas el siguiente video donde te explicamos como va a ser todo el proceso de adopción</p>
-                <video src={video} onEnded={()=> setDisable()} className="c-popupAdoption__video"></video>
+                <video src={video} poster={poster} onEnded={()=> setDisable()} className="c-popupAdoption__video"></video>
                 <button onClick={()=>play()} className="btn-play">▶</button>
                 <h5 className="c-popupAdoption__quest">¿Quieres continuar con el proceso de adopción?</h5>
                 <div className="c-popupAdoption__button">
-                <button onClick={()=> setShow(false)} className="c-popupAdoption__cancel">Cancelar</button>
+                <button onClick={()=> {setShow(false); stopVideo()}} className="c-popupAdoption__cancel">Cancelar</button>
                 <button  disabled className="c-popupAdoption__continue">Continuar</button>
                 </div>
             </PopUp>
-           
+
+        
         </div>
     )
 }

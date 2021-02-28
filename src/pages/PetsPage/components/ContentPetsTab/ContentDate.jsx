@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { PopUpContext } from '../../../../shared/Context/PopUpContext';
 import PopUpAdoption from '../PopUpAdoption/PopUpAdoption';
 import './ContentDate.scss';
 
 export default function ContentDate() {
 
-    const [show, setShow] = useState(false);
+    const {show, setShow} = useContext(PopUpContext);
 
     return (
         <div className="p-detailDate">
@@ -28,12 +29,7 @@ export default function ContentDate() {
         </div>
         <div className="p-detailDate__button">
             <button className="p-detailDate__buttonAp">Apadrinar</button>
-            <button className="p-detailAdoption__buttonAdop" onClick={()=> {
-                {if(show == true){
-                    setShow(false)
-                }else{
-                    setShow(true)
-                }}}}>Adoptar</button>
+            <button className="p-detailAdoption__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
             <PopUpAdoption show={show}></PopUpAdoption>
 
         </div>  

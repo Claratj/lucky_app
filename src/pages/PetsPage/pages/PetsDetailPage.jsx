@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import image1 from '../../../assets/img/chinchilla.jpg';
 import image2 from '../../../assets/img/chinchilla.jpg';
 import image3 from '../../../assets/img/chinchilla.jpg';
@@ -16,6 +16,7 @@ import ContentDate from '../components/ContentPetsTab/ContentDate';
 import ContentHealth from '../components/ContentPetsTab/ContentHealth';
 import ContentAdoption from '../components/ContentPetsTab/ContentAdoption';
 import { Link } from 'react-router-dom';
+import { PopUpContext } from '../../../shared/Context/PopUpContext';
 
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -23,7 +24,9 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export default function PetsDetailPage() {
     const pets = 
         {name: 'Kiwi', img1: image1, img2: image2, img3: image3, location: 'Madrid', km: '1.3km', like: false};
-
+    
+    const [show, setShow] = useState(false);
+    
 
     function handleClick(e, text){
         
@@ -68,7 +71,7 @@ export default function PetsDetailPage() {
                 <div className="detail-tab__link" onClick={(e) => handleClick(e, 'adoption')}>Adopción</div>
       
             </div>
-
+            <PopUpContext.Provider value={{show, setShow}}>
             <div id="datos" className="p-pets-detail__main flex">
                 <ContentDate></ContentDate>
             </div>
@@ -78,6 +81,7 @@ export default function PetsDetailPage() {
             <div id="adoption" className="p-pets-detail__main">
                 <ContentAdoption></ContentAdoption>
             </div>
+            </PopUpContext.Provider>
         </div>
             
         
