@@ -39,6 +39,7 @@
         padding-right: 3rem;
         background: transparent;
         border-right: 1px solid $color-cloudy-blue;
+        outline: none;
     }
 
     &__continue{
@@ -49,6 +50,7 @@
         background: transparent;
         margin-right: -1rem;
         padding-left: 3rem;
+        outline: none;
         
         &:disabled{
             color: grey;

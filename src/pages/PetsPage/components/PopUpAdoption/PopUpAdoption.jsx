@@ -6,7 +6,7 @@ import './PopUpAdoption.scss'
 
 export default function PopUpAdoption(props) {
     
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
     
     
     const setDisable = ()=>{
@@ -25,7 +25,7 @@ export default function PopUpAdoption(props) {
     }
     useEffect(()=>{
         setShow(props.show)
-    }, [props.show])
+    },[props.show])
     
     return (
         

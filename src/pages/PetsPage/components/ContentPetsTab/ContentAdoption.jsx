@@ -2,14 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import './ContentAdoption.scss';
 
 import PopUpAdoption from '../PopUpAdoption/PopUpAdoption';
-import { PopUpContext } from '../../../../shared/Context/PopUpContext';
+
 
 
 export default function ContentAdoption() {
 
     const [show, setShow] = useState(false);
 
-    
+   
 
     return (
         <div className="p-detailAdoption">
@@ -27,7 +27,12 @@ export default function ContentAdoption() {
         </div>
         <div className="p-detailAdoption__button">
             <button className="p-detailAdoption__buttonAp">Apadrinar</button>
-            <button className="p-detailAdoption__buttonAdop" onClick={()=> {setShow(true)}}>Adoptar</button>
+            <button className="p-detailAdoption__buttonAdop" onClick={()=> {
+                {if(show == true){
+                    setShow(false)
+                }else{
+                    setShow(true)
+                }}}}>Adoptar</button>
             <PopUpAdoption show={show}></PopUpAdoption>
 
         </div>
