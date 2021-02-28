@@ -12,6 +12,7 @@ import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDe
 import PetsPage from '../../pages/PetsPage/PetsPage';
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
+import {LoginFormPage} from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
 
 export function Routes() {
     return (
@@ -36,6 +37,9 @@ export function Routes() {
             </Route>
             <Route path={"/login"}>
                 <LoginPage/>
+            </Route>
+            <Route path={"/login-form"}>
+                <LoginFormPage/>
             </Route>
             <Route exact path="/">
                 <SplashPage />
