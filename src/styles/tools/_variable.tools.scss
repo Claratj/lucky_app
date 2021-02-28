@@ -8,7 +8,9 @@ $color-pink: #E08888;
 $color-orange: #f5a623;
 $color-red: #f44332;
 $color-green: #248d1b;
+$color-pine-green: #0e363d;
 $color-greyishBrown: #555555;
+$color-ocean: #01748e;
 
 @font-face{
     font-family: Barlow;
@@ -18,4 +20,19 @@ $color-greyishBrown: #555555;
 @font-face{
     font-family: Barlow-med;
     src: url(../../assets/fonts/Barlow-Medium.ttf);
+}
+
+@font-face {
+    font-family: Barlow-SemiBold;
+    src: url(../../assets/fonts/Barlow-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Barlow-Bold;
+    src: url(../../assets/fonts/Barlow-Bold.ttf);
+}
+
+@font-face {
+    font-family: Barlow-Regular;
+    src: url(../../assets/fonts/Barlow-Regular.ttf);
 }
