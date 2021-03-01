@@ -13,8 +13,10 @@
         text-decoration: none;
         color: $color-greyishBrown;
         padding-bottom: 0.6rem;
+        
         &:hover {
             border-bottom: 0.18rem solid $color-pink;
+        
         }
     }
 }
@@ -23,3 +25,6 @@
     color: $color-blue-text;
     font-weight: 600;
 }
+
+
+  

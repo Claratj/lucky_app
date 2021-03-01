@@ -1,0 +1,57 @@
+@import '../../../../styles/tools/variable.tools';
+.p-detailAdoption{
+margin-top: -2rem;
+    
+    &__title{
+        font-weight: 800;
+        color: $color-blue-text;
+        font-size: 1rem;
+    }
+
+    &__require, &__tax, &__send{
+        border: 1px solid rgba(1, 116, 142, .15);
+        border-radius: 5px;
+        margin-top: 2rem;
+        width: 125%;
+        height: 5.5rem;
+        margin-left: -1.4rem;
+    }
+
+    
+    &__button{
+        margin-top: 1rem;
+        margin-left: -1rem;
+    }
+
+    &__buttonAp, &__buttonAdop{
+       width: 7.5rem; 
+       height: 2.3rem;
+       border-radius: 5px;
+       border: 2px solid $color-pink;
+       background-color: white;
+       color: $color-pink;
+       outline: none;
+        font-size: 1rem;
+        margin-left: 1rem;
+       &:hover{
+           background-color: $color-pink;
+           color: white;
+           transition: 0.5s;
+           font-weight: 800;
+       }
+    }
+}
+
+
+.ul-item{
+    list-style: none;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+    &__li{
+        
+    }
+    &__li::before{
+        content: url('./../../../../assets/img/pawprint.png');
+    }
+    
+}
