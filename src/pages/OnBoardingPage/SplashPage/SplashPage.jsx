@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Redirect } from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import './SplashPage.scss';
 import img from '../../../assets/img/splash.svg';
@@ -7,24 +8,34 @@ import img from '../../../assets/img/splash.svg';
 
 export function SplashPage() {
 
-    const duration = 200;
+    // const duration = 200;
 
-    const transitionStyles = {
-        entering: { opacity: 1 },
-        entered: { opacity: 1 },
-        exiting: { opacity: 0 },
-        exited: { opacity: 0 },
-    };
+    // const transitionStyles = {
+    //     entering: { opacity: 1 },
+    //     entered: { opacity: 1 },
+    //     exiting: { opacity: 0 },
+    //     exited: { opacity: 0 },
+    // };
 
 
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         console.log('This will run after 2 seconds!')
-    //     }, 2000)
-    //     return () => {
-    //         clearTimeout(timer);
-    //     }
-    // }, [])
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            <Redirect to="/boarding" />
+        }, 5000)
+        return () => {
+            clearTimeout(timer);
+        }
+    }, [])
+
+
+    // const [redirectNow, setRedirectNow] = useState(false);
+
+    // if (redirectNow) {
+    //     return <Redirect to='/boarding' />
+    // }
+
+
+
 
 
     return (

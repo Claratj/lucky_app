@@ -1,12 +1,13 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/swiper.scss';
 import imgSitios from '../../assets/img/boarding-sitios.svg';
 import imgAdopt from '../../assets/img/boarding-adoptar.svg';
 import imgAso from '../../assets/img/boarding-asociaciones.svg';
 import './OnBoardingPage.scss';
 
-// SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 
 
@@ -16,9 +17,9 @@ export function OnBoardingPage() {
   return (
     <div className="base-c">
       <Swiper
-        spaceBetween={0}
+        spaceBetween={50}
         slidesPerView={1}
-        onSwiper={(swiper) => console.log(swiper)}>
+        pagination={{ clickable: true }}>
 
         <SwiperSlide>
           <figure className="fig-c">
