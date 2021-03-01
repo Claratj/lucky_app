@@ -7,6 +7,7 @@ import confi from '../../../assets/img/imgHomeCard/confi.png';
 import eventos from '../../../assets/img/imgHomeCard/eventos.png';
 import protectora from '../../../assets/img/imgHomeCard/protectora.png';
 import salir from '../../../assets/img/imgHomeCard/salir.png';
+import arrow from '../../../assets/img/imgHomeCard/arrow.png'
 import Footer from '../../../core/Footer/Footer';
 
 export function HomeCard() {
@@ -21,6 +22,10 @@ export function HomeCard() {
                 <p>
                     Asociaciones protectoras
                 </p>
+                <div className="container-img__arrow">
+                   <img  src={arrow}></img>
+                </div>
+                
             </div>
             <div className="container-img">
                 
@@ -28,6 +33,9 @@ export function HomeCard() {
                 <p>
                     Eventos
                 </p>
+                <div className="container-img__arrow">
+                   <img  src={arrow}></img>
+                </div>
             </div>
             <div className="container-img">
                 
@@ -35,6 +43,9 @@ export function HomeCard() {
                 <p>
                     Curiosidades
                 </p>
+                <div className="container-img__arrow">
+                   <img  src={arrow}></img>
+                </div>
             </div>
             <div className="container-img">
                 
@@ -42,6 +53,9 @@ export function HomeCard() {
                 <p>
                     Ayuda
                 </p>
+                <div className="container-img__arrow">
+                   <img  src={arrow}></img>
+                </div>
             </div>
             <div className="container-img">
                 
@@ -49,6 +63,9 @@ export function HomeCard() {
                 <p>
                     Configuración 
                 </p>
+                <div className="container-img__arrow">
+                   <img  src={arrow}></img>
+                </div>
             </div>
             <div className="container-img session">
                 
@@ -56,6 +73,9 @@ export function HomeCard() {
                 <p>
                     Cerrar sesión
                 </p>
+                <div className="container-img__arrow">
+                   <img  src={arrow}></img>
+                </div>
             </div>
 
             <Footer />

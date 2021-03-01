@@ -24,7 +24,20 @@
             font-family: Barlow;
             font-size: 17px;
         }
+        .container-img__arrow {
+            position: absolute;
+            right: 0;
+            margin-right: 5%;
+
+            img {
+            height: 1rem;
+            width: 0.7rem;
+            
+
+            }
+        }
     }
+    
 
     .session{
         margin-top: 35%;
