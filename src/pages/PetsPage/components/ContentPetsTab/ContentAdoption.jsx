@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext} from 'react';
 import './ContentAdoption.scss';
 
 import PopUpAdoption from '../PopUpAdoption/PopUpAdoption';
@@ -27,7 +27,7 @@ export default function ContentAdoption() {
         <p className="p-detailAdoption__itemsend">No se envía a otra ciudad</p>
         </div>
         <div className="p-detailAdoption__button">
-            <button className="p-detailAdoption__buttonAp">Apadrinar</button>
+            <button className="p-detailDate__buttonAp">Apadrinar</button>
             <button className="p-detailAdoption__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
             <PopUpAdoption show={show}></PopUpAdoption>
 

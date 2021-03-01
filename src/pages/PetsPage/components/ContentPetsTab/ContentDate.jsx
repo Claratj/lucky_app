@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import { PopUpContext } from '../../../../shared/Context/PopUpContext';
 import PopUpAdoption from '../PopUpAdoption/PopUpAdoption';
 import './ContentDate.scss';

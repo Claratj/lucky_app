@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext} from 'react'
 import PopUp from '../../../../shared/PopUp/PopUp'
 import video from '../../../../assets/video/adopcion'
 import './PopUpAdoption.scss'
