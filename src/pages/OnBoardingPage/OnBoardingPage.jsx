@@ -6,6 +6,9 @@ import imgSitios from '../../assets/img/boarding-sitios.svg';
 import imgAdopt from '../../assets/img/boarding-adoptar.svg';
 import imgAso from '../../assets/img/boarding-asociaciones.svg';
 import './OnBoardingPage.scss';
+import { NavLink } from 'react-router-dom';
+
+
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -14,8 +17,12 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export function OnBoardingPage() {
 
 
+
   return (
     <div className="base-c">
+      <NavLink to={"/login"}>
+        <div className="close">x</div>
+      </NavLink>
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
@@ -35,10 +42,12 @@ export function OnBoardingPage() {
           </figure>
         </SwiperSlide>
         <SwiperSlide>
-          <figure className="fig-c">
-            <img className="fig-c__img" src={imgAso}></img>
-            <p className="fig-c__text">Si eres una asociación sube a tus peludos para darles más difusión</p>
-          </figure>
+          <NavLink to={"/login"} style={{ textDecoration: 'none' }}>
+            <figure className="fig-c">
+              <img className="fig-c__img" src={imgAso}></img>
+              <p className="fig-c__text">Si eres una asociación sube a tus peludos para darles más difusión</p>
+            </figure>
+          </NavLink>
         </SwiperSlide>
       </Swiper>
     </div>
