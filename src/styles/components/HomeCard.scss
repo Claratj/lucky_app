@@ -1,0 +1,33 @@
+.container{
+    padding: 0.7rem;
+    padding-top: 3rem;
+    width: 1.5rem;
+
+    &-img{
+        height: 3.7rem;
+        display: flex;
+        align-items:center;
+        border: solid 1px $color-light-blue;
+        margin-top: 5%;
+        padding: 0.5rem;
+        border-radius: 4pt;
+
+        img {
+            height: 1.5rem;
+            width: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        p {
+            margin-top: 1rem;
+            color: $color-blue-text;
+            font-family: Barlow;
+            font-size: 17px;
+        }
+    }
+
+    .session{
+        margin-top: 35%;
+        margin-bottom: 15%;
+    }
+}
