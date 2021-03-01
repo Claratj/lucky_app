@@ -11,24 +11,30 @@ export default function PopUpAdoption() {
     const {show, setShow} = useContext(PopUpContext);
     
     const setDisable = ()=>{
-        const video = document.querySelector('.c-popupAdoption__continue');
-        video.disabled = false;
+        const contin = document.querySelector('.c-popupAdoption__continue');
+        contin.disabled = false;
     }
 
     const play = ()=>{
         const video = document.querySelector('video');
         const btnPlay = document.querySelector('.btn-play');
         if (video != null) {
-            video.play(); 
-            btnPlay.style.visibility = 'hidden';
+            video.play();
+            if (video.play()) {
+                btnPlay.style.visibility = 'hidden';
+            }else{
+                
+            } 
+            
         }
                
     }
 
     const stopVideo = ()=>{
         const video = document.querySelector('video');
-        video.pause();
-        video.currentTime = 0;
+        const btnPlay = document.querySelector('.btn-play');
+        video.load();
+        btnPlay.style.visibility = 'visible';
     }
     
     

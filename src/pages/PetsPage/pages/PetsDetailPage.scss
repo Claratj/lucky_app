@@ -77,19 +77,19 @@
 }
 
 
-//Swiper
+
 .swiper-container{
     margin-bottom: 3rem;
 }
-.swiper-pagination {
+.swiper-pagination.pets {
     position: absolute;
     text-align: center;
     transition: 300ms opacity;
     transform: translate3d(0, 0, 0);
     z-index: 10;
-    top: 13.5rem;
+    top: 12.5rem;
     
-    &.swiper-pagination-hidden {
+    &.swiper-pagination-hidden.pets {
       opacity: 0;
     
       
@@ -107,30 +107,30 @@
   .swiper-pagination-bullets-dynamic {
     overflow: hidden;
     font-size: 0;
-    .swiper-pagination-bullet {
+    .swiper-pagination-bullet.pets {
       transform: scale(0.33);
       position: relative;
     }
-    .swiper-pagination-bullet-active {
+    .swiper-pagination-bullet-active.pets {
       transform: scale(1);
     }
-    .swiper-pagination-bullet-active-main {
+    .swiper-pagination-bullet-active-main.pets {
       transform: scale(1);
     }
-    .swiper-pagination-bullet-active-prev {
+    .swiper-pagination-bullet-active-prev.pets {
       transform: scale(0.66);
     }
-    .swiper-pagination-bullet-active-prev-prev {
+    .swiper-pagination-bullet-active-prev-prev.pets {
       transform: scale(0.33);
     }
-    .swiper-pagination-bullet-active-next {
+    .swiper-pagination-bullet-active-next.pets {
       transform: scale(0.66);
     }
-    .swiper-pagination-bullet-active-next-next {
+    .swiper-pagination-bullet-active-next-next.pets {
       transform: scale(0.33);
     }
   }
-  .swiper-pagination-bullet {
+  .swiper-pagination-bullet.pets {
     width: 8px;
     height: 8px;
     display: inline-block;
@@ -148,7 +148,7 @@
       cursor: pointer;
     }
   }
-  .swiper-pagination-bullet-active {
+  .swiper-pagination-bullet-active.pets {
     opacity: 1;
     background: $color-pink;
   }
@@ -156,14 +156,14 @@
   
   .swiper-container-horizontal {
     > .swiper-pagination-bullets {
-      .swiper-pagination-bullet {
+      .swiper-pagination-bullet.pets {
         margin: 0 4px;
       }
       &.swiper-pagination-bullets-dynamic {
         left: 50%;
         transform: translateX(-50%);
         white-space: nowrap;
-        .swiper-pagination-bullet {
+        .swiper-pagination-bullet.pets {
           transition: 200ms transform, 200ms left;
         }
       }

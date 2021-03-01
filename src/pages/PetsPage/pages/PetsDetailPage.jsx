@@ -39,14 +39,14 @@ export default function PetsDetailPage() {
               tablinks[i].className = tablinks[i].className.replace(" activeTab", "");
               };
           document.getElementById(text).className += " flex";
-          e.currentTarget.className += " activeTab";
+                e.currentTarget.className += " activeTab";
       };    
 
     
     return (
         <div className="c-petsDetailPage">
         <Link to="/pets"><img src={iconBack} alt="" className="c-petsDetailPage__back"/></Link>
-        <Swiper spaceBetween={50} slidesPerView={1} pagination={{ clickable: true }}>
+        <Swiper spaceBetween={50} slidesPerView={1} pagination={{ clickable: true, clickableClass:'swiper-pagination-clickable pets', bulletClass: 'swiper-pagination-bullet pets'}}>
           <SwiperSlide><img src={image1} className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
           <SwiperSlide><img src={image1} className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
           <SwiperSlide><img src={image1} className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
