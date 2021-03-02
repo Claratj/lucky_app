@@ -8,81 +8,26 @@ import confi from '../../../assets/img/imgHomeCard/confi.png';
 import eventos from '../../../assets/img/imgHomeCard/eventos.png';
 import protectora from '../../../assets/img/imgHomeCard/protectora.png';
 import salir from '../../../assets/img/imgHomeCard/salir.png';
-import arrow from '../../../assets/img/imgHomeCard/arrow.png'
 import Footer from '../../../core/Footer/Footer';
+import { CardMenu } from '../../../shared/CardMenu/CardMenu';
 
 export function HomeCard() {
 
-    
-
     return (
-        <div className="container">
-            <div className="container-img">
-                
-                <img src={protectora}></img>
-                <p>
-                    Asociaciones protectoras
-                </p>
-                <div className="container-img__arrow">
-                   <img  src={arrow}></img>
-                </div>
-                
+        <div className="container flex flex-column align-items-center mt-5">
+            <CardMenu icon={protectora} title='Asociaciones protectoras' link='/'></CardMenu>
+            <CardMenu icon={eventos} title='Eventos' link='/'></CardMenu>
+            <CardMenu icon={blogCopy} title='Curiosidades' link='/'></CardMenu>
+            <div className="flex flex-column align-items-center w-100">
+            <CardMenu icon={ayuda} title='Ayuda' link='/'></CardMenu>
+            <CardMenu icon={confi} title='Configuración' link='/'></CardMenu>
             </div>
-            <div className="container-img">
-                
-                <img src={eventos}></img>
-                <p>
-                    Eventos
-                </p>
-                <div className="container-img__arrow">
-                   <img  src={arrow}></img>
-                </div>
+            <div className="flex flex-column align-items-center session w-100">
+            <CardMenu icon={salir} title='Cerrar sesión' link='/'></CardMenu>
             </div>
-            <div className="container-img">
-                
-                <img src={blogCopy}></img>
-                <p>
-                    Curiosidades
-                </p>
-                <div className="container-img__arrow">
-                   <img  src={arrow}></img>
-                </div>
-            </div>
-            <div className="container-img">
-                
-                <img src={ayuda}></img>
-                <p>
-                    Ayuda
-                </p>
-                <div className="container-img__arrow">
-                   <img  src={arrow}></img>
-                </div>
-            </div>
-            <div className="container-img">
-                
-                <img src={confi}></img>
-                <p>
-                    Configuración 
-                </p>
-                <div className="container-img__arrow">
-                   <img  src={arrow}></img>
-                </div>
-            </div>
-            <div className="container-img session">
-                
-                <img src={salir}></img>
-                <p>
-                    Cerrar sesión
-                </p>
-                <div className="container-img__arrow">
-                   <img  src={arrow}></img>
-                </div>
-            </div>
-
             <Footer />
 
-        </div>
-        
+        </div>        
     )
 }
 
