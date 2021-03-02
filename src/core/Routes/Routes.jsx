@@ -12,13 +12,14 @@ import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDe
 import PetsPage from '../../pages/PetsPage/PetsPage';
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
-import { LoginFormPage } from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
+import {LoginFormPage} from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
+import HomePage from "../../pages/HomePage/HomePage";
 
 export function Routes() {
     return (
         <Switch>
             <Route path="/pets/:name">
-                <PetsDetailPage />
+                <PetsDetailPage/>
             </Route>
             <Route path="/pets">
                 <PetsPage />
@@ -41,8 +42,11 @@ export function Routes() {
             <Route path={"/login-form"}>
                 <LoginFormPage />
             </Route>
+            <Route path={"/splash"}>
+                <SplashPage/>
+            </Route>
             <Route exact path="/">
-                <SplashPage />
+                <HomePage />
             </Route>
             <Route path="*">
                 <h1>ERROR</h1>
