@@ -4,7 +4,7 @@ import {
     Route
 } from "react-router-dom";
 
-import {LoginPage} from "../../pages/LoginPage/LoginPage";
+import { LoginPage } from "../../pages/LoginPage/LoginPage";
 import { SplashPage } from '../../pages/OnBoardingPage/SplashPage/SplashPage';
 import { OnBoardingPage } from '../../pages/OnBoardingPage/OnBoardingPage';
 import { AdoptionsPage } from '../../pages/AdoptionsPage/AdoptionsPage';
@@ -22,25 +22,25 @@ export function Routes() {
                 <PetsDetailPage/>
             </Route>
             <Route path="/pets">
-                <PetsPage/>
+                <PetsPage />
             </Route>
             <Route path="/profile">
-                <ProfilePage/>
+                <ProfilePage />
             </Route>
             <Route path="/adoptions/:id">
-                <AdoptionsDeatilPage/>
+                <AdoptionsDeatilPage />
             </Route>
             <Route path="/adoptions">
-                <AdoptionsPage/>
+                <AdoptionsPage />
             </Route>
             <Route exact path="/boarding">
                 <OnBoardingPage />
             </Route>
             <Route path={"/login"}>
-                <LoginPage/>
+                <LoginPage />
             </Route>
             <Route path={"/login-form"}>
-                <LoginFormPage/>
+                <LoginFormPage />
             </Route>
             <Route path={"/splash"}>
                 <SplashPage/>

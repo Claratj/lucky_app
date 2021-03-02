@@ -1,40 +1,31 @@
-import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect, useState } from "react";
+import { Redirect } from 'react-router-dom'
 import './SplashPage.scss';
 import img from '../../../assets/img/splash.svg';
 
-
-
 export function SplashPage() {
 
-    const duration = 200;
+    const [redirect, setRedirect] = useState(false)
 
-    const transitionStyles = {
-        entering: { opacity: 1 },
-        entered: { opacity: 1 },
-        exiting: { opacity: 0 },
-        exited: { opacity: 0 },
-    };
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setRedirect(true);
+        }, 3800);
+        return () => {
+            clearTimeout(timer);
+        }
+    }, [])
 
-
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         console.log('This will run after 2 seconds!')
-    //     }, 2000)
-    //     return () => {
-    //         clearTimeout(timer);
-    //     }
-    // }, [])
 
 
     return (
-
-
         <div className="base-c">
-            <figure className="fig-c">
-                <img className="fig-c__img" src={img}></img>
+            <figure className="fig-c fade-appear">
+                <img className="fig-c__img" src={img} alt=""></img>
                 <h1 className="fig-c__title">LUCKY</h1>
             </figure>
+            {redirect ? <Redirect to={"/boarding"} /> : null}
         </div>
+
     )
 }
