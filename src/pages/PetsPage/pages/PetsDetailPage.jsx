@@ -17,6 +17,7 @@ import ContentHealth from '../components/ContentPetsTab/ContentHealth';
 import ContentAdoption from '../components/ContentPetsTab/ContentAdoption';
 import { Link } from 'react-router-dom';
 import { PopUpContext } from '../../../shared/Context/PopUpContext';
+import PopUpAdoption from '../components/PopUpAdoption/PopUpAdoption';
 
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -45,6 +46,7 @@ export default function PetsDetailPage() {
     
     return (
         <div className="c-petsDetailPage">
+        
         <Link to="/pets"><img src={iconBack} alt="" className="c-petsDetailPage__back"/></Link>
         <Swiper spaceBetween={50} slidesPerView={1} pagination={{ clickable: true, clickableClass:'swiper-pagination-clickable pets', bulletClass: 'swiper-pagination-bullet pets'}}>
           <SwiperSlide><img src={image1} alt="" className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
@@ -71,7 +73,7 @@ export default function PetsDetailPage() {
                 <div className="detail-tab__link" onClick={(e) => handleClick(e, 'adoption')}>Adopción</div>
       
             </div>
-            <PopUpContext.Provider value={{show, setShow}}>
+            
             <div id="datos" className="p-pets-detail__main flex">
                 <ContentDate></ContentDate>
             </div>
@@ -81,9 +83,17 @@ export default function PetsDetailPage() {
             <div id="adoption" className="p-pets-detail__main">
                 <ContentAdoption></ContentAdoption>
             </div>
-            </PopUpContext.Provider>
-        </div>
             
+
+        <PopUpContext.Provider value={{show, setShow}}>
+        <div className="c-petsDetailPage__button">
+        <button className="c-petsDetailPage__buttonAp">Apadrinar</button>
+            <button className="c-petsDetailPage__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
+            <PopUpAdoption show={show}></PopUpAdoption>
+
+        </div> 
+        </PopUpContext.Provider>
+        </div>   
         
     )
 }

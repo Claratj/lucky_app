@@ -1,11 +1,10 @@
-import React, { useContext} from 'react';
-import { PopUpContext } from '../../../../shared/Context/PopUpContext';
-import PopUpAdoption from '../PopUpAdoption/PopUpAdoption';
+import React from 'react';
+
 import './ContentDate.scss';
 
 export default function ContentDate() {
 
-    const {show, setShow} = useContext(PopUpContext);
+   
 
     return (
         <div className="p-detailDate">
@@ -27,12 +26,7 @@ export default function ContentDate() {
         <p className="p-detailDate__histo">Me lllamo Blue, soy una chinchilla muy buena, pero vi cosas que no deberia haber visto,
         que no debia haber pasadp. Por eso llamaron a Lara y vino salvarnos la vida.</p>
         </div>
-        <div className="p-detailDate__button">
-            <button className="p-detailDate__buttonAp">Apadrinar</button>
-            <button className="p-detailAdoption__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
-            <PopUpAdoption show={show}></PopUpAdoption>
-
-        </div>  
+          
         </div>
     )
 }
