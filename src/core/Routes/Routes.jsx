@@ -3,32 +3,54 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import {AdoptionsPage} from '../../pages/AdoptionsPage/AdoptionsPage';
-import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
-import {HomePage} from '../../pages/HomePage/HomePage';
 
-import {ProfilePage} from '../../pages/ProfilePage/ProfilePage';
-
+import {LoginPage} from "../../pages/LoginPage/LoginPage";
+import { SplashPage } from '../../pages/OnBoardingPage/SplashPage/SplashPage';
+import { OnBoardingPage } from '../../pages/OnBoardingPage/OnBoardingPage';
+import { AdoptionsPage } from '../../pages/AdoptionsPage/AdoptionsPage';
+import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDetailsPage/AdoptionsDetailPage';
+import PetsPage from '../../pages/PetsPage/PetsPage';
+import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
+import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
+import {LoginFormPage} from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
+import HomePage from "../../pages/HomePage/HomePage";
 
 export function Routes() {
     return (
         <Switch>
+            <Route path="/pets/:name">
+                <PetsDetailPage/>
+            </Route>
+            <Route path="/pets">
+                <PetsPage/>
+            </Route>
             <Route path="/profile">
-                <ProfilePage></ProfilePage>
+                <ProfilePage/>
+            </Route>
+            <Route path="/adoptions/:id">
+                <AdoptionsDeatilPage/>
             </Route>
             <Route path="/adoptions">
-                <AdoptionsPage></AdoptionsPage>
+                <AdoptionsPage/>
+            </Route>
+            <Route exact path="/boarding">
+                <OnBoardingPage />
+            </Route>
+            <Route path={"/login"}>
+                <LoginPage/>
+            </Route>
+            <Route path={"/login-form"}>
+                <LoginFormPage/>
+            </Route>
+            <Route path={"/splash"}>
+                <SplashPage/>
             </Route>
             <Route exact path="/">
-                <HomePage/>
-            </Route>
-            <Route path="/HomeCard">
-                <HomeCard></HomeCard>
+                <HomePage />
             </Route>
             <Route path="*">
                 <h1>ERROR</h1>
             </Route>
-
         </Switch>
     );
 }
