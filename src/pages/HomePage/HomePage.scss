@@ -1,55 +1,35 @@
 @import '../../styles/tools/variable.tools';
+@import '../../styles/tools/textstyles.tools';
 
-.container {
-  max-width: 100%;
-  align-items: center;
-
-  .container-welcome {
-    margin-top: 10rem;
-
-    .container-welcome__h3 {
-      color: $color-light-blue;
-      margin-top: 10rem;
-      font-family: Barlow;
-      font-weight: 500;
-    }
+.welcome {
+  margin-top: 2.5rem;
+  width: 90%;
+  &__title {
+    color: $color-ocean;
   }
+}
 
-  .container-img {
+.main {
+  width: 90%;
+  &__title {
+    color: $color-ocean;
+  }
+  &__article {
+    width: 100%;
+    background-color: $color-background-pink;
+    border-radius: 0.25rem 0.25rem 0 0;
+    &__img {
       width: 100%;
-
-      .container-img__title{
-          font-family: Barlow;
-          color: #44a1a0;
-          padding-top: 2rem;
-          border-top: 1px solid #44a19fcc; 
-          font-weight: 800;
-      }
-
-      .container-img__figure {
-          background-color: $color-pink;
-          width: 100%;
-          height: 16rem;
-          margin-top: 2.5rem;
-          border-radius: 2px;
-          align-items: center;
-          padding: 0.5%;
-          border-radius: 2%;
-      }
-
-      .container-img__img{
-          width: 100%;
-          border-radius: 2%;
-
-      }
-
-      .container-img__p {
-          color:white;
-          font-family: Barlow;
-          font-weight: 600;
-          text-align: center;
-          margin-top: 3%;
-          
-      }
+      bottom: 2rem;
+    }
+    &__title {
+      background-color: $color-background-pink;
+      color: #fff;
+      padding: 0.8rem;
+      font-family: Barlow-SemiBold, sans-serif;
+      text-align: center;
+      border: 0.125rem solid $color-background-pink;
+      border-radius: 0 0 0.25rem 0.25rem;
+    }
   }
 }
