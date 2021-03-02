@@ -17,7 +17,7 @@ export function ResumenTab(props){
                     <div className="e-resumenTab__map__title">
                         <img src={protectora} alt="" className="e-resumenTab__map__title__img"/>
                         <div className="e-resumenTab__map__title__copy">
-                            <p className="e-resumenTab__map__title__copy__title">{props.asociation}</p>
+                            <p className="e-resumenTab__map__title__copy__title s-body-2">{props.ownerName}</p>
                             <p><img src={location} alt="" className="e-resumenTab__map__title__copy__img"/>{props.address}</p>
                         </div>
                     </div>
