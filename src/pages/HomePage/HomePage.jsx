@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../core/Footer/Footer';
+import './HomePage.scss';
 //import BootstrapCarousel from './Carousel/BootstrapCarousel';
 import chinchillas from '../../assets/img/imgHomePage/chinchillas.png';
 import iguana from '../../assets/img/imgHomePage/iguana.png';

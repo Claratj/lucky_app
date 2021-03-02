@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../../../shared/CardMenu/CardMenu.scss';
+import './HomeCard.scss';
 import ayuda from '../../../assets/img/imgHomeCard/ayuda.png';
 import blogCopy from '../../../assets/img/imgHomeCard/blogCopy.png';
 import confi from '../../../assets/img/imgHomeCard/confi.png';
