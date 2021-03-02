@@ -1,0 +1,30 @@
+@import '../tools/variable.tools';
+
+.detail-tab {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    &__link {
+        text-align: center;
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        text-decoration: none;
+        color: $color-greyishBrown;
+        padding-bottom: 0.6rem;
+        
+        &:hover {
+            border-bottom: 0.18rem solid $color-pink;
+        
+        }
+    }
+}
+.activeTab {
+    border-bottom: 0.18rem solid $color-pink;
+    color: $color-blue-text;
+    font-weight: 600;
+}
+
+
+  

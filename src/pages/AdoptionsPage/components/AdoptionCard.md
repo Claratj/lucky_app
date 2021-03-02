@@ -1,0 +1,1 @@
+Esta card también aparece en la página de detalle, solo que en la de detalle no muestra el proceso

@@ -1,0 +1,23 @@
+@import "../../styles/tools/variable.tools";
+
+.c-button {
+  border-radius: 0.3125rem;
+  width: 12.25rem;
+  height: 2.5rem;
+  font-family: Barlow-Regular, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0;
+  cursor: pointer;
+
+  &__dark {
+    border: none;
+    background-color: $color-ocean;
+    color: white;
+  }
+
+  &__light {
+    border: 1px solid $color-ocean;
+    background-color: white;
+    color: $color-ocean;
+  }
+}

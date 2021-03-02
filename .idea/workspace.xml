@@ -2,19 +2,86 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="860c9e2b-7346-47c5-b336-79332273fd68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Lucky.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Footer/Footer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/Barlow-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/Barlow-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/arrow-big.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/atras.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/boarding-adoptar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/boarding-asociaciones.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/boarding-sitios.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/buscar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/chinchilla.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/compartir.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/favoritos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/filtros.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/fondo@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/logo@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/male.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/pawprint.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/protectora.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/splash.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/video/adopcion" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AdoptionsPage/components/AdoptionCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AdoptionsPage/components/AdoptionCard.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AdoptionsPage/components/AdoptionCard.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AdoptionsPage/pages/AdoptionsDetailsPage/AdoptionsDetailPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AdoptionsPage/pages/AdoptionsDetailsPage/AdoptionsDetailPage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AdoptionsPage/pages/AdoptionsDetailsPage/components/InfoTab.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AdoptionsPage/pages/AdoptionsDetailsPage/components/ResumenTab.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AdoptionsPage/pages/AdoptionsDetailsPage/components/ResumenTab.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/LoginPage/pages/LoginFormPage/LoginFormPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/LoginPage/pages/LoginFormPage/LoginFormPage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/OnBoardingPage/OnBoardingPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/OnBoardingPage/OnBoardingPage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/OnBoardingPage/SplashPage/SplashPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/OnBoardingPage/SplashPage/SplashPage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/PetsPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/components/ContentPetsTab/ContentAdoption.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/components/ContentPetsTab/ContentAdoption.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/components/ContentPetsTab/ContentDate.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/components/ContentPetsTab/ContentDate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/components/ContentPetsTab/ContentHealth.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/components/ContentPetsTab/ContentHealth.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/components/PetsGallery/PetsGallery.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/components/PetsGallery/PetsGallery.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/components/PopUpAdoption/PopUpAdoption.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/components/PopUpAdoption/PopUpAdoption.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/pages/PetsDetailPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PetsPage/pages/PetsDetailPage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/Context/PopUpContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/PopUp/PopUp.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/PopUp/PopUp.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/SearchBar/SearchBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/SearchBar/SearchBar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/blocks/_button.blocks.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/blocks/_containers.blocks.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/elements/_body.elements.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/elements/_img.elements.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/elements/_tab.elements.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/imports/_blocks.imports.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/imports/_elements.imports.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/tools/_textstyles.tools.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdoptionsPage/pages/AdoptionsDetailsPage/components/AdoptionTab.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Routes/Routes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Routes/Routes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/menu/Menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Menu/Menu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/menu/menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Menu/Menu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomeCard/HomeCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomeCard/HomeCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Footer/Footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/HomeCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomeCard/HomeCard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/HomePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdoptionsPage/AdoptionsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdoptionsPage/AdoptionsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdoptionsPage/AdoptionsPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdoptionsPage/AdoptionsPage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfilePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfilePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfilePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfilePage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/CardMenu/CardMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/CardMenu/CardMenu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/imports/_tools.imports.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/imports/_tools.imports.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tools/_variable.tools.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tools/_variable.tools.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +148,7 @@
       <workItem from="1614499208118" duration="5516000" />
       <workItem from="1614504776660" duration="11256000" />
       <workItem from="1614614463153" duration="3215000" />
-      <workItem from="1614675727832" duration="361000" />
+      <workItem from="1614675727832" duration="710000" />
     </task>
     <servers />
   </component>

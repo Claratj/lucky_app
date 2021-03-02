@@ -1,9 +1,38 @@
 $color-light-blue: #44A1A0;
 $color-blue-text: #01748e;
 $color-dark-blue: #164C56;
+$color-cloud-blue: #bdd2d6;
+$color-cloudy-blue: #afd3db;
+$color-black: #2d2d2d;
 $color-pink: #E08888;
+$color-orange: #f5a623;
+$color-red: #f44332;
+$color-green: #248d1b;
+$color-pine-green: #0e363d;
+$color-greyishBrown: #555555;
+$color-ocean: #01748e;
 
 @font-face{
     font-family: Barlow;
+    src: url(../../assets/fonts/Barlow-Regular.ttf);
+}
+
+@font-face{
+    font-family: Barlow-med;
+    src: url(../../assets/fonts/Barlow-Medium.ttf);
+}
+
+@font-face {
+    font-family: Barlow-SemiBold;
+    src: url(../../assets/fonts/Barlow-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Barlow-Bold;
+    src: url(../../assets/fonts/Barlow-Bold.ttf);
+}
+
+@font-face {
+    font-family: Barlow-Regular;
     src: url(../../assets/fonts/Barlow-Regular.ttf);
 }
