@@ -4,7 +4,7 @@ import {
     Route
 } from "react-router-dom";
 
-import {LoginPage} from "../../pages/LoginPage/LoginPage";
+import { LoginPage } from "../../pages/LoginPage/LoginPage";
 import { SplashPage } from '../../pages/OnBoardingPage/SplashPage/SplashPage';
 import { OnBoardingPage } from '../../pages/OnBoardingPage/OnBoardingPage';
 import { AdoptionsPage } from '../../pages/AdoptionsPage/AdoptionsPage';
@@ -13,36 +13,40 @@ import PetsPage from '../../pages/PetsPage/PetsPage';
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
 import {LoginFormPage} from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
+import HomePage from "../../pages/HomePage/HomePage";
 
 export function Routes() {
     return (
         <Switch>
-        <Route path="/pets/:name">
-         <PetsDetailPage/>
-          </Route>
+            <Route path="/pets/:name">
+                <PetsDetailPage/>
+            </Route>
             <Route path="/pets">
-                <PetsPage/>
+                <PetsPage />
             </Route>
             <Route path="/profile">
-                <ProfilePage/>
+                <ProfilePage />
             </Route>
             <Route path="/adoptions/:id">
-                <AdoptionsDeatilPage/>
+                <AdoptionsDeatilPage />
             </Route>
             <Route path="/adoptions">
-                <AdoptionsPage/>
+                <AdoptionsPage />
             </Route>
             <Route exact path="/boarding">
                 <OnBoardingPage />
             </Route>
             <Route path={"/login"}>
-                <LoginPage/>
+                <LoginPage />
             </Route>
             <Route path={"/login-form"}>
-                <LoginFormPage/>
+                <LoginFormPage />
+            </Route>
+            <Route path={"/splash"}>
+                <SplashPage/>
             </Route>
             <Route exact path="/">
-                <SplashPage />
+                <HomePage />
             </Route>
             <Route path="*">
                 <h1>ERROR</h1>
