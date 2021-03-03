@@ -17,6 +17,7 @@ import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
 import PopUp from "../../shared/PopUp/PopUp";
 import {PopUpFormSent} from "../../pages/PetsPage/components/PopUpFormSent/PopUpFormSent";
+import {PopUpAdoptionSent} from "../../pages/AdoptionsPage/components/PopUpAdoptionSent/PopUpAdoptionSent";
 
 
 export function Routes() {
@@ -51,9 +52,6 @@ export function Routes() {
             </Route>
             <Route path={"/menu"}>
                 <HomeCard></HomeCard>
-            </Route>
-            <Route path={"/test"}>
-                <PopUpFormSent/>
             </Route>
             <Route exact path="/">
                 <HomePage />
