@@ -1,0 +1,49 @@
+@import '../../styles/tools/variable.tools';
+
+
+.c-input-img{
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    &__input{
+        display: none;
+    }
+
+    &__label {
+        color: $color-ocean;
+        font-size: 12px;
+        text-align: center;
+        width: 67px;
+        height: 73px;
+        border: 2px $color-cloudy-blue solid;
+        border-radius: 8px;
+        padding: 10px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        display: block;
+        position: relative;
+        margin: 10px;
+        cursor: pointer;
+    }
+    
+    &__img{
+        max-width: 2rem;
+        max-height: 2rem;
+    }
+    :checked + &__label {
+        border: 2px $color-pink solid;
+        color:  $color-pink;
+        &__img {
+            fill:  $color-pink;
+        }
+    }
+    // :checked + &__img {
+    //     // background-color: $color-pink;
+    //     // fill: red;
+    // }
+}
+
+
