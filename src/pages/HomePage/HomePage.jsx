@@ -10,31 +10,15 @@ import { API } from '../../shared/consts/api.consts';
 
 export function HomePage() {
   const [news, setNews] = useState([]);
-
-   const getNews = fetch('http://localhost:5300/news', {
-    method: 'GET',
-     headers: {
-         'Accept': 'application/json',
-        'Content-Type': 'application/json',
-         'Access-Control-Allow-Origin': '*',
-    },
-    
- }).then((results)=> {
-   setNews(results.results);
-  console.log(results);
-  });
   
-  /* const getNews = () =>{
-    console.log('hola');
+  const getNews = () =>{
     API.get('/news').then((results)=> {
-    setNews(results.results);
-    console.log(results);
+    setNews(results.data.results);
     });
-  } */
+  } 
 
   useEffect(getNews, []);
   console.log(news);
-
     return (
         <div className="container flex flex-column align-items-center">
           <div className="welcome">
@@ -46,20 +30,12 @@ export function HomePage() {
           </div>
           <div className="main">
             <p className="main__title s-body-2">Novedades</p>
+            {news.map((obj) =>
             <article className="main__article">
               <img className="main__article__img" src={chinchillas} alt=""/>
-              <p className="main__article__title">10 curiosidades sobre las chichillas.</p>    
+              <p className="main__article__title">{obj.title}</p>    
             </article>
-
-            <article className="main__article">
-              <img className="main__article__img" src={iguana} alt=""/>
-              <p className="main__article__title">¿Sabes qué comen las iguanas?</p>  
-            </article>
-
-            <article className="main__article">
-              <img className="main__article__img" src={perroMotero} alt=""/>
-              <p className="main__article__title">10 lugares para visitar con tu perro en Madrid.</p>  
-            </article>
+            )}
           </div>
           <Footer />
       </div>
