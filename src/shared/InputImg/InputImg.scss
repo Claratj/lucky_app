@@ -1,12 +1,12 @@
 @import '../../styles/tools/variable.tools';
 
 
-.c-input-img{
+.c-input-img {
     // display: flex;
     // justify-content: center;
     // align-items: center;
 
-    &__input{
+    &__input {
         display: none;
     }
 
@@ -29,20 +29,20 @@
         cursor: pointer;
     }
     
-    &__img{
+    & svg{
         max-width: 2rem;
         max-height: 2rem;
     }
     :checked + &__label {
         border: 2px $color-pink solid;
         color:  $color-pink;
-        &__img {
+        &__img svg path {
             fill:  $color-pink;
         }
     }
-    :checked + &__img {
-        fill: $color-pink;
-    }
+    // :checked + svg {
+    //     fill: $color-pink;
+    // }
 }
 
 

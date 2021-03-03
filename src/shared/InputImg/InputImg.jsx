@@ -18,8 +18,9 @@ export default function InputImg(props) {
 
         <div className="c-input-img" >
             <input id={label} className="c-input-img__input" onChange={handleChecked} type="checkbox" alt="Submit" width="48" height="48" />
-            <label for={label} className="c-input-img__label" ><img className="c-input-img__img" alt={label} src={img} />{label}</label>
+            <label for={label} className="c-input-img__label" ><img alt={label} src={img} />{label}</label>
         </div>
 
     )
 }
+

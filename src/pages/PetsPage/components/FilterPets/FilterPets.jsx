@@ -36,6 +36,7 @@ export function FilterPets(props) {
         <div className="fig-c">
             <div>
                 <h5 className="fig-c__filter-title">Filtros</h5>
+
             </div>
             <div>
                 <p className="p-filter-title-section">Ciudad</p>
