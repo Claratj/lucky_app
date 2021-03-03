@@ -11,26 +11,26 @@ import { API } from '../../shared/consts/api.consts';
 export function HomePage() {
   const [news, setNews] = useState([]);
 
-//   const getNews = fetch('http://localhost:5300/news', {
-//     method: 'GET',
-//     headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json',
-//         'Access-Control-Allow-Origin': '*',
-//     },
-//     credentials: 'include',
-// }).then((results)=> {
-//   setNews(results.results);
-//   console.log(results);
-//   });
+   const getNews = fetch('http://localhost:5300/news', {
+    method: 'GET',
+     headers: {
+         'Accept': 'application/json',
+        'Content-Type': 'application/json',
+         'Access-Control-Allow-Origin': '*',
+    },
+    
+ }).then((results)=> {
+   setNews(results.results);
+  console.log(results);
+  });
   
-  const getNews = () =>{
+  /* const getNews = () =>{
     console.log('hola');
     API.get('/news').then((results)=> {
     setNews(results.results);
     console.log(results);
     });
-  }
+  } */
 
   useEffect(getNews, []);
   console.log(news);
