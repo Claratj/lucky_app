@@ -2,19 +2,20 @@ import React from 'react';
 
 import { Link, useParams } from 'react-router-dom';
 
-import { AdoptionCard } from '../../components/AdoptionCard';
 import iconBack from '../../../../assets/img/atras.png';
 
 import './AdoptionsDetailPage.scss';
 import '../../../../styles/elements/_tab.elements.scss';
 import { ResumenTab } from './components/ResumenTab';
+import { InfoTab } from './components/InfoTab';
+import { AdoptionTab } from './components/AdoptionTab';
 
 
 export function AdoptionsDeatilPage() {
-        // aquí le pasamos el id de la mascota por params y recogemos todos sus datos a través de la API. id de la adopción
+    // aquí recogemos por param el id del usuario y llamamos a la API para recoger todas las solicitudes de ese usuario concreto
     
     const param = useParams();
-    const petId = param.id; 
+    const userId = param.id;  
 
     const pet = {   
         id: 1,
@@ -58,10 +59,10 @@ export function AdoptionsDeatilPage() {
                 <ResumenTab name={pet.name} city={pet.city} gender={pet.gender} img={pet.img} id={pet.id} ownerName={pet.ownerName} address={pet.address}></ResumenTab>
             </div>
             <div id="info" className="p-adoptions-detail__main">
-                INFO
+                <InfoTab></InfoTab>
             </div>
             <div id="adoption" className="p-adoptions-detail__main">
-                ADOPCION
+                <AdoptionTab ownerName={pet.ownerName} address={pet.address}></AdoptionTab>
             </div>
         </div>
     );
