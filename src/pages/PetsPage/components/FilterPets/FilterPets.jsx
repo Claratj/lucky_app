@@ -4,7 +4,7 @@ import './FilterPets.scss';
 // import RNPickerSelect from 'react-native-picker-select';
 import imgDog from '../../../../assets/img/perrop-a.svg';
 import imgSnake from '../../../../assets/img/snake-a.svg';
-
+import imgSpider from '../../../../assets/img/imgInput/spider-01.svg';
 import InputImg from '../../../../shared/InputImg/InputImg';
 
 
@@ -12,13 +12,8 @@ import InputImg from '../../../../shared/InputImg/InputImg';
 
 export function FilterPets(props) {
 
-    const [checked, setChecked] = useState(false);
     // const [selected, setSelected] = useState(false);
 
-    const handleChecked = ({ target }) => {
-        console.log(target);
-        setChecked(target.checked);
-    }
 
     // useEffect(() => {
     //     setSelected(true);
@@ -36,12 +31,6 @@ export function FilterPets(props) {
 
     // const { showFilter, setShowFilter } = useContext(PopUpContext);
 
-
-
-
-    let label = 'Perro';
-    let label1 = 'asda';
-    // let lable2 = 'Gato';
 
     return (
         <div className="fig-c">
@@ -70,31 +59,46 @@ export function FilterPets(props) {
             <div>
                 <p className="p-filter-title-section">Especie</p>
                 <div className="p-input-container">
-                    <InputImg img={imgDog} label={label} checked={checked} onChange={handleChecked} />
-                    <InputImg img={imgSnake} label={label1} />
-                    <InputImg />
-                    <InputImg />
-                    <InputImg />
-                    <InputImg />
-                    <InputImg />
-                    <InputImg />
-                    <InputImg />
-                    <InputImg />
-                    <InputImg />
+                    <InputImg img={imgDog} label={'Perro'} />
+                    <InputImg img={imgSnake} label={'Gato'} />
+                    <InputImg label={'Conejo'} />
+                    <InputImg label={'Cobaya'} />
+                    <InputImg label={'Pequeño mamífero'} />
+                    <InputImg label={'Hurón'} />
+                    <InputImg label={'Pez'} />
+                    <InputImg label={'Reptil'} />
+                    <InputImg label={'Anfibio'} />
+                    <InputImg img={imgSpider} label={'Spider'} />
+                    <InputImg label={'Ave'} />
                 </div>
-                Aquí hay otra sección de tipo de ave/ raza
+                <select class="custom-select">
+                    llamada a la api de tipo
+                </select>
             </div>
             <div>
                 <p className="p-filter-title-section">Edad</p>
-                Aquí iría como ciudad pero de edad
+                <select class="custom-select">
+                    <option value="0">Select car:</option>
+                    <option value="1">Cachorro</option>
+                    <option value="2">Joven</option>
+                    <option value="3">Adulto</option>
+                </select>
             </div>
             <div>
                 <p className="p-filter-title-section">Sexo</p>
-                Aquí iría despliegue botones -sexo
+                <div className="p-input-container">
+                    <InputImg label={'Hembra'} />
+                    <InputImg label={'Macho'} />
+                </div>
             </div>
             <div>
                 <p className="p-filter-title-section">Tamaño</p>
-                Aquí iría despliegue botones -tamaño
+                <div className="p-input-container">
+                    <InputImg label={'Pequeño'} />
+                    <InputImg label={'Mediano'} />
+                    <InputImg label={'Grande'} />
+                </div>
+
             </div>
             <button className="c-button c-button__pink">Aplicar</button>
 

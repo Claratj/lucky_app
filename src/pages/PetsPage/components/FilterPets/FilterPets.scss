@@ -2,6 +2,9 @@
 
 
 .fig-c {
+
+    overflow-x: hidden;
+    
     &__filter-title {
         font-family: Barlow-med;
         color: $color-blue-text;

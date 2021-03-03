@@ -40,10 +40,10 @@
             fill:  $color-pink;
         }
     }
-    // :checked + &__img {
-    //     // background-color: $color-pink;
-    //     // fill: red;
-    // }
+    :checked + &__img {
+        fill: $color-pink;
+    }
 }
+
 
 
