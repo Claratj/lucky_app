@@ -15,9 +15,6 @@ import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
 import {LoginFormPage} from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
-import PopUp from "../../shared/PopUp/PopUp";
-import {PopUpFormSent} from "../../pages/PetsPage/components/PopUpFormSent/PopUpFormSent";
-import {PopUpAdoptionSent} from "../../pages/AdoptionsPage/components/PopUpAdoptionSent/PopUpAdoptionSent";
 
 
 export function Routes() {
