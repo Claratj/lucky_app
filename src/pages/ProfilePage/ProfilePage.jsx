@@ -9,6 +9,8 @@ import apadrina from '../../assets/img/apadrina-a.svg';
 import donar from '../../assets/img/donar-a.svg';
 import photo from '../../assets/img/profile-photo.png';
 
+import Footer from '../../core/Footer/Footer';
+
 import './ProfilePage.scss';
 
 export function ProfilePage() {
@@ -29,8 +31,7 @@ export function ProfilePage() {
             <CardMenu icon={obj.img} title={obj.title} link={obj.link}></CardMenu>
             )}
             </div>
-            {/* aquí va el footer  */}
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
         </div>
     );
 }

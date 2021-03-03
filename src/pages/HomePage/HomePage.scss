@@ -1,0 +1,37 @@
+@import '../../styles/tools/variable.tools';
+@import '../../styles/tools/textstyles.tools';
+
+.welcome {
+  margin: 8rem 0 2rem;
+  width: 90%;
+  &__title {
+    color: $color-ocean;
+  }
+}
+
+.main {
+  width: 90%;
+  &__title {
+    color: $color-ocean;
+    margin: 1.5rem 0;
+  }
+  &__article {
+    width: 100%;
+    background-color: $color-background-pink;
+    border-radius: 0.25rem 0.25rem 0 0;
+    margin-bottom: 1rem;
+    &__img {
+      width: 100%;
+      bottom: 2rem;
+    }
+    &__title {
+      background-color: $color-background-pink;
+      color: #fff;
+      padding: 0.8rem;
+      font-family: Barlow-SemiBold, sans-serif;
+      text-align: center;
+      border: 0.125rem solid $color-background-pink;
+      border-radius: 0 0 0.25rem 0.25rem;
+    }
+  }
+}
