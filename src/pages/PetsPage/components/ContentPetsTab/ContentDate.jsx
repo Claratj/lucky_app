@@ -2,19 +2,19 @@ import React from 'react';
 
 import './ContentDate.scss';
 
-export default function ContentDate() {
+export default function ContentDate(props) {
 
    
 
     return (
-        <div className="p-detailDate">
+         <div className="p-detailDate">
         <div className="p-detailDate__list">
             <ul className="ul-item">
-                <li className="ul-item__li">Especie</li>
-                <li className="ul-item__li">Fecha de nacimiento</li>
-                <li className="ul-item__li">Sexo</li>
-                <li className="ul-item__li">Tamaño</li>
-                <li className="ul-item__li">Peso</li>
+                <li className="ul-item__li">Especie <span>{props.pet.species}</span></li>
+                <li className="ul-item__li">Fecha de nacimiento <span>{props.pet.age}</span></li>
+                <li className="ul-item__li">Sexo <span>{props.pet.gender}</span></li>
+                <li className="ul-item__li">Tamaño <span>{props.pet.size}</span></li>
+                <li className="ul-item__li">Peso <span></span></li>
             </ul>
         </div>
         <div className="p-detailDate__personality">
@@ -23,8 +23,7 @@ export default function ContentDate() {
         </div> 
         <div className="p-detailDate__history">
         <h3 className="p-detailDate__title">Historia</h3>  
-        <p className="p-detailDate__histo">Me lllamo Blue, soy una chinchilla muy buena, pero vi cosas que no deberia haber visto,
-        que no debia haber pasadp. Por eso llamaron a Lara y vino salvarnos la vida.</p>
+        <p className="p-detailDate__histo"></p>
         </div>
           
         </div>
