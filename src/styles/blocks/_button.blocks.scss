@@ -15,6 +15,14 @@
     color: white;
   }
 
+  &__pink {
+    width: 20.813rem;
+    border: none;
+    background-color: $color-background-pink;
+    color: white;
+
+  }
+
   &__light {
     border: 1px solid $color-ocean;
     background-color: white;
