@@ -16,7 +16,7 @@ export function Footer() {
         <div className="c-footer">
             <Link to="/"><img src={home} alt={"Home"}/></Link>
             <Link to="#"><img src={mapa} alt={"Mapa"}/></Link>
-            <Link to="/adoptions"><img src={mascota} alt={"Mascota"}/></Link>
+            <Link to="/pets"><img src={mascota} alt={"Mascota"}/></Link>
             <Link to="/profile"><img src={perfil} alt={"Perfil"}/></Link>
             <Link to='/menu'><img src={mS} alt={"mS"}/></Link>
         </div>

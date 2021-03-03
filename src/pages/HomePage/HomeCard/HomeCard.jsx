@@ -18,11 +18,11 @@ export function HomeCard() {
             <CardMenu icon={protectora} title='Asociaciones protectoras' link='/'></CardMenu>
             <CardMenu icon={eventos} title='Eventos' link='/'></CardMenu>
             <CardMenu icon={blogCopy} title='Curiosidades' link='/'></CardMenu>
-            <div className="flex flex-column align-items-center w-100">
+            <div className="flex flex-column align-items-center full-width">
             <CardMenu icon={ayuda} title='Ayuda' link='/'></CardMenu>
             <CardMenu icon={confi} title='Configuración' link='/'></CardMenu>
             </div>
-            <div className="flex flex-column align-items-center session w-100">
+            <div className="flex flex-column align-items-center session">
             <CardMenu icon={salir} title='Cerrar sesión' link='/'></CardMenu>
             </div>
             <Footer />

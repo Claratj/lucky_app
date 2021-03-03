@@ -55,7 +55,7 @@ export function AdoptionsDeatilPage() {
             </div>
 
             <div id="resumen" className="p-adoptions-detail__main flex">
-                <ResumenTab name={pet.name} city={pet.city} gender={pet.gender} img={pet.img} id={pet.id} ownerName={pet.asociation} address={pet.address}></ResumenTab>
+                <ResumenTab name={pet.name} city={pet.city} gender={pet.gender} img={pet.img} id={pet.id} ownerName={pet.ownerName} address={pet.address}></ResumenTab>
             </div>
             <div id="info" className="p-adoptions-detail__main">
                 INFO
