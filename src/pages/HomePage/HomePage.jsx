@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../../core/Footer/Footer';
 import './HomePage.scss';
 //import BootstrapCarousel from './Carousel/BootstrapCarousel';
-import chinchillas from '../../assets/img/imgHomePage/chinchillas.png';
-import iguana from '../../assets/img/imgHomePage/iguana.png';
-import perroMotero from '../../assets/img/imgHomePage/perroMotero.png';
 import Footer from '../../core/Footer/Footer';
 import { API } from '../../shared/consts/api.consts';
 
@@ -32,12 +29,12 @@ export function HomePage() {
             <p className="main__title s-body-2">Novedades</p>
             {news.map((obj) =>
             <article className="main__article">
-              <img className="main__article__img" src={chinchillas} alt=""/>
+              <img className="main__article__img" src={obj.img} alt=""/>
               <p className="main__article__title">{obj.title}</p>    
             </article>
             )}
           </div>
-          <Footer />
+          <Footer></Footer>
       </div>
     )
 }
