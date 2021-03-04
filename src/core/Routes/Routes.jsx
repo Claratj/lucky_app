@@ -33,7 +33,7 @@ export function Routes() {
             <Route path="/adoptions/form">
                 <AdoptionForm />
             </Route>
-            <Route path="/adoptions/:id">
+            <Route path="/adoptions/pet/:id">
                 <AdoptionsDeatilPage />
             </Route>
             <Route path="/adoptions/:userId">
