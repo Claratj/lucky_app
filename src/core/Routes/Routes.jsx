@@ -15,6 +15,7 @@ import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
 import {LoginFormPage} from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
+import {AdoptionForm} from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
 
 
 export function Routes() {
@@ -28,6 +29,9 @@ export function Routes() {
             </Route>
             <Route path="/profile">
                 <ProfilePage />
+            </Route>
+            <Route path="/adoptions/form">
+                <AdoptionForm />
             </Route>
             <Route path="/adoptions/:id">
                 <AdoptionsDeatilPage />

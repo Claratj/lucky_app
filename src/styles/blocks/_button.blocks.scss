@@ -20,4 +20,10 @@
     background-color: white;
     color: $color-ocean;
   }
+
+  &__red {
+    border: none;
+    background-color: rgb(250, 156, 147);
+    color: white;
+  }
 }
