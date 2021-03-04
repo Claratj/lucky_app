@@ -22,8 +22,9 @@
   }
 
   &__red {
+    width: 90%;
     border: none;
-    background-color: rgb(250, 156, 147);
+    background-color: $color-background-pink;
     color: white;
   }
 }

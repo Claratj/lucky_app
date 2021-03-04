@@ -36,7 +36,7 @@ export function Routes() {
             <Route path="/adoptions/:id">
                 <AdoptionsDeatilPage />
             </Route>
-            <Route path="/adoptions">
+            <Route path="/adoptions/:userId">
                 <AdoptionsPage />
             </Route>
             <Route exact path="/boarding">

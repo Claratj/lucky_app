@@ -6,7 +6,7 @@ import './AdoptionCard.scss';
 export function AdoptionCard(props) {
     return(
         <div className="c-adoption-card">
-        <Link to={"/adoptions/" + props.id} className="c-adoption-card__link">
+        <Link to={"/adoptions/pet/" + props.id} className="c-adoption-card__link">
         <div className="c-adoption-card__title">
             <p className="c-adoption-card__title__name">Adopción de {props.name}</p>
             {props.status && props.status === 'rejected' &&

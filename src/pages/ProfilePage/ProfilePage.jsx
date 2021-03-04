@@ -1,6 +1,7 @@
 import React from 'react';
 import { CardMenu } from '../../shared/CardMenu/CardMenu';
 import chica from '../../assets/img/chica-a.png';
+// import chico from '../../assets/img/chico-r.svg';
 import direccion from '../../assets/img/localization-a.svg';
 import favorito from '../../assets/img/favoritos-a.png';
 import notificacion from '../../assets/img/notification-a.svg';
@@ -23,6 +24,10 @@ export function ProfilePage() {
         {title: 'Apadrinar', img: apadrina, link: '/'},
         {title: 'Donar', img: donar, link: '/'}
     ];
+
+    // const changeColor = (src, e) =>{
+    //     e.target.src = src;
+    // }
     return(
         <div className="p-profile">
             <img src={photo} alt="" className="p-profile__photo"/>
@@ -31,6 +36,7 @@ export function ProfilePage() {
             <CardMenu icon={obj.img} title={obj.title} link={obj.link}></CardMenu>
             )}
             </div>
+            {/* <img src={mascota} alt="" onClick={(e)=>changeColor(chico, e)}/> */}
             <Footer></Footer>
         </div>
     );

@@ -17,30 +17,6 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
-        &__title {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            &__img {
-                width: 4.5rem;
-            }
-            &__copy {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin-left: 1rem;
-                &__img {
-                    width: 1.8rem;
-                    margin-right: 0.5rem;
-                }
-                &__title {
-                    color: $color-blue-text;
-                    // font-weight: 800;
-                    // font-size: 1.2rem;
-                }
-            }
-        }
         &__map {
             margin: 3rem;
         }
