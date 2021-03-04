@@ -4,6 +4,7 @@ import './HomePage.scss';
 //import BootstrapCarousel from './Carousel/BootstrapCarousel';
 import Footer from '../../core/Footer/Footer';
 import { API } from '../../shared/consts/api.consts';
+import Map from '../../shared/Map/Map';
 
 export function HomePage() {
   const [news, setNews] = useState([]);
@@ -34,6 +35,7 @@ export function HomePage() {
             </article>
             )}
           </div>
+          <Map />
           <Footer></Footer>
       </div>
     )
