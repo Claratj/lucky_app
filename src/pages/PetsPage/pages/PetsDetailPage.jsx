@@ -24,7 +24,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export default function PetsDetailPage() {
     
     const [show, setShow] = useState(false);
-    const [pet, setPet] = useState([]);
+    const [pet, setPet] = useState({images: [], species: [], data: []});
     const  param  = useParams();
     const petId = param.id;
 
@@ -58,14 +58,14 @@ export default function PetsDetailPage() {
         
         <Link to="/pet"><img src={iconBack} alt="" className="c-petsDetailPage__back"/></Link>
         <Swiper spaceBetween={50} slidesPerView={1} pagination={{ clickable: true, clickableClass:'swiper-pagination-clickable pets', bulletClass: 'swiper-pagination-bullet pets'}}>
-        <SwiperSlide><img src={pet.image} alt="" className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
+        <SwiperSlide><img src={pet.images[0]} alt="" className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
         </Swiper>
 
         <div className="mini-tab">
           <img src={maleIcon} alt="" className="mini-tab__gender"></img>
           <div className="mini-tab__date">
-            <h5 className="mini-tab__name">{pet.name}</h5>
-            <p>{pet.city}</p>
+            <h5 className="mini-tab__name"></h5>
+            <p></p>
           </div>
           <div className="mini-tab__img">
           <img src={favIcon} alt="" className="mini-tab__fav" />

@@ -10,11 +10,11 @@ export default function ContentDate(props) {
          <div className="p-detailDate">
         <div className="p-detailDate__list">
             <ul className="ul-item">
-                <li className="ul-item__li">Especie <span>{props.pet.species}</span></li>
+                <li className="ul-item__li">Especie <span>{props.pet.species.species}</span></li>
                 <li className="ul-item__li">Fecha de nacimiento <span>{props.pet.age}</span></li>
                 <li className="ul-item__li">Sexo <span>{props.pet.gender}</span></li>
                 <li className="ul-item__li">Tamaño <span>{props.pet.size}</span></li>
-                <li className="ul-item__li">Peso <span></span></li>
+                <li className="ul-item__li">Peso <span>{props.pet.data.weight}</span></li>
             </ul>
         </div>
         <div className="p-detailDate__personality">

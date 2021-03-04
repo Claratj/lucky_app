@@ -24,7 +24,7 @@ export default function PetsGallery() {
         <Link to={"/pet/" + item._id} className="c-galleryPets__link">
             <div className="c-galleryPets__card" key={i}>
             <div className="c-galleryPets__img">
-                <img src={item.image} className="c-galleryPets__pet"></img>
+                <img src={item.images[0]} className="c-galleryPets__pet"></img>
                 <img src={favIcon} className="c-galleryPets__fav"></img>
             </div>
             <div className="c-galleryPets__text">
