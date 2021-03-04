@@ -8,7 +8,7 @@ export function AdoptionFormConfirm(props) {
         //TODO fix API connection
         const application = {
             // userId:,
-            // petId:,
+            // pet:,
             form: {
                 data: {
                     name: props.getState('name', ''),
