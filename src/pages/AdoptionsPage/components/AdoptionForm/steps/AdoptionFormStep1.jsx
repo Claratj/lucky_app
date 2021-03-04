@@ -20,7 +20,7 @@ export function AdoptionFormStep1() {
             <TextField id={"street"} label={"Calle, número, piso"} fullWidth/>
             <TextField id={"code"} label={"Código postal"} fullWidth/>
             <TextField id={"city"} label={"Ciudad"} fullWidth/>
-            <FormControlLabel control={<Checkbox name="checkedC" />} label="Acepto los términos y condiciones de la adopción" />
+            <FormControlLabel control={<Checkbox name="terms" />} label="Acepto los términos y condiciones de la adopción" />
             <button className={"c-button c-button__red"}>Continuar</button>
         </form>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '../AdoptionForm.scss';
-import {Checkbox, FormControlLabel, Radio, RadioGroup, TextField} from "@material-ui/core";
+import {FormControlLabel, Radio, RadioGroup, TextField} from "@material-ui/core";
 
 export function AdoptionFormStep2() {
     return (
@@ -16,25 +16,33 @@ export function AdoptionFormStep2() {
                 <rect className={"p-adoption-form__progress-part"} width={"50%"} height={7} fill={"rgb(255,156,147)"}/>
             </svg>
             <p className={"p-adoption-form__subtitle"}>Sobre las mascotas</p>
-            <RadioGroup className={"p-adoption-form__radio-group"}>
+            <RadioGroup className={"p-adoption-form__radio-group"} name={"morePets"}>
                 <p>¿Tienes otros animales?</p>
                 <div>
                     <FormControlLabel value="yes" control={<Radio color="primary"/>} label="Sí"
-                                      labelPlacement="bottom"/>
+                                      labelPlacement="top"/>
                     <FormControlLabel value="no" control={<Radio color="primary"/>} label="No"
-                                      labelPlacement="bottom"/>
+                                      labelPlacement="top"/>
                 </div>
             </RadioGroup>
-            <TextField id={"name"} label={"Nombre y apellidos"} fullWidth/>
-            <TextField id={"email"} label={"Email"} type={"email"} fullWidth/>
-            <TextField id={"tel"} label={"Teléfono"} type={"phone"} fullWidth/>
-            <TextField id={"DNI"} label={"DNI"} fullWidth/>
-            <p className={"p-adoption-form__subtitle"}>Dirección</p>
-            <TextField id={"street"} label={"Calle, número, piso"} fullWidth/>
-            <TextField id={"code"} label={"Código postal"} fullWidth/>
-            <TextField id={"city"} label={"Ciudad"} fullWidth/>
-            <FormControlLabel control={<Checkbox name="checkedC"/>}
-                              label="Acepto los términos y condiciones de la adopción"/>
+            <TextField id={"whichPet"} label={"¿Cuales?"} fullWidth/>
+            <TextField id={"behaviour"} label={"¿Se lleva bien con otros animales?"} fullWidth/>
+            <div className={"p-adoption-form__block"}>
+                <p>¿Por qué has elegido adoptar?</p>
+                <TextField id={"why"} fullWidth/>
+            </div>
+            <div className={"p-adoption-form__block"}>
+                <p>¿Conoces las necesidades del animal?</p>
+                <TextField id={"needs"} fullWidth/>
+            </div>
+            <div className={"p-adoption-form__block"}>
+                <p>¿Conoces sus gastos?</p>
+                <TextField id={"expenses"} fullWidth/>
+            </div>
+            <div className={"p-adoption-form__block"}>
+                <p>¿Conoces su alimentación?</p>
+                <TextField id={"feed"} fullWidth/>
+            </div>
             <button className={"c-button c-button__red"}>Continuar</button>
         </form>
     )
