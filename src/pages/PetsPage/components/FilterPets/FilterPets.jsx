@@ -12,7 +12,7 @@ import InputImg from '../../../../shared/InputImg/InputImg';
 
 export function FilterPets(props) {
 
-    // const [selected, setSelected] = useState(false);
+    const [selected, setSelected] = useState(false);
 
 
     // useEffect(() => {
@@ -29,7 +29,18 @@ export function FilterPets(props) {
     //         })
     // }, []);
 
-    // const { showFilter, setShowFilter } = useContext(PopUpContext);
+
+
+
+    const deleteFilters = () => {
+
+
+    }
+
+    const aplyFilters = () => {
+        setSelected(true);
+    }
+
 
 
     return (
@@ -40,7 +51,6 @@ export function FilterPets(props) {
             </div>
             <div className="p-filter">
                 <p className="p-filter__title">Ciudad</p>
-
                 <select class="p-filter__select">
                     <option value="1">Madrid</option>
                     <option value="2">Barcelona</option>
@@ -61,7 +71,7 @@ export function FilterPets(props) {
                     <option value="17">Oviedo</option>
                 </select>
             </div>
-            <div>
+            <div className="p-filter-especie">
                 <p className="p-filter__title">Especie</p>
                 <div className="p-input-wrap">
                     <InputImg label={'Perro'} >
@@ -80,11 +90,14 @@ export function FilterPets(props) {
                     </InputImg> */}
                     <InputImg label={'Ave'} />
                 </div>
-                <select class="p-filter__select">
-                    <option value="1">Golden</option>
-                    <option value="2">Podenco</option>
-                    <option value="3">Pastor Belga</option>
-                </select>
+                <div className="p-filter">
+                    <p className="p-filter__title">Tipo</p>
+                    <select class="p-filter__select">
+                        <option value="1">Golden</option>
+                        <option value="2">Podenco</option>
+                        <option value="3">Pastor Belga</option>
+                    </select>
+                </div>
             </div>
             <div className="p-filter">
                 <p className="p-filter__title">Edad</p>
@@ -111,8 +124,8 @@ export function FilterPets(props) {
 
             </div>
             <div className="p-filter-btn-box">
-                <button className="c-button c-button__pink-border">Borrar filtros</button>
-                <button className="c-button c-button__pink">Aplicar</button>
+                <button className="c-button c-button__pink-border" onClick={deleteFilters}>Borrar filtros</button>
+                <button className="c-button c-button__pink" onClick={aplyFilters}>Aplicar</button>
             </div>
 
         </div>
