@@ -18,6 +18,7 @@ export function AdoptionsDeatilPage() {
     // aquí recogemos por param el id de la mascota y mostramos sus datos de adopción
 
     const [pet, setPet] = useState({
+        images:[],
         shelter: {}
     });
         
@@ -63,7 +64,7 @@ export function AdoptionsDeatilPage() {
             </div>
 
             <div id="resumen" className="p-adoptions-detail__main flex">
-                <ResumenTab name={pet.name} city={pet.city} gender={pet.gender} img={pet.image} id={pet._id} organization={pet.shelter.name} address={pet.shelter.address}></ResumenTab>
+                <ResumenTab name={pet.name} city={pet.city} gender={pet.gender} img={pet.images[0]} id={pet._id} organization={pet.shelter.name} address={pet.shelter.address}></ResumenTab>
             </div>
             <div id="info" className="p-adoptions-detail__main">
                 <InfoTab></InfoTab>

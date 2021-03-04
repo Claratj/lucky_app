@@ -30,7 +30,7 @@ export function AdoptionsPage() {
             <SearchBar></SearchBar>
             <div className="p-adoptions__main">
             {applications.map((app, i)=>
-            <AdoptionCard name={app.pet.name} city={app.pet.city} gender={app.pet.gender} img={app.pet.image} status={app.status} id={app.pet._id}></AdoptionCard>
+            <AdoptionCard name={app.pet.name} city={app.pet.city} gender={app.pet.gender} img={app.pet.images} status={app.status} id={app.pet._id}></AdoptionCard>
             )}
             </div>
         </div>
