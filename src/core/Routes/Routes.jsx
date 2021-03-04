@@ -29,10 +29,10 @@ export function Routes() {
             <Route path="/profile">
                 <ProfilePage />
             </Route>
-            <Route path="/adoptions/:id">
+            <Route path="/adoptions/pet/:id">
                 <AdoptionsDeatilPage />
             </Route>
-            <Route path="/adoptions">
+            <Route path="/adoptions/:userId">
                 <AdoptionsPage />
             </Route>
             <Route exact path="/boarding">

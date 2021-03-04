@@ -20,4 +20,11 @@
     background-color: white;
     color: $color-ocean;
   }
+
+  &__red {
+    width: 90%;
+    border: none;
+    background-color: $color-background-pink;
+    color: white;
+  }
 }
