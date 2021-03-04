@@ -7,7 +7,7 @@ export function AdoptionTab(props){
     return(
         <div className="flex flex-column align-items-center tab">
             <p className="s-body-2">Dirección</p>
-            <AddressCard ownerName={props.ownerName} address={props.address}></AddressCard> 
+            <AddressCard organization='Asociación Protectora LARA' address='C/ Eraso, 14 Madrid'></AddressCard> 
             <button className="c-button c-button__red">Enviar</button>
         </div>
     );
