@@ -6,13 +6,17 @@ export default function InputImg(props) {
 
     const [checked, setChecked] = useState(false);
 
+    let listChecked = [];
 
     const handleChecked = ({ target }) => {
-        console.log(target);
+        // console.log(target.id);
         setChecked(target.checked);
-    }
 
+    }
     let label = props.label;
+
+
+
     let img = props.img;
 
     return (

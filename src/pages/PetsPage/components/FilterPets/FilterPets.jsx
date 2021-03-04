@@ -15,25 +15,8 @@ export function FilterPets(props) {
     const [selected, setSelected] = useState(false);
 
 
-    // useEffect(() => {
-    //     setSelected(true);
-    //     axios
-    //         .get(/**Peticion a la api */)
-    //         .then(res => {
-    //             /**tendríamos que hacer un filter y después metérselo a setFilter */
-    //             setFilter(res.data);
-    //             setSelected(false);
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         })
-    // }, []);
-
-
-
-
     const deleteFilters = () => {
-
+        
 
     }
 
@@ -90,14 +73,14 @@ export function FilterPets(props) {
                     </InputImg> */}
                     <InputImg label={'Ave'} />
                 </div>
-                <div className="p-filter">
-                    <p className="p-filter__title">Tipo</p>
-                    <select class="p-filter__select">
-                        <option value="1">Golden</option>
-                        <option value="2">Podenco</option>
-                        <option value="3">Pastor Belga</option>
-                    </select>
-                </div>
+            <div className="p-filter">
+                <p className="p-filter__title">Tipo</p>
+                <select class="p-filter__select">
+                    <option value="1">Golden</option>
+                    <option value="2">Podenco</option>
+                    <option value="3">Pastor Belga</option>
+                </select>
+            </div>
             </div>
             <div className="p-filter">
                 <p className="p-filter__title">Edad</p>
@@ -124,7 +107,7 @@ export function FilterPets(props) {
 
             </div>
             <div className="p-filter-btn-box">
-                <button className="c-button c-button__pink-border" onClick={deleteFilters}>Borrar filtros</button>
+                <button className="c-button c-button__pink-border" type="reset" onClick={deleteFilters}>Borrar filtros</button>
                 <button className="c-button c-button__pink" onClick={aplyFilters}>Aplicar</button>
             </div>
 
