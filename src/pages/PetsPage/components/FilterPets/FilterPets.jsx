@@ -63,7 +63,7 @@ export function FilterPets(props) {
             </div>
             <div>
                 <p className="p-filter__title">Especie</p>
-                <div className="p-input-container">
+                <div className="p-input-wrap">
                     <InputImg label={'Perro'} >
                         <Dog />
                     </InputImg>
@@ -81,7 +81,9 @@ export function FilterPets(props) {
                     <InputImg label={'Ave'} />
                 </div>
                 <select class="p-filter__select">
-                    llamada a la api de tipo
+                    <option value="1">Golden</option>
+                    <option value="2">Podenco</option>
+                    <option value="3">Pastor Belga</option>
                 </select>
             </div>
             <div className="p-filter">
@@ -92,16 +94,16 @@ export function FilterPets(props) {
                     <option value="3">Adulto</option>
                 </select>
             </div>
-            <div>
+            <div className="p-filter">
                 <p className="p-filter__title">Sexo</p>
-                <div className="p-input-container">
+                <div className="d-flex p-input-center">
                     <InputImg label={'Hembra'} />
                     <InputImg label={'Macho'} />
                 </div>
             </div>
-            <div>
+            <div className="p-filter">
                 <p className="p-filter__title">Tamaño</p>
-                <div className="p-input-container">
+                <div className="d-flex p-input-center">
                     <InputImg label={'Pequeño'} />
                     <InputImg label={'Mediano'} />
                     <InputImg label={'Grande'} />
