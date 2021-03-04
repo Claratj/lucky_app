@@ -20,17 +20,15 @@
     width: 7.5rem; 
     height: 2.3rem;
     border: none;
-    background-color: $color-background-pink;
-    color: white;
+    background-color: white;
+    color: $color-pink;
+    border: 2px solid $color-pink;
 
-    &-border {
-      width: 7.5rem; 
-      height: 2.3rem;
-      background-color: white;
-      border: 2px solid $color-pink;
-      color: $color-pink;
-
-    }
+    &:hover{
+      background-color: $color-pink;
+      color: white;
+      transition: 0.5s;
+  }
 
     &-large{
       width: 20.813rem;
