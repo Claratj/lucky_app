@@ -19,26 +19,26 @@ export function AdoptionFormConfirm(props) {
                     city: props.getState('city', ''),
                 },
                 terms: props.getState('terms', ''),
-            }
-        },
-        pets: {
-            morePets: props.getState('morePets', ''),
-            whichPet: props.getState('whichPet', ''),
-            behaviour: props.getState('behaviour', ''),
-            why: props.getState('why', ''),
-            needs: props.getState('needs', ''),
-            expenses: props.getState('expenses', ''),
-            feed: props.getState('feed', ''),
-        },
-        family: {
-            where: props.getState('where', ''),
-            rent: props.getState('rent', ''),
-            allowed: props.getState('allowed', ''),
-            moving: props.getState('moving', ''),
-            garden: props.getState('garden', ''),
-            flatmate: props.getState('flatmate', ''),
-            agreeTerms: props.getState('agreeTerms', ''),
-            agreeVisit: props.getState('agreeVisit', ''),
+            },
+            pets: {
+                morePets: props.getState('morePets', '') === 'true',
+                whichPet: props.getState('whichPet', ''),
+                behaviour: props.getState('behaviour', ''),
+                why: props.getState('why', ''),
+                needs: props.getState('needs', ''),
+                expenses: props.getState('expenses', ''),
+                feed: props.getState('feed', ''),
+            },
+            family: {
+                where: props.getState('where', ''),
+                rent: props.getState('rent', '') === 'true',
+                allowed: props.getState('allowed', '') === 'true',
+                moving: props.getState('moving', '') === 'true',
+                garden: props.getState('garden', '') === 'true',
+                flatmate: props.getState('flatmate', '') === 'true',
+                agreeTerms: props.getState('agreeTerms', '') === 'true',
+                agreeVisit: props.getState('agreeVisit', '') === 'true',
+            },
         },
         status: 'process',
     }
@@ -70,11 +70,10 @@ export function AdoptionFormConfirm(props) {
     //         headers: { 'Content-Type': 'application/json' },
     //     body: JSON.stringify({ title: 'React POST Request Example' })};
     //     const response = await fetch('https://jsonplaceholder.typicode.com/posts', requestOptions);const data = await response.json();this.setState({ postId: data.id });}
-    
+
     const sendInfo = () => {
-        const jsonApp = JSON.stringify(application);
-        API.post("/application", {
-            body: jsonApp,
+        console.log(application);
+        API.post("/application", application).then(() => {
         });
     }
 
