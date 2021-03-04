@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
 import './FilterPets.scss';
 // import RNPickerSelect from 'react-native-picker-select';
-import imgDog from '../../../../assets/img/perrop-a.svg';
-import imgSnake from '../../../../assets/img/snake-a.svg';
-import imgSpider from '../../../../assets/img/imgInput/spider-01.svg';
+import { ReactComponent as Dog } from '../../../../assets/img/icons-fixed/svg/dog.svg';
+// import { ReactComponent as Spider } from '../../../../assets/img/imgInput/spider-01.svg';
+
+// import imgSnake from '../../../../assets/img/snake-a.svg';
+// import imgSpider from '../../../../assets/img/imgInput/spider-01.svg';
 import InputImg from '../../../../shared/InputImg/InputImg';
 
 
@@ -60,8 +62,10 @@ export function FilterPets(props) {
             <div>
                 <p className="p-filter-title-section">Especie</p>
                 <div className="p-input-container">
-                    <InputImg img={imgDog} label={'Perro'} />
-                    <InputImg img={imgSnake} label={'Gato'} />
+                    <InputImg label={'Perro'} >
+                        <Dog />
+                    </InputImg>
+                    {/* <InputImg img={imgSnake} label={'Gato'} /> */}
                     <InputImg label={'Conejo'} />
                     <InputImg label={'Cobaya'} />
                     <InputImg label={'Pequeño mamífero'} />
@@ -69,7 +73,9 @@ export function FilterPets(props) {
                     <InputImg label={'Pez'} />
                     <InputImg label={'Reptil'} />
                     <InputImg label={'Anfibio'} />
-                    <InputImg img={imgSpider} label={'Spider'} />
+                    {/* <InputImg label={'Spider'} >
+                        <Spider />
+                    </InputImg> */}
                     <InputImg label={'Ave'} />
                 </div>
                 <select class="custom-select">
