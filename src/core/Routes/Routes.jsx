@@ -21,10 +21,10 @@ import {AdoptionForm} from "../../pages/AdoptionsPage/components/AdoptionForm/Ad
 export function Routes() {
     return (
         <Switch>
-            <Route path="/pets/:name">
+            <Route path="/pet/:id">
                 <PetsDetailPage/>
             </Route>
-            <Route path="/pets">
+            <Route path="/pet">
                 <PetsPage />
             </Route>
             <Route path="/profile">

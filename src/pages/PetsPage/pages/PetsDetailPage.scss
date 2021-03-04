@@ -13,6 +13,31 @@
     &__imgswiper{
         width: 26.6rem;
     }
+
+    &__button{
+      margin-top: 1rem;
+      margin-left: -1rem;
+  }
+
+  &__buttonAp, &__buttonAdop{
+     width: 7.5rem; 
+     height: 2.3rem;
+     border-radius: 5px;
+     border: 2px solid $color-pink;
+     background-color: white;
+     color: $color-pink;
+     outline: none;
+     font-size: 1rem;
+     margin-left: 1rem;
+     
+     &:hover{
+         background-color: $color-pink;
+         color: white;
+         transition: 0.5s;
+         font-weight: 800;
+     }
+  }
+
 }
 
 .mini-tab{
@@ -59,6 +84,7 @@
         height: 1.97rem;
         margin-left: 0.6rem;
     }
+    
 }
 
 .p-pets-detail{
@@ -137,6 +163,7 @@
     border-radius: 50%;
     background: transparent;
     border: 1px solid $color-pink;
+    
     @at-root button#{&} {
       border: none;
       margin: 0;

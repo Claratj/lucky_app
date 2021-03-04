@@ -1,16 +1,10 @@
-import React, { useContext} from 'react';
+import React from 'react';
 import './ContentAdoption.scss';
 
-import PopUpAdoption from '../PopUpAdoption/PopUpAdoption';
-import { PopUpContext } from '../../../../shared/Context/PopUpContext';
 
 
 
 export default function ContentAdoption() {
-
-    const {show, setShow} = useContext(PopUpContext);
-
-   
 
     return (
         <div className="p-detailAdoption">
@@ -26,12 +20,7 @@ export default function ContentAdoption() {
         <h3 className="p-detailAdoption__title">¿Se envía a otra ciudad?</h3>  
         <p className="p-detailAdoption__itemsend">No se envía a otra ciudad</p>
         </div>
-        <div className="p-detailAdoption__button">
-            <button className="p-detailDate__buttonAp">Apadrinar</button>
-            <button className="p-detailAdoption__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
-            <PopUpAdoption show={show}></PopUpAdoption>
-
-        </div>
+        
         </div>
     )
 }

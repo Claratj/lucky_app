@@ -12,7 +12,7 @@ export function HomePage() {
     API.get('/news').then((results)=> {
     setNews(results.data.results);
     });
-  }
+  } 
 
   useEffect(getNews, []);
   console.log(news);
