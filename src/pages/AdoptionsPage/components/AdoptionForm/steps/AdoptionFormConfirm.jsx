@@ -5,6 +5,7 @@ import {API} from "../../../../../shared/consts/api.consts";
 export function AdoptionFormConfirm(props) {
 
     const sendInfo = () => {
+        //TODO fix API connection
         const application = {
             // userId:,
             // petId:,

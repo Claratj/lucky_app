@@ -28,7 +28,7 @@ export function AdoptionFormStep1(props) {
                        onChange={props.handleChange} fullWidth/>
             <TextField name={"city"} label={"Ciudad"} value={props.getState('city', '')} onChange={props.handleChange}
                        fullWidth/>
-            <FormControlLabel control={<Checkbox name="terms" onChange={props.handleChange} checked={props.getState('terms', '')}/> }
+            <FormControlLabel control={<Checkbox name="terms" onChange={props.handleChange} checked={props.getState('terms', '') === true}/> }
                               label="Acepto los términos y condiciones de la adopción" />
             <button className={"c-button c-button__red"} onClick={props.next}>Continuar</button>
         </div>
