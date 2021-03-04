@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Link, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 
 import iconBack from '../../../../assets/img/atras.png';
 
@@ -13,6 +13,8 @@ import { API } from '../../../../shared/consts/api.consts';
 
 
 export function AdoptionsDeatilPage() {
+
+    const history = useHistory(); // para volver atrás
     // aquí recogemos por param el id de la mascota y mostramos sus datos de adopción
 
     const [pet, setPet] = useState({
@@ -49,8 +51,8 @@ export function AdoptionsDeatilPage() {
 
     return(
         <div className="p-adoptions-detail">
-            <div className="p-adoptions-detail__title-div">    
-                <Link to="/adoptions"><img src={iconBack} alt="" className="p-adoptions-detail__title-div__img"/></Link>
+            <div className="p-adoptions-detail__title-div">   
+                <img src={iconBack} alt="" className="p-adoptions-detail__title-div__img" onClick={() => history.goBack()}/>
                 <h1 className="p-adoptions-detail__title-div__title">Adopción de {pet.name}</h1>
             </div>
 

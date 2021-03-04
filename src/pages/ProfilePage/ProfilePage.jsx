@@ -20,7 +20,7 @@ export function ProfilePage() {
         {title: 'Direcciones', img: direccion, link: '/'},
         {title: 'Favoritos', img: favorito, link: '/'},
         {title: 'Notificaciones', img: notificacion, link: '/'},
-        {title: 'Estado de la adopción', img: mascota, link: '/adoptions'},
+        {title: 'Estado de la adopción', img: mascota, link: '/adoptions/:userId'}, // aquí vamos a necesitar el user del id para pasárselo!!!!
         {title: 'Apadrinar', img: apadrina, link: '/'},
         {title: 'Donar', img: donar, link: '/'}
     ];
