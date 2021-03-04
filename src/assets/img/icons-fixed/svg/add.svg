@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24pt" height="24pt" viewBox="0 0 24 24">
+<g enable-background="new">
+<clipPath id="cp0">
+<path transform="matrix(1,0,0,-1,0,24)" d="M 11.5 3 C 16.74671 3 21 7.253295 21 12.5 C 21 17.74671 16.74671 22 11.5 22 C 6.253295 22 2 17.74671 2 12.5 C 2 7.253295 6.253295 3 11.5 3 Z " fill-rule="evenodd"/>
+</clipPath>
+<g clip-path="url(#cp0)">
+<clipPath id="cp1">
+<path transform="matrix(1,0,0,-1,0,24)" d="M -51 -607 L 1212 -607 L 1212 656 L -51 656 Z "/>
+</clipPath>
+<g clip-path="url(#cp1)">
+<path transform="matrix(1,0,0,-1,0,24)" d="M -3 27 L 26 27 L 26 -2 L -3 -2 Z " />
+</g>
+</g>
+<clipPath id="cp2">
+<path transform="matrix(1,0,0,-1,0,24)" d="M 11.5 17 C 11.77614 17 12 16.77614 12 16.5 L 12 7.5 C 12 7.223858 11.77614 7 11.5 7 C 11.22386 7 11 7.223858 11 7.5 L 11 16.5 C 11 16.77614 11.22386 17 11.5 17 Z " fill-rule="evenodd"/>
+</clipPath>
+<g clip-path="url(#cp2)">
+<clipPath id="cp3">
+<path transform="matrix(1,0,0,-1,0,24)" d="M -51 -607 L 1212 -607 L 1212 656 L -51 656 Z "/>
+</clipPath>
+<g clip-path="url(#cp3)">
+<path transform="matrix(1,0,0,-1,0,24)" d="M 6 22 L 17 22 L 17 2 L 6 2 Z " />
+</g>
+</g>
+<clipPath id="cp4">
+<path transform="matrix(1,0,0,-1,0,24)" d="M -51 -607 L 1212 -607 L 1212 656 L -51 656 Z "/>
+</clipPath>
+<g clip-path="url(#cp4)">
+<path transform="matrix(1,0,0,1,11,7)" stroke-width="1" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" d="M .5 0 C .7761424 0 1 .2238576 1 .5 L 1 9.5 C 1 9.776142 .7761424 10 .5 10 C .2238576 10 0 9.776142 0 9.5 L 0 .5 C 0 .2238576 .2238576 0 .5 0 Z "/>
+</g>
+<clipPath id="cp5">
+<path transform="matrix(1,0,0,-1,0,24)" d="M 6.5 12 C 6.5 12.26299 6.713198 12.47619 6.97619 12.47619 L 16.02381 12.47619 C 16.2868 12.47619 16.5 12.26299 16.5 12 C 16.5 11.73701 16.2868 11.52381 16.02381 11.52381 L 6.97619 11.52381 C 6.713198 11.52381 6.5 11.73701 6.5 12 Z " fill-rule="evenodd"/>
+</clipPath>
+<g clip-path="url(#cp5)">
+<clipPath id="cp6">
+<path transform="matrix(1,0,0,-1,0,24)" d="M -51 -607 L 1212 -607 L 1212 656 L -51 656 Z "/>
+</clipPath>
+<g clip-path="url(#cp6)">
+<path transform="matrix(1,0,0,-1,0,24)" d="M 1.5 6.52381 L 1.5 17.47619 L 21.5 17.47619 L 21.5 6.52381 Z " />
+</g>
+</g>
+<clipPath id="cp7">
+<path transform="matrix(1,0,0,-1,0,24)" d="M -51 -607 L 1212 -607 L 1212 656 L -51 656 Z "/>
+</clipPath>
+<g clip-path="url(#cp7)">
+<path transform="matrix(0,-1,1,0,6.5,12.5)" stroke-width="1" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" d="M .5 0 C .7629927 0 .9761905 .2131977 .9761905 .4761905 L .9761905 9.52381 C .9761905 9.786802 .7629927 10 .5 10 C .2370073 10 .02380952 9.786802 .02380952 9.52381 L .02380952 .4761905 C .02380952 .2131977 .2370073 0 .5 0 Z "/>
+</g>
+</g>
+</svg>

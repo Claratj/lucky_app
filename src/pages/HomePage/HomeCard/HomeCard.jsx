@@ -2,12 +2,12 @@ import React from 'react';
 
 import '../../../shared/CardMenu/CardMenu.scss';
 import './HomeCard.scss';
-import ayuda from '../../../assets/img/imgHomeCard/ayuda.png';
-import blogCopy from '../../../assets/img/imgHomeCard/blogCopy.png';
-import confi from '../../../assets/img/imgHomeCard/confi.png';
-import eventos from '../../../assets/img/imgHomeCard/eventos.png';
-import protectora from '../../../assets/img/imgHomeCard/protectora.png';
-import salir from '../../../assets/img/imgHomeCard/salir.png';
+import ayuda from '../../../assets/img/ayuda.png';
+import blogCopy from '../../../assets/img/blogCopy.png';
+import confi from '../../../assets/img/confi.png';
+import eventos from '../../../assets/img/eventos.png';
+import protectora from '../../../assets/img/protectoraHome.png';
+import salir from '../../../assets/img/salir.png';
 import Footer from '../../../core/Footer/Footer';
 import { CardMenu } from '../../../shared/CardMenu/CardMenu';
 
