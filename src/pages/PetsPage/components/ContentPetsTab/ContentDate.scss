@@ -40,23 +40,7 @@
         margin-left: 1.4rem;
     }
 
-    &__buttonAp, &__buttonAdop{
-       width: 7.5rem; 
-       height: 2.3rem;
-       border-radius: 5px;
-       border: 2px solid $color-pink;
-       background-color: white;
-       color: $color-pink;
-       outline: none;
-        font-size: 1rem;
-        margin-left: 1rem;
-       &:hover{
-           background-color: $color-pink;
-           color: white;
-           transition: 0.5s;
-           font-weight: 800;
-       }
-    }
+   
 }
 
 
