@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './InputImg.scss';
-import { ReactComponent as Spider } from '../../assets/img/spider.svg';
-
+import { ReactComponent as Spider } from '../../assets/img/icons-fixed/svg/bird.svg';
 export default function InputImg(props) {
 
     const [checked, setChecked] = useState(false);
@@ -11,7 +10,6 @@ export default function InputImg(props) {
     const handleChecked = ({ target }) => {
         // console.log(target.id);
         setChecked(target.checked);
-
     }
     let label = props.label;
 
@@ -24,7 +22,7 @@ export default function InputImg(props) {
         <div className="c-input-img" >
             <input id={label} className="c-input-img__input" onChange={handleChecked} type="checkbox" alt="Submit" width="48" height="48" />
             <label for={label} className="c-input-img__label" >
-                <svg />
+                <Spider  />
                 {label}
             </label>
         </div>
