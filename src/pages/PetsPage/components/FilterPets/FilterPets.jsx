@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
 import './FilterPets.scss';
-// import RNPickerSelect from 'react-native-picker-select';
 import { ReactComponent as Dog } from '../../../../assets/img/icons-fixed/svg/dog.svg';
 // import { ReactComponent as Spider } from '../../../../assets/img/imgInput/spider-01.svg';
 
@@ -40,27 +38,31 @@ export function FilterPets(props) {
                 <h5 className="fig-c__filter-title">Filtros</h5>
 
             </div>
-            <div>
-                <p className="p-filter-title-section">Ciudad</p>
+            <div className="p-filter">
+                <p className="p-filter__title">Ciudad</p>
 
-                <select class="custom-select">
-                    <option value="0">Select car:</option>
-                    <option value="1">Audi</option>
-                    <option value="2">BMW</option>
-                    <option value="3">Citroen</option>
-                    <option value="4">Ford</option>
-                    <option value="5">Honda</option>
-                    <option value="6">Jaguar</option>
-                    <option value="7">Land Rover</option>
-                    <option value="8">Mercedes</option>
-                    <option value="9">Mini</option>
-                    <option value="10">Nissan</option>
-                    <option value="11">Toyota</option>
-                    <option value="12">Volvo</option>
+                <select class="p-filter__select">
+                    <option value="1">Madrid</option>
+                    <option value="2">Barcelona</option>
+                    <option value="3">Valencia</option>
+                    <option value="4">Sevilla</option>
+                    <option value="5">Zaragoza</option>
+                    <option value="6">Málaga</option>
+                    <option value="7">Murcia</option>
+                    <option value="8">Palma</option>
+                    <option value="9">Gran Canaria</option>
+                    <option value="10">Bilbao</option>
+                    <option value="11">Alicante</option>
+                    <option value="12">Córdoba</option>
+                    <option value="13">Valladolid</option>
+                    <option value="14">Vitoria</option>
+                    <option value="15">La Coruña</option>
+                    <option value="16">Granada</option>
+                    <option value="17">Oviedo</option>
                 </select>
             </div>
             <div>
-                <p className="p-filter-title-section">Especie</p>
+                <p className="p-filter__title">Especie</p>
                 <div className="p-input-container">
                     <InputImg label={'Perro'} >
                         <Dog />
@@ -78,28 +80,27 @@ export function FilterPets(props) {
                     </InputImg> */}
                     <InputImg label={'Ave'} />
                 </div>
-                <select class="custom-select">
+                <select class="p-filter__select">
                     llamada a la api de tipo
                 </select>
             </div>
-            <div>
-                <p className="p-filter-title-section">Edad</p>
-                <select class="custom-select">
-                    <option value="0">Select car:</option>
+            <div className="p-filter">
+                <p className="p-filter__title">Edad</p>
+                <select class="p-filter__select">
                     <option value="1">Cachorro</option>
                     <option value="2">Joven</option>
                     <option value="3">Adulto</option>
                 </select>
             </div>
             <div>
-                <p className="p-filter-title-section">Sexo</p>
+                <p className="p-filter__title">Sexo</p>
                 <div className="p-input-container">
                     <InputImg label={'Hembra'} />
                     <InputImg label={'Macho'} />
                 </div>
             </div>
             <div>
-                <p className="p-filter-title-section">Tamaño</p>
+                <p className="p-filter__title">Tamaño</p>
                 <div className="p-input-container">
                     <InputImg label={'Pequeño'} />
                     <InputImg label={'Mediano'} />
@@ -107,7 +108,10 @@ export function FilterPets(props) {
                 </div>
 
             </div>
-            <button className="c-button c-button__pink">Aplicar</button>
+            <div className="p-filter-btn-box">
+                <button className="c-button c-button__pink-border">Borrar filtros</button>
+                <button className="c-button c-button__pink">Aplicar</button>
+            </div>
 
         </div>
     )

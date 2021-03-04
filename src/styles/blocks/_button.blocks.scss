@@ -15,11 +15,27 @@
     color: white;
   }
 
+
   &__pink {
-    width: 20.813rem;
+    width: 7.5rem; 
+    height: 2.3rem;
     border: none;
     background-color: $color-background-pink;
     color: white;
+
+    &-border {
+      width: 7.5rem; 
+      height: 2.3rem;
+      background-color: white;
+      border: 2px solid $color-pink;
+      color: $color-pink;
+
+    }
+
+    &-large{
+      width: 20.813rem;
+
+    }
 
   }
 

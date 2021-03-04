@@ -2,7 +2,7 @@
 
 
 .fig-c {
-
+    margin: 0 10px;
     overflow-x: hidden;
     
     &__filter-title {
@@ -12,13 +12,51 @@
    
 }
 
-.p-filter-title-section {
-    color: $color-ocean;
-    font-size: 16px;
+.p-filter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+
+
+    &__title {
+        color: $color-ocean;
+        font-size: 16px;
+    }
+
+    &__select {
+        padding: 5px 8px;
+        width: 16.25rem;
+        margin-bottom: 10px;
+        border: none;
+        border-bottom: 1px $color-cloud-blue solid;
+        font-size: 12px;
+        // box-shadow: none;
+        background-color: transparent;
+        // background-image: none;
+        appearance: none;
+    
+        &.p-filter__select:focus{
+            outline: none;
+        }
+    }
+
+    &-btn-box {
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+
 }
+
+
 .p-input-container {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
+
 
