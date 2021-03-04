@@ -6,11 +6,12 @@ export function Map () {
         <div>
             <div className="container">
                 <GoogleMaps
-                apiKey={""}
-                style={{height: "50rem", width: "37rem"}}
+                apiKey={"AIzaSyC9P5XqvxTuegAWR8vZ2W3IXrda7Mfnss4"}
+                style={{height: "400px", width: "300px"}}
+                zoom={15}
                 center={{
-                    lat: 40.43691,
-                    lng: -368520
+                    lat: 40.436895,
+                    lng: -3.685454
                 }}
                 />
             </div>
