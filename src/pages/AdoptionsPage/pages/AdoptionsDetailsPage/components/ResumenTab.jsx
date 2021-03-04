@@ -13,7 +13,7 @@ export function ResumenTab(props){
             <AdoptionCard name={props.name} city={props.city} gender={props.gender} img={props.img} id={props.id}></AdoptionCard>
                 <hr className="e-resumenTab__hr"/>
                 <div className="e-resumenTab__map">
-                    <AddressCard organization='Asociación Protectora LARA' address='C/ Eraso, 14 Madrid'></AddressCard> 
+                    <AddressCard organization={props.organization} address={props.address}></AddressCard> 
                     <div className="e-resumenTab__map__map">
                         MAP
                     </div>
