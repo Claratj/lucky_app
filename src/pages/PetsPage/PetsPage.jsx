@@ -22,7 +22,7 @@ export default function PetsPage(props) {
             <p className="c-pets-page__par">Accede al perfil de tus mascotas</p>
             
             <Swiper className="pets"  
-            spaceBetween={-100} 
+            spaceBetween={-110} 
             initialSlide={1} 
             slidesPerView={3} 
             centeredSlides={true} 
