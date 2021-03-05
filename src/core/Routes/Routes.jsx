@@ -12,7 +12,7 @@ import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDe
 import PetsPage from '../../pages/PetsPage/PetsPage';
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
-import {LoginFormPage} from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
+import { LoginFormPage } from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
 import {AdoptionForm} from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
