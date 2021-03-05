@@ -33,7 +33,7 @@ export default function InputImg(props) {
 
     // let listChecked = [];
 
-    const handleChecked = ({ target }) => {
+    /* const handleChecked = ({ target }) => {
         console.log(target);
         setChecked(target.checked);
         if (target.checked) {
@@ -48,7 +48,7 @@ export default function InputImg(props) {
         // console.log(checked);
         console.log(target.checked);
         // console.log(object);
-    }
+    } */
     let label = props.label;
 
 
