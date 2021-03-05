@@ -30,7 +30,7 @@ export function Routes() {
             <Route path="/profile">
                 <ProfilePage />
             </Route>
-            <Route path="/adoptions/form">
+            <Route path="/adoption-form/:petId">
                 <AdoptionForm />
             </Route>
             <Route path="/adoptions/pet/:id">
@@ -48,13 +48,13 @@ export function Routes() {
             <Route path={"/login-form"}>
                 <LoginFormPage />
             </Route>
-            <Route path={"/splash"}>
+            <Route exact path={"/"}>
                 <SplashPage/>
             </Route>
             <Route path={"/menu"}>
                 <HomeCard></HomeCard>
             </Route>
-            <Route exact path="/">
+            <Route path="/home">
                 <HomePage />
             </Route>
             <Route path="*">
