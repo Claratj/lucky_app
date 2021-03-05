@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import image from '../../../../assets/img/chinchilla.jpg';
 import favIcon from '../../../../assets/img/favoritos.png';
 import { API } from '../../../../shared/consts/api.consts';
 import './PetsGallery.scss';
