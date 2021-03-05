@@ -11,7 +11,13 @@ export function AdoptionsPage() {
     // aquí llamamos a la api de application y le pasamos el id del user, que recogemos por params de la ruta o del contexto al estar el usuario logeado
     // lo dejo así por ahora
 
-    const [applications, setApplications] = useState([]);
+    const [applications, setApplications] = useState([
+        {
+            pet: {
+                images:[]
+            }
+        }
+    ]);
 
     const param = useParams();
     const userId = param.userId;  
@@ -30,7 +36,7 @@ export function AdoptionsPage() {
             <SearchBar></SearchBar>
             <div className="p-adoptions__main">
             {applications.map((app, i)=>
-            <AdoptionCard name={app.pet.name} city={app.pet.city} gender={app.pet.gender} img={app.pet.images} status={app.status} id={app.pet._id}></AdoptionCard>
+            <AdoptionCard name={app.pet.name} city={app.pet.city} gender={app.pet.gender} img={app.pet.images[0]} status={app.status} id={app.pet._id}></AdoptionCard>
             )}
             </div>
         </div>
