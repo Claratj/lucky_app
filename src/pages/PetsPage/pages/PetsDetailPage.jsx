@@ -56,7 +56,7 @@ export default function PetsDetailPage() {
     return (
         <div className="c-petsDetailPage">
         
-        <Link to="/pet"><img src={iconBack} alt="" className="c-petsDetailPage__back"/></Link>
+        <Link to="/pets"><img src={iconBack} alt="" className="c-petsDetailPage__back"/></Link>
         <Swiper spaceBetween={50} slidesPerView={1} pagination={{ clickable: true, clickableClass:'swiper-pagination-clickable pets', bulletClass: 'swiper-pagination-bullet pets'}}>
         <SwiperSlide><img src={pet.images[0]} alt="" className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
         </Swiper>

@@ -20,10 +20,10 @@ import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
 export function Routes() {
     return (
         <Switch>
-            <Route path="/pet/:id">
+            <Route path="/pets/:id">
                 <PetsDetailPage/>
             </Route>
-            <Route path="/pet">
+            <Route path="/pets">
                 <PetsPage />
             </Route>
             <Route path="/profile">
