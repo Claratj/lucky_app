@@ -1,12 +1,11 @@
 import React from 'react';
 import { AdoptionCard } from '../../../components/AdoptionCard';
 
-import protectora from '../../../../../assets/img/protectora.png';
-import location from '../../../../../assets/img/localization-a.svg';
 import email from '../../../../../assets/img/email-r.svg';
 import whatsapp from '../../../../../assets/img/whatsapp-r.svg';
 
 import './ResumenTab.scss';
+import { AddressCard } from './AddressCard';
 
 export function ResumenTab(props){
     return(
@@ -14,13 +13,7 @@ export function ResumenTab(props){
             <AdoptionCard name={props.name} city={props.city} gender={props.gender} img={props.img} id={props.id}></AdoptionCard>
                 <hr className="e-resumenTab__hr"/>
                 <div className="e-resumenTab__map">
-                    <div className="e-resumenTab__map__title">
-                        <img src={protectora} alt="" className="e-resumenTab__map__title__img"/>
-                        <div className="e-resumenTab__map__title__copy">
-                            <p className="e-resumenTab__map__title__copy__title">{props.asociation}</p>
-                            <p><img src={location} alt="" className="e-resumenTab__map__title__copy__img"/>{props.address}</p>
-                        </div>
-                    </div>
+                    <AddressCard organization={props.organization} address={props.address}></AddressCard> 
                     <div className="e-resumenTab__map__map">
                         MAP
                     </div>

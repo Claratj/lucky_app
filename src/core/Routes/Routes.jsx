@@ -15,25 +15,28 @@ import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
 import { LoginFormPage } from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
-import { FilterPets } from '../../pages/PetsPage/components/FilterPets/FilterPets';
+import {AdoptionForm} from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
 
 
 export function Routes() {
     return (
         <Switch>
-            <Route path="/pets/:name">
-                <PetsDetailPage />
+            <Route path="/pet/:id">
+                <PetsDetailPage/>
             </Route>
-            <Route path="/pets">
+            <Route path="/pet">
                 <PetsPage />
             </Route>
             <Route path="/profile">
                 <ProfilePage />
             </Route>
-            <Route path="/adoptions/:id">
+            <Route path="/adoption-form/:petId">
+                <AdoptionForm />
+            </Route>
+            <Route path="/adoptions/pet/:id">
                 <AdoptionsDeatilPage />
             </Route>
-            <Route path="/adoptions">
+            <Route path="/adoptions/:userId">
                 <AdoptionsPage />
             </Route>
             <Route exact path="/boarding">
@@ -45,15 +48,14 @@ export function Routes() {
             <Route path={"/login-form"}>
                 <LoginFormPage />
             </Route>
-            <Route path={"/splash"}>
-                <SplashPage />
+            <Route exact path={"/"}>
+                <SplashPage/>
             </Route>
             <Route path={"/menu"}>
                 <HomeCard></HomeCard>
             </Route>
-            <Route exact path="/">
-                <FilterPets />
-                {/* <HomePage /> */}
+            <Route path="/home">
+                <HomePage />
             </Route>
             <Route path="*">
                 <h1>ERROR</h1>

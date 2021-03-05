@@ -1,7 +1,4 @@
-import React, { useState } from 'react'
-import image1 from '../../../assets/img/chinchilla.jpg';
-import image2 from '../../../assets/img/chinchilla.jpg';
-import image3 from '../../../assets/img/chinchilla.jpg';
+import React, { useEffect, useState } from 'react'
 import favIcon from '../../../assets/img/favoritos.png';
 import maleIcon from '../../../assets/img/male.png';
 import sharedIcon from '../../../assets/img/compartir.png';
@@ -15,17 +12,30 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import ContentDate from '../components/ContentPetsTab/ContentDate';
 import ContentHealth from '../components/ContentPetsTab/ContentHealth';
 import ContentAdoption from '../components/ContentPetsTab/ContentAdoption';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { PopUpContext } from '../../../shared/Context/PopUpContext';
+import PopUpAdoption from '../components/PopUpAdoption/PopUpAdoption';
+import { API } from '../../../shared/consts/api.consts';
+
 
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export default function PetsDetailPage() {
-    const pets = 
-        {name: 'Kiwi', img1: image1, img2: image2, img3: image3, location: 'Madrid', km: '1.3km', like: false};
     
     const [show, setShow] = useState(false);
+    const [pet, setPet] = useState({images: [], species: [], data: []});
+    const  param  = useParams();
+    const petId = param.id;
+
+    const getPets = ()=>{
+        API.get('/pet/' + petId).then((res)=>{
+            setPet(res.data.result);
+            console.log(res.data.result)
+        })
+    }
+
+    useEffect(getPets, []);
     
 
     function handleClick(e, text){
@@ -45,18 +55,17 @@ export default function PetsDetailPage() {
     
     return (
         <div className="c-petsDetailPage">
-        <Link to="/pets"><img src={iconBack} alt="" className="c-petsDetailPage__back"/></Link>
+        
+        <Link to="/pet"><img src={iconBack} alt="" className="c-petsDetailPage__back"/></Link>
         <Swiper spaceBetween={50} slidesPerView={1} pagination={{ clickable: true, clickableClass:'swiper-pagination-clickable pets', bulletClass: 'swiper-pagination-bullet pets'}}>
-          <SwiperSlide><img src={image1} alt="" className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
-          <SwiperSlide><img src={image1} alt="" className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
-          <SwiperSlide><img src={image1} alt="" className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
+        <SwiperSlide><img src={pet.images[0]} alt="" className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
         </Swiper>
 
         <div className="mini-tab">
           <img src={maleIcon} alt="" className="mini-tab__gender"></img>
           <div className="mini-tab__date">
-            <h5 className="mini-tab__name">{pets.name}</h5>
-            <p>{pets.location}</p>
+            <h5 className="mini-tab__name"></h5>
+            <p></p>
           </div>
           <div className="mini-tab__img">
           <img src={favIcon} alt="" className="mini-tab__fav" />
@@ -71,19 +80,27 @@ export default function PetsDetailPage() {
                 <div className="detail-tab__link" onClick={(e) => handleClick(e, 'adoption')}>Adopción</div>
       
             </div>
-            <PopUpContext.Provider value={{show, setShow}}>
+            
             <div id="datos" className="p-pets-detail__main flex">
-                <ContentDate></ContentDate>
+                <ContentDate pet={pet}></ContentDate>
             </div>
             <div id="salud" className="p-pets-detail__main">
-                <ContentHealth></ContentHealth>
+                <ContentHealth pet={pet}></ContentHealth>
             </div>
             <div id="adoption" className="p-pets-detail__main">
-                <ContentAdoption></ContentAdoption>
+                <ContentAdoption pet={pet}></ContentAdoption>
             </div>
-            </PopUpContext.Provider>
-        </div>
             
+
+        <PopUpContext.Provider value={{show, setShow}}>
+        <div className="c-petsDetailPage__button">
+        <button className="c-petsDetailPage__buttonAp">Apadrinar</button>
+            <button className="c-petsDetailPage__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
+            <PopUpAdoption show={show}></PopUpAdoption>
+
+        </div> 
+        </PopUpContext.Provider>
+        </div>   
         
     )
 }

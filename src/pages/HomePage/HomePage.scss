@@ -2,7 +2,7 @@
 @import '../../styles/tools/textstyles.tools';
 
 .welcome {
-  margin-top: 2.5rem;
+  margin: 8rem 0 2rem;
   width: 90%;
   &__title {
     color: $color-ocean;
@@ -13,11 +13,13 @@
   width: 90%;
   &__title {
     color: $color-ocean;
+    margin: 1.5rem 0;
   }
   &__article {
     width: 100%;
     background-color: $color-background-pink;
     border-radius: 0.25rem 0.25rem 0 0;
+    margin-bottom: 1rem;
     &__img {
       width: 100%;
       bottom: 2rem;
