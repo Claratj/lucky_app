@@ -15,14 +15,17 @@ import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
 import { LoginFormPage } from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
-import {AdoptionForm} from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
-
+import { AdoptionForm } from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
+import {FilterPets} from '../../pages/PetsPage/components/FilterPets/FilterPets';
 
 export function Routes() {
     return (
         <Switch>
+            <Route path="/pet/filter">
+                <FilterPets />
+            </Route>
             <Route path="/pet/:id">
-                <PetsDetailPage/>
+                <PetsDetailPage />
             </Route>
             <Route path="/pet">
                 <PetsPage />
@@ -49,7 +52,7 @@ export function Routes() {
                 <LoginFormPage />
             </Route>
             <Route exact path={"/"}>
-                <SplashPage/>
+                <SplashPage />
             </Route>
             <Route path={"/menu"}>
                 <HomeCard></HomeCard>

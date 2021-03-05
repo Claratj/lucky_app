@@ -68,7 +68,7 @@ export function FilterPets(props) {
                     <InputImg label={'Perro'} >
                         <Dog />
                     </InputImg>
-                    <InputImg label={'Gato'} />
+                    <InputImg label={'Gato'} id="prueba"/>
                     <InputImg label={'Conejo'} />
                     <InputImg label={'Cobaya'} />
                     <InputImg label={'Pequeño mamífero'} />
