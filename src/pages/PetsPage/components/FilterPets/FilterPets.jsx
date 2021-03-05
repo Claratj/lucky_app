@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './FilterPets.scss';
 import { ReactComponent as Dog } from '../../../../assets/img/icons-fixed/svg/dog.svg';
 // import { ReactComponent as Spider } from '../../../../assets/img/imgInput/spider-01.svg';
@@ -6,22 +6,30 @@ import { ReactComponent as Dog } from '../../../../assets/img/icons-fixed/svg/do
 // import imgSnake from '../../../../assets/img/snake-a.svg';
 // import imgSpider from '../../../../assets/img/imgInput/spider-01.svg';
 import InputImg from '../../../../shared/InputImg/InputImg';
+// import { InputImgContext } from '../../../../shared/InputImg/InputImg';
 
 
 
 
 export function FilterPets(props) {
 
-    const [selected, setSelected] = useState(false);
+    const [selected, setSelected] = useState();
 
+
+    // const handleSelected = () => {
+    //     setSelected();
+    // }
+
+    let value;
 
     const deleteFilters = () => {
-
+        console.log('estoy en delete');
+        value = false;
 
     }
 
     const aplyFilters = () => {
-        setSelected(true);
+        // setSelected(true);
     }
 
 
@@ -60,7 +68,7 @@ export function FilterPets(props) {
                     <InputImg label={'Perro'} >
                         <Dog />
                     </InputImg>
-                    {/* <InputImg img={imgSnake} label={'Gato'} /> */}
+                    <InputImg label={'Gato'} />
                     <InputImg label={'Conejo'} />
                     <InputImg label={'Cobaya'} />
                     <InputImg label={'Pequeño mamífero'} />
@@ -68,9 +76,7 @@ export function FilterPets(props) {
                     <InputImg label={'Pez'} />
                     <InputImg label={'Reptil'} />
                     <InputImg label={'Anfibio'} />
-                    {/* <InputImg label={'Spider'} >
-                        <Spider />
-                    </InputImg> */}
+                    <InputImg label={'Arácnido o insecto'} />
                     <InputImg label={'Ave'} />
                 </div>
                 <div className="p-filter">

@@ -33,18 +33,19 @@
     & svg{
         max-width: 2rem;
         max-height: 2rem;
+        fill:  $color-ocean;
     }
     :checked + &__label {
         border: 2px $color-pink solid;
         color:  $color-pink;
-        &__img svg path {
+        & svg path {
             fill:  $color-pink;
         }
     }
-    :checked + svg {
-        fill: $color-pink;
+    // :checked + svg {
+    //     fill: $color-pink;
         
-    }
+    // }
     // rect, clipPath, path {
     //     fill:red;
     // }
