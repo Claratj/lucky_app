@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './InputImg.scss';
 import  DogBlue  from '../../assets/img/perrop.png';
 import  DogPink  from '../../assets/img/perropink.png';
@@ -28,7 +28,7 @@ import { ReactComponent as Large } from '../../assets/img/icons-fixed/svg/large.
 
 export default function InputImg(props) {
 
-    const [checked, setChecked] = useState();
+    const [checked, setChecked] = useState(false);
     // const { isSelected } = useContext(InputImgContext);
 
     // let listChecked = [];
@@ -57,10 +57,11 @@ export default function InputImg(props) {
     return (
 
         <div className="c-input-img" >
-            <input id={label} className="c-input-img__input" onClick={()=>setChecked(true)} type="checkbox" alt="Submit" width="48" height="48" />
+            <input id={label} className="c-input-img__input" onClick={()=>{if(checked == true){
+                setChecked(false)}else{setChecked(true)}}} type="checkbox" alt="Submit" width="48" height="48" />
             <label for={label} className="c-input-img__label" >
                 {label === 'Perro' && checked == true ?
-                    <DogPink/>
+                    <img src={DogPink} alt=""/>
                     : <img src={DogBlue}></img> }
                 {label === 'Reptil' &&
                     < Cat />}
