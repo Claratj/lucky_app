@@ -12,17 +12,20 @@ import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDe
 import PetsPage from '../../pages/PetsPage/PetsPage';
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
-import {LoginFormPage} from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
+import { LoginFormPage } from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
-import {AdoptionForm} from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
-
+import { AdoptionForm } from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
+import {FilterPets} from '../../pages/PetsPage/components/FilterPets/FilterPets';
 
 export function Routes() {
     return (
         <Switch>
-            <Route path="/pets/:id">
-                <PetsDetailPage/>
+            <Route path="/pet/filter">
+                <FilterPets />
+            </Route>
+            <Route path="/pet/:id">
+                <PetsDetailPage />
             </Route>
             <Route path="/pets">
                 <PetsPage />
@@ -30,7 +33,7 @@ export function Routes() {
             <Route path="/profile">
                 <ProfilePage />
             </Route>
-            <Route path="/adoptions/form">
+            <Route path="/adoption-form/:petId">
                 <AdoptionForm />
             </Route>
             <Route path="/adoptions/pet/:id">
@@ -48,13 +51,13 @@ export function Routes() {
             <Route path={"/login-form"}>
                 <LoginFormPage />
             </Route>
-            <Route path={"/splash"}>
-                <SplashPage/>
+            <Route exact path={"/"}>
+                <SplashPage />
             </Route>
             <Route path={"/menu"}>
                 <HomeCard></HomeCard>
             </Route>
-            <Route exact path="/">
+            <Route path="/home">
                 <HomePage />
             </Route>
             <Route path="*">
