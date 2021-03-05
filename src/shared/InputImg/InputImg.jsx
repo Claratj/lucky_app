@@ -14,6 +14,7 @@ import { ReactComponent as Bird } from '../../assets/img/icons-fixed/svg/bird.sv
 
 import { ReactComponent as Female } from '../../assets/img/icons-fixed/svg/female.svg';
 import { ReactComponent as Male } from '../../assets/img/icons-fixed/svg/male.svg';
+
 import { ReactComponent as Small } from '../../assets/img/icons-fixed/svg/small.svg';
 import { ReactComponent as Medium } from '../../assets/img/icons-fixed/svg/medium.svg';
 import { ReactComponent as Large } from '../../assets/img/icons-fixed/svg/large.svg';
