@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../../core/Footer/Footer';
 import './HomePage.scss';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
@@ -14,8 +14,10 @@ export function HomePage() {
   const [news, setNews] = useState([]);
   
   const getNews = () =>{
+    setIsLoading(true);
     API.get('/news').then((results)=> {
-    setNews(results.data.results);
+      setIsLoading(false);
+      setNews(results.data.results);
     });
   } 
 
