@@ -18,9 +18,13 @@
     .MuiSelect-icon {
         color: $color-background-pink;
     }
-    // .MuiInputBase-root{
-    //         width: 60%;
-    // }
+    .MuiInputBase-input {
+        color: $color-black;
+        font-family: Barlow;
+    }
+    .MuiInputLabel-animated {
+        color: $color-greyishBrown;
+    }
 }
 .appointment-form {
     width: 90%;
