@@ -48,5 +48,8 @@
     border: none;
     background-color: $color-background-pink;
     color: white;
+    &--mtop {
+      margin-top: 1rem;
+    }
   }
 }

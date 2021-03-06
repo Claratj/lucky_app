@@ -22,7 +22,7 @@ export function InfoTab(){
                 <img src={arrow} alt="" className="btn__img"/>
             </button>
 
-            <button className="c-button c-button__red">Enviar</button>
+            <button className="c-button c-button__red c-button__red--mtop">Enviar</button>
 
         </div>
     );
