@@ -11,6 +11,20 @@
             padding-top: 1.5rem;
         }
     }
+    .MuiTextField-root {
+        font-family: Barlow;
+
+    }
+    .MuiSelect-icon {
+        color: $color-background-pink;
+    }
+    .MuiInputBase-input {
+        color: $color-black;
+        font-family: Barlow;
+    }
+    .MuiInputLabel-animated {
+        color: $color-greyishBrown;
+    }
 }
 .appointment-form {
     width: 90%;
@@ -19,20 +33,5 @@
     margin-bottom: 1.6rem;
 }
 
-.MuiTextField-root {
-    font-family: Barlow;
-}
-.MuiInput-root {
-    font-family: Barlow;
-}
-.MuiInputBase-root {
-    font-family: Barlow;
-}
 
-.MuiInputBase-input {
-    background-color: red;
-    margin: 10px;
-}
-.MuiSelect-icon {
-    color: $color-background-pink;
-}
+

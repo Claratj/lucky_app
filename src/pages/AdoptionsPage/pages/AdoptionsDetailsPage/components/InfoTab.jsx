@@ -3,7 +3,14 @@ import React, { useState } from 'react';
 import arrow from '../../../../../assets/img/arrow-r.png';
 import './InfoTab.scss';
 
+import { API } from '../../../../../shared/consts/api.consts';
+import { useParams } from 'react-router';
+
 export function InfoTab(){
+
+    const param = useParams();
+    const petId = param.id;  
+
     const [form, setForm] = useState({});
     const [img1, setImg1] = useState(null);
     const [img2, setImg2] = useState(null);
@@ -17,7 +24,18 @@ export function InfoTab(){
         ev.preventDefault();        
         try {
             const formData = new FormData();
-            formData.append('img', img1);
+            formData.append('image', img1); 
+            // formData.append('image2', img2);
+            // formData.append('image3', img3);
+            // aquí la imagen se sube a cloudinary, pero hay un error y es que solo se sube la primera foto...
+            API.post("/img", formData).then((image) => {
+                console.log(image.data.image);
+                const url = image.data.image;
+                API.patch("/application/img/" + petId, {  //aquí añadimos la img al array de imgs de la solicitud
+                    imgs: url
+                }).then(()=> {
+                });
+            }); 
 
         } catch(error) {
             console.log('Entro por el catch');
@@ -35,9 +53,7 @@ export function InfoTab(){
             setImgPreview1(reader.result);
         }
 
-        reader.readAsDataURL(file);
-
-        console.log(file);
+        reader.readAsDataURL(file)
     }
     const onFileSelect2 = (ev) => {
         console.log(ev.target.files);
@@ -50,8 +66,6 @@ export function InfoTab(){
         }
 
         reader.readAsDataURL(file);
-
-        console.log(file);
     }
     const onFileSelect3 = (ev) => {
         console.log(ev.target.files);
@@ -64,11 +78,8 @@ export function InfoTab(){
         }
 
         reader.readAsDataURL(file);
-
-        console.log(file);
     }
     return(
-        // <div className="flex flex-column align-items-center">
             <form onSubmit={formSubmit} encType="multipart/form-data" className="flex flex-column align-items-center">
             <div className="copy">
                 <p className="copy__title s-body-2">Subir imágenes</p>
@@ -141,8 +152,5 @@ export function InfoTab(){
 
             <input type="submit" value="Enviar" className="c-button c-button__red c-button__red--mtop"/>
         </form>
-
-
-        // </div>
     );
 }
