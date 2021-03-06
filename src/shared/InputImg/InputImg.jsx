@@ -37,15 +37,17 @@ export default function InputImg(props) {
         console.log(target);
         setChecked(target.checked);
         if (target.checked) {
+
             console.log('Checkbox has been ticked!');
-            // if (props.checked === false) {
-            //     target.change = false;
-            //     setChecked(target.change)
-            // }
+        } else if (status == false) {
+
+            target.change = false;
+            setChecked(target.change);
         } else {
             console.log('has been unclicked');
+
         }
-        // console.log(checked);
+
         console.log(target.checked);
         // console.log(object);
     } */
