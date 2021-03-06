@@ -97,8 +97,8 @@ export default function PetsDetailPage() {
         <PopUpContext.Provider value={{show, setShow}}>
         <div className="c-petsDetailPage__button">
         <button className="c-petsDetailPage__buttonAp">Apadrinar</button>
-            <button className="c-petsDetailPage__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
-            <PopUpAdoption show={show}></PopUpAdoption>
+        <button className="c-petsDetailPage__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
+        <PopUpAdoption show={show}></PopUpAdoption>
 
         </div> 
         </PopUpContext.Provider>
