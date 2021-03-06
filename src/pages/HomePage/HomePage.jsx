@@ -8,10 +8,12 @@ import { API } from '../../shared/consts/api.consts';
 import Pet from '../../assets/img/mascota@2x.png';
 import Apadrina from '../../assets/img/apadrina@2x.png';
 import Donar from '../../assets/img/donar@2x.png';
+import { LoadingContext } from '../../core/Loading/contexts/LoadingContext';
 
 export function HomePage() {
   SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
   const [news, setNews] = useState([]);
+  const {setIsLoading} = useContext(LoadingContext);
   
   const getNews = () =>{
     setIsLoading(true);
