@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './MapsPage.scss';
 import Footer from "../../core/Footer/Footer";
@@ -43,12 +43,20 @@ export function MapsPage() {
 
             ]
         }
-    ]
+    ];
+
+    const [inputValue, setInputValue] = useState('');
 
     return(
         <div className={"p-maps-page"}>
             <div className={"container"}>
-                {locations.map((location, i) => <MapsPageLocation key={i} location={location}/>)}
+                <div className={"p-maps-page__search"}>
+                    <input className={"p-maps-page__search-bar"} value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
+                    <p className={"p-maps-page__clear"} onClick={() => setInputValue('')}>x</p>
+                </div>
+                <div className={"p-maps-page__response"}>
+                    {locations.map((location, i) => <MapsPageLocation key={i} location={location}/>)}
+                </div>
             </div>
             <Footer/>
         </div>

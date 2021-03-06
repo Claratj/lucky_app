@@ -6,9 +6,14 @@ import './MapsPageLocation.scss';
 
 export function MapsPageLocation(props) {
     const [showAll, setShowAll] = useState(false);
+    const [showOpinions, setShowOpinions] = useState(false);
 
-    const dropdown = () => {
+    const dropdownAll = () => {
         showAll ? setShowAll(false) : setShowAll(true);
+    }
+
+    const dropdownOpinions = () => {
+        showOpinions ? setShowOpinions(false) : setShowOpinions(true);
     }
 
     return (
@@ -17,7 +22,7 @@ export function MapsPageLocation(props) {
                 <p className={"s-body-2"}>{props.location.name}</p>
                 <DropDown style={{transform: showAll ? "rotate(0)" : "rotate(180deg)", marginTop: "-0.7rem"}}
                           fill={"#E08888"}
-                          onClick={dropdown}/>
+                          onClick={dropdownAll}/>
             </div>
             {showAll && <div className={"c-location__body"}>
                 <div className={"c-location__data"}>
@@ -29,8 +34,30 @@ export function MapsPageLocation(props) {
                         <div className={"c-location__score"}>
                             <p className={"s-text-style-4"}>{props.location.score}</p>
                         </div>
+                        <div className={"c-location__address"}>
+                            <p className={"s-text-style-2"}>{props.location.address1}</p>
+                            <p className={"s-text-style-2"}>{props.location.address2}</p>
+                        </div>
                     </div>
                 </div>
+                <div className={"c-location__opinions"}>
+                    <div className={"c-location__opinions-header"}>
+                        <p className={"s-body-2"}>Opiniones</p>
+                        <DropDown style={{transform: showAll ? "rotate(0)" : "rotate(180deg)", marginTop: "-0.7rem"}}
+                                  fill={"#E08888"}
+                                  onClick={dropdownOpinions}/>
+                    </div>
+                    <div className={"c-location__opinions-content"}>
+                        {showOpinions && props.location.opinions.map((opinion, i) => <div
+                            className={"c-location__opinion"}>
+                            <img src={opinion.img} alt={"Opinión"} className={"c-location__opinion-image"}/>
+                            <p className={"c-location__opinion-text"}>{`"${opinion.text}"`}</p>
+                        </div>)}
+                    </div>
+                </div>
+                <p className={"s-body-2"}>¿Has estado alguna vez aquí?</p>
+                <textarea className={"c-location__textarea"} placeholder={"Cuéntanos tu experiencia"}/>
+                <button className={"c-button__pink"}>Enviar</button>
             </div>}
         </div>
     )
