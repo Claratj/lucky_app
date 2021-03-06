@@ -18,6 +18,7 @@
     align-items: center;
     padding: 1rem;
     width: 90%;
+    margin-bottom: 1.5rem;
     &__span{
         color: $color-ocean;
     }
@@ -33,6 +34,7 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 1.5rem;
 }
 .file {
     height: 8rem;

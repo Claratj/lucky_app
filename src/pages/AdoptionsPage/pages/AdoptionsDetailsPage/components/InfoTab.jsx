@@ -134,8 +134,12 @@ export function InfoTab(){
                 <p className="btn__copy">Desglosar las tasas</p>
                 <img src={arrow} alt="" className="btn__img"/>
             </button>
+            <div className="flex copy">
+            <input type="checkbox"/><p className="s-detail-1 ml-2">Pagar a través de la applicación</p></div>
+            <div className="flex copy">
+            <input type="checkbox"/><p className="s-detail-1 ml-2">Hablar con la protectora</p></div>
 
-            <input type="submit" value="Enviar" className="c-button c-button__red"/>
+            <input type="submit" value="Enviar" className="c-button c-button__red c-button__red--mtop"/>
         </form>
 
 

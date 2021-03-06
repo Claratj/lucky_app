@@ -62,9 +62,8 @@ export function AdoptionsDeatilPage() {
                 <div className="detail-tab__link" onClick={(e) => handleClick(e, 'info')}>Info Adicional</div>
                 <div className="detail-tab__link" onClick={(e) => handleClick(e, 'adoption')}>Adopción</div>
             </div>
-
             <div id="resumen" className="p-adoptions-detail__main flex">
-                <ResumenTab name={pet.name} city={pet.city} gender={pet.gender} img={pet.images[0]} id={pet._id} organization={pet.shelter.name} address={pet.shelter.address}></ResumenTab>
+                <ResumenTab name={pet.name} city={pet.city} gender={pet.gender} img={pet.images[0]} id={pet._id} organization={pet.shelter.name} address={pet.shelter.address} email={pet.shelter.email}></ResumenTab>
             </div>
             <div id="info" className="p-adoptions-detail__main">
                 <InfoTab></InfoTab>
