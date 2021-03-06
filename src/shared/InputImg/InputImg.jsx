@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import './InputImg.scss';
-import  DogBlue  from '../../assets/img/perrop.png';
-import  DogPink  from '../../assets/img/perropink.png';
+import DogBlue from '../../assets/img/perrop.png';
+import DogPink from '../../assets/img/perropink.png';
 import { ReactComponent as Cat } from '../../assets/img/icons-fixed/svg/cat.svg';
 import { ReactComponent as Rabbit } from '../../assets/img/icons-fixed/svg/rabbit.svg';
 import { ReactComponent as GuineaPig } from '../../assets/img/icons-fixed/svg/guinea-pig.svg';
@@ -59,12 +59,14 @@ export default function InputImg(props) {
     return (
 
         <div className="c-input-img" >
-            <input id={label} className="c-input-img__input" onClick={()=>{if(checked === true){
-                setChecked(false)}else{setChecked(true)}}} type="checkbox" alt="Submit" width="48" height="48" />
+            <input id={label} className="c-input-img__input" onClick={() => {
+                if (checked === true) {
+                    setChecked(false)
+                } else { setChecked(true) }
+            }} type="checkbox" alt="Submit" width="48" height="48" />
             <label for={label} className="c-input-img__label" >
                 {label === 'Perro' && checked === true ?
-                    <img src={DogPink} alt=""/>
-                    : <img src={DogBlue}></img> }
+                    <span className="icon-hedgehog" />
                 {label === 'Reptil' &&
                     <span className="icon-frog"></span>}
                 {label === 'Conejo' &&
