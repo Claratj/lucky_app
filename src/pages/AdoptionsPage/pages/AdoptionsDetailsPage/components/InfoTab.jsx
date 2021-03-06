@@ -5,15 +5,19 @@ import './InfoTab.scss';
 
 export function InfoTab(){
     const [form, setForm] = useState({});
-    const [img, setImg] = useState(null);
-    const [imgPreview, setImgPreview] = useState(null);
+    const [img1, setImg1] = useState(null);
+    const [img2, setImg2] = useState(null);
+    const [img3, setImg3] = useState(null);
+    const [imgPreview1, setImgPreview1] = useState(null);
+    const [imgPreview2, setImgPreview2] = useState(null);
+    const [imgPreview3, setImgPreview3] = useState(null);
     const [error, setError] = useState('');
 
     const formSubmit = async (ev) => {
         ev.preventDefault();        
         try {
             const formData = new FormData();
-            formData.append('img', img);
+            formData.append('img', img1);
 
         } catch(error) {
             console.log('Entro por el catch');
@@ -21,14 +25,42 @@ export function InfoTab(){
         }
     }
 
-    const onFileSelect = (ev) => {
+    const onFileSelect1 = (ev) => {
         console.log(ev.target.files);
         let reader = new FileReader();
         let file = ev.target.files[0];
 
         reader.onloadend = () => {
-            setImg(file);
-            setImgPreview(reader.result);
+            setImg1(file);
+            setImgPreview1(reader.result);
+        }
+
+        reader.readAsDataURL(file);
+
+        console.log(file);
+    }
+    const onFileSelect2 = (ev) => {
+        console.log(ev.target.files);
+        let reader = new FileReader();
+        let file = ev.target.files[0];
+
+        reader.onloadend = () => {
+            setImg2(file);
+            setImgPreview2(reader.result);
+        }
+
+        reader.readAsDataURL(file);
+
+        console.log(file);
+    }
+    const onFileSelect3 = (ev) => {
+        console.log(ev.target.files);
+        let reader = new FileReader();
+        let file = ev.target.files[0];
+
+        reader.onloadend = () => {
+            setImg3(file);
+            setImgPreview3(reader.result);
         }
 
         reader.readAsDataURL(file);
@@ -44,51 +76,51 @@ export function InfoTab(){
             </div>
             <div className="file-container">
             <div className="file">
-            {!imgPreview && 
+            {!imgPreview1 && 
                 <input
                     type="file"
                     name="img"
-                    value={form.img}
-                    onChange={onFileSelect}
+                    value={form.img1}
+                    onChange={onFileSelect1}
                     accept="image/png, image/jpg, image/jpeg"
                     className="file-input"
                 />
             }
 
-            {imgPreview && <div>
-                <img src={imgPreview} alt="img" className="img-file"/>
+            {imgPreview1 && <div>
+                <img src={imgPreview1} alt="img" className="img-file"/>
             </div>}
             </div>
             <div className="file">
-            {!imgPreview && 
+            {!imgPreview2 && 
                 <input
                     type="file"
                     name="img"
-                    value={form.img}
-                    onChange={onFileSelect}
+                    value={form.img2}
+                    onChange={onFileSelect2}
                     accept="image/png, image/jpg, image/jpeg"
                     className="file-input"
                 />
             }
 
-            {imgPreview && <div>
-                <img src={imgPreview} alt="img" className="img-file"/>
+            {imgPreview2 && <div>
+                <img src={imgPreview2} alt="img" className="img-file"/>
             </div>}
             </div>
             <div className="file">
-            {!imgPreview && 
+            {!imgPreview3 && 
                 <input
                     type="file"
                     name="img"
-                    value={form.img}
-                    onChange={onFileSelect}
+                    value={form.img3}
+                    onChange={onFileSelect3}
                     accept="image/png, image/jpg, image/jpeg"
                     className="file-input"
                 />
             }
 
-            {imgPreview && <div>
-                <img src={imgPreview} alt="img" className="img-file"/>
+            {imgPreview3 && <div>
+                <img src={imgPreview3} alt="img" className="img-file"/>
             </div>}
             </div>
             </div>
