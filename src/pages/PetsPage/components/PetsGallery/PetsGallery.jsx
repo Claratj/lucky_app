@@ -1,14 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import favIcon from '../../../../assets/img/favoritos.png';
+import { LoadingContext } from '../../../../core/Loading/contexts/LoadingContext';
 import { API } from '../../../../shared/consts/api.consts';
 import './PetsGallery.scss';
 
 export default function PetsGallery() {
     const [pets, setPets] = useState([]);
 
+    const {setIsLoading} = useContext(LoadingContext);
+
     const getPets = ()=>{
+        setIsLoading(true);
         API.get('/pet').then((res)=>{
+            setIsLoading(false);
             setPets(res.data.results)
         })
     }
@@ -20,7 +25,7 @@ export default function PetsGallery() {
     return (
         <div className="c-galleryPets">
         {pets.map((item, i)=>
-        <Link to={"/pets/" + item._id} className="c-galleryPets__link">
+        <Link to={"/pet/" + item._id} className="c-galleryPets__link">
             <div className="c-galleryPets__card" key={i}>
             <div className="c-galleryPets__img">
                 <img src={item.images[0]} className="c-galleryPets__pet"></img>

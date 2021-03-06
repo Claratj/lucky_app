@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 export function ResumenTab(props){
     return(
-        <div className="e-resumenTab">
+        <div className="container">
             <AdoptionCard name={props.name} city={props.city} gender={props.gender} img={props.img} id={props.id}></AdoptionCard>
                 <hr className="e-resumenTab__hr"/>
                 <div className="e-resumenTab__map">

@@ -1,14 +1,14 @@
 @import '../../../../../styles/tools/variable.tools';
 
 .e-resumenTab {
-    width: 100%;
+    // width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     &__hr {
         width: 90%;
-        margin: 1.8rem 0;
+        margin: 1.8rem auto;
         background-color: $color-cloudy-blue;
         border-color: $color-cloudy-blue;
     }

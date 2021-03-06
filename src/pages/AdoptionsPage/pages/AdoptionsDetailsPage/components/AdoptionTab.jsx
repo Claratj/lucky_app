@@ -16,7 +16,7 @@ export function AdoptionTab(props){
     useEffect(getDate, []);
 
     return(
-        <div className="flex flex-column align-items-center tab">
+        <div className="container flex flex-column align-items-center tab">
         <div className="tab__address">
             <p className="s-body-2 tab__copy">Dirección</p>
             <AddressCard organization={props.organization} address={props.address}></AddressCard> </div>
