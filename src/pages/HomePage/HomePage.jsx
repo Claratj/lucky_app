@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../../core/Footer/Footer';
 import './HomePage.scss';
 //import BootstrapCarousel from './Carousel/BootstrapCarousel';
 import Footer from '../../core/Footer/Footer';
 import { API } from '../../shared/consts/api.consts';
+import { LoadingContext } from '../../core/Loading/contexts/LoadingContext';
 
 export function HomePage() {
+  const {setIsLoading} = useContext(LoadingContext);
   const [news, setNews] = useState([]);
   
   const getNews = () =>{
+    setIsLoading(true);
     API.get('/news').then((results)=> {
-    setNews(results.data.results);
+      setIsLoading(false);
+      setNews(results.data.results);
     });
   } 
 

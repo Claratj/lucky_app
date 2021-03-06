@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { useHistory, useParams } from 'react-router-dom';
 
@@ -10,12 +10,15 @@ import { ResumenTab } from './components/ResumenTab';
 import { InfoTab } from './components/InfoTab';
 import { AdoptionTab } from './components/AdoptionTab';
 import { API } from '../../../../shared/consts/api.consts';
+import { LoadingContext } from '../../../../core/Loading/contexts/LoadingContext';
 
 
 export function AdoptionsDeatilPage() {
 
     const history = useHistory(); // para volver atrás
     // aquí recogemos por param el id de la mascota y mostramos sus datos de adopción
+
+    const {setIsLoading} = useContext(LoadingContext);
 
     const [pet, setPet] = useState({
         images:[],
@@ -26,9 +29,11 @@ export function AdoptionsDeatilPage() {
     const petId = param.id;  
   
     const getPet = () =>{
+        setIsLoading(true);
         API.get('/pet/' + petId).then((results)=> {
-        setPet(results.data.result);
-        console.log(results.data.result);
+            setIsLoading(false);
+            setPet(results.data.result);
+            console.log(results.data.result);
         });
     }
 
