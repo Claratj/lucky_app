@@ -48,7 +48,7 @@ export default function PetsPage(props) {
 
         </Swiper>
 
-            <Link to="" className="c-pets-page__link">
+            <Link to="/adoptions" className="c-pets-page__link">
             <div className="c-pets-page__state">
             <h4 className="c-pets-page__adoption">Estado de la adopción</h4>
             <img src={arrow} alt="" className="c-pets-page__img"/></div> 

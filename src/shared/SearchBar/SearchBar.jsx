@@ -9,7 +9,8 @@ export default function SearchBar() {
     return (
         <div className="c-searchBar">
            <div className="c-searchBar__back"></div>
-           <NavLink to="/"><img src={iconBack} className="c-search__imgBack"></img></NavLink>
+           {/* habría que cambiar el enlace para que te llevara atrás y no a /  */}
+           <NavLink to="/"><img src={iconBack} className="c-search__imgBack"></img></NavLink> 
            <div className="c-searchBar__form">
            <form>
                <input type="text" placeholder="Buscar" className="c-searchBar__input"></input>

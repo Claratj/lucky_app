@@ -59,14 +59,14 @@ export default function InputImg(props) {
     return (
 
         <div className="c-input-img" >
-            <input id={label} className="c-input-img__input" onClick={()=>{if(checked == true){
+            <input id={label} className="c-input-img__input" onClick={()=>{if(checked === true){
                 setChecked(false)}else{setChecked(true)}}} type="checkbox" alt="Submit" width="48" height="48" />
             <label for={label} className="c-input-img__label" >
-                {label === 'Perro' && checked == true ?
+                {label === 'Perro' && checked === true ?
                     <img src={DogPink} alt=""/>
                     : <img src={DogBlue}></img> }
                 {label === 'Reptil' &&
-                    < Cat />}
+                    <span className="icon-frog"></span>}
                 {label === 'Conejo' &&
                     < Rabbit />}
                 {label === 'Cobaya' &&

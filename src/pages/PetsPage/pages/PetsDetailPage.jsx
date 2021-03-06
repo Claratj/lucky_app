@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import favIcon from '../../../assets/img/favoritos.png';
 import maleIcon from '../../../assets/img/male.png';
 import sharedIcon from '../../../assets/img/compartir.png';
@@ -16,6 +16,7 @@ import { Link, useParams } from 'react-router-dom';
 import { PopUpContext } from '../../../shared/Context/PopUpContext';
 import PopUpAdoption from '../components/PopUpAdoption/PopUpAdoption';
 import { API } from '../../../shared/consts/api.consts';
+import { LoadingContext } from '../../../core/Loading/contexts/LoadingContext';
 
 
 
@@ -28,8 +29,12 @@ export default function PetsDetailPage() {
     const  param  = useParams();
     const petId = param.id;
 
+    const {setIsLoading} = useContext(LoadingContext);
+
     const getPets = ()=>{
+        setIsLoading(true);
         API.get('/pet/' + petId).then((res)=>{
+            setIsLoading(false);
             setPet(res.data.result);
             console.log(res.data.result)
         })
@@ -97,8 +102,8 @@ export default function PetsDetailPage() {
         <PopUpContext.Provider value={{show, setShow}}>
         <div className="c-petsDetailPage__button">
         <button className="c-petsDetailPage__buttonAp">Apadrinar</button>
-            <button className="c-petsDetailPage__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
-            <PopUpAdoption show={show}></PopUpAdoption>
+        <button className="c-petsDetailPage__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
+        <PopUpAdoption show={show}></PopUpAdoption>
 
         </div> 
         </PopUpContext.Provider>
