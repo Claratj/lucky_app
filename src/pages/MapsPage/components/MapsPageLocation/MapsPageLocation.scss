@@ -1,0 +1,43 @@
+@import "../../../../styles/tools/variable.tools";
+
+.c-location {
+  margin-top: 1rem;
+  border: 1px solid $color-cloudy-blue;
+  border-radius: 0.25rem;
+  padding: 1.875rem 1.25rem;
+  transition: all 0.2s linear;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__img {
+    object-fit: cover;
+    position: center;
+    width: 6.75rem;
+    height: 6rem;
+  }
+
+  &__data {
+    margin-top: 1.5rem;
+    display: flex;
+
+    &-text {
+      margin-left: 1.3125rem;
+    }
+  }
+
+  &__score {
+    margin-top: 1rem;
+  }
+
+  .s-body-2,
+  .s-text-style-4 {
+    color: $color-ocean;
+  }
+
+  svg {
+    transition: all 0.2s linear;
+  }
+}
