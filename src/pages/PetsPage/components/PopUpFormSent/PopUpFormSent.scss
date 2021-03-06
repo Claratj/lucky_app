@@ -1,0 +1,26 @@
+@import "/src/styles/tools/variable.tools";
+
+.c-popup-form-sent {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $color-pine-green;
+    text-align: center;
+    padding: 0 2.5rem;
+
+    .s-text-style-5 {
+      color: $color-ocean;
+    }
+  }
+
+  &__img {
+    padding: 2.25rem 8% 3.0625rem 8%;
+  }
+
+  &__close {
+    text-align: left;
+    padding-left: 2.5rem;
+  }
+}
