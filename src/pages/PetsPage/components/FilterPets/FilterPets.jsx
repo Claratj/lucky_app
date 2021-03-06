@@ -1,10 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import './FilterPets.scss';
 import { ReactComponent as Dog } from '../../../../assets/img/icons-fixed/svg/dog.svg';
-// import { ReactComponent as Spider } from '../../../../assets/img/imgInput/spider-01.svg';
-
-// import imgSnake from '../../../../assets/img/snake-a.svg';
-// import imgSpider from '../../../../assets/img/imgInput/spider-01.svg';
 import InputImg from '../../../../shared/InputImg/InputImg';
 // import { InputImgContext } from '../../../../shared/InputImg/InputImg';
 
@@ -21,12 +17,16 @@ export function FilterPets(props) {
     // }
 
     let value;
+    let status = true;
 
-    const deleteFilters = () => {
-        console.log('estoy en delete');
-        value = false;
 
+    let disableFilters = (status) => {
+        status = false;
+        // console.log(status);
+        return status
     }
+
+    // console.log(status);
 
     const aplyFilters = () => {
         // setSelected(true);
@@ -68,7 +68,7 @@ export function FilterPets(props) {
                     <InputImg label={'Perro'} >
                         <Dog />
                     </InputImg>
-                    <InputImg label={'Gato'} id="prueba"/>
+                    <InputImg label={'Gato'} />
                     <InputImg label={'Conejo'} />
                     <InputImg label={'Cobaya'} />
                     <InputImg label={'Pequeño mamífero'} />
@@ -113,7 +113,7 @@ export function FilterPets(props) {
 
             </div>
             <div className="p-filter-btn-box">
-                <button className="c-button c-button__pink" type="reset" onClick={deleteFilters}>Borrar filtros</button>
+                <button className="c-button c-button__pink" type="reset" onClick={disableFilters} status={status}>Borrar filtros</button>
                 <button className="c-button c-button__pink" onClick={aplyFilters}>Aplicar</button>
             </div>
 
