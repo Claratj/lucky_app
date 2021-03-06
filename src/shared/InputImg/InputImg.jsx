@@ -29,7 +29,6 @@ export default function InputImg(props) {
 
     const [checked, setChecked] = useState(false);
 
-    // const { isSelected } = useContext(InputImgContext);
 
     // let listChecked = [];
 
@@ -40,27 +39,20 @@ export default function InputImg(props) {
 
     const handleChecked = ({ target }) => {
 
-        // console.log(target);
-        // console.log(status);
         setChecked(target.checked);
         if (target.checked) {
+
             console.log('Checkbox has been ticked!');
-            // if (props.checked === false) {
-            //     
-            // }
         } else if (status == false) {
+
             target.change = false;
             setChecked(target.change);
-            // console.log(status);
-            console.log('desactivado');
         } else {
             console.log('has been unclicked');
 
         }
 
-        // console.log(checked);
         console.log(target.checked);
-        // console.log(object);
     }
 
 
@@ -69,7 +61,7 @@ export default function InputImg(props) {
     return (
 
         <div className="c-input-img" >
-            <input id={label} className="c-input-img__input" onChange={handleChecked} type="checkbox" disabled={status} value={checked} alt="Submit" width="48" height="48" />
+            <input id={label} className="c-input-img__input" onChange={handleChecked} type="checkbox" value={checked} alt="Submit" width="48" height="48" />
 
 
             <label for={label} className="c-input-img__label" >
