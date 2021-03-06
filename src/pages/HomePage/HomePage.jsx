@@ -56,8 +56,8 @@ export function HomePage() {
         </div>
           <div className="main">
             <p className="main__title s-body-2">Novedades</p>
-            {news.map((obj) =>
-            <article className="main__article">
+            {news.map((obj, i) =>
+            <article className="main__article" key={i}>
               <img className="main__article__img" src={obj.img} alt=""/>
               <p className="main__article__title">{obj.title}</p>    
             </article>
