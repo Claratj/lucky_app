@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?iesezb');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?iesezb#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?iesezb') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?iesezb') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?iesezb##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?9ygri8');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?9ygri8#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?9ygri8') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?9ygri8') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?9ygri8##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,19 +27,59 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-frog {
+.icon-hedgehog {
   &:before {
-    content: $icon-frog; 
+    content: $icon-hedgehog; 
   }
 }
-.icon-cobra {
+.icon-ferret {
   &:before {
-    content: $icon-cobra; 
+    content: $icon-ferret; 
   }
 }
-.icon-cauldron {
+.icon-rabbit {
   &:before {
-    content: $icon-cauldron; 
+    content: $icon-rabbit; 
+  }
+}
+.icon-stethoscope {
+  &:before {
+    content: $icon-stethoscope; 
+  }
+}
+.icon-hairdryer {
+  &:before {
+    content: $icon-hairdryer; 
+  }
+}
+.icon-pet-care {
+  &:before {
+    content: $icon-pet-care; 
+  }
+}
+.icon-mortarboard {
+  &:before {
+    content: $icon-mortarboard; 
+  }
+}
+.icon-home {
+  &:before {
+    content: $icon-home; 
+  }
+}
+.icon-shop {
+  &:before {
+    content: $icon-shop; 
+  }
+}
+.icon-mouse {
+  &:before {
+    content: $icon-mouse; 
+  }
+}
+.icon-stethoscope1 {
+  &:before {
+    content: $icon-stethoscope1; 
   }
 }
 .icon-snake {
@@ -47,24 +87,74 @@
     content: $icon-snake; 
   }
 }
-.icon-hoja {
+.icon-tick {
   &:before {
-    content: $icon-hoja; 
+    content: $icon-tick; 
   }
 }
-.icon-pacman {
+.icon-nut {
   &:before {
-    content: $icon-pacman; 
+    content: $icon-nut; 
   }
 }
-.icon-bug {
+.icon-nut-1 {
   &:before {
-    content: $icon-bug; 
+    content: $icon-nut-1; 
   }
 }
-.icon-fire {
+.icon-cancel-1 {
   &:before {
-    content: $icon-fire; 
+    content: $icon-cancel-1; 
+  }
+}
+.icon-femenine-1 {
+  &:before {
+    content: $icon-femenine-1; 
+  }
+}
+.icon-hairstyle {
+  &:before {
+    content: $icon-hairstyle; 
+  }
+}
+.icon-male {
+  &:before {
+    content: $icon-male; 
+  }
+}
+.icon-masculine {
+  &:before {
+    content: $icon-masculine; 
+  }
+}
+.icon-happy {
+  &:before {
+    content: $icon-happy; 
+  }
+}
+.icon-frog {
+  &:before {
+    content: $icon-frog; 
+  }
+}
+.icon-tropical-fish {
+  &:before {
+    content: $icon-tropical-fish; 
+  }
+}
+.icon-parrot {
+  &:before {
+    content: $icon-parrot; 
+  }
+}
+.icon-dog {
+  &:before {
+    content: $icon-dog; 
+  }
+}
+.icon-spider {
+  &:before {
+    content: $icon-spider; 
   }
 }
 
