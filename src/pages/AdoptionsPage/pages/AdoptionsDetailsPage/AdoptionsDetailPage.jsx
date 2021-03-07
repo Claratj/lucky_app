@@ -22,6 +22,7 @@ export function AdoptionsDeatilPage() {
 
     const [pet, setPet] = useState({
         images:[],
+        adoption: {},
         shelter: {}
     });
         
@@ -71,7 +72,7 @@ export function AdoptionsDeatilPage() {
                 <ResumenTab name={pet.name} city={pet.city} gender={pet.gender} img={pet.images[0]} id={pet._id} organization={pet.shelter.name} address={pet.shelter.address} email={pet.shelter.email}></ResumenTab>
             </div>
             <div id="info" className="p-adoptions-detail__main">
-                <InfoTab></InfoTab>
+                <InfoTab price={pet.adoption.rates}></InfoTab>
             </div>
             <div id="adoption" className="p-adoptions-detail__main">
                 <AdoptionTab organization={pet.shelter.name} address={pet.shelter.address}></AdoptionTab>
