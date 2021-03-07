@@ -18,6 +18,7 @@ import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
 import { AdoptionForm } from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
 import {FilterPets} from '../../pages/PetsPage/components/FilterPets/FilterPets';
 import {MapsPage} from "../../pages/MapsPage/MapsPage";
+import Page404 from '../../shared/Page404/Page404';
 
 export function Routes() {
     return (
@@ -65,7 +66,7 @@ export function Routes() {
                 <HomePage />
             </Route>
             <Route path="*">
-                <h1>ERROR</h1>
+                <Page404></Page404>
             </Route>
         </Switch>
     );

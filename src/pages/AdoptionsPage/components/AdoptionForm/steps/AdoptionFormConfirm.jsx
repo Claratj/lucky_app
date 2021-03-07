@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Redirect, useParams} from "react-router-dom";
 import {API} from "../../../../../shared/consts/api.consts";
-
+import { PopUpFormSent } from '../../../../PetsPage/components/PopUpFormSent/PopUpFormSent';
 export function AdoptionFormConfirm(props) {
 
     const param = useParams();
@@ -83,6 +83,7 @@ export function AdoptionFormConfirm(props) {
     useEffect(sendInfo, []);
 
     return (
-        <Redirect to={"/adoptions"}/>
+        <PopUpFormSent></PopUpFormSent>
+        
     )
 }

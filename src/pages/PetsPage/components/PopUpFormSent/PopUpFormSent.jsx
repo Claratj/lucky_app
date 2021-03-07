@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import "./PopUpFormSent.scss";
 import PopUp from "../../../../shared/PopUp/PopUp";
 import img from "../../../../assets/img/undrawPlayfulCatRchv@3x.png";
+import { Redirect } from "react-router";
 
 export function PopUpFormSent() {
 
@@ -10,6 +11,7 @@ export function PopUpFormSent() {
 
     const closePopUp = () => {
         setShow(false);
+        return <Redirect to="/"/>
     }
 
     return (
