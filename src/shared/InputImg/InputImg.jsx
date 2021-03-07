@@ -17,13 +17,13 @@ export default function InputImg(props) {
 
 
 
-    const {
+    let {
         values,
         setValues,
         handleChecked
     } = Filter(initialFilterValues);
 
-    const handleChecked = (e) => {
+    handleChecked = (e) => {
         const { name, value } = e.target;
         if (checked === true) {
             setChecked(false)
@@ -58,7 +58,7 @@ export default function InputImg(props) {
     return (
 
         <div className="c-input-img" >
-            <input id={label} className="c-input-img__input" ({label} == 'Hembra' ? 'Macho' : name="gender") value={label} onClick={handleChecked
+            <input id={label} className="c-input-img__input"  value={label} onClick={handleChecked
             } type="checkbox" alt="Submit" width="48" height="48" />
 
             <label for={label} className="c-input-img__label" >
