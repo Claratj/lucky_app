@@ -10,12 +10,7 @@ export function PopUpFormSent() {
     const [show, setShow] = useState(true);
 
     const closePopUp = () => {
-<<<<<<< HEAD
-        setShow(false);
-        return <Redirect to="/"/>
-=======
         setShow(false);        
->>>>>>> 42a37cdcfbee59198d08b6bc66b6ef46ef197984
     }
 
     return (
