@@ -1,33 +1,55 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { Filter } from '../Filter/Filter';
+
 import './InputImg.scss';
 
+
+const initialFilterValues = {
+    species: '',
+    gender: '',
+    size: ''
+}
 
 
 export default function InputImg(props) {
 
     const [checked, setChecked] = useState(false);
-    // const { isSelected } = useContext(InputImgContext);
 
-    // let listChecked = [];
 
-    /* const handleChecked = ({ target }) => {
-        console.log(target);
-        setChecked(target.checked);
-        if (target.checked) {
 
-            console.log('Checkbox has been ticked!');
-        } else if (status == false) {
+    let {
+        values,
+        setValues,
+        handleChecked
+    } = Filter(initialFilterValues);
 
-            target.change = false;
-            setChecked(target.change);
-        } else {
-            console.log('has been unclicked');
-
-        }
-
-        console.log(target.checked);
+    handleChecked = (e) => {
+        const { name, value } = e.target;
+        if (checked === true) {
+            setChecked(false)
+        } else { setChecked(true) }
         // console.log(object);
-    } */
+    }
+
+
+    // const handleChecked = ({ target }) => {
+    //     console.log(target);
+    //     setChecked(target.checked);
+    //     if (target.checked) {
+
+    //         console.log('Checkbox has been ticked!');
+    //     } else if (status == false) {
+
+    //         target.change = false;
+    //         setChecked(target.change);
+    //     } else {
+    //         console.log('has been unclicked');
+
+    //     }
+
+    //     console.log(target.checked);
+    //     // console.log(object);
+    // } 
     let label = props.label;
 
 
@@ -36,15 +58,12 @@ export default function InputImg(props) {
     return (
 
         <div className="c-input-img" >
-            <input id={label} className="c-input-img__input" onClick={() => {
-                if (checked === true) {
-                    setChecked(false)
-                } else { setChecked(true) }
-            }} type="checkbox" alt="Submit" width="48" height="48" />
+            <input id={label} className="c-input-img__input"  value={label} onClick={handleChecked
+            } type="checkbox" alt="Submit" width="48" height="48" />
 
             <label for={label} className="c-input-img__label" >
                 {label === 'Perro' &&
-                    < span className="icon-dog size" />}
+                    <span className="icon-dog size" />}
                 {label === 'Gato' &&
                     <span className="icon-happy size" />}
                 {label === 'Conejo' &&
@@ -84,5 +103,3 @@ export default function InputImg(props) {
         </div>
     )
 }
-
-{/* <span className="icon-frog"></span> */ }
