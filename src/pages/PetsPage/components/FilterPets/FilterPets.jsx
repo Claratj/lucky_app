@@ -5,30 +5,36 @@ import { Filter } from '../../../../shared/Filter/Filter';
 // import { InputImgContext } from '../../../../shared/InputImg/InputImg';
 
 
-const initialFilterValues = {
+/* const initialFilterValues = {
     city: '',
     species: '',
     type: '',
     age: '',
     gender: '',
     size: ''
-}
+} */
 
 
 export function FilterPets(props) {
 
-    const {
-        values,
-        setValues,
-        handleInputChange
-    } = Filter(initialFilterValues);
+    const [data, setData] = useState({
+        
+    });
+
+    const handleInputChange=(e)=>{
+        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+        setData({
+            ...data,
+            [e.target.name]: value});
+        console.log(data)
+    }
 
 
 
-    useEffect(() => {
+   /*  useEffect(() => {
+        console.log(data)
 
-
-    }, [])
+    }, [data]) */
 
 
     // let disableFilters = (status) => {
@@ -54,7 +60,7 @@ export function FilterPets(props) {
             <form>
                 <div className="p-filter">
                     <p className="p-filter__title">Ciudad</p>
-                    <select class="p-filter__select" name="city" value={values.city} onChange={handleInputChange} >
+                    <select class="p-filter__select" name="city" value={data.city} onChange={handleInputChange} >
                         <option value="Madrid">Madrid</option>
                         <option value="Barcelona">Barcelona</option>
                         <option value="Valencia">Valencia</option>
@@ -77,7 +83,7 @@ export function FilterPets(props) {
                 <div className="p-filter-especie">
                     <p className="p-filter__title">Especie</p>
                     <div className="p-input-wrap">
-                        <InputImg label={'Perro'} name="Perro" value={values.species} onChange={handleInputChange} />
+                        <InputImg label={'Perro'} name="perro" checked={data.perro} onChange={handleInputChange} />
                         <InputImg label={'Gato'} />
                         <InputImg label={'Conejo'} />
                         <InputImg label={'Cobaya'} />
@@ -91,7 +97,7 @@ export function FilterPets(props) {
                     </div>
                     <div className="p-filter">
                         <p className="p-filter__title">Tipo</p>
-                        <select class="p-filter__select" name="type" value={values.type} onChange={handleInputChange}>
+                        <select class="p-filter__select" name="type" value={data.type} onChange={handleInputChange}>
                             <option value="Golden">Golden</option>
                             <option value="Podenco">Podenco</option>
                             <option value="Pastor Belga">Pastor Belga</option>
@@ -100,7 +106,7 @@ export function FilterPets(props) {
                 </div>
                 <div className="p-filter">
                     <p className="p-filter__title">Edad</p>
-                    <select class="p-filter__select" name="age" value={values.age} onChange={handleInputChange}>
+                    <select class="p-filter__select" name="age" value={data.age} onChange={handleInputChange}>
                         <option value="Cachorro">Cachorro</option>
                         <option value="Joven">Joven</option>
                         <option value="Adulto">Adulto</option>
@@ -109,8 +115,8 @@ export function FilterPets(props) {
                 <div className="p-filter">
                     <p className="p-filter__title">Sexo</p>
                     <div className="d-flex p-input-center">
-                        <InputImg label={'Hembra'} />
-                        <InputImg label={'Macho'} />
+                        <InputImg label={'Hembra'} name="hembra" checked={data.gender} onChange={handleInputChange}/>
+                        <InputImg label={'Macho'} name="macho" checked={data.gender} onChange={handleInputChange} />
                     </div>
                 </div>
                 <div className="p-filter">

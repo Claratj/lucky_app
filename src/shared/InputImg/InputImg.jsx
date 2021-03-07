@@ -44,7 +44,7 @@ export default function InputImg(props) {
 
             <label for={label} className="c-input-img__label" >
                 {label === 'Perro' &&
-                    < span className="icon-dog size" />}
+                    <span className="icon-dog size" />}
                 {label === 'Gato' &&
                     <span className="icon-happy size" />}
                 {label === 'Conejo' &&

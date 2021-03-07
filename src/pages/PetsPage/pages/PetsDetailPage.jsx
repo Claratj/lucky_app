@@ -25,7 +25,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export default function PetsDetailPage() {
     
     const [show, setShow] = useState(false);
-    const [pet, setPet] = useState({images: [], species: [], data: []});
+    const [pet, setPet] = useState({images: [], species: [], data: [] });
     const  param  = useParams();
     const petId = param.id;
 
@@ -36,7 +36,7 @@ export default function PetsDetailPage() {
         API.get('/pet/' + petId).then((res)=>{
             setIsLoading(false);
             setPet(res.data.result);
-            console.log(res.data.result)
+            
         })
     }
 
