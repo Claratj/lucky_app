@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import './InputImg.scss';
-import DogBlue from '../../assets/img/perrop.png';
-import DogPink from '../../assets/img/perropink.png';
+// import DogBlue from '../../assets/img/perrop.png';
+// import DogPink from '../../assets/img/perropink.png';
 import { ReactComponent as Cat } from '../../assets/img/icons-fixed/svg/cat.svg';
 import { ReactComponent as Rabbit } from '../../assets/img/icons-fixed/svg/rabbit.svg';
 import { ReactComponent as GuineaPig } from '../../assets/img/icons-fixed/svg/guinea-pig.svg';
@@ -64,41 +64,42 @@ export default function InputImg(props) {
                     setChecked(false)
                 } else { setChecked(true) }
             }} type="checkbox" alt="Submit" width="48" height="48" />
+
             <label for={label} className="c-input-img__label" >
-                {label === 'Perro' && checked === true ?
-                    <span className="icon-hedgehog" />
-                {label === 'Reptil' &&
-                    <span className="icon-frog"></span>}
+                {label === 'Perro' &&
+                    < span className="icon-dog" />}
+                {label === 'Gato' &&
+                    <span className="icon-happy" />}
                 {label === 'Conejo' &&
-                    < Rabbit />}
+                    <span className="icon-rabbit" />}
                 {label === 'Cobaya' &&
-                    < GuineaPig />}
+                    <span className="icon-mouse" />}
                 {label === 'Pequeño mamífero' &&
-                    < SmallMammal />}
+                    <span className="icon-hedgehog" />}
                 {label === 'Hurón' &&
-                    < Ferret />}
+                    <span className="icon-ferret" />}
                 {label === 'Pez' &&
-                    < Fish />}
+                    <span className="icon-tropical-fish" />}
                 {label === 'Reptil' &&
-                    < Reptile />}
+                    <span className="icon-snake" />}
                 {label === 'Anfibio' &&
-                    < Amphibian />}
+                    <span className="icon-frog" />}
                 {label === 'Arácnido o insecto' &&
-                    < ArachnidInsect />}
+                    <span className="icon-spider" />}
                 {label === 'Ave' &&
-                    < Bird />}
+                    <span className="icon-parrot" />}
 
                 {label === 'Hembra' &&
-                    < Female />}
+                    <span className="icon-femenine-1" />}
                 {label === 'Macho' &&
-                    < Male />}
+                    <span className="icon-masculine" />}
 
                 {label === 'Pequeño' &&
-                    < Small />}
+                    <span className="icon-dog" />}
                 {label === 'Mediano' &&
-                    < Medium />}
+                    <span className="icon-dog" />}
                 {label === 'Grande' &&
-                    < Large />}
+                    <span className="icon-dog" />}
 
                 {label}
 
