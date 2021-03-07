@@ -6,15 +6,25 @@ margin-top: -2rem;
         font-weight: 800;
         color: $color-blue-text;
         font-size: 1rem;
+        margin-top:0.5rem;
+        margin-left: 0.5rem;
     }
 
     &__require, &__tax, &__send{
         border: 1px solid rgba(1, 116, 142, .15);
         border-radius: 5px;
         margin-top: 2rem;
-        width: 125%;
-        height: 5.5rem;
-        margin-left: -1.4rem;
+        width: 22rem;
+        height: 6rem;
+        
+    }
+    &__send{
+        margin-bottom: 0.8rem;
+    }
+
+    &__person, &__itemtax, &__itemsend{
+        margin-left: 0.5rem;
+        margin-top: 0.3rem;
     }
 
 }
@@ -24,9 +34,7 @@ margin-top: -2rem;
     list-style: none;
     margin-top: -2rem;
     margin-bottom: 2rem;
-    &__li{
-        
-    }
+    
     
     
 }

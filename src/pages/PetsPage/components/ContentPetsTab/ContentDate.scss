@@ -26,6 +26,8 @@
         font-weight: 800;
         color: $color-blue-text;
         font-size: 1rem;
+        margin-top:0.5rem;
+        margin-left: 0.5rem;
     }
 
     &__history{
@@ -35,7 +37,7 @@
     }
 
     &__histo{
-        margin-top: 1rem;
+        margin: 0.5rem 0.3rem 0.5rem 0.3rem;
     }
 
     &__button{
@@ -50,7 +52,7 @@
 .ul-item{
     
     list-style: none;
-    margin-top: -2rem;
+    margin-top: 10rem;
     margin-bottom: 2rem;
 
     &__li{
@@ -63,7 +65,8 @@
         margin-right: 0.5rem;
     }
     &__span{
-        margin-left: 2rem;
+        float: right;
+        margin-right: 0.5rem;
         text-align: right;
     }
     

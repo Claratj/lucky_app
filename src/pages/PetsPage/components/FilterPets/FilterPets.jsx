@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './FilterPets.scss';
 import InputImg from '../../../../shared/InputImg/InputImg';
 import { Filter, FilterForm } from '../../../../shared/Filter/Filter';
@@ -124,9 +124,9 @@ export function FilterPets(props) {
                 <div className="p-filter">
                     <p className="p-filter__title">Tamaño</p>
                     <div className="d-flex p-input-center">
-                        <InputImg label={'Pequeño'} name={'size'} value={values.species} onChange={handleInputChange} />
-                        <InputImg label={'Mediano'} name={'size'} value={values.species} onChange={handleInputChange}/>
-                        <InputImg label={'Grande'} name={'size'} value={values.species} onChange={handleInputChange}/>
+                        <InputImg label={'Pequeño'} name={'size'}  onChange={handleInputChange} />
+                        <InputImg label={'Mediano'} name={'size'}  onChange={handleInputChange}/>
+                        <InputImg label={'Grande'} name={'size'}  onChange={handleInputChange}/>
                     </div>
 
                 </div>
