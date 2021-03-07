@@ -3,13 +3,14 @@ import React, {useState} from "react";
 import "./PopUpFormSent.scss";
 import PopUp from "../../../../shared/PopUp/PopUp";
 import img from "../../../../assets/img/undrawPlayfulCatRchv@3x.png";
+import { Redirect } from "react-router";
 
 export function PopUpFormSent() {
 
     const [show, setShow] = useState(true);
 
     const closePopUp = () => {
-        setShow(false);
+        setShow(false);        
     }
 
     return (
@@ -21,6 +22,9 @@ export function PopUpFormSent() {
                 <p>Recuerda que la protectora se pondrá en contacto contigo para poder hacer la entrevista personal</p>
                 <img src={img} alt={"¡Enviado!"} className={"c-popup-form-sent__img"}/>
             </div>
+            {!show && 
+                <Redirect to="/home"></Redirect> 
+            }
         </PopUp>
     )
 }

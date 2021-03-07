@@ -6,7 +6,7 @@ import './InfoTab.scss';
 import { API } from '../../../../../shared/consts/api.consts';
 import { useParams } from 'react-router';
 
-export function InfoTab(){
+export function InfoTab(props){
 
     const param = useParams();
     const petId = param.id;  
@@ -146,7 +146,7 @@ export function InfoTab(){
                 <p className="s-detail-1">Para pagar las tasas de adopción puedes elegir o pagarlo mediante la app con un pago único o poniéndose en contacto con la protectora para fraccionar el pago</p>
             </div>
             <button className="btn s-body-2">
-                <span className="btn__span">125€</span>
+                <span className="btn__span">{props.price}</span>
                 <p className="btn__copy">Desglosar las tasas</p>
                 <img src={arrow} alt="" className="btn__img"/>
             </button>
