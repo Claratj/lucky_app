@@ -2,10 +2,6 @@ import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import {API} from "../../../../../shared/consts/api.consts";
 import { PopUpFormSent } from '../../../../PetsPage/components/PopUpFormSent/PopUpFormSent';
-<<<<<<< HEAD
-=======
-
->>>>>>> 42a37cdcfbee59198d08b6bc66b6ef46ef197984
 export function AdoptionFormConfirm(props) {
 
     const param = useParams();
@@ -61,9 +57,5 @@ export function AdoptionFormConfirm(props) {
 
     return (
         <PopUpFormSent></PopUpFormSent>
-<<<<<<< HEAD
-        
-=======
->>>>>>> 42a37cdcfbee59198d08b6bc66b6ef46ef197984
     )
 }

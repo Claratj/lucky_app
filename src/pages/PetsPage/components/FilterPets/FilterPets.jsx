@@ -124,15 +124,9 @@ export function FilterPets(props) {
                 <div className="p-filter">
                     <p className="p-filter__title">Tamaño</p>
                     <div className="d-flex p-input-center">
-<<<<<<< HEAD
-                        <InputImg label={'Pequeño'} name={'size'}  onChange={handleInputChange} />
-                        <InputImg label={'Mediano'} name={'size'}  onChange={handleInputChange}/>
-                        <InputImg label={'Grande'} name={'size'}  onChange={handleInputChange}/>
-=======
                         {/* <InputImg label={'Pequeño'} name={'size'} value={values.species} onChange={handleInputChange} />
                         <InputImg label={'Mediano'} name={'size'} value={values.species} onChange={handleInputChange}/>
                         <InputImg label={'Grande'} name={'size'} value={values.species} onChange={handleInputChange}/> */}
->>>>>>> 42a37cdcfbee59198d08b6bc66b6ef46ef197984
                     </div>
 
                 </div>
