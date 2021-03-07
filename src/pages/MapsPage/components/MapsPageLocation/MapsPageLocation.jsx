@@ -33,6 +33,7 @@ export function MapsPageLocation(props) {
                         <p className={"s-body-2"}>Puntuación</p>
                         <div className={"c-location__score"}>
                             <p className={"s-text-style-4"}>{props.location.score}</p>
+                            {/*TODO Still need to add them paws*/}
                         </div>
                         <div className={"c-location__address"}>
                             <p className={"s-text-style-2"}>{props.location.address1}</p>
@@ -43,6 +44,7 @@ export function MapsPageLocation(props) {
                 <div className={"c-location__opinions"}>
                     <div className={"c-location__opinions-header"}>
                         <p className={"s-body-2"}>Opiniones</p>
+                        {/*TODO Why won't you rotate?*/}
                         <DropDown style={{transform: showAll ? "rotate(0)" : "rotate(180deg)", marginTop: "-0.7rem"}}
                                   fill={"#E08888"}
                                   onClick={dropdownOpinions}/>
