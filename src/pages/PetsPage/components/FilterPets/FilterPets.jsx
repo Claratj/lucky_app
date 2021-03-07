@@ -1,30 +1,44 @@
 import React, { useEffect, useState, useContext } from 'react';
 import './FilterPets.scss';
-import { ReactComponent as Dog } from '../../../../assets/img/icons-fixed/svg/dog.svg';
 import InputImg from '../../../../shared/InputImg/InputImg';
 // import { InputImgContext } from '../../../../shared/InputImg/InputImg';
 
 
+const initialFilterValues = {
+    city: '',
+    species: '',
+    type: '',
+    age: '',
+    gender: '',
+    size: ''
+}
 
 
 export function FilterPets(props) {
 
-    const [selected, setSelected] = useState();
+    const [values, setValues] = useState(initialFilterValues);
 
 
-    // const handleSelected = () => {
-    //     setSelected();
-    // }
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setValues({
+            ...values,
+            [name]: value,
 
-    let value;
-    let status = true;
-
-
-    let disableFilters = (status) => {
-        status = false;
-        // console.log(status);
-        return status
+        })
     }
+
+    useEffect(() => {
+
+
+    }, [])
+
+
+    // let disableFilters = (status) => {
+    //     status = false;
+    //     // console.log(status);
+    //     return status
+    // }
 
     // console.log(status);
 
@@ -43,7 +57,7 @@ export function FilterPets(props) {
             <form>
                 <div className="p-filter">
                     <p className="p-filter__title">Ciudad</p>
-                    <select class="p-filter__select">
+                    <select class="p-filter__select" name="city" value={values.city} onChange={handleInputChange} >
                         <option value="1">Madrid</option>
                         <option value="2">Barcelona</option>
                         <option value="3">Valencia</option>
@@ -66,9 +80,7 @@ export function FilterPets(props) {
                 <div className="p-filter-especie">
                     <p className="p-filter__title">Especie</p>
                     <div className="p-input-wrap">
-                        <InputImg label={'Perro'} >
-                            <Dog />
-                        </InputImg>
+                        <InputImg label={'Perro'} />
                         <InputImg label={'Gato'} />
                         <InputImg label={'Conejo'} />
                         <InputImg label={'Cobaya'} />
@@ -82,7 +94,7 @@ export function FilterPets(props) {
                     </div>
                     <div className="p-filter">
                         <p className="p-filter__title">Tipo</p>
-                        <select class="p-filter__select">
+                        <select class="p-filter__select" name="type" value={values.type} onChange={handleInputChange}>
                             <option value="1">Golden</option>
                             <option value="2">Podenco</option>
                             <option value="3">Pastor Belga</option>
@@ -91,7 +103,7 @@ export function FilterPets(props) {
                 </div>
                 <div className="p-filter">
                     <p className="p-filter__title">Edad</p>
-                    <select class="p-filter__select">
+                    <select class="p-filter__select" name="age" value={values.age} onChange={handleInputChange}>
                         <option value="1">Cachorro</option>
                         <option value="2">Joven</option>
                         <option value="3">Adulto</option>
