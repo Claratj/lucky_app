@@ -1,0 +1,30 @@
+@import "../../styles/tools/variable.tools";
+
+.p-maps-page {
+  padding-top: 2.6875rem;
+
+  &__search {
+    &-bar {
+      width: 100%;
+      padding: 0.5rem 1.3125rem;
+      border: 1px solid $color-cloudy-blue;
+      border-radius: 1rem;
+      font-family: Barlow-Regular, sans-serif;
+      font-size: 0.625rem;
+    }
+  }
+
+  &__clear {
+    position: absolute;
+    color: $color-pink;
+    font-weight: bold;
+    width: 1.875rem;
+    height: 1.875rem;
+    left: 90%;
+    top: 2.9rem;
+  }
+
+  &__response {
+    margin-top: 2.25rem;
+  }
+}
