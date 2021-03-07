@@ -32,7 +32,7 @@ export function AdoptionTab(props){
                     }}
                 />
                 <label className="s-body-2 tab__copy tab__copy--top">Hora</label>
-                <TextField id="hola" label="¿A qué hora puedes venir" defaultValue="9.00h" select>
+                <TextField id="hola" label="¿A qué hora puedes venir?" defaultValue="9.00h" select>
                     <MenuItem type="time" value="9">9.00h</MenuItem>
                     <MenuItem value="10">10.00h</MenuItem>
                 </TextField>

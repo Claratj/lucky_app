@@ -13,22 +13,27 @@ export function InfoTab(){
 
     const [form, setForm] = useState({});
     const [img1, setImg1] = useState(null);
-    const [img2, setImg2] = useState(null);
-    const [img3, setImg3] = useState(null);
+    const [img2, setImg2] = useState();
+    const [img3, setImg3] = useState();
     const [imgPreview1, setImgPreview1] = useState(null);
     const [imgPreview2, setImgPreview2] = useState(null);
     const [imgPreview3, setImgPreview3] = useState(null);
     const [error, setError] = useState('');
+    
 
     const formSubmit = async (ev) => {
         ev.preventDefault();        
         try {
             const formData = new FormData();
             formData.append('image', img1); 
-            // formData.append('image2', img2);
-            // formData.append('image3', img3);
+            formData.append('image', img2);
+            formData.append('image', img3);
+            console.log(formData);
+            // console.log(images);
+            // intentar hacer un for para recorrer el formData y llamar a la API las veces que sea
             // aquí la imagen se sube a cloudinary, pero hay un error y es que solo se sube la primera foto...
-            API.post("/img", formData).then((image) => {
+            // for(let i = 0; i<images.length; i++) {
+                            API.post("/img", formData).then((image) => {
                 console.log(image.data.image);
                 const url = image.data.image;
                 API.patch("/application/img/" + petId, {  //aquí añadimos la img al array de imgs de la solicitud
@@ -36,7 +41,7 @@ export function InfoTab(){
                 }).then(()=> {
                 });
             }); 
-
+            // }
         } catch(error) {
             console.log('Entro por el catch');
             setError(error.message);
