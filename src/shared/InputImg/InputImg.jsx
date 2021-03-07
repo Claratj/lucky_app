@@ -1,28 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
 import './InputImg.scss';
-// import DogBlue from '../../assets/img/perrop.png';
-// import DogPink from '../../assets/img/perropink.png';
-import { ReactComponent as Cat } from '../../assets/img/icons-fixed/svg/cat.svg';
-import { ReactComponent as Rabbit } from '../../assets/img/icons-fixed/svg/rabbit.svg';
-import { ReactComponent as GuineaPig } from '../../assets/img/icons-fixed/svg/guinea-pig.svg';
-import { ReactComponent as SmallMammal } from '../../assets/img/icons-fixed/svg/small-mammal.svg';
-import { ReactComponent as Ferret } from '../../assets/img/icons-fixed/svg/ferret.svg';
-import { ReactComponent as Fish } from '../../assets/img/icons-fixed/svg/fish.svg';
-import { ReactComponent as Reptile } from '../../assets/img/icons-fixed/svg/reptile.svg';
-import { ReactComponent as Amphibian } from '../../assets/img/icons-fixed/svg/amphibian.svg';
-import { ReactComponent as ArachnidInsect } from '../../assets/img/icons-fixed/svg/arachnid-insect.svg';
-import { ReactComponent as Bird } from '../../assets/img/icons-fixed/svg/bird.svg';
-
-import { ReactComponent as Female } from '../../assets/img/icons-fixed/svg/female.svg';
-import { ReactComponent as Male } from '../../assets/img/icons-fixed/svg/male.svg';
-
-import { ReactComponent as Small } from '../../assets/img/icons-fixed/svg/small.svg';
-import { ReactComponent as Medium } from '../../assets/img/icons-fixed/svg/medium.svg';
-import { ReactComponent as Large } from '../../assets/img/icons-fixed/svg/large.svg';
-
-
-
-
 
 
 
@@ -67,39 +44,39 @@ export default function InputImg(props) {
 
             <label for={label} className="c-input-img__label" >
                 {label === 'Perro' &&
-                    < span className="icon-dog" />}
+                    < span className="icon-dog size" />}
                 {label === 'Gato' &&
-                    <span className="icon-happy" />}
+                    <span className="icon-happy size" />}
                 {label === 'Conejo' &&
-                    <span className="icon-rabbit" />}
+                    <span className="icon-rabbit size" />}
                 {label === 'Cobaya' &&
-                    <span className="icon-mouse" />}
+                    <span className="icon-mouse size" />}
                 {label === 'Pequeño mamífero' &&
-                    <span className="icon-hedgehog" />}
+                    <span className="icon-hedgehog size" />}
                 {label === 'Hurón' &&
-                    <span className="icon-ferret" />}
+                    <span className="icon-ferret size" />}
                 {label === 'Pez' &&
-                    <span className="icon-tropical-fish" />}
+                    <span className="icon-tropical-fish size" />}
                 {label === 'Reptil' &&
-                    <span className="icon-snake" />}
+                    <span className="icon-snake size" />}
                 {label === 'Anfibio' &&
-                    <span className="icon-frog" />}
+                    <span className="icon-frog size" />}
                 {label === 'Arácnido o insecto' &&
-                    <span className="icon-spider" />}
+                    <span className="icon-spider size" />}
                 {label === 'Ave' &&
-                    <span className="icon-parrot" />}
+                    <span className="icon-parrot size" />}
 
                 {label === 'Hembra' &&
-                    <span className="icon-femenine-1" />}
+                    <span className="icon-femenine-1 size" />}
                 {label === 'Macho' &&
-                    <span className="icon-masculine" />}
+                    <span className="icon-masculine size" />}
 
                 {label === 'Pequeño' &&
-                    <span className="icon-dog" />}
+                    <span className="icon-dog size" />}
                 {label === 'Mediano' &&
-                    <span className="icon-dog" />}
+                    <span className="icon-dog size" />}
                 {label === 'Grande' &&
-                    <span className="icon-dog" />}
+                    <span className="icon-dog size" />}
 
                 {label}
 

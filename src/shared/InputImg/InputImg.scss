@@ -29,18 +29,16 @@
         margin: 10px;
         cursor: pointer;
     }
-    
-    & svg{
-        max-width: 2rem;
-        max-height: 2rem;
-        fill:  $color-ocean;
+    .size {
+        font-size: 1.5rem;
     }
+    
     :checked + &__label {
         border: 2px $color-pink solid;
         color:  $color-pink;
-        & svg path {
-            fill:  $color-pink;
-        }
+        // & svg path {
+        //     fill:  $color-pink;
+        // }
     }
     // :checked + svg {
     //     fill: $color-pink;
