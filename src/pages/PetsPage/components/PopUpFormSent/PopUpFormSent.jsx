@@ -10,8 +10,12 @@ export function PopUpFormSent() {
     const [show, setShow] = useState(true);
 
     const closePopUp = () => {
+<<<<<<< HEAD
         setShow(false);
         return <Redirect to="/"/>
+=======
+        setShow(false);        
+>>>>>>> 42a37cdcfbee59198d08b6bc66b6ef46ef197984
     }
 
     return (
@@ -23,6 +27,9 @@ export function PopUpFormSent() {
                 <p>Recuerda que la protectora se pondrá en contacto contigo para poder hacer la entrevista personal</p>
                 <img src={img} alt={"¡Enviado!"} className={"c-popup-form-sent__img"}/>
             </div>
+            {!show && 
+                <Redirect to="/home"></Redirect> 
+            }
         </PopUp>
     )
 }
