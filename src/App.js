@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { useState } from "react";
+import {
+  BrowserRouter as Router
+} from "react-router-dom";
 import './App.css';
+import { LoadingContext } from "./core/Loading/contexts/LoadingContext";
+import { Loading } from "./core/Loading/Loading";
+import { Routes } from './core/Routes/Routes';
+import './index.scss';
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(false);
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <LoadingContext.Provider value={{isLoading, setIsLoading}}>
+      <Loading></Loading>
+      <Routes></Routes>
+    </LoadingContext.Provider>
     </div>
+    </Router>
   );
 }
 

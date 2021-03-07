@@ -1,0 +1,54 @@
+@import "../../styles/tools/variable.tools";
+
+.c-button {
+  border-radius: 0.3125rem;
+  width: 12.25rem;
+  height: 2.5rem;
+  font-family: Barlow-Regular, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0;
+  cursor: pointer;
+
+  &__dark {
+    border: none;
+    background-color: $color-ocean;
+    color: white;
+  }
+
+
+  &__pink {
+    width: 7.5rem; 
+    height: 2.3rem;
+    background-color: white;
+    color: $color-pink;
+    border: 2px solid $color-pink;
+
+    &:hover{
+      background-color: $color-pink;
+      color: white;
+      transition: 0.3s;
+  }
+
+    &-large{
+      width: 20.813rem;
+
+    }
+
+  }
+
+  &__light {
+    border: 1px solid $color-ocean;
+    background-color: white;
+    color: $color-ocean;
+  }
+
+  &__red {
+    width: 90%;
+    border: none;
+    background-color: $color-background-pink;
+    color: white;
+    &--mtop {
+      margin-top: 1rem;
+    }
+  }
+}

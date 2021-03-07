@@ -1,0 +1,36 @@
+@import '../../../../styles/tools/variable.tools';
+
+.p-adoptions-detail{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    &__title-div {
+        margin-top: 3.58rem;
+        display: flex;
+        width: 90%;
+        &__title {
+            color: $color-black;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin: 0 auto;
+            padding-right: 1rem;
+        }
+    }
+    &__main {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        &__hr {
+            width: 90%;
+            margin: 1.8rem 0;
+            background-color: rgb(189, 210, 214);
+        }
+    }
+}
+.flex {
+    display: flex;
+}

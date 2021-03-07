@@ -1,0 +1,64 @@
+@import "../../../../styles/tools/variable.tools";
+
+.p-adoption-form {
+  margin-top: 2.6875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__exit {
+    position: absolute;
+    top: 1.9rem;
+    font-size: 2rem;
+    color: $color-pink;
+    cursor: pointer;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__progress {
+    margin-top: 1.875rem;
+    border-radius: 0.21875rem;
+  }
+
+  &__subtitle {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    color: $color-ocean;
+    font-size: 1.25rem;
+    font-family: Barlow-med, sans-serif;
+  }
+
+  &__radio-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__block {
+    margin-top: 1.5rem;
+  }
+
+  .MuiFormGroup-root {
+    flex-direction: row;
+    p {
+      flex: 2;
+    }
+  }
+
+  .c-button {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  label,
+  span {
+    font-size: 0.75rem;
+    font-family: Barlow-Regular, sans-serif;
+  }
+
+}

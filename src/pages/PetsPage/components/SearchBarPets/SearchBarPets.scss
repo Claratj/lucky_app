@@ -1,0 +1,35 @@
+@import '../../../../styles/tools/variable.tools';
+
+.c-search-pets{
+    display: flex;
+    justify-content: center;
+    margin:2rem 1rem 0 1rem;
+
+    &__form{
+        border: 1px solid $color-light-blue;
+        border-radius: 20px;
+        width: 25rem;
+        display: flex;
+    }
+
+    &__input{
+        width: 11rem;
+        padding-top: 0.7rem;
+        padding-left: 0.5rem;
+        margin-left: 0.4rem;
+        text-indent: 10px;
+        border: none;
+        font-size: 0.83rem;
+        background: transparent;
+        outline: none;
+        position: relative;
+        top: -0.35rem;
+        font-family: 'Barlow';
+    }
+    &__button{
+        
+        border: none;
+        background-color: transparent;
+        margin-left: 8rem;
+    }
+}

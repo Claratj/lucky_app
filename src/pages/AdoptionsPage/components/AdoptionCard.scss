@@ -1,0 +1,77 @@
+@import '../../../styles/tools/variable.tools';
+
+.c-adoption-card {
+    border: 1px solid $color-cloudy-blue;
+    border-radius: 0.25rem;
+    margin: 0.8rem auto;
+    width: 90%;
+
+    &__link {
+        text-decoration: none;
+        color: $color-blue-text;
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        font-family: 'Barlow-med';
+        font-size: 1.1rem;
+        display: flex;
+        align-items: flex-end;
+        padding: 0.6rem 1.2rem 0.6rem 0.6rem;
+        justify-content: space-between;
+        &__status {
+            font-size: 0.8rem;
+            display: flex;
+            align-items: flex-end;
+            &--red {
+                color: $color-red;
+            }
+            &--orange {
+                color: $color-orange;
+            }
+            &--green {
+                color: $color-green;
+            }
+            &__div{
+                margin-left: 0.5rem;
+                width: 0.8rem;
+                height: 0.8rem;
+                border-radius: 50%;
+                &--red {
+                    background-color: $color-red;
+                }
+                &--orange {
+                    background-color: $color-orange;
+                }
+                &--green {
+                    background-color: $color-green;
+                }
+            }
+        }
+    }
+    &__details {
+        display: flex;
+        width: 100%;
+        padding: 0 1rem 1rem;
+        &__img-div {
+            &__img {
+                width: 7rem;
+                height: 7rem;
+                border: 0.2rem solid $color-cloud-blue;
+                border-radius: 50%;
+            }
+
+        }
+        &__copy {
+            color: $color-black;
+            font-family: 'Barlow-med';
+            margin-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            &--thin{
+                font-family: 'Barlow';
+            }
+        }
+    }
+}

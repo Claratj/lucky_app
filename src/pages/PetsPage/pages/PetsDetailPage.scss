@@ -1,0 +1,216 @@
+@import '../../../styles/imports/tools.imports';
+
+.c-petsDetailPage{
+
+
+    &__back{
+        position: absolute;
+        z-index: 2;
+        top: 2rem;
+        left: 2rem;
+    }
+
+    &__imgswiper{
+        width: 26.6rem;
+    }
+
+    &__button{
+      margin-top: 1rem;
+      margin-left: 2.6rem;
+      margin-bottom: 2rem;
+  }
+
+  &__buttonAp, &__buttonAdop{
+     width: 7.5rem; 
+     height: 2.3rem;
+     border-radius: 5px;
+     border: 2px solid $color-pink;
+     background-color: white;
+     color: $color-pink;
+     outline: none;
+     font-size: 1rem;
+     margin-left: 1rem;
+     
+     &:hover{
+         background-color: $color-pink;
+         color: white;
+         transition: 0.5s;
+         font-weight: 800;
+     }
+  }
+
+  &__imgswiper{
+    height: 16rem;
+    object-fit: cover;
+  }
+
+}
+
+.mini-tab{
+    display: flex;
+    width: 15rem;
+    height: 4rem;
+    margin-left: 4rem;
+    margin-top: -5.2rem;
+    position:absolute;
+    border-radius: 0.33rem;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+
+    &__gender{
+        width: 15px;
+        height: 15px;
+        margin-left: 1rem;
+        margin-right: -2.7rem;
+        margin-top: 0.8rem;
+    }
+
+    &__name{
+        font-size: 1.33rem;
+    }
+
+    &__date{
+        margin-left: 3rem;
+        margin-top: 0.5rem;
+    }
+
+    &__img{
+        margin-top: 1rem;
+        margin-left: 5rem;
+        
+    }
+
+    &__fav{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &__share{
+        width: 1.97rem;
+        height: 1.97rem;
+        margin-left: 0.6rem;
+    }
+
+    
+    
+}
+
+.p-pets-detail{
+    &__main{
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+.flex{
+    display: flex;
+}
+
+
+
+.swiper-container{
+    margin-bottom: 3rem;
+}
+.swiper-pagination.pets {
+    position: absolute;
+    text-align: center;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+    top: 12.5rem;
+    
+    &.swiper-pagination-hidden.pets {
+      opacity: 0;
+    
+      
+    }
+  }
+  
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+  }
+  /* Bullets */
+  .swiper-pagination-bullets-dynamic {
+    overflow: hidden;
+    font-size: 0;
+    .swiper-pagination-bullet.pets {
+      transform: scale(0.33);
+      position: relative;
+    }
+    .swiper-pagination-bullet-active.pets {
+      transform: scale(1);
+    }
+    .swiper-pagination-bullet-active-main.pets {
+      transform: scale(1);
+    }
+    .swiper-pagination-bullet-active-prev.pets {
+      transform: scale(0.66);
+    }
+    .swiper-pagination-bullet-active-prev-prev.pets {
+      transform: scale(0.33);
+    }
+    .swiper-pagination-bullet-active-next.pets {
+      transform: scale(0.66);
+    }
+    .swiper-pagination-bullet-active-next-next.pets {
+      transform: scale(0.33);
+    }
+  }
+  .swiper-pagination-bullet.pets {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid $color-pink;
+    
+    @at-root button#{&} {
+      border: none;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      appearance: none;
+    }
+    .swiper-pagination-clickable & {
+      cursor: pointer;
+    }
+  }
+  .swiper-pagination-bullet-active.pets {
+    opacity: 1;
+    background: $color-pink;
+  }
+  
+  
+  .swiper-container-horizontal {
+    > .swiper-pagination-bullets {
+      .swiper-pagination-bullet.pets {
+        margin: 0 4px;
+      }
+      &.swiper-pagination-bullets-dynamic {
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        .swiper-pagination-bullet.pets {
+          transition: 200ms transform, 200ms left;
+        }
+      }
+    }
+    &.swiper-container-rtl > .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+      transition: 200ms transform, 200ms right;
+    }
+  }
+  
+  
+  .swiper-pagination-lock {
+    display: none;
+  }
+
+  

@@ -1,0 +1,63 @@
+@import '../../../../../styles/tools/variable.tools';
+.tab {
+    width: 100%;
+    &__address {
+        width: 90%;
+    }
+    &__copy {
+        margin-bottom: 1.5rem;
+        color: $color-ocean;
+        &--top {
+            padding-top: 1.5rem;
+        }
+    }
+    .MuiTextField-root {
+        font-family: Barlow;
+
+    }
+    .MuiSelect-icon {
+        color: $color-background-pink;
+    }
+    .MuiInputBase-input {
+        color: $color-black;
+        font-family: Barlow;
+    }
+    .MuiInputLabel-animated {
+        color: $color-greyishBrown;
+    }
+
+    .MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button {
+        font-family: Barlow;
+    }
+}
+.appointment-form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.6rem;
+    .MuiInputBase-input {
+        font-family: Barlow;
+        color: $color-pine-green;
+    }
+    .MuiInput-underline:after {
+        border-bottom: 0.1rem solid $color-background-pink; 
+    }
+}
+
+.date-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.05rem solid $color-cloudy-blue;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: $color-pine-green;
+    &__img {
+        width: 2rem;
+    }
+
+}
+
+
+
