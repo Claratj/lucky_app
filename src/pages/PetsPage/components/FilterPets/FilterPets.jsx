@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect } from 'react';
 import './FilterPets.scss';
 import InputImg from '../../../../shared/InputImg/InputImg';
-import { Filter } from '../../../../shared/Filter/Filter';
+import { Filter, FilterForm } from '../../../../shared/Filter/Filter';
 // import { InputImgContext } from '../../../../shared/InputImg/InputImg';
 
 
@@ -57,7 +57,7 @@ export function FilterPets(props) {
                 <h5 className="fig-c__filter-title">Filtros</h5>
 
             </div>
-            <form>
+            <FilterForm>
                 <div className="p-filter">
                     <p className="p-filter__title">Ciudad</p>
                     <select class="p-filter__select" name="city" value={data.city} onChange={handleInputChange} >
@@ -83,6 +83,7 @@ export function FilterPets(props) {
                 <div className="p-filter-especie">
                     <p className="p-filter__title">Especie</p>
                     <div className="p-input-wrap">
+<<<<<<< HEAD
                         <InputImg label={'Perro'} name="perro" checked={data.perro} onChange={handleInputChange} />
                         <InputImg label={'Gato'} />
                         <InputImg label={'Conejo'} />
@@ -94,6 +95,19 @@ export function FilterPets(props) {
                         <InputImg label={'Anfibio'} />
                         <InputImg label={'Arácnido o insecto'} />
                         <InputImg label={'Ave'} />
+=======
+                        <InputImg label={'Perro'} name={'species'} value={values.species} onChange={handleInputChange} />
+                        <InputImg label={'Gato'} name={'species'} value={values.species} onChange={handleInputChange}/>
+                        <InputImg label={'Conejo'} name={'species'} value={values.species} onChange={handleInputChange}/>
+                        <InputImg label={'Cobaya'} name={'species'} value={values.species} onChange={handleInputChange} />
+                        <InputImg label={'Pequeño mamífero'} name={'species'} value={values.species} onChange={handleInputChange}/>
+                        <InputImg label={'Hurón'} name={'species'} value={values.species} onChange={handleInputChange}/>
+                        <InputImg label={'Pez'} name={'species'} value={values.species} onChange={handleInputChange}/>
+                        <InputImg label={'Reptil'} name={'species'} value={values.species} onChange={handleInputChange}/>
+                        <InputImg label={'Anfibio'} name={'species'} value={values.species} onChange={handleInputChange}/>
+                        <InputImg label={'Arácnido o insecto'} name={'species'} value={values.species} onChange={handleInputChange}/>
+                        <InputImg label={'Ave'} name={'species'} value={values.species} onChange={handleInputChange}/>
+>>>>>>> 47ed3f75003f53baab77a7b59fd7de045e407df4
                     </div>
                     <div className="p-filter">
                         <p className="p-filter__title">Tipo</p>
@@ -114,17 +128,24 @@ export function FilterPets(props) {
                 </div>
                 <div className="p-filter">
                     <p className="p-filter__title">Sexo</p>
+                    {/* <FormControl> */}
                     <div className="d-flex p-input-center">
+<<<<<<< HEAD
                         <InputImg label={'Hembra'} name="hembra" checked={data.gender} onChange={handleInputChange}/>
                         <InputImg label={'Macho'} name="macho" checked={data.gender} onChange={handleInputChange} />
+=======
+                        <InputImg label={'Hembra'} name={'gender'} value={values.species} onChange={handleInputChange}/>
+                        <InputImg label={'Macho'} name={'gender'} value={values.species} onChange={handleInputChange}/>
+>>>>>>> 47ed3f75003f53baab77a7b59fd7de045e407df4
                     </div>
+                    {/* </FormControl> */}
                 </div>
                 <div className="p-filter">
                     <p className="p-filter__title">Tamaño</p>
                     <div className="d-flex p-input-center">
-                        <InputImg label={'Pequeño'} />
-                        <InputImg label={'Mediano'} />
-                        <InputImg label={'Grande'} />
+                        <InputImg label={'Pequeño'} name={'size'} value={values.species} onChange={handleInputChange} />
+                        <InputImg label={'Mediano'} name={'size'} value={values.species} onChange={handleInputChange}/>
+                        <InputImg label={'Grande'} name={'size'} value={values.species} onChange={handleInputChange}/>
                     </div>
 
                 </div>
@@ -132,7 +153,7 @@ export function FilterPets(props) {
                     <button className="c-button c-button__pink" type="reset">Borrar filtros</button>
                     <button className="c-button c-button__pink" typye="submit">Aplicar</button>
                 </div>
-            </form>
+            </FilterForm>
         </div>
     )
 }
