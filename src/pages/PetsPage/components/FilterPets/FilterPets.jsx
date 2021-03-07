@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect } from 'react';
 import './FilterPets.scss';
 import InputImg from '../../../../shared/InputImg/InputImg';
-import { Filter } from '../../../../shared/Filter/Filter';
+import { Filter, FilterForm } from '../../../../shared/Filter/Filter';
 // import { InputImgContext } from '../../../../shared/InputImg/InputImg';
 
 
@@ -51,7 +51,7 @@ export function FilterPets(props) {
                 <h5 className="fig-c__filter-title">Filtros</h5>
 
             </div>
-            <form>
+            <FilterForm>
                 <div className="p-filter">
                     <p className="p-filter__title">Ciudad</p>
                     <select class="p-filter__select" name="city" value={values.city} onChange={handleInputChange} >
@@ -108,10 +108,12 @@ export function FilterPets(props) {
                 </div>
                 <div className="p-filter">
                     <p className="p-filter__title">Sexo</p>
+                    {/* <FormControl> */}
                     <div className="d-flex p-input-center">
                         <InputImg label={'Hembra'} />
                         <InputImg label={'Macho'} />
                     </div>
+                    {/* </FormControl> */}
                 </div>
                 <div className="p-filter">
                     <p className="p-filter__title">Tamaño</p>
@@ -126,7 +128,7 @@ export function FilterPets(props) {
                     <button className="c-button c-button__pink" type="reset">Borrar filtros</button>
                     <button className="c-button c-button__pink" typye="submit">Aplicar</button>
                 </div>
-            </form>
+            </FilterForm>
         </div>
     )
 }

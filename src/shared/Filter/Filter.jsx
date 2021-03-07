@@ -24,17 +24,12 @@ export function Filter(initialFilterValues) {
 
 
 
-export default function FilterForm() {
+export function FilterForm(props) {
 
 
     return (
         <form action="">
-
-            <div className="p-filter-btn-box">
-                <button className="c-button c-button__pink" type="reset">Borrar filtros</button>
-                <button className="c-button c-button__pink" typye="submit">Aplicar</button>
-            </div>
-
+            {props.children}
         </form>
     )
 }
