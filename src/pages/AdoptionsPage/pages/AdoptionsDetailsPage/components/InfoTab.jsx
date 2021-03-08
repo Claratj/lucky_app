@@ -28,14 +28,15 @@ export function InfoTab(props){
             formData.append('image', img1); 
             formData.append('image', img2);
             formData.append('image', img3);
-            console.log(formData);
+            
             // console.log(images);
             // intentar hacer un for para recorrer el formData y llamar a la API las veces que sea
             // aquí la imagen se sube a cloudinary, pero hay un error y es que solo se sube la primera foto...
             // for(let i = 0; i<images.length; i++) {
-                            API.post("/img", formData).then((image) => {
-                console.log(image.data.image);
-                const url = image.data.image;
+                API.post("/img", formData).then((image) => {
+                console.log(image)
+              console.log(petId)
+                const url = image.data.imgs;
                 API.patch("/application/img/" + petId, {  //aquí añadimos la img al array de imgs de la solicitud
                     imgs: url
                 }).then(()=> {
