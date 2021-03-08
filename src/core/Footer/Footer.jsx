@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Footer.scss';
-import home from '../../assets/img/home.svg';
+import home from '../../assets/img/casa.svg';
 import mapa from '../../assets/img/mapa.svg';
 import mascota from '../../assets/img/mascota.svg';
 import perfil from '../../assets/img/perfil.svg';
 import mS from '../../assets/img/mS.svg';
 import '../../pages/HomePage/HomeCard/HomeCard';
-import {Link } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 
 export function Footer() {
@@ -19,16 +19,16 @@ export function Footer() {
 
     return (
         <div className="c-footer">
-            <Link to="/"><img src={home} alt={"Home"}/></Link>
-            <Link to="#"><img src={mapa} alt={"Mapa"}/></Link>
-            <Link to="/pets"><img src={mascota} alt={"Mascota"}/></Link>
-            <Link to="/profile">
+            <NavLink to="/home" className="c-footer__link" activeClassName="active"><img src={home} alt={"Home"}/></NavLink>
+            <NavLink to="/maps" className="c-footer__link" activeClassName="active"><img src={mapa} alt={"Mapa"}/></NavLink>
+            <NavLink to="/pets" className="c-footer__link" activeClassName="active"><img src={mascota} alt={"Mascota"}/></NavLink>
+            <NavLink to="/profile">
             {user.image ? 
             <img src={user.image} alt={"Perfil"} className="c-footer__img"/>
             :
             <img src={perfil} alt={"Perfil"}/>
-            }</Link>
-            <Link to='/menu'><img src={mS} alt={"mS"}/></Link>
+            }</NavLink>
+            <NavLink to='/menu'><img src={mS} alt={"mS"}/></NavLink>
         </div>
     )
 }

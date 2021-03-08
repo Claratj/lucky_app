@@ -18,7 +18,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 let allPets = [];
 
 export default function PetsPage() {
-    const [search, setSearch] = useState([]);
+    const [search, setSearch] = useState(null);
     const [pets, setPets] = useState([]);
     const {setIsLoading} = useContext(LoadingContext);
     
