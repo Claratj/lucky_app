@@ -6,9 +6,10 @@ export function AdoptionFormConfirm(props) {
 
     const param = useParams();
     const petId = param.petId; 
+    const user = (JSON.parse(localStorage.getItem('userData')));
 
     const application = {
-        // userId:,
+        userId: user._id,
         pet: petId,        
         form: {
             data: {

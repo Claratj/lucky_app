@@ -10,4 +10,10 @@
     bottom: 0;
     left: 0;
     background-color: white;
+    &__img {
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+        border-radius: 50%;
+    }
 }

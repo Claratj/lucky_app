@@ -41,10 +41,10 @@ export function Routes() {
             <Route path="/adoption-form/:petId">
                 <AdoptionForm />
             </Route>
-            <Route path="/adoptions/pet/:id">
+            <Route exact path="/adoptions/pet/:id">
                 <AdoptionsDeatilPage />
             </Route>
-            <Route path="/adoptions/:userId">
+            <Route path="/adoptions">
                 <AdoptionsPage />
             </Route>
             <Route exact path="/boarding">
