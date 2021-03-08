@@ -90,32 +90,60 @@ export function MapsPage() {
     const cleanLocations = async (data) => {
         let theseLocations = [];
         for (let i = 0; i < data.length; i++) {
-            await API.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=${data[i].place_id}&fields=name,rating,geometry,reviews,address_component&key=${process.env.REACT_APP_MAPS_API_KEY}`).then((r) => {
+            await API.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=${data[i].place_id}&fields=name,rating,geometry,reviews,address_component,photo&key=${process.env.REACT_APP_MAPS_API_KEY}`).then((r) => {
                 const currentLocation = r.data.result;
                 console.log(currentLocation);
-                theseLocations.push({
+                let fullInfo = {
                     name: currentLocation.name,
-                    address1: `${currentLocation.address_components[1].long_name}, ${currentLocation.address_components[0].long_name}`,
-                    address2: `${currentLocation.address_components[6].long_name} ${currentLocation.address_components[2].long_name}`,
-                    img: '',
-                    score: currentLocation.rating,
+                    address1: '',
+                    address2: '',
+                    score: currentLocation.rating ? currentLocation.rating : 0,
                     lat: currentLocation.geometry.location.lat,
                     lng: currentLocation.geometry.location.lng,
-                    opinions: [{
-                        img: currentLocation.reviews[0].profile_photo_url,
-                        text: currentLocation.reviews[0].text,
-                    },
+                };
+
+                const address = {
+                    route: '',
+                    street_number: '',
+                    locality: '',
+                    postal_code: '',
+                };
+                for (let i = 0; i < currentLocation.address_components.length; i++) {
+                    if (currentLocation.address_components[i].types.contains('route')) {
+                        address.route = currentLocation.address_components[i].long_name;
+                    } else if (currentLocation.address_components[i].types.contains('street_number')) {
+                        address.street_number = currentLocation.address_components[i].long_name;
+                    } else if (currentLocation.address_components[i].types.contains('locality')) {
+                        address.locality = currentLocation.address_components[i].long_name;
+                    } else if (currentLocation.address_components[i].types.contains('postal_code')) {
+                        address.postal_code = currentLocation.address_components[i].long_name;
+                    }
+                }
+                fullInfo.address1 = `${address.route}, ${address.street_number}`;
+                fullInfo.address2 = `${address.locality} ${address.postal_code}`;
+
+                if (currentLocation.photos) {
+                    API.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${currentLocation.photos[0].photo_reference}&key=${process.env.REACT_APP_MAPS_API_KEY}`)
+                        .then((res) => fullInfo.img = res.headers['x-final-url']);
+                }
+
+                if (currentLocation.reviews) {
+                    fullInfo.opinions = [
+                        {
+                            img: currentLocation.reviews[0].profile_photo_url,
+                            text: currentLocation.reviews[0].text,
+                        },
                         {
                             img: currentLocation.reviews[1].profile_photo_url,
                             text: currentLocation.reviews[1].text,
                         },
                     ]
-                })
+                }
+                theseLocations.push(fullInfo);
             });
         }
 
         setLocations(theseLocations);
-        console.log(locations);
     }
 
     const mapRef = useRef();
