@@ -4,56 +4,60 @@ import './MapsPage.scss';
 import Footer from "../../core/Footer/Footer";
 import {MapsPageLocation} from "./components/MapsPageLocation/MapsPageLocation";
 import {GoogleMap, InfoWindow, Marker, useLoadScript} from "@react-google-maps/api";
+import {Combobox, ComboboxInput, ComboboxPopover, ComboboxOption, ComboboxList} from "@reach/combobox";
+import usePlacesAutocomplete, {getGeocode, getLatLng} from 'use-places-autocomplete';
 import MapStyles from './components/MapStyles';
+import {API} from "../../shared/consts/api.consts";
 
 export function MapsPage() {
-    const locations = [
-        {
-            name: 'Clínica Veterinaria Don Can',
-            img: 'https://mivetclinicas.com/wp-content/uploads/2019/04/Don-Can-fachada.png',
-            score: 4.45,
-            address1: 'Calle de Cristóbal Bordiu, 27',
-            address2: '28003 Madrid',
-            lat: 40.443150,
-            lng: -3.699470,
-            opinions: [
-                {
-                    img: 'https://ak.picdn.net/shutterstock/videos/6977578/thumb/1.jpg',
-                    text: "Cuidan de mis perros desde hace 25 años, increíbles, profesionales y cariñosos",
-                },
-                {
-                    img: 'https://previews.123rf.com/images/madrolly/madrolly2007/madrolly200700045/150607838-person-looking-over-the-shoulder-straw-hat-on-a-girl-that-is-watching-behind-her-woman-turning-aroun.jpg',
-                    text: "Excelente trato a los perros y a los dueños muy recomendable"
-                }
-            ]
-        },
-        {
-            name: 'Hospital veterinario Retiro',
-            img: 'https://t1.ea.ltmcdn.com/es/places/8/3/5/img_5538_hospital-veterinario-retiro_0_orig.jpg',
-            score: 4.1,
-            address1: 'Av. de Menéndez Pelayo, 9',
-            address2: '28009 Madrid',
-            lat: 40.421300,
-            lng: -3.679600,
-            opinions: []
-        },
-        {
-            name: 'Centro Veterinario Los Sauces',
-            img: 'https://cvsauces.com/nuevo/wp-content/uploads/2014/10/saucesss.jpg',
-            score: 4.4,
-            address1: 'Calle de Sta Engracia, 63',
-            address2: '28010 Madrid',
-            lat: 40.434080,
-            lng: -3.698580,
-            opinions: []
-        }
-    ];
+    // const locations = [
+    //     {
+    //         name: 'Clínica Veterinaria Don Can',
+    //         img: 'https://mivetclinicas.com/wp-content/uploads/2019/04/Don-Can-fachada.png',
+    //         score: 4.45,
+    //         address1: 'Calle de Cristóbal Bordiu, 27',
+    //         address2: '28003 Madrid',
+    //         lat: 40.443150,
+    //         lng: -3.699470,
+    //         opinions: [
+    //             {
+    //                 img: 'https://ak.picdn.net/shutterstock/videos/6977578/thumb/1.jpg',
+    //                 text: "Cuidan de mis perros desde hace 25 años, increíbles, profesionales y cariñosos",
+    //             },
+    //             {
+    //                 img: 'https://previews.123rf.com/images/madrolly/madrolly2007/madrolly200700045/150607838-person-looking-over-the-shoulder-straw-hat-on-a-girl-that-is-watching-behind-her-woman-turning-aroun.jpg',
+    //                 text: "Excelente trato a los perros y a los dueños muy recomendable"
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         name: 'Hospital veterinario Retiro',
+    //         img: 'https://t1.ea.ltmcdn.com/es/places/8/3/5/img_5538_hospital-veterinario-retiro_0_orig.jpg',
+    //         score: 4.1,
+    //         address1: 'Av. de Menéndez Pelayo, 9',
+    //         address2: '28009 Madrid',
+    //         lat: 40.421300,
+    //         lng: -3.679600,
+    //         opinions: []
+    //     },
+    //     {
+    //         name: 'Centro Veterinario Los Sauces',
+    //         img: 'https://cvsauces.com/nuevo/wp-content/uploads/2014/10/saucesss.jpg',
+    //         score: 4.4,
+    //         address1: 'Calle de Sta Engracia, 63',
+    //         address2: '28010 Madrid',
+    //         lat: 40.434080,
+    //         lng: -3.698580,
+    //         opinions: []
+    //     }
+    // ];
+
+    const [locations, setLocations] = useState([]);
 
     const [center, setCenter] = useState({
         lat: 0,
         lng: 0,
     })
-    const [inputValue, setInputValue] = useState('');
     const [selected, setSelected] = useState(null);
 
     const libraries = ['places'];
@@ -64,7 +68,7 @@ export function MapsPage() {
     }
 
     const options = {
-        // styles: MapStyles,
+        styles: MapStyles,
         disableDefaultUI: true,
     };
 
@@ -73,26 +77,93 @@ export function MapsPage() {
         libraries,
     });
 
-    const recalculateCenter = () => {
-        let lat = 0;
-        let lng = 0;
+    const getLocation = () => {
+        navigator.geolocation.getCurrentPosition((position) => {
+            setCenter({
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+            })
+            panTo({lat: position.coords.latitude, lng: position.coords.longitude});
+        }, () => null);
+    }
 
-        for (let i = 0; i < locations.length; i++) {
-            lat += locations[i].lat;
-            lng += locations[i].lng;
+    const cleanLocations = async (data) => {
+        let theseLocations = [];
+        for (let i = 0; i < data.length; i++) {
+            await API.get(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${data[i].place_id}&fields=name,rating,geometry,reviews,address_component&key=${process.env.REACT_APP_MAPS_API_KEY}`).then((r) => {
+                const currentLocation = r.data.result;
+                console.log(currentLocation);
+                theseLocations.push({
+                    name: currentLocation.name,
+                    address1: `${currentLocation.address_components[1].long_name}, ${currentLocation.address_components[0].long_name}`,
+                    address2: `${currentLocation.address_components[6].long_name} ${currentLocation.address_components[2].long_name}`,
+                    img: '',
+                    score: currentLocation.rating,
+                    lat: currentLocation.geometry.location.lat,
+                    lng: currentLocation.geometry.location.lng,
+                    opinions: [{
+                        img: currentLocation.reviews[0].profile_photo_url,
+                        text: currentLocation.reviews[0].text,
+                    },
+                        {
+                            img: currentLocation.reviews[1].profile_photo_url,
+                            text: currentLocation.reviews[1].text,
+                        },
+                    ]
+                })
+            });
         }
 
-        setCenter({
-            lat: lat / 3,
-            lng: lng / 3,
-        });
+        setLocations(theseLocations);
+        console.log(locations);
     }
 
     const mapRef = useRef();
     const onMapLoad = useCallback((map) => {
-        recalculateCenter();
+        getLocation();
         mapRef.current = map;
     });
+
+    const panTo = useCallback(({lat, lng}) => {
+        mapRef.current.panTo({lat, lng});
+        mapRef.current.setZoom(14);
+    }, [])
+
+    function Search() {
+        const {ready, value, suggestions: {status, data}, setValue, clearSuggestions} = usePlacesAutocomplete({
+            requestOptions: {
+                location: {
+                    lat: () => center.lat,
+                    lng: () => center.lng
+                },
+                radius: 5 * 1000,
+            }
+        });
+
+        return <Combobox onSelect={async (address) => {
+            console.log(data);
+            await cleanLocations(data);
+            setValue(address, false);
+            clearSuggestions();
+            try {
+                const results = await getGeocode({address});
+                const {lat, lng} = await getLatLng(results[0]);
+                panTo({lat, lng});
+            } catch (e) {
+                console.error(e.message);
+            }
+        }}>
+            <ComboboxInput className={"p-maps-page__search-bar"} value={value} onChange={(e) => {
+                setValue(e.target.value);
+            }} disabled={!ready} placeholder={"¿Qué estás buscando?"}/>
+            <ComboboxPopover className={"p-maps-page__popover"}>
+                <ComboboxList>
+                    {status === "OK" && data.map(({id, description}) => <ComboboxOption key={id}
+                                                                                        value={description}/>)}
+                </ComboboxList>
+            </ComboboxPopover>
+        </Combobox>
+    }
 
     return (
         <div className={"p-maps-page"}>
@@ -100,9 +171,8 @@ export function MapsPage() {
             <div className={"container"}>
 
                 <div className={"p-maps-page__search"}>
-                    <input className={"p-maps-page__search-bar"} placeholder={"¿Qué estás buscando?"} value={inputValue}
-                           onChange={(e) => setInputValue(e.target.value)}/>
-                    <p className={"p-maps-page__clear"} onClick={() => setInputValue('')}>x</p>
+                    <Search panTo={panTo}/>
+                    <p className={"p-maps-page__clear"}>x</p>
                 </div>
 
                 {isLoaded && <div className={"p-maps-page__map"}>
@@ -119,7 +189,9 @@ export function MapsPage() {
                                                                 }}
                                                                 onClick={() => {
                                                                     setSelected(location)
-                                                                    window.location.href = `#locations-${i}`;
+                                                                    window.location.href =
+                                                                        `#locations-${i}`
+                                                                    ;
                                                                 }}/>)}
 
 

@@ -17,7 +17,6 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 
 export function OnBoardingPage() {
-
 const {isSplash, setSplash} = useContext(SplashContext);
 
   const setSplashPage = ()=>{

@@ -49,7 +49,7 @@ export function LoginFormPage() {
         {userToken && 
             <Redirect to="/home"/>
 
-        };
+        }
             <img src={logo} alt={"Lucky"} className={"p-login-form__logo"}/>
             <p className={"s-text-style"}>¡Hola! para continuar, inicia sesión o crea una cuenta</p>
             <form onSubmit={handleSubmit}>
