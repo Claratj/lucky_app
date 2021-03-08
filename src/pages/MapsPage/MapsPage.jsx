@@ -109,13 +109,13 @@ export function MapsPage() {
                     postal_code: '',
                 };
                 for (let i = 0; i < currentLocation.address_components.length; i++) {
-                    if (currentLocation.address_components[i].types.contains('route')) {
+                    if (currentLocation.address_components[i].types.includes('route')) {
                         address.route = currentLocation.address_components[i].long_name;
-                    } else if (currentLocation.address_components[i].types.contains('street_number')) {
+                    } else if (currentLocation.address_components[i].types.includes('street_number')) {
                         address.street_number = currentLocation.address_components[i].long_name;
-                    } else if (currentLocation.address_components[i].types.contains('locality')) {
+                    } else if (currentLocation.address_components[i].types.includes('locality')) {
                         address.locality = currentLocation.address_components[i].long_name;
-                    } else if (currentLocation.address_components[i].types.contains('postal_code')) {
+                    } else if (currentLocation.address_components[i].types.includes('postal_code')) {
                         address.postal_code = currentLocation.address_components[i].long_name;
                     }
                 }
