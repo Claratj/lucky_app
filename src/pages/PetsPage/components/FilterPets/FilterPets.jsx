@@ -1,34 +1,37 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import './FilterPets.scss';
 import InputImg from '../../../../shared/InputImg/InputImg';
 import { Filter, FilterForm } from '../../../../shared/Filter/Filter';
 // import { InputImgContext } from '../../../../shared/InputImg/InputImg';
 
 
-const initialFilterValues = {
+/* const initialFilterValues = {
     city: '',
     species: '',
     type: '',
     age: '',
     gender: '',
     size: ''
-}
+} */
 
 
 export function FilterPets(props) {
 
-    const {
-        values,
-        setValues,
-        handleInputChange
-    } = Filter(initialFilterValues);
+    const [data, setData] = useState({
+
+    });
+
+    const handleInputChange = (e) => {
+        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+        setData({
+            ...data,
+            [e.target.name]: value
+        });
+        console.log(data)
+    }
 
 
 
-    useEffect(() => {
-
-
-    }, [])
 
 
     // let disableFilters = (status) => {
@@ -54,7 +57,7 @@ export function FilterPets(props) {
             <FilterForm>
                 <div className="p-filter">
                     <p className="p-filter__title">Ciudad</p>
-                    <select class="p-filter__select" name="city" value={values.city} onChange={handleInputChange} >
+                    <select class="p-filter__select" value={data.city} onChange={handleInputChange} >
                         <option value="Madrid">Madrid</option>
                         <option value="Barcelona">Barcelona</option>
                         <option value="Valencia">Valencia</option>
@@ -76,22 +79,57 @@ export function FilterPets(props) {
                 </div>
                 <div className="p-filter-especie">
                     <p className="p-filter__title">Especie</p>
-                    <div className="p-input-wrap">
-                        <InputImg label={'Perro'} name={'species'} value={values.species} onChange={handleInputChange} />
-                        <InputImg label={'Gato'} name={'species'} value={values.species} onChange={handleInputChange}/>
-                        <InputImg label={'Conejo'} name={'species'} value={values.species} onChange={handleInputChange}/>
-                        <InputImg label={'Cobaya'} name={'species'} value={values.species} onChange={handleInputChange} />
-                        <InputImg label={'Pequeño mamífero'} name={'species'} value={values.species} onChange={handleInputChange}/>
-                        <InputImg label={'Hurón'} name={'species'} value={values.species} onChange={handleInputChange}/>
-                        <InputImg label={'Pez'} name={'species'} value={values.species} onChange={handleInputChange}/>
-                        <InputImg label={'Reptil'} name={'species'} value={values.species} onChange={handleInputChange}/>
-                        <InputImg label={'Anfibio'} name={'species'} value={values.species} onChange={handleInputChange}/>
-                        <InputImg label={'Arácnido o insecto'} name={'species'} value={values.species} onChange={handleInputChange}/>
-                        <InputImg label={'Ave'} name={'species'} value={values.species} onChange={handleInputChange}/>
+                    <div className="p-input-wrap c-input-img">
+                        <input id='Perro' className="c-input-img__input" value={data.species} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Perro' className="c-input-img__label" >                    <span className="icon-dog size" /></label>
+                        <input id='Gato' className="c-input-img__input" value={data.species} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Gato' className="c-input-img__label" >                    <span className="icon-happy size" /></label>
+                        <input id='Conejo' className="c-input-img__input" value={data.species} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Conejo' className="c-input-img__label" >                    <span className="icon-rabbit size" /></label>
+                        <input id='Cobaya' className="c-input-img__input" value={data.species} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Cobaya' className="c-input-img__label" >                    <span className="icon-mouse size" /></label>
+                        <input id='Pequeño mamífero' className="c-input-img__input" value={data.species} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Pequeño mamífero' className="c-input-img__label" >                    <span className="icon-hedgehog size" /></label>
+                        <input id='Hurón' className="c-input-img__input" value={data.species} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Hurón' className="c-input-img__label" >                    <span className="icon-ferret size" /></label>
+                        <input id='Pez' className="c-input-img__input" value={data.species} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Pez' className="c-input-img__label" >                    <span className="icon-tropical-fish size" /></label>
+                        <input id='Reptil' className="c-input-img__input" value={data.species} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Reptil' className="c-input-img__label" >                    <span className="icon-snake size" /></label>
+                        <input id='Anfibio' className="c-input-img__input" value={data.species} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Anfibio' className="c-input-img__label" >                    <span className="icon-frog size" /></label>
+                        <input id='Arácnido o insecto' className="c-input-img__input" value={data.species} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Arácnido o insecto' className="c-input-img__label" >                    <span className="icon-spider size" /></label>
+                        <input id='Ave' className="c-input-img__input" value={data.species} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Ave' className="c-input-img__label" >                    <span className="icon-parrot size" /></label>
+
+
+                        {/* <InputImg label={'Perro'} name="perro" checked={data.perro} onChange={handleInputChange} />
+                        <InputImg label={'Gato'} species='Gato' />
+                        <InputImg label={'Conejo'} />
+                        <InputImg label={'Cobaya'} />
+                        <InputImg label={'Pequeño mamífero'} />
+                        <InputImg label={'Hurón'} />
+                        <InputImg label={'Pez'} />
+                        <InputImg label={'Reptil'} />
+                        <InputImg label={'Anfibio'} />
+                        <InputImg label={'Arácnido o insecto'} />
+                        <InputImg label={'Ave'} /> */}
                     </div>
                     <div className="p-filter">
                         <p className="p-filter__title">Tipo</p>
-                        <select class="p-filter__select" name="type" value={values.type} onChange={handleInputChange}>
+                        <select class="p-filter__select" value={data.type} onChange={handleInputChange}>
                             <option value="Golden">Golden</option>
                             <option value="Podenco">Podenco</option>
                             <option value="Pastor Belga">Pastor Belga</option>
@@ -100,7 +138,7 @@ export function FilterPets(props) {
                 </div>
                 <div className="p-filter">
                     <p className="p-filter__title">Edad</p>
-                    <select class="p-filter__select" name="age" value={values.age} onChange={handleInputChange}>
+                    <select class="p-filter__select" value={data.age} onChange={handleInputChange}>
                         <option value="Cachorro">Cachorro</option>
                         <option value="Joven">Joven</option>
                         <option value="Adulto">Adulto</option>
@@ -109,18 +147,42 @@ export function FilterPets(props) {
                 <div className="p-filter">
                     <p className="p-filter__title">Sexo</p>
                     {/* <FormControl> */}
-                    <div className="d-flex p-input-center">
-                        <InputImg label={'Hembra'} name={'gender'} value={values.species} onChange={handleInputChange}/>
-                        <InputImg label={'Macho'} name={'gender'} value={values.species} onChange={handleInputChange}/>
+                    <div className="d-flex p-input-center c-input-img">
+
+                        <input id='Hembra' className="c-input-img__input" value={data.gender} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Hembra' className="c-input-img__label" >                    <span className="icon-femenine-1 size" /></label>
+                        <input id='Macho' className="c-input-img__input" value={data.gender} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Macho' className="c-input-img__label" >                    <span className="icon-masculine size" /></label>
+
+
+
+                        {/* <InputImg label={'Hembra'} gender='Hembra'checked={data.gender} onChange={handleInputChange} />
+                        <InputImg label={'Macho'} checked={data.gender} onChange={handleInputChange} /> */}
                     </div>
                     {/* </FormControl> */}
                 </div>
                 <div className="p-filter">
                     <p className="p-filter__title">Tamaño</p>
-                    <div className="d-flex p-input-center">
-                        <InputImg label={'Pequeño'} name={'size'} value={values.species} onChange={handleInputChange} />
-                        <InputImg label={'Mediano'} name={'size'} value={values.species} onChange={handleInputChange}/>
-                        <InputImg label={'Grande'} name={'size'} value={values.species} onChange={handleInputChange}/>
+                    <div className="d-flex p-input-center c-input-img">
+
+                        <input id='Pequeño' className="c-input-img__input" value={data.size} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Pequeño' className="c-input-img__label" >                    <span className="icon-dog size" /></label>
+                        <input id='Mediano' className="c-input-img__input" value={data.size} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Mediano' className="c-input-img__label" >                    <span className="icon-dog size" /></label>
+                        <input id='Grande' className="c-input-img__input" value={data.size} onChange={handleInputChange
+                        } type="checkbox" alt="Submit" width="48" height="48" />
+                        <label for='Grande' className="c-input-img__label" >                    <span className="icon-dog size" /></label>
+
+
+
+
+                        {/* <InputImg label={'Pequeño'} onChange={handleInputChange} />
+                        <InputImg label={'Mediano'} onChange={handleInputChange} />
+                        <InputImg label={'Grande'} onChange={handleInputChange} /> */}
                     </div>
 
                 </div>
