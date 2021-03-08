@@ -62,7 +62,7 @@ export function Routes() {
                 <LoginFormPage />
             </Route>
             <Route exact path={"/"}>
-                <SplashPage />
+                <OnBoardingPage />
             </Route>
             <Route path={"/menu"}>
                 <HomeCard></HomeCard>
