@@ -30,7 +30,18 @@ export function FilterPets(props) {
     }
 
 
-
+    const inputSelected = (e) => {
+        const inputs = document.getElementsByName('species');
+        for (let i = 0; i < inputs.length; i++) {
+            const element = array[i];
+            
+        }
+        const id = e.target.id;
+        let inputSelected = document.getElementById(id);
+        if (inputSelected.checked) {
+            console.log('estoy aquiii' + e.target.value);
+        }
+    }
 
 
 
@@ -73,7 +84,7 @@ export function FilterPets(props) {
                     <p className="p-filter__title">Especie</p>
                     <div className="p-input-wrap c-input-img">
                         <input id='perro' className="c-input-img__input" name="species" value='perro' onChange={handleInputChange
-                        } type="checkbox" alt="Submit" />
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
                         <label htmlFor='perro' className="c-input-img__label" >
                             <span className="icon-dog size" /> Perro
                         </label>
