@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
 import {ReactComponent as DropDown} from '../../../../assets/img/icons-fixed/svg/desplegable.svg';
-import {ReactComponent as Score} from '../../../../assets/img/icons-fixed/svg/patitas.svg';
 import './MapsPageLocation.scss';
 
 export function MapsPageLocation(props) {
@@ -17,7 +16,7 @@ export function MapsPageLocation(props) {
     }
 
     return (
-        <div className={"c-location"}>
+        <div className={"c-location"} id={`locations-${props.id}`}>
             <div className={"c-location__header"}>
                 <p className={"s-body-2"}>{props.location.name}</p>
                 <DropDown style={{transform: showAll ? "rotate(0)" : "rotate(180deg)", marginTop: "-0.7rem"}}
@@ -33,7 +32,11 @@ export function MapsPageLocation(props) {
                         <p className={"s-body-2"}>Puntuación</p>
                         <div className={"c-location__score"}>
                             <p className={"s-text-style-4"}>{props.location.score}</p>
-                            {/*TODO Still need to add them paws*/}
+                            <span className={"icon-paw-print"} style={props.location.score > 0.5 ? {color: '#E08888'} : {color: '#2d2d2d'}}/>
+                            <span className={"icon-paw-print"} style={props.location.score > 1.5 ? {color: '#E08888'} : {color: '#2d2d2d'}}/>
+                            <span className={"icon-paw-print"} style={props.location.score > 2.5 ? {color: '#E08888'} : {color: '#2d2d2d'}}/>
+                            <span className={"icon-paw-print"} style={props.location.score > 3.5 ? {color: '#E08888'} : {color: '#2d2d2d'}}/>
+                            <span className={"icon-paw-print"} style={props.location.score > 4.5 ? {color: '#E08888'} : {color: '#2d2d2d'}}/>
                         </div>
                         <div className={"c-location__address"}>
                             <p className={"s-text-style-2"}>{props.location.address1}</p>
@@ -44,14 +47,13 @@ export function MapsPageLocation(props) {
                 <div className={"c-location__opinions"}>
                     <div className={"c-location__opinions-header"}>
                         <p className={"s-body-2"}>Opiniones</p>
-                        {/*TODO Why won't you rotate?*/}
-                        <DropDown style={{transform: showAll ? "rotate(0)" : "rotate(180deg)", marginTop: "-0.7rem"}}
+                        <DropDown style={{transform: showOpinions ? "rotate(0)" : "rotate(180deg)", marginTop: "-0.7rem"}}
                                   fill={"#E08888"}
                                   onClick={dropdownOpinions}/>
                     </div>
                     <div className={"c-location__opinions-content"}>
                         {showOpinions && props.location.opinions.map((opinion, i) => <div
-                            className={"c-location__opinion"}>
+                            className={"c-location__opinion"} key={i}>
                             <img src={opinion.img} alt={"Opinión"} className={"c-location__opinion-image"}/>
                             <p className={"c-location__opinion-text"}>{`"${opinion.text}"`}</p>
                         </div>)}

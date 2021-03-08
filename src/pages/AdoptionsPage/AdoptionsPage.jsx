@@ -4,13 +4,10 @@ import SearchBar from '../../shared/SearchBar/SearchBar';
 import './AdoptionsPage.scss';
 import { AdoptionCard } from './components/AdoptionCard';
 import { API } from '../../shared/consts/api.consts';
-import { useParams } from 'react-router-dom';
 import { LoadingContext } from '../../core/Loading/contexts/LoadingContext';
 
 export function AdoptionsPage() {
 
-    // aquí llamamos a la api de application y le pasamos el id del user, que recogemos por params de la ruta o del contexto al estar el usuario logeado
-    // lo dejo así por ahora
     const {setIsLoading} = useContext(LoadingContext);
 
     const [applications, setApplications] = useState([
@@ -20,13 +17,13 @@ export function AdoptionsPage() {
             }
         }
     ]);
-
-    const param = useParams();
-    const userId = param.userId;  
+ 
+    const user = (JSON.parse(localStorage.getItem('userData')));
   
     const getApplications = () =>{
+        console.log(user);
         setIsLoading(true);
-        API.get('/application/user/' + userId).then((results)=> {
+        API.get('/application/user/' + user._id).then((results)=> {
             setIsLoading(false);
             setApplications(results.data.results);
             console.log(results.data.results);
