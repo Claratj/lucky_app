@@ -36,7 +36,11 @@ export function HomePage() {
     return (
         <div className="container flex flex-column align-items-center home-page">
           <div className="welcome">
+          {user ? 
             <h3 className="welcome__title s-text-style-5">¡Hola {user.name}!</h3> 
+          :
+          <h3 className="welcome__title s-text-style-5">¡Hola!</h3> 
+          }            
           </div>
             <div className="c-home-page">
             <Swiper className="home"  
