@@ -3,7 +3,7 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import './MapsPage.scss';
 import Footer from "../../core/Footer/Footer";
 import {MapsPageLocation} from "./components/MapsPageLocation/MapsPageLocation";
-import {GoogleMap, Marker, useLoadScript} from "@react-google-maps/api";
+import {GoogleMap, InfoWindow, Marker, useLoadScript} from "@react-google-maps/api";
 import MapStyles from './components/MapStyles';
 
 export function MapsPage() {
@@ -54,6 +54,7 @@ export function MapsPage() {
         lng: 0,
     })
     const [inputValue, setInputValue] = useState('');
+    const [selected, setSelected] = useState(null);
 
     const libraries = ['places'];
 
@@ -95,24 +96,44 @@ export function MapsPage() {
 
     return (
         <div className={"p-maps-page"}>
+
             <div className={"container"}>
+
                 <div className={"p-maps-page__search"}>
                     <input className={"p-maps-page__search-bar"} placeholder={"¿Qué estás buscando?"} value={inputValue}
                            onChange={(e) => setInputValue(e.target.value)}/>
                     <p className={"p-maps-page__clear"} onClick={() => setInputValue('')}>x</p>
                 </div>
+
                 {isLoaded && <div className={"p-maps-page__map"}>
-                    <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={14} options={options} onLoad={onMapLoad}>
+                    <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={14} options={options}
+                               onLoad={onMapLoad}>
+
                         {locations.map((location, i) => <Marker key={i}
                                                                 position={{lat: location.lat, lng: location.lng}}
                                                                 icon={{
                                                                     url: 'https://cdn.zeplin.io/5e2888579d7785572934fb93/assets/F29C25E8-57BD-47CE-852F-0674F0EDD1D6.png',
                                                                     scaledSize: new window.google.maps.Size(32, 32),
+                                                                    origin: new window.google.maps.Point(0, 0),
+                                                                    anchor: new window.google.maps.Point(15, 15),
+                                                                }}
+                                                                onClick={() => {
+                                                                    setSelected(location)
+                                                                    window.location.href = `#locations-${i}`;
                                                                 }}/>)}
+
+
+                        {selected ? (<InfoWindow position={{lat: selected.lat, lng: selected.lng}}
+                                                 onCloseClick={() => setSelected(null)}>
+                            <div>
+                                <h2>{selected.name}</h2>
+                            </div>
+                        </InfoWindow>) : null}
                     </GoogleMap>
                 </div>}
+
                 <div className={"p-maps-page__response"}>
-                    {locations.map((location, i) => <MapsPageLocation key={i} location={location}/>)}
+                    {locations.map((location, i) => <MapsPageLocation key={i} id={i} location={location}/>)}
                 </div>
             </div>
             <Footer/>
