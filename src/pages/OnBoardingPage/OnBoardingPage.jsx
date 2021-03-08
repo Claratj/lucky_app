@@ -11,12 +11,14 @@ import { SplashContext } from './SplashContext/SplashContext';
 
 
 
+
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 
 
 export function OnBoardingPage() {
-  const {setSplash} = useContext(SplashContext);
+
+const {isSplash, setSplash} = useContext(SplashContext);
 
   const setSplashPage = ()=>{
     setSplash(true);
@@ -27,7 +29,7 @@ export function OnBoardingPage() {
   useEffect(setSplashPage, [])
 
   return (
-    <div className="base-c">
+    isSplash == false && <div className="base-c">
       <NavLink to={"/login"}>
         <div className="close">x</div>
       </NavLink>
