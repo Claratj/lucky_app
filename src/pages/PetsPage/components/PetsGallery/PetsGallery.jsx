@@ -5,26 +5,12 @@ import { LoadingContext } from '../../../../core/Loading/contexts/LoadingContext
 import { API } from '../../../../shared/consts/api.consts';
 import './PetsGallery.scss';
 
-export default function PetsGallery() {
-    const [pets, setPets] = useState([]);
-
-    const {setIsLoading} = useContext(LoadingContext);
-
-    const getPets = ()=>{
-        setIsLoading(true);
-        API.get('/pet').then((res)=>{
-            setIsLoading(false);
-            setPets(res.data.results)
-        })
-    }
-
-    useEffect(getPets, []);
-
+export default function PetsGallery(props) {
 
     
     return (
         <div className="c-galleryPets">
-        {pets.map((item, i)=>
+        {props.pets.map((item, i)=>
         <Link to={"/pet/" + item._id} className="c-galleryPets__link" key={i}>
             <div className="c-galleryPets__card">
             <div className="c-galleryPets__img">

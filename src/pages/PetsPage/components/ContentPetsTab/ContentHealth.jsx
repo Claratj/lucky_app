@@ -3,7 +3,7 @@ import React from 'react';
 import './ContentHealth.scss';
 import iconPaw from '../../../../assets/img/pawprint.png';
 export default function ContentHealth(props) {
-console.log(props.pet.health.vaccine)
+
 
     return (
         

@@ -5,7 +5,8 @@ import './ContentAdoption.scss';
 
 
 export default function ContentAdoption(props) {
-console.log(props.pet)
+
+
     return (
         <div className="p-detailAdoption">
         <div className="p-detailAdoption__require">

@@ -26,7 +26,7 @@ export default function ContentDate(props) {
         </div>
         <div className="p-detailDate__personality">
         <h3 className="p-detailDate__title">Personalidad</h3>
-        { personality && personality.map((item)=><p className="p-detailDate__person">{item}</p> )}
+        { personality && personality.map((item, i)=><p key={i} className="p-detailDate__person">{item}</p> )}
         </div> 
         <div className="p-detailDate__history">
         <h3 className="p-detailDate__title">Historia</h3>  
