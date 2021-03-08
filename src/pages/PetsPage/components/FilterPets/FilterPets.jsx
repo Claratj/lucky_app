@@ -17,7 +17,7 @@ export function FilterPets(props) {
             ...data,
             [e.target.name]: value
         });
-        // console.log(data)
+        console.log(data)
     }
 
 
@@ -25,7 +25,6 @@ export function FilterPets(props) {
         const name = e.target.name;
         const inputsName = document.getElementsByName(name);
 
-        console.log(inputsName);
         for (let i = 0; i < inputsName.length; i++) {
             const input = inputsName[i];
             if (input.checked == false) {
@@ -36,7 +35,6 @@ export function FilterPets(props) {
     }
     const clearFilter = () => {
         const inputs = document.getElementsByTagName('input');
-        console.log(inputs);
         for (let i = 0; i < inputs.length; i++) {
             const input = inputs[i];
             if (input.disabled == true) {
@@ -52,7 +50,7 @@ export function FilterPets(props) {
         // setSelected(true);
     }
 
-    const species = {    
+    const species = {
         perro: ['Beagle', 'Bóxer', 'Bulldog inglés', 'Caniche', 'Chihuahua', 'Dálmata', 'Golden retirever', 'Husky siberiano', 'Pastor alemán', 'Yorkshire terrier', 'Mestizo', 'Otro'],
         gato: ['Azul ruso', 'Bobtail americano', 'Burmés', 'Maine Coon', 'Manés', 'Persa', 'Ragdoll', 'Siamés', 'Siberiano', 'Somalí', 'Mestizo', 'Otro'],
         conejo: ['Belier', 'Blanco de Hotot', 'Cabeza de León', 'English Angora', 'Gigante de Flandes', 'Rex', 'Tan', 'Toy', 'Otro'],
