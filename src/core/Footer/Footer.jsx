@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Footer.scss';
-import home from '../../assets/img/casa.svg';
+
 import mapa from '../../assets/img/mapa.svg';
 import mascota from '../../assets/img/mascota.svg';
 import perfil from '../../assets/img/perfil.svg';
@@ -19,9 +19,9 @@ export function Footer() {
 
     return (
         <div className="c-footer">
-            <NavLink to="/home" className="c-footer__link" activeClassName="active"><img src={home} alt={"Home"}/></NavLink>
-            <NavLink to="/maps" className="c-footer__link" activeClassName="active"><img src={mapa} alt={"Mapa"}/></NavLink>
-            <NavLink to="/pets" className="c-footer__link" activeClassName="active"><img src={mascota} alt={"Mascota"}/></NavLink>
+            <NavLink to="/home" className="c-footer__link" activeClassName="active"><span className="icon-casa"></span></NavLink>
+            <NavLink to="/maps" className="c-footer__link" activeClassName="active"><span className="icon-alfiler"></span></NavLink>
+            <NavLink to="/pets" className="c-footer__link" activeClassName="active"><span className="icon-perro"></span></NavLink>
             <NavLink to="/profile">
             {user.image ? 
             <img src={user.image} alt={"Perfil"} className="c-footer__img"/>
