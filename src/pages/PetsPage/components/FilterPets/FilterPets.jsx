@@ -19,7 +19,7 @@ export function FilterPets(props) {
             [e.target.name]: value
         });
 
-        // console.log(data)
+        console.log(data);
     }
 
     console.log(data.species);
@@ -282,9 +282,10 @@ export function FilterPets(props) {
                 <div className="p-filter-btn-box">
                     <button className="c-button c-button__pink" type="reset" onClick={clearFilter}>Borrar filtros</button>
                     <Link to="/pets">
-                        <button className="c-button c-button__pink" typye="submit">Aplicar</button></Link>
+                        <button className="c-button c-button__pink" type="submit">Aplicar</button>
+                    </Link>
                 </div>
             </form>
-        </div >
+        </div>
     )
 }
