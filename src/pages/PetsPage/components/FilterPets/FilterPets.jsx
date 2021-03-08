@@ -10,6 +10,7 @@ export function FilterPets(props) {
     });
 
 
+
     const handleInputChange = (e) => {
         // const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
         const value = e.target.value;
@@ -17,9 +18,11 @@ export function FilterPets(props) {
             ...data,
             [e.target.name]: value
         });
-        console.log(data)
+
+        // console.log(data)
     }
 
+    console.log(data.species);
 
     const inputSelected = (e) => {
         const name = e.target.name;
@@ -27,17 +30,19 @@ export function FilterPets(props) {
 
         for (let i = 0; i < inputsName.length; i++) {
             const input = inputsName[i];
-            if (input.checked == false) {
+            if (input.checked === false) {
                 input.disabled = true;
             }
         }
 
     }
+
+
     const clearFilter = () => {
         const inputs = document.getElementsByTagName('input');
         for (let i = 0; i < inputs.length; i++) {
             const input = inputs[i];
-            if (input.disabled == true) {
+            if (input.disabled === true) {
                 input.removeAttribute('disabled');
             }
         }
@@ -55,13 +60,64 @@ export function FilterPets(props) {
         gato: ['Azul ruso', 'Bobtail americano', 'Burmés', 'Maine Coon', 'Manés', 'Persa', 'Ragdoll', 'Siamés', 'Siberiano', 'Somalí', 'Mestizo', 'Otro'],
         conejo: ['Belier', 'Blanco de Hotot', 'Cabeza de León', 'English Angora', 'Gigante de Flandes', 'Rex', 'Tan', 'Toy', 'Otro'],
         cobaya: ['Americana', 'Crestada', 'Satinada', 'Otros'],
-        mamifero: ['Otros'],
-        huron: ['Otros'],
         pez: ['Luchadores de Siam', 'Guppys', 'Guramis', 'Pez disco', 'Tetras', 'Otros'],
         reptil: ['Anolis', 'Camaleón', 'Chuckwalla', 'Iguana marina', 'Lagarto azul', 'Monstruo de Gila', 'Otros'],
         anfibio: ['Rana arborícola', 'Rana punta de flecha', 'Salamandra', 'Tritón', 'Otros'],
-        insecto: ['Araña pollito', 'Hormiga', 'Insecto palo', 'Milpiés gigante', 'Tarántula mexicana', 'Otros'],
+        aracnido: ['Araña pollito', 'Hormiga', 'Insecto palo', 'Milpiés gigante', 'Tarántula mexicana', 'Otros'],
         ave: ['Agaporni', 'Cacatúa', 'Jilguero', 'Loro', 'Ninfa', 'Periquito', 'Otros']
+    }
+
+    let selected = data.species;
+    let listType = []
+
+    switch (selected !== null) {
+        case (selected === 'perro'):
+            listType = species.perro.map((type, i) =>
+                <option key={i} value={type}>{type}</option>
+            );
+            break;
+
+        case (selected === 'gato'):
+            listType = species.gato.map((type, i) =>
+                <option key={i} value={type}>{type}</option>
+            );
+            break;
+        case (selected === 'conejo'):
+            listType = species.conejo.map((type, i) =>
+                <option key={i} value={type}>{type}</option>
+            );
+            break;
+        case (selected === 'cobaya'):
+            listType = species.cobaya.map((type, i) =>
+                <option key={i} value={type}>{type}</option>
+            );
+            break;
+        case (selected === 'pez'):
+            listType = species.pez.map((type, i) =>
+                <option key={i} value={type}>{type}</option>
+            );
+            break;
+        case (selected === 'reptil'):
+            listType = species.reptil.map((type, i) =>
+                <option key={i} value={type}>{type}</option>
+            );
+            break;
+        case (selected === 'anfibio'):
+            listType = species.anfibio.map((type, i) =>
+                <option key={i} value={type}>{type}</option>
+            );
+            break;
+        case (selected === 'aracnido'):
+            listType = species.aracnido.map((type, i) =>
+                <option key={i} value={type}>{type}</option>
+            );
+            break;
+        case (selected === 'ave'):
+            listType = species.ave.map((type, i) =>
+                <option key={i} value={type}>{type}</option>
+            );
+            break;
+
     }
 
 
@@ -123,9 +179,9 @@ export function FilterPets(props) {
                             <span className="icon-mouse size" /> Cobaya
                         </label>
 
-                        <input id='pequeñoMamífero' className="c-input-img__input" name="species" value='Pequeño mamífero' onChange={handleInputChange
+                        <input id='pequeñoMamifero' className="c-input-img__input" name="species" value='Pequeño mamífero' onChange={handleInputChange
                         } onClick={inputSelected} type="checkbox" alt="Submit" />
-                        <label htmlFor='pequeñoMamífero' className="c-input-img__label" >
+                        <label htmlFor='pequeñoMamifero' className="c-input-img__label" >
                             <span className="icon-hedgehog size" /> Pequeño mamífero
                         </label>
 
@@ -166,14 +222,15 @@ export function FilterPets(props) {
                         </label>
 
                     </div>
-                    <div className="p-filter">
-                        <p className="p-filter__title">Tipo</p>
-                        <select class="p-filter__select" name="typePet" value={data.type} onChange={handleInputChange}>
-                            <option value="Golden">Golden</option>
-                            <option value="Podenco">Podenco</option>
-                            <option value="Pastor Belga">Pastor Belga</option>
-                        </select>
-                    </div>
+
+                    {selected && selected !== 'huron' && selected !== 'Pequeño mamífero' &&
+                        < div className="p-filter">
+                            <p className="p-filter__title">Tipo</p>
+                            <select class="p-filter__select" name="typePet" value={data.type} onChange={handleInputChange}>
+                                {listType}
+                            </select>
+                        </div>
+                    }
                 </div>
                 <div className="p-filter">
                     <p className="p-filter__title">Edad</p>
@@ -228,6 +285,6 @@ export function FilterPets(props) {
                         <button className="c-button c-button__pink" typye="submit">Aplicar</button></Link>
                 </div>
             </form>
-        </div>
+        </div >
     )
 }
