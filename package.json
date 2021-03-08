@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "@reach/combobox": "^0.13.2",
     "@react-google-maps/api": "^2.1.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -22,6 +23,7 @@
     "react-step-builder": "^2.0.6",
     "react-whatsapp": "^0.2.1",
     "swiper": "^6.4.15",
+    "use-places-autocomplete": "^1.9.1",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

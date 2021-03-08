@@ -35,4 +35,14 @@
   &__response {
     margin-top: 2.25rem;
   }
+
+  &__popover {
+    padding: 0 2rem 1rem 2rem;
+    border: 1px solid $color-pink;
+    background-color: white;
+    border-radius: 1rem;
+    li {
+      margin-top: 0.5rem;
+    }
+  }
 }
