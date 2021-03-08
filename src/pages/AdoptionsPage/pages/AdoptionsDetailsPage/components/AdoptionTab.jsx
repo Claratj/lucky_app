@@ -1,5 +1,5 @@
 import { MenuItem, TextField } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { AddressCard } from './AddressCard';
 import localization from 'moment/locale/es'
 import calendar from '../../../../../assets/img/calendar-r.svg';
@@ -12,6 +12,9 @@ import { useParams } from 'react-router';
 
 import { PopUpContext } from '../../../../../shared/Context/PopUpContext';
 import { PopUpAdoptionSent } from './PopUpAdoptionSent/PopUpAdoptionSent';
+import {GoogleMap, Marker, useLoadScript} from "@react-google-maps/api";
+
+import MapStyles from '../../../../MapsPage/components/MapStyles';
 
 export function AdoptionTab(props){
     const [show, setShow] = useState(false);
@@ -48,14 +51,55 @@ export function AdoptionTab(props){
         });
         setPop(true);
     }
+    const libraries = ['places'];
+    const {isLoaded, loadError} = useLoadScript({
+        googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY,
+        libraries,
+    });
+    const location = {
+            lat: props.lat,
+            lng: props.long,
+    }
 
+    const mapContainerStyle = {
+        width: '100%',
+        height: '7rem',
+    }
+    
+    const center = {
+        lat: props.lat,
+        lng: props.long
+    }
+    const mapRef = useRef();
+    const onMapLoad = useCallback((map) => {
+        mapRef.current = map;
+    });
+
+    const options = {
+        styles: MapStyles,
+        disableDefaultUI: true,
+    };
     return(
 
         <div className="container flex flex-column align-items-center tab">
         <div className="tab__address">        
             <p className="s-body-2 tab__copy">Dirección</p>
             <AddressCard organization={props.organization} address={props.address}></AddressCard> </div>
-            MAP
+            {isLoaded && <div className={"tab__map"}>
+                    <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={16} options={options}
+                               onLoad={onMapLoad}>
+
+                        <Marker
+                                                                position={{lat: location.lat, lng: location.lng}}
+                                                                icon={{
+                                                                    url: 'https://cdn.zeplin.io/5e2888579d7785572934fb93/assets/F29C25E8-57BD-47CE-852F-0674F0EDD1D6.png',
+                                                                    scaledSize: new window.google.maps.Size(32, 32),
+                                                                    origin: new window.google.maps.Point(0, 0),
+                                                                    anchor: new window.google.maps.Point(15, 15),
+                                                                }}
+                                                                />)}
+                    </GoogleMap>
+                </div>}
             <form noValidate className="appointment-form">
                 <label className="s-body-2 tab__copy tab__copy--top">Día</label>
                 {!show &&

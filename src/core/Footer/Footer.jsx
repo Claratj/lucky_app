@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Footer.scss';
 
-import mapa from '../../assets/img/mapa.svg';
-import mascota from '../../assets/img/mascota.svg';
 import perfil from '../../assets/img/avatar-default.svg';
 import mS from '../../assets/img/mS.svg';
 import '../../pages/HomePage/HomeCard/HomeCard';

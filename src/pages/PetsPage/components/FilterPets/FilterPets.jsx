@@ -54,8 +54,6 @@ export function FilterPets(props) {
         gato: ['Azul ruso', 'Bobtail americano', 'Burmés', 'Maine Coon', 'Manés', 'Persa', 'Ragdoll', 'Siamés', 'Siberiano', 'Somalí', 'Mestizo', 'Otro'],
         conejo: ['Belier', 'Blanco de Hotot', 'Cabeza de León', 'English Angora', 'Gigante de Flandes', 'Rex', 'Tan', 'Toy', 'Otro'],
         cobaya: ['Americana', 'Crestada', 'Satinada', 'Otros'],
-        mamifero: ['Otros'],
-        huron: ['Otros'],
         pez: ['Luchadores de Siam', 'Guppys', 'Guramis', 'Pez disco', 'Tetras', 'Otros'],
         reptil: ['Anolis', 'Camaleón', 'Chuckwalla', 'Iguana marina', 'Lagarto azul', 'Monstruo de Gila', 'Otros'],
         anfibio: ['Rana arborícola', 'Rana punta de flecha', 'Salamandra', 'Tritón', 'Otros'],
