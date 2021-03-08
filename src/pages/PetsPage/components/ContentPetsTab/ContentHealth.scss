@@ -1,9 +1,10 @@
 @import '../../../../styles/tools/variable.tools';
 .p-detailhealth{
-
+    margin: 1rem;
     
     &__list{
        
+        margin-left: 1rem;
         font-weight: 600;
         font-size: 1rem;
     }
@@ -13,15 +14,18 @@
         font-weight: 800;
         color: $color-blue-text;
         font-size: 1rem;
+        margin-top:0.5rem;
+        margin-left: 0.5rem;
     }
 
     &__about{
         border: 1px solid rgba(1, 116, 142, .15);
         border-radius: 5px;
         margin-top: 2rem;
-        width: 115%;
+        margin-bottom: 2.1rem;
+        width: 22rem;
         height: 6rem;
-        margin-left: -1.4rem;
+        
     }
 
     &__abou{
@@ -36,9 +40,5 @@
     list-style: none;
     margin-top: -2rem;
     margin-bottom: 2rem;
-    &__li{
-        
-    }
-   
-    
+       
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="34pt" height="33pt" viewBox="0 0 34 33">
+<g enable-background="new">
+<clipPath id="cp0">
+<path transform="matrix(1,0,0,-1,0,33)" d="M 12.25722 11.70023 L 10.80413 13.10079 L 17.18394 19.71985 L 23.80214 13.32833 L 22.40015 11.87662 L 17.23509 16.86477 L 12.25722 11.70023 Z " fill-rule="evenodd"/>
+</clipPath>
+<g clip-path="url(#cp0)">
+<clipPath id="cp1">
+<path transform="matrix(1,0,0,-1,0,33)" d="M -316 -537 L 59 -537 L 59 481 L -316 481 Z "/>
+</clipPath>
+<g clip-path="url(#cp1)">
+<path transform="matrix(1,0,0,-1,0,33)" d="M 28.91354 6.989546 L 5.917048 6.58814 L 5.604072 24.51849 L 28.60057 24.91989 Z "/>
+</g>
+</g>
+</g>
+</svg>

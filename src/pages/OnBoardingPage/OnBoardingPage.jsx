@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/swiper.scss';
@@ -7,6 +7,8 @@ import imgAdopt from '../../assets/img/boarding-adoptar.svg';
 import imgAso from '../../assets/img/boarding-asociaciones.svg';
 import './OnBoardingPage.scss';
 import { NavLink } from 'react-router-dom';
+import { SplashContext } from './SplashContext/SplashContext';
+
 
 
 
@@ -16,10 +18,18 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export function OnBoardingPage() {
 
+const {isSplash, setSplash} = useContext(SplashContext);
 
+  const setSplashPage = ()=>{
+    setSplash(true);
+    setTimeout(() => {
+      setSplash(false)
+    }, 3800);
+  }
+  useEffect(setSplashPage, [])
 
   return (
-    <div className="base-c">
+    isSplash == false && <div className="base-c">
       <NavLink to={"/login"}>
         <div className="close">x</div>
       </NavLink>

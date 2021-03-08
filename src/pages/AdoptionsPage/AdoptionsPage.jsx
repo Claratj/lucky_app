@@ -4,13 +4,13 @@ import SearchBar from '../../shared/SearchBar/SearchBar';
 import './AdoptionsPage.scss';
 import { AdoptionCard } from './components/AdoptionCard';
 import { API } from '../../shared/consts/api.consts';
-import { useParams } from 'react-router-dom';
 import { LoadingContext } from '../../core/Loading/contexts/LoadingContext';
 
-export function AdoptionsPage() {
+let allApps = [];
 
-    // aquí llamamos a la api de application y le pasamos el id del user, que recogemos por params de la ruta o del contexto al estar el usuario logeado
-    // lo dejo así por ahora
+export function AdoptionsPage() {
+    const [search, setSearch] = useState(null);
+
     const {setIsLoading} = useContext(LoadingContext);
 
     const [applications, setApplications] = useState([
@@ -21,23 +21,39 @@ export function AdoptionsPage() {
         }
     ]);
 
-    const param = useParams();
-    const userId = param.userId;  
+ 
+    const user = (JSON.parse(localStorage.getItem('userData')));
   
     const getApplications = () =>{
         setIsLoading(true);
-        API.get('/application/user/' + userId).then((results)=> {
+        API.get('/application/user/' + user._id).then((results)=> {
             setIsLoading(false);
-            setApplications(results.data.results);
-            console.log(results.data.results);
+            allApps = results.data.results;
+            setApplications(results.data.results);            
         });
     }
 
+    const filterItem = ()=>{
+        const filterApps = allApps.filter((app)=>{
+            if (app.pet.name.toLowerCase().includes(search.toLowerCase())) {
+                return app;
+            }
+        })
+        setApplications(filterApps);
+    }
+
     useEffect(getApplications, []);
+    useEffect(() => {
+        if (search) {
+            filterItem();
+        }else{
+            getApplications()
+        }
+    }, [search]);
     
     return(
         <div className="p-adoptions">
-            <SearchBar></SearchBar>
+            <SearchBar handleChange={(i)=> setSearch(i.value)}></SearchBar>
             <div className="p-adoptions__main">
             {applications.map((app, i)=>
             <AdoptionCard name={app.pet.name} city={app.pet.city} gender={app.pet.gender} img={app.pet.images[0]} status={app.status} id={app.pet._id}></AdoptionCard>

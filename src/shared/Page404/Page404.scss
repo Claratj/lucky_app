@@ -1,0 +1,28 @@
+@import '../../styles/tools/variable.tools';
+.p-error{
+    &__img{
+        margin-top: 8rem;
+        margin-left: 1rem;
+        width: 90%;
+    }
+
+&__sorry{
+    font-size: 3rem;
+    color: $color-dark-blue;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+&__not{
+    font-size: 2rem;
+    color: $color-blue-text;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+&__logo{
+    width: 70%;
+    margin-top: 4rem;
+    margin-left: 3.5rem;
+}
+}

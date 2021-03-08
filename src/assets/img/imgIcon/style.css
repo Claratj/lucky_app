@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?auuxgm');
-  src:  url('fonts/icomoon.eot?auuxgm#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?auuxgm') format('truetype'),
-    url('fonts/icomoon.woff?auuxgm') format('woff'),
-    url('fonts/icomoon.svg?auuxgm#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?d3v017');
+  src:  url('fonts/icomoon.eot?d3v017#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?d3v017') format('truetype'),
+    url('fonts/icomoon.woff?d3v017') format('woff'),
+    url('fonts/icomoon.svg?d3v017#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -88,8 +88,20 @@
 .icon-happy:before {
   content: "\e914";
 }
+.icon-alfiler:before {
+  content: "\e91b";
+}
+.icon-perro:before {
+  content: "\e91c";
+}
+.icon-casa:before {
+  content: "\e91d";
+}
 .icon-paw-print:before {
   content: "\e91a";
+}
+.icon-camara:before {
+  content: "\e91e";
 }
 .icon-frog:before {
   content: "\e915";

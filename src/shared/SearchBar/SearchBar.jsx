@@ -5,20 +5,19 @@ import iconBack from '../../assets/img/atras.png';
 import iconSearch from '../../assets/img/buscar.png';
 import './SearchBar.scss';
 
-export default function SearchBar() {
+export default function SearchBar(props) {
     return (
         <div className="c-searchBar">
            <div className="c-searchBar__back"></div>
-           {/* habría que cambiar el enlace para que te llevara atrás y no a /  */}
-           <NavLink to="/"><img src={iconBack} className="c-search__imgBack"></img></NavLink> 
+           <NavLink to="/home"><img src={iconBack} className="c-search__imgBack" alt=""/></NavLink> 
            <div className="c-searchBar__form">
-           <form>
                <input type="text" placeholder="Buscar" className="c-searchBar__input"></input>
-               <button className="c-searchBar__button"><img src={iconSearch}></img></button>
-            </form>   
+               <button className="c-searchBar__button"  onClick={()=>{
+                   const input = document.querySelector('input');
+                   props.handleChange(input)}}><img src={iconSearch} alt=""/></button>
            </div> 
            <div className="c-searchBar__filter">
-               <NavLink to="/"><img src={iconFilter} className="c-search__imgFilter"></img></NavLink>
+               <NavLink to="/"><img src={iconFilter} className="c-search__imgFilter" alt=""/></NavLink>
            </div> 
         </div>
     )

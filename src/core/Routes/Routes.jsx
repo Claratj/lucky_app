@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Switch,
     Route
@@ -12,13 +12,21 @@ import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDe
 import PetsPage from '../../pages/PetsPage/PetsPage';
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
+import { RegisterFormPage } from "../../pages/LoginPage/pages/RegisterFormPage/RegisterFormPage";
+
 import { LoginFormPage } from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
 import { AdoptionForm } from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
 import {FilterPets} from '../../pages/PetsPage/components/FilterPets/FilterPets';
+import {MapsPage} from "../../pages/MapsPage/MapsPage";
+import Page404 from '../../shared/Page404/Page404';
+import { SplashContext } from '../../pages/OnBoardingPage/SplashContext/SplashContext';
 
 export function Routes() {
+
+    const [isSplash, setSplash] = useState(false);
+    
     return (
         <Switch>
             <Route path="/pets/filter">
@@ -33,13 +41,16 @@ export function Routes() {
             <Route path="/profile">
                 <ProfilePage />
             </Route>
+            <Route path={"/maps"}>
+                <MapsPage/>
+            </Route>
             <Route path="/adoption-form/:petId">
                 <AdoptionForm />
             </Route>
-            <Route path="/adoptions/pet/:id">
+            <Route exact path="/adoptions/pet/:id">
                 <AdoptionsDeatilPage />
             </Route>
-            <Route path="/adoptions/:userId">
+            <Route path="/adoptions">
                 <AdoptionsPage />
             </Route>
             <Route exact path="/boarding">
@@ -48,12 +59,18 @@ export function Routes() {
             <Route path={"/login"}>
                 <LoginPage />
             </Route>
+            <Route path={"/register"}>
+              <RegisterFormPage />
+            </Route>
             <Route path={"/login-form"}>
                 <LoginFormPage />
             </Route>
+            <SplashContext.Provider value={{isSplash, setSplash}}>
+            <SplashPage></SplashPage>
             <Route exact path={"/"}>
-                <SplashPage />
+                <OnBoardingPage></OnBoardingPage>
             </Route>
+            </SplashContext.Provider>
             <Route path={"/menu"}>
                 <HomeCard></HomeCard>
             </Route>
@@ -61,7 +78,7 @@ export function Routes() {
                 <HomePage />
             </Route>
             <Route path="*">
-                <h1>ERROR</h1>
+                <Page404></Page404>
             </Route>
         </Switch>
     );
