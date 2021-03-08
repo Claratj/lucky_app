@@ -26,21 +26,25 @@ export function FilterPets(props) {
             ...data,
             [e.target.name]: value
         });
-        console.log(data)
+        // console.log(data)
     }
 
 
-    const inputSelected = (e) => {
-        const inputs = document.getElementsByName('species');
-        for (let i = 0; i < inputs.length; i++) {
-            const element = array[i];
-            
+    const inputSelected = () => {
+        const inputsSpecies = document.getElementsByName('species');
+        console.log(inputsSpecies);
+        for (let i = 0; i < inputsSpecies.length; i++) {
+            let input = inputsSpecies[i];
+            if (input.checked == false) {
+                input.disabled= true;
+                console.log(input);
+            }
         }
-        const id = e.target.id;
-        let inputSelected = document.getElementById(id);
-        if (inputSelected.checked) {
-            console.log('estoy aquiii' + e.target.value);
-        }
+        // const id = e.target.id;
+        // let inputSelected = document.getElementById(id);
+        // if (inputSelected.checked) {
+        //     console.log('estoy aquiii' + e.target.value);
+        // }
     }
 
 
@@ -90,7 +94,7 @@ export function FilterPets(props) {
                         </label>
 
                         <input id='gato' className="c-input-img__input" name="species" value='gato' onChange={handleInputChange
-                        } type="checkbox" alt="Submit" />
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
                         <label htmlFor='gato' className="c-input-img__label" >
                             <span className="icon-happy size" /> Gato
                         </label>
