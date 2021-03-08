@@ -10,9 +10,25 @@ import protectora from '../../../assets/img/protectoraHome.png';
 import salir from '../../../assets/img/salir.png';
 import Footer from '../../../core/Footer/Footer';
 import { CardMenu } from '../../../shared/CardMenu/CardMenu';
+import { API } from '../../../shared/consts/api.consts';
 
 export function HomeCard() {
 
+
+    const logout = (event) => {
+        event.preventDefault();
+        API.get('logout').then((res)=>{
+            if(res.data.logout){
+                localStorage.clear();
+                window.location.href = "/login-form";
+            
+            }
+
+        });
+     
+    }
+    const user = JSON.parse(localStorage.getItem('userData'));
+    
     return (
         <div className="container flex flex-column align-items-center mt-5">
             <CardMenu icon={protectora} title='Asociaciones protectoras' link='/'></CardMenu>
@@ -20,11 +36,14 @@ export function HomeCard() {
             <CardMenu icon={blogCopy} title='Curiosidades' link='/'></CardMenu>
             <div className="flex flex-column align-items-center full-width">
             <CardMenu icon={ayuda} title='Ayuda' link='/'></CardMenu>
-            <CardMenu icon={confi} title='Configuración' link='/'></CardMenu>
+            {user && 
+            <CardMenu icon={confi} title='Configuración' link='/'></CardMenu>}
             </div>
+            {user &&
             <div className="flex flex-column align-items-center session">
-            <CardMenu icon={salir} title='Cerrar sesión' link='/'></CardMenu>
+            <CardMenu icon={salir}  onClick={logout} title='Cerrar sesión' link=''></CardMenu>
             </div>
+            }
             <Footer />
 
         </div>        

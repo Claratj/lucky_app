@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom'
 import './SplashPage.scss';
 import img from '../../../assets/img/splash.svg';
 import { SplashContext } from "../SplashContext/SplashContext";
-
 export function SplashPage() {
 
     /* const [redirect, setRedirect] = useState(false)
@@ -17,7 +16,7 @@ export function SplashPage() {
         }
     }, []) */
 
-const {isSplash} = useContext(SplashContext)
+const {isSplash} = useContext(SplashContext);
 
     return (
        isSplash && <div className="base-c">

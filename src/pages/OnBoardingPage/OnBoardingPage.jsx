@@ -11,23 +11,25 @@ import { SplashContext } from './SplashContext/SplashContext';
 
 
 
+
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 
 
 export function OnBoardingPage() {
-  // const {setSplash} = useContext(SplashContext);
-  //
-  // const setSplashPage = ()=>{
-  //   setSplash(true);
-  //   setTimeout(() => {
-  //     setSplash(false)
-  //   }, 3800);
-  // }
-  // useEffect(setSplashPage, [])
+
+const {isSplash, setSplash} = useContext(SplashContext);
+
+  const setSplashPage = ()=>{
+    setSplash(true);
+    setTimeout(() => {
+      setSplash(false)
+    }, 3800);
+  }
+  useEffect(setSplashPage, [])
 
   return (
-    <div className="base-c">
+    isSplash == false && <div className="base-c">
       <NavLink to={"/login"}>
         <div className="close">x</div>
       </NavLink>
