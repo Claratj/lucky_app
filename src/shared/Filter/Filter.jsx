@@ -22,16 +22,16 @@ import React, { useState } from 'react';
 //     }
 // }
 
-export class FilterObject extends React.Component {
-    constructor(props) {
-        super(props);
+// export class FilterObject extends React.Component {
+//     constructor(props) {
+//         super(props);
 
-        this.state = {
-            species: props.species,
-            gender: props.gender
-        }
-    }
-}
+//         this.state = {
+//             species: props.species,
+//             gender: props.gender
+//         }
+//     }
+// }
 
 
 
