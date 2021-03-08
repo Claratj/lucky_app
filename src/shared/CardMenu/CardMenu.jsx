@@ -9,7 +9,7 @@ export function CardMenu(props) {
         <div className="c-card-menu">
             <img src={props.icon} alt="" className="c-card-menu__img"/>
             <p className="c-card-menu__title">{props.title}</p>
-            <NavLink to={props.link} className="c-card-menu__link"><img src={arrow} alt=""/></NavLink>
+            <NavLink to={props.link} onClick = {props.onClick} className="c-card-menu__link"><img src={arrow} alt=""/></NavLink>
         </div>
     );
 }
