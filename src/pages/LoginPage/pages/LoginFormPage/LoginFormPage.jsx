@@ -88,7 +88,9 @@ export function LoginFormPage() {
             <button type="submit" className={"c-button c-button__dark"}>Iniciar sesión</button>
          
             </form>
-            <button className={"c-button c-button__light"}>Crear cuenta</button>
+            <Link to="/register">
+                <button className={"c-button c-button__light"}>Crear cuenta</button>
+            </Link>
 
 
       
