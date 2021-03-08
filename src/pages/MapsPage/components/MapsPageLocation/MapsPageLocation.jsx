@@ -45,13 +45,13 @@ export function MapsPageLocation(props) {
                     <div className={"c-location__opinions-header"}>
                         <p className={"s-body-2"}>Opiniones</p>
                         {/*TODO Why won't you rotate?*/}
-                        <DropDown style={{transform: showAll ? "rotate(0)" : "rotate(180deg)", marginTop: "-0.7rem"}}
+                        <DropDown style={{transform: showOpinions ? "rotate(0)" : "rotate(180deg)", marginTop: "-0.7rem"}}
                                   fill={"#E08888"}
                                   onClick={dropdownOpinions}/>
                     </div>
                     <div className={"c-location__opinions-content"}>
                         {showOpinions && props.location.opinions.map((opinion, i) => <div
-                            className={"c-location__opinion"}>
+                            className={"c-location__opinion"} key={i}>
                             <img src={opinion.img} alt={"Opinión"} className={"c-location__opinion-image"}/>
                             <p className={"c-location__opinion-text"}>{`"${opinion.text}"`}</p>
                         </div>)}
