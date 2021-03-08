@@ -65,18 +65,18 @@ export function Routes() {
             <Route path={"/login-form"}>
                 <LoginFormPage />
             </Route>
+            <Route path={"/menu"}>
+                <HomeCard></HomeCard>
+            </Route>
+            <Route exact path="/home">
+                <HomePage />
+            </Route>
             <SplashContext.Provider value={{isSplash, setSplash}}>
             <SplashPage></SplashPage>
             <Route exact path={"/"}>
                 <OnBoardingPage></OnBoardingPage>
             </Route>
             </SplashContext.Provider>
-            <Route path={"/menu"}>
-                <HomeCard></HomeCard>
-            </Route>
-            <Route path="/home">
-                <HomePage />
-            </Route>
             <Route path="*">
                 <Page404></Page404>
             </Route>

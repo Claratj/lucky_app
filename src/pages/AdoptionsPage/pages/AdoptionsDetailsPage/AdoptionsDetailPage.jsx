@@ -16,7 +16,6 @@ import { LoadingContext } from '../../../../core/Loading/contexts/LoadingContext
 export function AdoptionsDeatilPage() {
 
     const history = useHistory(); // para volver atrás
-    // aquí recogemos por param el id de la mascota y mostramos sus datos de adopción
 
     const {setIsLoading} = useContext(LoadingContext);
 
