@@ -3,6 +3,10 @@
 .p-maps-page {
   padding-top: 2.6875rem;
 
+  .container {
+    margin-bottom: 5rem;
+  }
+
   &__search {
     &-bar {
       width: 100%;
@@ -22,6 +26,10 @@
     height: 1.875rem;
     left: 90%;
     top: 2.9rem;
+  }
+
+  &__map {
+    margin-top: 1rem;
   }
 
   &__response {
