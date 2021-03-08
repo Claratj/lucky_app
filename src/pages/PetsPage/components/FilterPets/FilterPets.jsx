@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import './FilterPets.scss';
-
-
-/* const initialFilterValues = {
-    city: '',
-    species: '',
-    type: '',
-    age: '',
-    gender: '',
-    size: ''
-} */
+import { Link } from 'react-router-dom';
 
 
 export function FilterPets(props) {
@@ -221,7 +212,8 @@ export function FilterPets(props) {
                 </div>
                 <div className="p-filter-btn-box">
                     <button className="c-button c-button__pink" type="reset" onClick={clearFilter}>Borrar filtros</button>
-                    <button className="c-button c-button__pink" typye="submit">Aplicar</button>
+                    <Link to="/pets">
+                        <button className="c-button c-button__pink" typye="submit">Aplicar</button></Link>
                 </div>
             </form>
         </div>
