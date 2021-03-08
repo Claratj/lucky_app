@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PetsGallery from './components/PetsGallery/PetsGallery';
 import { Link } from 'react-router-dom';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
@@ -11,13 +11,53 @@ import iconFilter from '../../assets/img/filtros.png';
 import SearchBarPets from './components/SearchBarPets/SearchBarPets';
 import './PetsPage.scss';
 import Footer from '../../core/Footer/Footer';
+import { LoadingContext } from '../../core/Loading/contexts/LoadingContext';
+import { API } from '../../shared/consts/api.consts';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+let allPets = [];
 
-export default function PetsPage(props) {
+export default function PetsPage() {
+    const [search, setSearch] = useState([]);
+    const [pets, setPets] = useState([]);
+    const {setIsLoading} = useContext(LoadingContext);
+    
+
+    const user =JSON.parse(localStorage.getItem('userData'));
+
+    const getPets = ()=>{
+        setIsLoading(true);
+        API.get('/pet').then((res)=>{
+            setIsLoading(false);
+            console.log(res.data.results)
+            allPets = res.data.results;
+            setPets(res.data.results);
+            
+        })
+    }
+
+    const filterItem = ()=>{
+        const filterPets = allPets.filter((pet)=>{
+            if (pet.name.toLowerCase().includes(search.toLowerCase())) {
+                return pet;
+            }
+        })
+        setPets(filterPets);
+    }
+
+    useEffect(getPets, []);
+    useEffect(() => {
+        if (search) {
+            filterItem();
+        }else{
+            getPets()
+        }
+    }, [search]);
+
+console.log(search)
     return (
         <div className="c-pets-page">
-            <SearchBarPets></SearchBarPets>
+            <SearchBarPets handleChange={(inp)=> setSearch(inp.value)}></SearchBarPets>
             <Link to="" className="c-pets-page__link"><div className="c-pets-page__mypets"><h4>Mis mascotas</h4><img src={more} className="c-pets-page__more" alt="" /></div>  </Link>
             <p className="c-pets-page__par">Accede al perfil de tus mascotas</p>
             
@@ -46,7 +86,7 @@ export default function PetsPage(props) {
             <figcaption className="c-pets-page__figcap">Dali</figcaption></div> 
             </SwiperSlide>
 
-        </Swiper>
+            </Swiper>
 
             <Link to="/adoptions" className="c-pets-page__link">
             <div className="c-pets-page__state">
@@ -59,7 +99,7 @@ export default function PetsPage(props) {
                 <img className="c-pets-page__filter" src={iconFilter} alt=""/>
             </div>
 
-            <PetsGallery></PetsGallery>
+            <PetsGallery pets={pets}></PetsGallery>
             <Footer></Footer>
         </div>
     )

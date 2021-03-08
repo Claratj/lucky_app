@@ -1,14 +1,15 @@
 import React, {useEffect} from 'react';
-import {Redirect, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {API} from "../../../../../shared/consts/api.consts";
-
+import { PopUpFormSent } from '../../../../PetsPage/components/PopUpFormSent/PopUpFormSent';
 export function AdoptionFormConfirm(props) {
 
     const param = useParams();
     const petId = param.petId; 
+    const user = (JSON.parse(localStorage.getItem('userData')));
 
     const application = {
-        // userId:,
+        userId: user._id,
         pet: petId,        
         form: {
             data: {
@@ -46,43 +47,16 @@ export function AdoptionFormConfirm(props) {
         status: 'process',
     }
 
-    // export const register = async (formData) => {
-    //
-    // const request = await fetch(REGISTER_URL, {
-    //
-    //     headers: {
-    //
-    //         'Accept': 'application/json',
-    //
-    //             'Access-Control-Allow-Credentials': true,
-    //
-    //             'Access-Control-Allow-Origin': '*',
-    //
-    //     },
-    //
-    //     method: 'POST',
-    //
-    //         body: formData,
-    //
-    //         credentials: 'include',
-    //
-    // }); }
-
-    // async componentDidMount() {// POST request using fetch with async/awaitconst requestOptions = {
-    //     method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ title: 'React POST Request Example' })};
-    //     const response = await fetch('https://jsonplaceholder.typicode.com/posts', requestOptions);const data = await response.json();this.setState({ postId: data.id });}
-
     const sendInfo = () => {
         console.log(application);
         API.post("/application", application).then(() => {
         });
+        
     }
 
     useEffect(sendInfo, []);
 
     return (
-        <Redirect to={"/adoptions"}/>
+        <PopUpFormSent></PopUpFormSent>
     )
 }

@@ -14,6 +14,7 @@ export function HomePage() {
   SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
   const [news, setNews] = useState([]);
   const {setIsLoading} = useContext(LoadingContext);
+  const [user, setUser] = useState({});
   
   const getNews = () =>{
     setIsLoading(true);
@@ -23,12 +24,19 @@ export function HomePage() {
     });
   } 
 
+  const getUser = () => {
+    setUser(JSON.parse(localStorage.getItem('userData')));
+  }
+
+  useEffect(getUser, []);
   useEffect(getNews, []);
+  console.log(user);
+
   console.log(news);
     return (
         <div className="container flex flex-column align-items-center home-page">
           <div className="welcome">
-            <h3 className="welcome__title s-text-style-5">¡Hola Celia!</h3> 
+            <h3 className="welcome__title s-text-style-5">¡Hola {user.name}!</h3> 
           </div>
             <div className="c-home-page">
             <Swiper className="home"  

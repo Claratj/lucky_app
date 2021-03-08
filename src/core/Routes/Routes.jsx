@@ -12,12 +12,15 @@ import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDe
 import PetsPage from '../../pages/PetsPage/PetsPage';
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
+import { RegisterFormPage } from "../../pages/LoginPage/pages/RegisterFormPage/RegisterFormPage";
+
 import { LoginFormPage } from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
 import { AdoptionForm } from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
 import {FilterPets} from '../../pages/PetsPage/components/FilterPets/FilterPets';
 import {MapsPage} from "../../pages/MapsPage/MapsPage";
+import Page404 from '../../shared/Page404/Page404';
 
 export function Routes() {
     return (
@@ -40,10 +43,10 @@ export function Routes() {
             <Route path="/adoption-form/:petId">
                 <AdoptionForm />
             </Route>
-            <Route path="/adoptions/pet/:id">
+            <Route exact path="/adoptions/pet/:id">
                 <AdoptionsDeatilPage />
             </Route>
-            <Route path="/adoptions/:userId">
+            <Route path="/adoptions">
                 <AdoptionsPage />
             </Route>
             <Route exact path="/boarding">
@@ -51,6 +54,9 @@ export function Routes() {
             </Route>
             <Route path={"/login"}>
                 <LoginPage />
+            </Route>
+            <Route path={"/register"}>
+              <RegisterFormPage />
             </Route>
             <Route path={"/login-form"}>
                 <LoginFormPage />
@@ -65,7 +71,7 @@ export function Routes() {
                 <HomePage />
             </Route>
             <Route path="*">
-                <h1>ERROR</h1>
+                <Page404></Page404>
             </Route>
         </Switch>
     );
