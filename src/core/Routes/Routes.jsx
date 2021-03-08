@@ -12,6 +12,8 @@ import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDe
 import PetsPage from '../../pages/PetsPage/PetsPage';
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
 import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
+import { RegisterFormPage } from "../../pages/LoginPage/pages/RegisterFormPage/RegisterFormPage";
+
 import { LoginFormPage } from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
@@ -52,6 +54,9 @@ export function Routes() {
             </Route>
             <Route path={"/login"}>
                 <LoginPage />
+            </Route>
+            <Route path={"/register"}>
+              <RegisterFormPage />
             </Route>
             <Route path={"/login-form"}>
                 <LoginFormPage />
