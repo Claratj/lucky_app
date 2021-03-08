@@ -9,12 +9,10 @@
     &__photo {
         width: 6rem;
         margin-bottom: 1.25rem;
-        &--original {
             height: 6rem;
             object-fit: contain;
             border-radius: 50%;
             border: 0.2rem solid $color-cloudy-blue;
-        }
     }
     &__details {
         width: 100%;
