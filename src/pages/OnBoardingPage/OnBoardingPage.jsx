@@ -16,15 +16,15 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 
 export function OnBoardingPage() {
-  const {setSplash} = useContext(SplashContext);
+  // const {setSplash} = useContext(SplashContext);
 
-  const setSplashPage = ()=>{
-    setSplash(true);
-    setTimeout(() => {
-      setSplash(false)
-    }, 3800);
-  }
-  useEffect(setSplashPage, [])
+  // const setSplashPage = ()=>{
+  //   setSplash(true);
+  //   setTimeout(() => {
+  //     setSplash(false)
+  //   }, 3800);
+  // }
+  // useEffect(setSplashPage, [])
 
   return (
     <div className="base-c">
