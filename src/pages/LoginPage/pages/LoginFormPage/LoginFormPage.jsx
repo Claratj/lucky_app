@@ -14,7 +14,7 @@ export function LoginFormPage() {
         'email': '',
         'password': '',
     });
-
+ 
     const handleClickShowPassword = () => {
         showPassword ? setShowPassword(false) : setShowPassword(true);
         console.log(showPassword);
@@ -35,13 +35,21 @@ export function LoginFormPage() {
     
             if(user){
                 window.location.href = "/home";
+
             }
 
         });
     }
+    let userToken = localStorage.getItem('token');
+ 
 
     return (
         <div className={"p-login-form"}>
+
+        {userToken && 
+            <Redirect to="/home"/>
+
+        };
             <img src={logo} alt={"Lucky"} className={"p-login-form__logo"}/>
             <p className={"s-text-style"}>¡Hola! para continuar, inicia sesión o crea una cuenta</p>
             <form onSubmit={handleSubmit}>
@@ -81,6 +89,10 @@ export function LoginFormPage() {
          
             </form>
             <button className={"c-button c-button__light"}>Crear cuenta</button>
+
+
+      
+
         </div>
     )
 }
