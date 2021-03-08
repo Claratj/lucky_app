@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Switch,
     Route
@@ -21,8 +21,12 @@ import { AdoptionForm } from "../../pages/AdoptionsPage/components/AdoptionForm/
 import {FilterPets} from '../../pages/PetsPage/components/FilterPets/FilterPets';
 import {MapsPage} from "../../pages/MapsPage/MapsPage";
 import Page404 from '../../shared/Page404/Page404';
+import { SplashContext } from '../../pages/OnBoardingPage/SplashContext/SplashContext';
 
 export function Routes() {
+
+    const [isSplash, setSplash] = useState(false);
+    
     return (
         <Switch>
             <Route path="/pet/filter">
@@ -61,15 +65,18 @@ export function Routes() {
             <Route path={"/login-form"}>
                 <LoginFormPage />
             </Route>
-            <Route exact path={"/"}>
-                <OnBoardingPage />
-            </Route>
             <Route path={"/menu"}>
                 <HomeCard></HomeCard>
             </Route>
-            <Route path="/home">
+            <Route exact path="/home">
                 <HomePage />
             </Route>
+            <SplashContext.Provider value={{isSplash, setSplash}}>
+            <SplashPage></SplashPage>
+            <Route exact path={"/"}>
+                <OnBoardingPage></OnBoardingPage>
+            </Route>
+            </SplashContext.Provider>
             <Route path="*">
                 <Page404></Page404>
             </Route>
