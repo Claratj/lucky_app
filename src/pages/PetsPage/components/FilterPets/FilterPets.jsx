@@ -31,7 +31,6 @@ export function FilterPets(props) {
 
 
     const inputSelected = (e) => {
-        // console.log(e);
         const name = e.target.name;
         const inputsName = document.getElementsByName(name);
 
@@ -40,12 +39,20 @@ export function FilterPets(props) {
             const input = inputsName[i];
             if (input.checked == false) {
                 input.disabled = true;
-                // console.log(input);
             }
         }
 
     }
-
+    const clearFilter = () => {
+        const inputs = document.getElementsByTagName('input');
+        console.log(inputs);
+        for (let i = 0; i < inputs.length; i++) {
+            const input = inputs[i];
+            if (input.disabled == true) {
+                input.removeAttribute('disabled');
+            }
+        }
+    }
 
 
 
@@ -213,7 +220,7 @@ export function FilterPets(props) {
 
                 </div>
                 <div className="p-filter-btn-box">
-                    <button className="c-button c-button__pink" type="reset">Borrar filtros</button>
+                    <button className="c-button c-button__pink" type="reset" onClick={clearFilter}>Borrar filtros</button>
                     <button className="c-button c-button__pink" typye="submit">Aplicar</button>
                 </div>
             </form>
