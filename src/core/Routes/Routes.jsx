@@ -29,7 +29,7 @@ export function Routes() {
     
     return (
         <Switch>
-            <Route path="/pet/filter">
+            <Route path="/pets/filter">
                 <FilterPets />
             </Route>
             <Route path="/pet/:id">
