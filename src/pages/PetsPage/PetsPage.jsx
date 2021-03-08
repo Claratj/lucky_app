@@ -18,7 +18,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 let allPets = [];
 
 export default function PetsPage() {
-    const [search, setSearch] = useState([]);
+    const [search, setSearch] = useState(null);
     const [pets, setPets] = useState([]);
     const {setIsLoading} = useContext(LoadingContext);
     
@@ -58,9 +58,11 @@ console.log(search)
     return (
         <div className="c-pets-page">
             <SearchBarPets handleChange={(inp)=> setSearch(inp.value)}></SearchBarPets>
+            {user && 
+        <div>
             <Link to="" className="c-pets-page__link"><div className="c-pets-page__mypets"><h4>Mis mascotas</h4><img src={more} className="c-pets-page__more" alt="" /></div>  </Link>
             <p className="c-pets-page__par">Accede al perfil de tus mascotas</p>
-            
+                        
             <Swiper className="pets"  
             spaceBetween={-110} 
             initialSlide={1} 
@@ -93,7 +95,7 @@ console.log(search)
             <h4 className="c-pets-page__adoption">Estado de la adopción</h4>
             <img src={arrow} alt="" className="c-pets-page__img"/></div> 
             </Link>
-
+            </div> }
             <div className="c-pets-page__petsadop">
                 <h4 className="c-pets-page__titleadop">Animales en adopción</h4>
                 <img className="c-pets-page__filter" src={iconFilter} alt=""/>
