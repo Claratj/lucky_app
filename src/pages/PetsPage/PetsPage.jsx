@@ -145,12 +145,20 @@ export default function PetsPage() {
     const clearFilter = () => {
 
         const inputs = document.querySelectorAll('input');
+        const selects = document.querySelectorAll('#select');
+        console.log(selects);
 
         inputs.forEach(input => {
             input.disabled = false;
             input.checked = false;
-            // input.target.value = "";
         });
+        for(let i=0, l = selects.length; i < l; i++) {
+            selects[i].selected = selects[i].defaultSelected;
+        }
+            // selects.forEach(select => {
+            // select.target.value = -1;
+        // })
+
 
         // setData({ species: {} });
         setPets(allPets);
