@@ -33,7 +33,7 @@ export default function PetsPage() {
     const [data, setData] = useState({
         species: ""
     });
-
+    const [count, setCount] = useState(0);
 
     const user = JSON.parse(localStorage.getItem('userData'));
 
@@ -44,6 +44,7 @@ export default function PetsPage() {
             ...data,
             [e.target.name]: value
         });
+        
 
         console.log(data);
     }
@@ -209,7 +210,7 @@ export default function PetsPage() {
             <div className="c-pets-page__petsadop">
                 <h4 className="c-pets-page__titleadop">Animales en adopción</h4>
                 <FilterContext.Provider value={{ show, setShow }}>
-                    <Badge badgeContent={4} color="primary">
+                    <Badge badgeContent={count} color="primary">
                         <div onClick={clickTrue}>
                             <img className="c-pets-page__filter" src={iconFilter} alt="" />
                         </div>
