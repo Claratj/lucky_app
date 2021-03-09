@@ -22,13 +22,77 @@ let allPets = [];
 
 export default function PetsPage() {
     const [search, setSearch] = useState(null);
-    const [pets, setPets] = useState([]);
+    const [pets, setPets] = useState([{
+        pet: {
+            species: {}
+        }
+    }]);
     const { setIsLoading } = useContext(LoadingContext);
     const [show, setShow] = useState(false);
-    // const [data, setData] = useState({});
+    const [data, setData] = useState({
+        species: {}
+    });
 
 
     const user = JSON.parse(localStorage.getItem('userData'));
+
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        setData({
+            ...data,
+            [e.target.name]: value
+        });
+
+        console.log(data);
+    }
+    const close = () => {
+        setShow(false);
+    }
+
+    const submitFilter = () => {
+        console.log(data);
+
+        if (data !== null) {
+
+            let filterPets = allPets.filter((pet) => {
+                if (pet.city === data.city) {
+                    return pet;
+                }
+            });
+            console.log(filterPets);
+            filterPets = filterPets.filter((pet) => {
+                if (pet.species.species.toLowerCase() === data.species) {
+                    return pet;
+                }
+            });
+            filterPets = filterPets.filter((pet) => {
+                if (pet.species.typePet === data.typePet) {
+                    return pet;
+                }
+            });
+            // filterPets = filterPets.filter((pet) => {
+            //     if (pet.age === data.age) {
+            //         return pet;
+            //     }
+            // });
+            console.log(filterPets);
+            filterPets = filterPets.filter((pet) => {
+                if (pet.gender.toLowerCase() === data.gender) {
+                    return pet;
+                }
+            });
+            // filterPets = filterPets.filter((pet) => {
+            //     if (pet.size === data.size) {
+            //         return pet;
+            //     }
+            // });
+            setPets(filterPets);
+            console.log(filterPets);
+        }
+        close();
+    }
+
+
 
     const getPets = () => {
         setIsLoading(true);
@@ -41,18 +105,8 @@ export default function PetsPage() {
         })
     }
 
-    // const handleInputChange = (e) => {
-    //     // const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
-    //     const value = e.target.value;
-    //     setData({
-    //         ...data,
-    //         [e.target.name]: value
-    //     });
 
-    //     console.log(data);
-    // }
-
-    const filterItem = () => {
+    const searchItem = () => {
         const filterPets = allPets.filter((pet) => {
             if (pet.name.toLowerCase().includes(search.toLowerCase())) {
                 return pet;
@@ -64,7 +118,7 @@ export default function PetsPage() {
     useEffect(getPets, []);
     useEffect(() => {
         if (search) {
-            filterItem();
+            searchItem();
         } else {
             getPets()
         }
@@ -75,6 +129,19 @@ export default function PetsPage() {
         // document.getElementsByClassName('c-pets-page').style.overflow = 'hidden';
         setShow(true);
 
+    }
+
+    const clearFilter = () => {
+
+        const inputs = document.querySelectorAll('input');
+
+        inputs.forEach(input => {
+            input.disabled = false;
+            input.checked = false;
+        });
+
+        // setData({ species: {} });
+        setPets(allPets);
     }
 
 
@@ -127,7 +194,7 @@ export default function PetsPage() {
                     <button onClick={clickTrue}>
                         <img className="c-pets-page__filter" src={iconFilter} alt="" />
                     </button>
-                    <FilterPets show={show}></FilterPets>
+                    <FilterPets show={show} handleInputChange={handleInputChange} submitFilter={submitFilter} clear={clearFilter} data={data}></FilterPets>
                 </FilterContext.Provider>
             </div>
 
