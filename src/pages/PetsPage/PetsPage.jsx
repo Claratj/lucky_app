@@ -64,34 +64,18 @@ export default function PetsPage() {
         }
         if (data.species !== "") {
             filterPets = filterPets.filter((pet) => {
-            if (pet.species.species.toLowerCase() === data.species) {
-                return pet;
+                if (pet.species.species.toLowerCase() === data.species) {
+                    return pet;
                 }
             });
         }
         if (data.typePet) {
             filterPets = filterPets.filter((pet) => {
-            if (pet.species.typePet === data.typePet) {
-                return pet;
+                if (pet.species.typePet === data.typePet) {
+                    return pet;
                 }
-            }); 
+            });
         }
-
-            // if (data.age) {
-            //     filterPets = filterPets.filter((pet) => {
-            //     const age = new Date();
-            //     // age.setUTCSeconds();
-            //     // age.UTC();
-            //     const result = pet.birthDate - age;
-            //     console.log(pet.birthDate);
-            //     console.log(age);
-            //     console.log(result);
-            //     // if (pet.age === data.age) {
-            //     //     return pet;
-            //     // }
-            // });
-
-            // }
 
         // filterPets = filterPets.filter((pet) => {
         //     if (pet.age === data.age) {
@@ -103,10 +87,10 @@ export default function PetsPage() {
                 if (pet.gender.toLowerCase() === data.gender) {
                     return pet;
                 }
-                });
+            });
         }
-            if(data.size) {
-                filterPets = filterPets.filter((pet) => {
+        if (data.size) {
+            filterPets = filterPets.filter((pet) => {
                 if (pet.size.toLowerCase() === data.size) {
                     return pet;
                 }
@@ -163,9 +147,11 @@ export default function PetsPage() {
         const inputs = document.querySelectorAll('input');
         const inputsSelect = document.querySelectorAll("[id^='mui-component-select-']");
 
+
         inputs.forEach(input => {
             input.disabled = false;
             input.checked = false;
+            // input.target.value = "";
         });
 
         inputsSelect.forEach(input => {
@@ -235,3 +221,4 @@ export default function PetsPage() {
         </div>
     )
 }
+

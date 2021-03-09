@@ -111,7 +111,7 @@ export function FilterPets(props) {
 
                 <div className="p-filter">
                     <p className="p-filter__title">Ciudad</p>
-                    <TextField name="city" defaultValue="" id="select" select onChange={props.handleInputChange} >
+                    <TextField name="city" defaultValue="" select onChange={props.handleInputChange} >
                         <MenuItem value="Madrid">Madrid</MenuItem>
                         <MenuItem value="Barcelona">Barcelona</MenuItem>
                         <MenuItem value="Valencia">Valencia</MenuItem>
@@ -209,14 +209,14 @@ export function FilterPets(props) {
                     {selected && selected !== 'huron' && selected !== 'Pequeño mamífero' &&
                         < div className="p-filter">
                             <p className="p-filter__title">Tipo</p>
-                            <TextField id="select" name="typePet" select onChange={props.handleInputChange}>
+                            <TextField name="typePet" select onChange={props.handleInputChange}>
                                 {listType}
                             </TextField>
                         </div>}
                 </div>
                 <div className="p-filter">
                     <p className="p-filter__title">Edad</p>
-                    <TextField id="select" name="age" select onChange={props.handleInputChange}>
+                    <TextField name="age" select onChange={props.handleInputChange}>
                         <MenuItem value="Cachorro">Cachorro</MenuItem>
                         <MenuItem value="Joven">Joven</MenuItem>
                         <MenuItem value="Adulto">Adulto</MenuItem>
@@ -263,10 +263,10 @@ export function FilterPets(props) {
                 </div>
                 <div className="p-filter-btn-box">
                     <button className="c-button c-button__pink" type="reset" onClick={props.clear}>Borrar filtros</button>
-                    <button className="c-button c-button__pink" onClick={props.submitFilter}>Aplicar</button>
+                    <button className="c-button c-button__pink" type="submit" onClick={props.submitFilter}>Aplicar</button>
                 </div>
-
             </PopUp>
         </div>
     )
 }
+
