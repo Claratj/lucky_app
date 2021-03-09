@@ -53,10 +53,10 @@ export default function PetsPage() {
     const submitFilter = () => {
         console.log(data);
 
-        let filterPets = [];
+        let filterPets = allPets;
         console.log(data);
         if (data.city) {
-            filterPets = allPets.filter((pet) => {
+            filterPets = filterPets.filter((pet) => {
                 if (pet.city === data.city) {
                     return pet;
                 }
