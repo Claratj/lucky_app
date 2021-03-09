@@ -43,7 +43,7 @@ export default function PetsPage() {
             ...data,
             [e.target.name]: value
         });
-        
+
         console.log(data);
     }
     const close = () => {
@@ -53,53 +53,53 @@ export default function PetsPage() {
     const submitFilter = () => {
         console.log(data);
 
-            let filterPets = [];
+        let filterPets = [];
         console.log(data);
-            if(data.city) {
-                filterPets = allPets.filter((pet) => {
+        if (data.city) {
+            filterPets = allPets.filter((pet) => {
                 if (pet.city === data.city) {
                     return pet;
                 }
-                });
-            }
-            if (data.species !== "") {
-                filterPets = filterPets.filter((pet) => {
+            });
+        }
+        if (data.species !== "") {
+            filterPets = filterPets.filter((pet) => {
                 if (pet.species.species.toLowerCase() === data.species) {
                     return pet;
                 }
-                });
-            }
-            if (data.typePet) {
-                filterPets = filterPets.filter((pet) => {
+            });
+        }
+        if (data.typePet) {
+            filterPets = filterPets.filter((pet) => {
                 if (pet.species.typePet === data.typePet) {
                     return pet;
                 }
-                }); 
-            }
+            });
+        }
 
-            // filterPets = filterPets.filter((pet) => {
-            //     if (pet.age === data.age) {
-            //         return pet;
-            //     }
-            // });
-            if(data.gender) {
-                filterPets = filterPets.filter((pet) => {
+        // filterPets = filterPets.filter((pet) => {
+        //     if (pet.age === data.age) {
+        //         return pet;
+        //     }
+        // });
+        if (data.gender) {
+            filterPets = filterPets.filter((pet) => {
                 if (pet.gender.toLowerCase() === data.gender) {
                     return pet;
                 }
             });
-            }
-            if(data.size) {
-                filterPets = filterPets.filter((pet) => {
+        }
+        if (data.size) {
+            filterPets = filterPets.filter((pet) => {
                 if (pet.size.toLowerCase() === data.size) {
                     return pet;
-                    }
-                });
-            }
+                }
+            });
+        }
 
-            setPets(filterPets);
-            console.log(filterPets);
-        
+        setPets(filterPets);
+        console.log(filterPets);
+
         close();
     }
 
@@ -145,6 +145,8 @@ export default function PetsPage() {
     const clearFilter = () => {
 
         const inputs = document.querySelectorAll('input');
+        const inputsSelect = document.querySelectorAll("[id^='mui-component-select-']");
+
 
         inputs.forEach(input => {
             input.disabled = false;
@@ -152,7 +154,11 @@ export default function PetsPage() {
             // input.target.value = "";
         });
 
-        // setData({ species: {} });
+        inputsSelect.forEach(input => {
+            input.innerHTML = '';
+        })
+
+        setData({ species: "" });
         setPets(allPets);
     }
 
