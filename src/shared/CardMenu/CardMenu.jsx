@@ -7,9 +7,10 @@ import './CardMenu.scss';
 export function CardMenu(props) {
     return(
         <div className="c-card-menu">
+        <NavLink to={props.link} onClick = {props.onClick} className="c-card-menu__link">
             <img src={props.icon} alt="" className="c-card-menu__img"/>
             <p className="c-card-menu__title">{props.title}</p>
-            <NavLink to={props.link} onClick = {props.onClick} className="c-card-menu__link"><img src={arrow} alt=""/></NavLink>
+            <img src={arrow} alt=""/></NavLink>
         </div>
     );
 }
