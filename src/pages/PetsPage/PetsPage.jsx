@@ -25,7 +25,7 @@ export default function PetsPage() {
     const [pets, setPets] = useState([]);
     const { setIsLoading } = useContext(LoadingContext);
     const [show, setShow] = useState(false);
-    const [data, setData] = useState({});
+    // const [data, setData] = useState({});
 
 
     const user = JSON.parse(localStorage.getItem('userData'));
@@ -41,16 +41,16 @@ export default function PetsPage() {
         })
     }
 
-    const handleInputChange = (e) => {
-        // const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
-        const value = e.target.value;
-        setData({
-            ...data,
-            [e.target.name]: value
-        });
+    // const handleInputChange = (e) => {
+    //     // const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    //     const value = e.target.value;
+    //     setData({
+    //         ...data,
+    //         [e.target.name]: value
+    //     });
 
-        console.log(data);
-    }
+    //     console.log(data);
+    // }
 
     const filterItem = () => {
         const filterPets = allPets.filter((pet) => {
@@ -70,12 +70,11 @@ export default function PetsPage() {
         }
     }, [search]);
 
-    console.log(show);
 
     const clickTrue = () => {
+        // document.getElementsByClassName('c-pets-page').style.overflow = 'hidden';
         setShow(true);
-        console.log(show);
-        console.log('hola');
+
     }
 
 
@@ -128,7 +127,7 @@ export default function PetsPage() {
                     <button onClick={clickTrue}>
                         <img className="c-pets-page__filter" src={iconFilter} alt="" />
                     </button>
-                    <FilterPets show={show} handleInputChange={handleInputChange}></FilterPets>
+                    <FilterPets show={show}></FilterPets>
                 </FilterContext.Provider>
             </div>
 
