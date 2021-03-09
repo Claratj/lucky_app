@@ -29,7 +29,9 @@ export default function PetsPage() {
     }]);
     const { setIsLoading } = useContext(LoadingContext);
     const [show, setShow] = useState(false);
-    const [data, setData] = useState({});
+    const [data, setData] = useState({
+        species: {}
+    });
 
 
     const user = JSON.parse(localStorage.getItem('userData'));
@@ -63,11 +65,11 @@ export default function PetsPage() {
                     return pet;
                 }
             });
-            // filterPets = filterPets.filter((pet) => {
-            //     if (pet.typePet === data.typePet) {
-            //         return pet;
-            //     }
-            // });
+            filterPets = filterPets.filter((pet) => {
+                if (pet.species.typePet === data.typePet) {
+                    return pet;
+                }
+            });
             // filterPets = filterPets.filter((pet) => {
             //     if (pet.age === data.age) {
             //         return pet;
@@ -138,7 +140,7 @@ export default function PetsPage() {
             input.checked = false;
         });
 
-        setData(null);
+        // setData({ species: {} });
         setPets(allPets);
     }
 

@@ -37,6 +37,8 @@ export function FilterPets(props) {
     }
 
     let selected = props.data.species;
+    // selected.toLowerCase();
+    console.log(selected);
     let listType = []
 
     switch (selected !== null) {
@@ -88,7 +90,7 @@ export function FilterPets(props) {
             break;
 
     }
-    console.log(show);
+    // console.log(show);
 
 
     return (
