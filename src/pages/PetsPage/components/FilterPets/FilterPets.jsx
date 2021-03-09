@@ -100,7 +100,7 @@ export function FilterPets(props) {
                     <div className="close">x</div>
                 </NavLink> */}
                 <div>
-                    <h5 className="fig-c__filter-title">Filtros</h5>
+                    <p className="fig-c__filter-title">Filtros</p>
                 </div>
 
                 <div className="p-filter">
@@ -202,7 +202,7 @@ export function FilterPets(props) {
                     {selected && selected !== 'huron' && selected !== 'Pequeño mamífero' &&
                         < div className="p-filter">
                             <p className="p-filter__title">Tipo</p>
-                            <TextField name="typePet" select  onChange={props.handleInputChange}>
+                            <TextField name="typePet" select onChange={props.handleInputChange}>
                                 {listType}
                             </TextField>
                         </div>
