@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
+
 import { CardMenu } from '../../shared/CardMenu/CardMenu';
+import Footer from '../../core/Footer/Footer';
+
 import chica from '../../assets/img/chica-a.png';
 import direccion from '../../assets/img/localization-a.svg';
 import favorito from '../../assets/img/favoritos-a.png';
@@ -8,8 +11,6 @@ import mascota from '../../assets/img/perro-a.svg';
 import apadrina from '../../assets/img/apadrina-a.svg';
 import donar from '../../assets/img/donar-a.svg';
 import avatar from '../../assets/img/avatar-default.svg';
-
-import Footer from '../../core/Footer/Footer';
 
 import './ProfilePage.scss';
 
@@ -36,11 +37,11 @@ export function ProfilePage() {
             {user == null?
                 <img src={avatar} alt="" className="p-profile__photo"/>            
             :
-            <img src={user.image} alt="" className="p-profile__photo"/>
+                <img src={user.image} alt="" className="p-profile__photo"/>
             }            
             <div className="p-profile__details">
             {cards.map((obj, i)=>
-            <CardMenu icon={obj.img} title={obj.title} link={obj.link}></CardMenu>
+                <CardMenu icon={obj.img} title={obj.title} link={obj.link}></CardMenu>
             )}
             </div>
             <Footer></Footer>

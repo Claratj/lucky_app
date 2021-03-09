@@ -1,0 +1,66 @@
+@import '../../../../styles/tools/variable.tools';
+
+.c-app-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    color: $color-ocean;
+
+    &__filter {
+        margin-top: 1rem;
+    }
+
+    &__input {
+        width: 3.5rem;
+        height: 3.5rem;
+        display: none;
+    }
+
+    &__label {
+        color: $color-ocean;
+        font-size: 0.75rem;
+        text-align: center;
+        width: 4.2rem;
+        height: 4.5rem;
+        border: 2px $color-cloudy-blue solid;
+        border-radius: 0.5rem;
+        padding: 2.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 1em; 
+        margin: 0.625rem;
+        cursor: pointer;
+    }
+    .size {
+        font-size: 1.5rem;
+    }    
+    :disabled + &__label {
+        color: lightgrey;
+    }
+    :checked + &__label {
+        border: 2px $color-pink solid;
+        color:  $color-pink;
+    }
+    &__btn{
+        margin: 1rem 0.5rem 0.5rem 0;
+        width: 7.5rem; 
+        height: 2.3rem;
+        border-radius: 5px;
+        border: 2px solid $color-pink;
+        background-color: white;
+        color: $color-pink;
+        outline: none;
+        font-size: 1rem;
+        font-family: 'Barlow';
+        &:hover{
+            background-color: $color-pink;
+            color: white;
+            transition: 0.5s;
+        }
+     }
+}
+

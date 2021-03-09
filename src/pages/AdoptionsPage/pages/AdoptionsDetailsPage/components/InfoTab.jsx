@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-
-import arrow from '../../../../../assets/img/arrow-r.png';
-import './InfoTab.scss';
+import { useParams } from 'react-router';
 
 import { API } from '../../../../../shared/consts/api.consts';
-import { useParams } from 'react-router';
+
+import arrow from '../../../../../assets/img/arrow-r.png';
+
+import './InfoTab.scss';
 
 export function InfoTab(props){
 
