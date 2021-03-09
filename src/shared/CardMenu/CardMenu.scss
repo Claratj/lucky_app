@@ -1,7 +1,6 @@
 @import '../../styles/tools/variable.tools';
 .c-card-menu {
-    display: flex;
-    align-items: center;
+
     width: 90%;
     padding: 0.6rem 1rem;
     min-height: 3.2rem;
@@ -19,6 +18,8 @@
         margin-bottom: 0;
     }
     &__link {
+        display: flex;
+        align-items: center;
         text-decoration: none;
         color: $color-pink;
     }
