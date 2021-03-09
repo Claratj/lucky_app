@@ -53,10 +53,10 @@ export default function PetsPage() {
     const submitFilter = () => {
         console.log(data);
 
-        let filterPets = [];
+        let filterPets = allPets;
         console.log(data);
         if (data.city) {
-            filterPets = allPets.filter((pet) => {
+            filterPets = filterPets.filter((pet) => {
                 if (pet.city === data.city) {
                     return pet;
                 }
@@ -223,9 +223,9 @@ export default function PetsPage() {
                 <h4 className="c-pets-page__titleadop">Animales en adopción</h4>
                 <FilterContext.Provider value={{ show, setShow }}>
 
-                    <button onClick={clickTrue}>
+                    <div onClick={clickTrue}>
                         <img className="c-pets-page__filter" src={iconFilter} alt="" />
-                    </button>
+                    </div>
                     <FilterPets show={show} handleInputChange={handleInputChange} submitFilter={submitFilter} clear={clearFilter} data={data}></FilterPets>
                 </FilterContext.Provider>
             </div>
