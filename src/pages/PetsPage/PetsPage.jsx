@@ -43,7 +43,7 @@ export default function PetsPage() {
             ...data,
             [e.target.name]: value
         });
-        
+
         console.log(data);
     }
     const close = () => {
@@ -53,9 +53,10 @@ export default function PetsPage() {
     const submitFilter = () => {
         console.log(data);
 
-        let filterPets = allPets;
-        if(data.city) {
-            filterPets = filterPets.filter((pet) => {
+        let filterPets = [];
+        console.log(data);
+        if (data.city) {
+            filterPets = allPets.filter((pet) => {
                 if (pet.city === data.city) {
                     return pet;
                 }
@@ -92,29 +93,29 @@ export default function PetsPage() {
 
             // }
 
-            // filterPets = filterPets.filter((pet) => {
-            //     if (pet.age === data.age) {
-            //         return pet;
-            //     }
-            // });
-            if(data.gender) {
-                filterPets = filterPets.filter((pet) => {
+        // filterPets = filterPets.filter((pet) => {
+        //     if (pet.age === data.age) {
+        //         return pet;
+        //     }
+        // });
+        if (data.gender) {
+            filterPets = filterPets.filter((pet) => {
                 if (pet.gender.toLowerCase() === data.gender) {
                     return pet;
                 }
                 });
-            }
+        }
             if(data.size) {
                 filterPets = filterPets.filter((pet) => {
                 if (pet.size.toLowerCase() === data.size) {
                     return pet;
-                    }
-                });
-            }
+                }
+            });
+        }
 
-            setPets(filterPets);
-            console.log(filterPets);
-        
+        setPets(filterPets);
+        console.log(filterPets);
+
         close();
     }
 
@@ -160,18 +161,15 @@ export default function PetsPage() {
     const clearFilter = () => {
 
         const inputs = document.querySelectorAll('input');
-        const selects = document.querySelectorAll('#select');
-        console.log(selects);
+        const inputsSelect = document.querySelectorAll("[id^='mui-component-select-']");
 
         inputs.forEach(input => {
             input.disabled = false;
             input.checked = false;
         });
-        for(let i=0, l = selects.length; i < l; i++) {
-            selects[i].selected = selects[i].defaultSelected;
-        }
-        selects.forEach(select => {
-            select.innerHTML = "";
+
+        inputsSelect.forEach(input => {
+            input.innerHTML = '';
         })
 
         setData({ species: "" });

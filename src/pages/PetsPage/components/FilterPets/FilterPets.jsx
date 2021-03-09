@@ -198,7 +198,7 @@ export function FilterPets(props) {
                                 <span className="icon-spider size" /> Arácnido o insecto
                         </label>
 
-                            <input id='ave' className="c-input-img__input" name="species" value='bird' onChange={props.handleInputChange
+                            <input id='ave' className="c-input-img__input" name="species" value='ave' onChange={props.handleInputChange
                             } onClick={inputSelected} type="checkbox" alt="Submit" />
                             <label htmlFor='ave' className="c-input-img__label" >
                                 <span className="icon-parrot size" /> Ave
