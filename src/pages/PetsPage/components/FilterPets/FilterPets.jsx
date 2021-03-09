@@ -105,7 +105,7 @@ export function FilterPets(props) {
 
                 <div className="p-filter">
                     <p className="p-filter__title">Ciudad</p>
-                    <TextField name="city" select onChange={props.handleInputChange} >
+                    <TextField name="city" select defaultValue="Madrid" onChange={props.handleInputChange} >
                         <MenuItem value="Madrid">Madrid</MenuItem>
                         <MenuItem value="Barcelona">Barcelona</MenuItem>
                         <MenuItem value="Valencia">Valencia</MenuItem>
@@ -123,6 +123,8 @@ export function FilterPets(props) {
                         <MenuItem value="La Coruña">La Coruña</MenuItem>
                         <MenuItem value="Granada">Granada</MenuItem>
                         <MenuItem value="Oviedo">Oviedo</MenuItem>
+                        <MenuItem value="Almeria">Almería</MenuItem>
+
                     </TextField>
                 </div>
                 <div className="p-filter-especie">
@@ -200,7 +202,7 @@ export function FilterPets(props) {
                     {selected && selected !== 'huron' && selected !== 'Pequeño mamífero' &&
                         < div className="p-filter">
                             <p className="p-filter__title">Tipo</p>
-                            <TextField name="typePet" select onChange={props.handleInputChange}>
+                            <TextField name="typePet" select  onChange={props.handleInputChange}>
                                 {listType}
                             </TextField>
                         </div>
