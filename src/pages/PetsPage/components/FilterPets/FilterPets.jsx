@@ -267,6 +267,6 @@ export function FilterPets(props) {
                 </div>
 
             </PopUp>
-        </div >
+        </div>
     )
 }

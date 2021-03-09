@@ -53,29 +53,44 @@ export default function PetsPage() {
     const submitFilter = () => {
         console.log(data);
 
-            let filterPets = [];
-        console.log(data);
-            if(data.city) {
-                filterPets = allPets.filter((pet) => {
+        let filterPets = allPets;
+        if(data.city) {
+            filterPets = filterPets.filter((pet) => {
                 if (pet.city === data.city) {
                     return pet;
                 }
-                });
-            }
-            if (data.species !== "") {
-                filterPets = filterPets.filter((pet) => {
-                if (pet.species.species.toLowerCase() === data.species) {
-                    return pet;
+            });
+        }
+        if (data.species !== "") {
+            filterPets = filterPets.filter((pet) => {
+            if (pet.species.species.toLowerCase() === data.species) {
+                return pet;
                 }
-                });
-            }
-            if (data.typePet) {
-                filterPets = filterPets.filter((pet) => {
-                if (pet.species.typePet === data.typePet) {
-                    return pet;
+            });
+        }
+        if (data.typePet) {
+            filterPets = filterPets.filter((pet) => {
+            if (pet.species.typePet === data.typePet) {
+                return pet;
                 }
-                }); 
-            }
+            }); 
+        }
+
+            // if (data.age) {
+            //     filterPets = filterPets.filter((pet) => {
+            //     const age = new Date();
+            //     // age.setUTCSeconds();
+            //     // age.UTC();
+            //     const result = pet.birthDate - age;
+            //     console.log(pet.birthDate);
+            //     console.log(age);
+            //     console.log(result);
+            //     // if (pet.age === data.age) {
+            //     //     return pet;
+            //     // }
+            // });
+
+            // }
 
             // filterPets = filterPets.filter((pet) => {
             //     if (pet.age === data.age) {
@@ -87,7 +102,7 @@ export default function PetsPage() {
                 if (pet.gender.toLowerCase() === data.gender) {
                     return pet;
                 }
-            });
+                });
             }
             if(data.size) {
                 filterPets = filterPets.filter((pet) => {
@@ -155,12 +170,11 @@ export default function PetsPage() {
         for(let i=0, l = selects.length; i < l; i++) {
             selects[i].selected = selects[i].defaultSelected;
         }
-            // selects.forEach(select => {
-            // select.target.value = -1;
-        // })
+        selects.forEach(select => {
+            select.innerHTML = "";
+        })
 
-
-        // setData({ species: {} });
+        setData({ species: "" });
         setPets(allPets);
     }
 
