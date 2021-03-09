@@ -1,5 +1,11 @@
 @import '../../../../styles/tools/variable.tools';
 
+.c-popUp {
+    &__content{
+        width: 100%;
+    }
+}
+
 
 .fig-c {
     padding: 2.2rem 0.5rem;

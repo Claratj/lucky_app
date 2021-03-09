@@ -18,20 +18,20 @@ import { LoginFormPage } from "../../pages/LoginPage/pages/LoginFormPage/LoginFo
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
 import { AdoptionForm } from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
-import {FilterPets} from '../../pages/PetsPage/components/FilterPets/FilterPets';
-import {MapsPage} from "../../pages/MapsPage/MapsPage";
+import { FilterPets } from '../../pages/PetsPage/components/FilterPets/FilterPets';
+import { MapsPage } from "../../pages/MapsPage/MapsPage";
 import Page404 from '../../shared/Page404/Page404';
 import { SplashContext } from '../../pages/OnBoardingPage/SplashContext/SplashContext';
 
 export function Routes() {
 
     const [isSplash, setSplash] = useState(false);
-    
+
     return (
         <Switch>
-            <Route path="/pets/filter">
+            {/* <Route path="/pets/filter">
                 <FilterPets />
-            </Route>
+            </Route> */}
             <Route path="/pet/:id">
                 <PetsDetailPage />
             </Route>
@@ -42,7 +42,7 @@ export function Routes() {
                 <ProfilePage />
             </Route>
             <Route path={"/maps"}>
-                <MapsPage/>
+                <MapsPage />
             </Route>
             <Route path="/adoption-form/:petId">
                 <AdoptionForm />
@@ -60,7 +60,7 @@ export function Routes() {
                 <LoginPage />
             </Route>
             <Route path={"/register"}>
-              <RegisterFormPage />
+                <RegisterFormPage />
             </Route>
             <Route path={"/login-form"}>
                 <LoginFormPage />
@@ -71,11 +71,11 @@ export function Routes() {
             <Route exact path="/home">
                 <HomePage />
             </Route>
-            <SplashContext.Provider value={{isSplash, setSplash}}>
-            <SplashPage></SplashPage>
-            <Route exact path={"/"}>
-                <OnBoardingPage></OnBoardingPage>
-            </Route>
+            <SplashContext.Provider value={{ isSplash, setSplash }}>
+                <SplashPage></SplashPage>
+                <Route exact path={"/"}>
+                    <OnBoardingPage></OnBoardingPage>
+                </Route>
             </SplashContext.Provider>
             <Route path="*">
                 <Page404></Page404>
