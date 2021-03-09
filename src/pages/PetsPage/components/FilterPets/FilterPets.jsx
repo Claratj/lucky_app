@@ -20,8 +20,8 @@ export function FilterPets(props) {
         //     }
         // }
         // const inputs = document.querySelectorAll('input');
-        inputsName.forEach(input => {  
-            input.disabled = true;            
+        inputsName.forEach(input => {
+            input.disabled = true;
         });
 
     }
@@ -102,9 +102,9 @@ export function FilterPets(props) {
     return (
         <div className="fig-c">
             <PopUp onClose={() => setShow(false)} show={show} >
-                {/* <NavLink to={"/pets"}>
-                    <div className="close">x</div>
-                </NavLink> */}
+
+                <div onClick={() => setShow(false)} className="close">x</div>
+
                 <div>
                     <p className="fig-c__filter-title">Filtros</p>
                 </div>
