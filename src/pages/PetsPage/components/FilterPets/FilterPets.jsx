@@ -266,6 +266,6 @@ export function FilterPets(props) {
                     <button className="c-button c-button__pink" type="submit" onClick={props.submitFilter}>Aplicar</button>
                 </div>
             </PopUp>
-        </div >
+        </div>
     )
 }
