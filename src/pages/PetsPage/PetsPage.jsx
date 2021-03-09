@@ -12,7 +12,10 @@ import SearchBarPets from './components/SearchBarPets/SearchBarPets';
 import './PetsPage.scss';
 import Footer from '../../core/Footer/Footer';
 import { LoadingContext } from '../../core/Loading/contexts/LoadingContext';
+import { FilterContext } from '../../shared/Context/FilterContext';
 import { API } from '../../shared/consts/api.consts';
+import { computeHeadingLevel } from '@testing-library/dom';
+import { FilterPets } from './components/FilterPets/FilterPets';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 let allPets = [];
@@ -21,6 +24,9 @@ export default function PetsPage() {
     const [search, setSearch] = useState(null);
     const [pets, setPets] = useState([]);
     const { setIsLoading } = useContext(LoadingContext);
+    const [show, setShow] = useState(false);
+    const [data, setData] = useState({});
+
 
     const user = JSON.parse(localStorage.getItem('userData'));
 
@@ -33,6 +39,17 @@ export default function PetsPage() {
             setPets(res.data.results);
 
         })
+    }
+
+    const handleInputChange = (e) => {
+        // const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+        const value = e.target.value;
+        setData({
+            ...data,
+            [e.target.name]: value
+        });
+
+        console.log(data);
     }
 
     const filterItem = () => {
@@ -53,7 +70,16 @@ export default function PetsPage() {
         }
     }, [search]);
 
-    console.log(search)
+    console.log(show);
+
+    const clickTrue = () => {
+        setShow(true);
+        console.log(show);
+        console.log('hola');
+    }
+
+
+    // console.log(search)
     return (
         <div className="c-pets-page">
             <SearchBarPets handleChange={(inp) => setSearch(inp.value)}></SearchBarPets>
@@ -97,9 +123,13 @@ export default function PetsPage() {
                 </div>}
             <div className="c-pets-page__petsadop">
                 <h4 className="c-pets-page__titleadop">Animales en adopción</h4>
-                <Link to="/pets/filter">
-                    <img className="c-pets-page__filter" src={iconFilter} alt="" />
-                </Link>
+                <FilterContext.Provider value={{ show, setShow }}>
+
+                    <button onClick={clickTrue}>
+                        <img className="c-pets-page__filter" src={iconFilter} alt="" />
+                    </button>
+                    <FilterPets show={show} handleInputChange={handleInputChange}></FilterPets>
+                </FilterContext.Provider>
             </div>
 
             <PetsGallery pets={pets}></PetsGallery>
