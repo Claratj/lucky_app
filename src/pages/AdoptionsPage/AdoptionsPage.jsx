@@ -13,11 +13,22 @@ let allApps = [];
 export function AdoptionsPage() {
     const [search, setSearch] = useState(null);
     const [pop, setPop] = useState(false);
+    const [filter, setFilter] = useState({});
+
+    const newFilter = (e) => {
+        const value = e.target.value;  
+        setFilter({
+            ...filter,
+            'filter': value});
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.disabled = true;
+        });
+        console.log(filter)
+    }
 
     const click = () => {
-        console.log('hola');
         setPop(true);
-        console.log(pop);
     }
     const close = () => {
         setPop(false);
@@ -54,6 +65,16 @@ export function AdoptionsPage() {
         setApplications(filterApps);
     }
 
+    const submitFilter = () => {
+        const filterApps = allApps.filter((app)=>{
+            if (app.status === filter.filter) {
+                return app;
+            }
+        })
+        setApplications(filterApps); 
+        close();  
+    }
+
     useEffect(getApplications, []);
     useEffect(() => {
         if (search) {
@@ -72,7 +93,7 @@ export function AdoptionsPage() {
             <AdoptionCard name={app.pet.name} city={app.pet.city} gender={app.pet.gender} img={app.pet.images[0]} status={app.status} id={app.pet._id}></AdoptionCard>
             )}
             </div>
-                <PopUpFilter onClose={close} show={pop}></PopUpFilter>
+                <PopUpFilter onClose={close} show={pop} filter={newFilter} submit={submitFilter}></PopUpFilter>
         </div>
         </PopUpContext.Provider>
     );
