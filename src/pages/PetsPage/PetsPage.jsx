@@ -17,7 +17,7 @@ import { API } from '../../shared/consts/api.consts';
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 let allPets = [];
 
-export default function PetsPage(props) {
+export default function PetsPage() {
     const [search, setSearch] = useState(null);
     const [pets, setPets] = useState([]);
     const { setIsLoading } = useContext(LoadingContext);
