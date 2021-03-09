@@ -22,15 +22,7 @@ export function FilterPets(props) {
     }
 
 
-    const clearFilter = () => {
-        const inputs = document.getElementsByTagName('input');
-        for (let i = 0; i < inputs.length; i++) {
-            const input = inputs[i];
-            if (input.disabled === true) {
-                input.removeAttribute('disabled');
-            }
-        }
-    }
+
 
     const species = {
         perro: ['Beagle', 'Bóxer', 'Bulldog inglés', 'Caniche', 'Chihuahua', 'Dálmata', 'Golden retirever', 'Husky siberiano', 'Pastor alemán', 'Yorkshire terrier', 'Mestizo', 'Otro'],
@@ -108,162 +100,161 @@ export function FilterPets(props) {
                 <div>
                     <h5 className="fig-c__filter-title">Filtros</h5>
                 </div>
-                <form>
-                    <div className="p-filter">
-                        <p className="p-filter__title">Ciudad</p>
-                        <TextField name="city" select onChange={props.handleInputChange} >
-                            <MenuItem value="Madrid">Madrid</MenuItem>
-                            <MenuItem value="Barcelona">Barcelona</MenuItem>
-                            <MenuItem value="Valencia">Valencia</MenuItem>
-                            <MenuItem value="Sevilla">Sevilla</MenuItem>
-                            <MenuItem value="Zaragoza">Zaragoza</MenuItem>
-                            <MenuItem value="Málaga">Málaga</MenuItem>
-                            <MenuItem value="Murcia">Murcia</MenuItem>
-                            <MenuItem value="Palma">Palma</MenuItem>
-                            <MenuItem value="Gran Canaria">Gran Canaria</MenuItem>
-                            <MenuItem value="Bilbao">Bilbao</MenuItem>
-                            <MenuItem value="Alicante">Alicante</MenuItem>
-                            <MenuItem value="Córdoba">Córdoba</MenuItem>
-                            <MenuItem value="Valladolid">Valladolid</MenuItem>
-                            <MenuItem value="Vitoria">Vitoria</MenuItem>
-                            <MenuItem value="La Coruña">La Coruña</MenuItem>
-                            <MenuItem value="Granada">Granada</MenuItem>
-                            <MenuItem value="Oviedo">Oviedo</MenuItem>
-                        </TextField>
+
+                <div className="p-filter">
+                    <p className="p-filter__title">Ciudad</p>
+                    <TextField name="city" select onChange={props.handleInputChange} >
+                        <MenuItem value="Madrid">Madrid</MenuItem>
+                        <MenuItem value="Barcelona">Barcelona</MenuItem>
+                        <MenuItem value="Valencia">Valencia</MenuItem>
+                        <MenuItem value="Sevilla">Sevilla</MenuItem>
+                        <MenuItem value="Zaragoza">Zaragoza</MenuItem>
+                        <MenuItem value="Málaga">Málaga</MenuItem>
+                        <MenuItem value="Murcia">Murcia</MenuItem>
+                        <MenuItem value="Palma">Palma</MenuItem>
+                        <MenuItem value="Gran Canaria">Gran Canaria</MenuItem>
+                        <MenuItem value="Bilbao">Bilbao</MenuItem>
+                        <MenuItem value="Alicante">Alicante</MenuItem>
+                        <MenuItem value="Córdoba">Córdoba</MenuItem>
+                        <MenuItem value="Valladolid">Valladolid</MenuItem>
+                        <MenuItem value="Vitoria">Vitoria</MenuItem>
+                        <MenuItem value="La Coruña">La Coruña</MenuItem>
+                        <MenuItem value="Granada">Granada</MenuItem>
+                        <MenuItem value="Oviedo">Oviedo</MenuItem>
+                    </TextField>
+                </div>
+                <div className="p-filter-especie">
+                    <p className="p-filter__title">Especie</p>
+                    <div className="p-input-wrap c-input-img">
+                        <input id='perro' className="c-input-img__input" name="species" value='perro' onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='perro' className="c-input-img__label" >
+                            <span className="icon-dog size" /> Perro
+                        </label>
+
+                        <input id='gato' className="c-input-img__input" name="species" value='gato' onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='gato' className="c-input-img__label" >
+                            <span className="icon-happy size" /> Gato
+                        </label>
+
+                        <input id='conejo' className="c-input-img__input" name="species" value='conejo' onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='conejo' className="c-input-img__label" >
+                            <span className="icon-rabbit size" /> Conejo
+
+                        </label>
+
+                        <input id='cobaya' className="c-input-img__input" name="species" value='cobaya' onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='cobaya' className="c-input-img__label" >
+                            <span className="icon-mouse size" /> Cobaya
+                        </label>
+
+                        <input id='pequeñoMamifero' className="c-input-img__input" name="species" value='Pequeño mamífero' onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='pequeñoMamifero' className="c-input-img__label" >
+                            <span className="icon-hedgehog size" /> Pequeño mamífero
+                        </label>
+
+                        <input id='huron' className="c-input-img__input" name="species" value='huron' onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='huron' className="c-input-img__label" >
+                            <span className="icon-ferret size" /> Hurón
+                        </label>
+
+                        <input id='pez' className="c-input-img__input" name="species" value='pez' onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='pez' className="c-input-img__label" >
+                            <span className="icon-tropical-fish size" /> Pez
+                        </label>
+
+                        <input id='reptil' className="c-input-img__input" name="species" value='reptil' onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='reptil' className="c-input-img__label" >
+                            <span className="icon-snake size" /> Reptil
+                        </label>
+
+                        <input id='anfibio' className="c-input-img__input" name="species" value='anfibio' onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='anfibio' className="c-input-img__label" >
+                            <span className="icon-frog size" /> Anfibio
+                        </label>
+
+                        <input id='aracnido' className="c-input-img__input" name="species" value='aracnido' onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='aracnido' className="c-input-img__label" >
+                            <span className="icon-spider size" /> Arácnido o insecto
+                        </label>
+
+                        <input id='ave' className="c-input-img__input" name="species" value='bird' onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='ave' className="c-input-img__label" >
+                            <span className="icon-parrot size" /> Ave
+                        </label>
+
                     </div>
-                    <div className="p-filter-especie">
-                        <p className="p-filter__title">Especie</p>
-                        <div className="p-input-wrap c-input-img">
-                            <input id='perro' className="c-input-img__input" name="species" value='perro' onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='perro' className="c-input-img__label" >
-                                <span className="icon-dog size" /> Perro
-                        </label>
 
-                            <input id='gato' className="c-input-img__input" name="species" value='gato' onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='gato' className="c-input-img__label" >
-                                <span className="icon-happy size" /> Gato
-                        </label>
-
-                            <input id='conejo' className="c-input-img__input" name="species" value='conejo' onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='conejo' className="c-input-img__label" >
-                                <span className="icon-rabbit size" /> Conejo
-
-                        </label>
-
-                            <input id='cobaya' className="c-input-img__input" name="species" value='cobaya' onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='cobaya' className="c-input-img__label" >
-                                <span className="icon-mouse size" /> Cobaya
-                        </label>
-
-                            <input id='pequeñoMamifero' className="c-input-img__input" name="species" value='Pequeño mamífero' onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='pequeñoMamifero' className="c-input-img__label" >
-                                <span className="icon-hedgehog size" /> Pequeño mamífero
-                        </label>
-
-                            <input id='huron' className="c-input-img__input" name="species" value='huron' onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='huron' className="c-input-img__label" >
-                                <span className="icon-ferret size" /> Hurón
-                        </label>
-
-                            <input id='pez' className="c-input-img__input" name="species" value='pez' onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='pez' className="c-input-img__label" >
-                                <span className="icon-tropical-fish size" /> Pez
-                        </label>
-
-                            <input id='reptil' className="c-input-img__input" name="species" value='reptil' onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='reptil' className="c-input-img__label" >
-                                <span className="icon-snake size" /> Reptil
-                        </label>
-
-                            <input id='anfibio' className="c-input-img__input" name="species" value='anfibio' onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='anfibio' className="c-input-img__label" >
-                                <span className="icon-frog size" /> Anfibio
-                        </label>
-
-                            <input id='aracnido' className="c-input-img__input" name="species" value='aracnido' onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='aracnido' className="c-input-img__label" >
-                                <span className="icon-spider size" /> Arácnido o insecto
-                        </label>
-
-                            <input id='ave' className="c-input-img__input" name="species" value='bird' onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='ave' className="c-input-img__label" >
-                                <span className="icon-parrot size" /> Ave
-                        </label>
-
+                    {selected && selected !== 'huron' && selected !== 'Pequeño mamífero' &&
+                        < div className="p-filter">
+                            <p className="p-filter__title">Tipo</p>
+                            <TextField name="typePet" select onChange={props.handleInputChange}>
+                                {listType}
+                            </TextField>
                         </div>
+                    }
+                </div>
+                <div className="p-filter">
+                    <p className="p-filter__title">Edad</p>
+                    <TextField name="age" select onChange={props.handleInputChange}>
+                        <MenuItem value="Cachorro">Cachorro</MenuItem>
+                        <MenuItem value="Joven">Joven</MenuItem>
+                        <MenuItem value="Adulto">Adulto</MenuItem>
+                    </TextField>
+                </div>
+                <div className="p-filter">
+                    <p className="p-filter__title">Sexo</p>
+                    <div className="d-flex p-input-center c-input-img">
 
-                        {selected && selected !== 'huron' && selected !== 'Pequeño mamífero' &&
-                            < div className="p-filter">
-                                <p className="p-filter__title">Tipo</p>
-                                <TextField name="typePet" select onChange={props.handleInputChange}>
-                                    {listType}
-                                </TextField>
-                            </div>
-                        }
-                    </div>
-                    <div className="p-filter">
-                        <p className="p-filter__title">Edad</p>
-                        <TextField name="age" select onChange={props.handleInputChange}>
-                            <MenuItem value="Cachorro">Cachorro</MenuItem>
-                            <MenuItem value="Joven">Joven</MenuItem>
-                            <MenuItem value="Adulto">Adulto</MenuItem>
-                        </TextField>
-                    </div>
-                    <div className="p-filter">
-                        <p className="p-filter__title">Sexo</p>
-                        <div className="d-flex p-input-center c-input-img">
-
-                            <input id='hembra' className="c-input-img__input" name="gender" value="hembra" onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='hembra' className="c-input-img__label" >                    <span className="icon-femenine-1 size" /></label>
-                            <input id='macho' className="c-input-img__input" name="gender" value="macho" onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='macho' className="c-input-img__label" >                    <span className="icon-masculine size" /></label>
-
-                        </div>
+                        <input id='hembra' className="c-input-img__input" name="gender" value="hembra" onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='hembra' className="c-input-img__label" >                    <span className="icon-femenine-1 size" /></label>
+                        <input id='macho' className="c-input-img__input" name="gender" value="macho" onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='macho' className="c-input-img__label" >                    <span className="icon-masculine size" /></label>
 
                     </div>
-                    <div className="p-filter">
-                        <p className="p-filter__title">Tamaño</p>
-                        <div className="d-flex p-input-center c-input-img">
 
-                            <input id="pequeño" className="c-input-img__input" name="size" value="pequeño" onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='pequeño' className="c-input-img__label" >
-                                <span className="icon-dog size" />
-                            </label>
+                </div>
+                <div className="p-filter">
+                    <p className="p-filter__title">Tamaño</p>
+                    <div className="d-flex p-input-center c-input-img">
 
-                            <input id="mediano" className="c-input-img__input" name="size" value="mediano" onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='mediano' className="c-input-img__label" >
-                                <span className="icon-dog size" />
-                            </label>
+                        <input id="pequeño" className="c-input-img__input" name="size" value="pequeño" onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='pequeño' className="c-input-img__label" >
+                            <span className="icon-dog size" />
+                        </label>
 
-                            <input id="grande" className="c-input-img__input" name="size" value="grande" onChange={props.handleInputChange
-                            } onClick={inputSelected} type="checkbox" alt="Submit" />
-                            <label htmlFor='grande' className="c-input-img__label" >
-                                <span className="icon-dog size" />
-                            </label>
+                        <input id="mediano" className="c-input-img__input" name="size" value="mediano" onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='mediano' className="c-input-img__label" >
+                            <span className="icon-dog size" />
+                        </label>
 
-                        </div>
+                        <input id="grande" className="c-input-img__input" name="size" value="grande" onChange={props.handleInputChange
+                        } onClick={inputSelected} type="checkbox" alt="Submit" />
+                        <label htmlFor='grande' className="c-input-img__label" >
+                            <span className="icon-dog size" />
+                        </label>
 
                     </div>
-                    <div className="p-filter-btn-box">
-                        <button className="c-button c-button__pink" type="reset" onClick={clearFilter}>Borrar filtros</button>
-                        <button className="c-button c-button__pink" type="submit">Aplicar</button>
-                    </div>
-                </form>
+
+                </div>
+                <div className="p-filter-btn-box">
+                    <button className="c-button c-button__pink" type="reset" onClick={props.clear}>Borrar filtros</button>
+                    <button className="c-button c-button__pink" type="submit" onClick={props.submitFilter}>Aplicar</button>
+                </div>
             </PopUp>
         </div>
     )
