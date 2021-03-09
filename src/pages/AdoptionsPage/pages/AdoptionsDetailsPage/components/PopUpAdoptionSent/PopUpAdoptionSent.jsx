@@ -1,9 +1,12 @@
 import React, {useContext} from "react";
 
-import "./PopUpAdoptionSent.scss";
 import PopUp from "../../../../../../shared/PopUp/PopUp";
-import img from "../../../../../../assets/img/undrawNatureFunN9Lv1@3x.png";
+
 import { PopUpContext } from "../../../../../../shared/Context/PopUpContext";
+
+import img from "../../../../../../assets/img/undrawNatureFunN9Lv1@3x.png";
+
+import "./PopUpAdoptionSent.scss";
 
 export function PopUpAdoptionSent() {
 

@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
-import SearchBar from '../../shared/SearchBar/SearchBar';
 
-import './AdoptionsPage.scss';
+import SearchBar from '../../shared/SearchBar/SearchBar';
 import { AdoptionCard } from './components/AdoptionCard';
-import { API } from '../../shared/consts/api.consts';
+import { PopUpFilter } from './components/PopUpFilter/PopUpFilter';
+
 import { LoadingContext } from '../../core/Loading/contexts/LoadingContext';
 import { PopUpContext } from '../../shared/Context/PopUpContext';
-import { PopUpFilter } from './components/PopUpFilter/PopUpFilter';
+
+import { API } from '../../shared/consts/api.consts';
+
+import './AdoptionsPage.scss';
 
 let allApps = [];
 
@@ -14,28 +17,6 @@ export function AdoptionsPage() {
     const [search, setSearch] = useState(null);
     const [pop, setPop] = useState(false);
     const [filter, setFilter] = useState({});
-
-    const newFilter = (e) => {
-        const value = e.target.value;  
-        setFilter({
-            ...filter,
-            'filter': value});
-        const inputs = document.querySelectorAll('input');
-        inputs.forEach(input => {
-            input.disabled = true;
-        });
-        console.log(filter)
-    }
-
-    const click = () => {
-        setPop(true);
-    }
-    const close = () => {
-        setPop(false);
-    }
-
-    const {setIsLoading} = useContext(LoadingContext);
-
     const [applications, setApplications] = useState([
         {
             pet: {
@@ -44,8 +25,28 @@ export function AdoptionsPage() {
         }
     ]);
 
- 
+    const {setIsLoading} = useContext(LoadingContext);
+
     const user = (JSON.parse(localStorage.getItem('userData')));
+
+    const newFilter = (e) => {
+        const value = e.target.value;
+        setFilter({
+            ...filter,
+            'filter': value});
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+                input.disabled = true;
+        });
+    }
+
+    const click = () => {
+        setPop(true);
+    }
+
+    const close = () => {
+        setPop(false);
+    }
   
     const getApplications = () =>{
         setIsLoading(true);
@@ -56,7 +57,7 @@ export function AdoptionsPage() {
         });
     }
 
-    const filterItem = ()=>{
+    const searchItem = ()=>{
         const filterApps = allApps.filter((app)=>{
             if (app.pet.name.toLowerCase().includes(search.toLowerCase())) {
                 return app;
@@ -66,19 +67,31 @@ export function AdoptionsPage() {
     }
 
     const submitFilter = () => {
-        const filterApps = allApps.filter((app)=>{
+        if(filter !== null) {
+                    const filterApps = allApps.filter((app)=>{
             if (app.status === filter.filter) {
                 return app;
             }
         })
-        setApplications(filterApps); 
+            setApplications(filterApps); 
+        }
         close();  
+    }
+    
+    const clearFilter = () => {
+        const inputs = document.querySelectorAll('input')
+        inputs.forEach(input => {
+            input.disabled = false;
+            input.checked = false;
+        });
+        setApplications(allApps);
+        setFilter(null);
     }
 
     useEffect(getApplications, []);
     useEffect(() => {
         if (search) {
-            filterItem();
+            searchItem();
         }else{
             getApplications()
         }
@@ -93,7 +106,7 @@ export function AdoptionsPage() {
             <AdoptionCard name={app.pet.name} city={app.pet.city} gender={app.pet.gender} img={app.pet.images[0]} status={app.status} id={app.pet._id}></AdoptionCard>
             )}
             </div>
-                <PopUpFilter onClose={close} show={pop} filter={newFilter} submit={submitFilter}></PopUpFilter>
+                <PopUpFilter onClose={close} show={pop} filter={newFilter} submit={submitFilter} clear={clearFilter}></PopUpFilter>
         </div>
         </PopUpContext.Provider>
     );

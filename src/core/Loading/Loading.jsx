@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+
 import { LoadingContext } from './contexts/LoadingContext';
+
 import './Loading.scss';
 
 export function Loading(){

@@ -1,16 +1,16 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef } from 'react';
+import { Link } from 'react-router-dom';
+
+import {GoogleMap, Marker, useLoadScript} from "@react-google-maps/api";
+
 import { AdoptionCard } from '../../../components/AdoptionCard';
+import { AddressCard } from './AddressCard';
 
 import email from '../../../../../assets/img/email-r.svg';
 import whatsapp from '../../../../../assets/img/whatsapp-r.svg';
 
 import './ResumenTab.scss';
-import { AddressCard } from './AddressCard';
-import { Link } from 'react-router-dom';
-import {GoogleMap, Marker, useLoadScript} from "@react-google-maps/api";
-
 import MapStyles from '../../../../MapsPage/components/MapStyles';
-// import {Mailto} from 'react-mailto';
 
 export function ResumenTab(props){
 
@@ -23,17 +23,16 @@ export function ResumenTab(props){
             lat: props.lat,
             lng: props.long,
     }
-
     const mapContainerStyle = {
         width: '100%',
         height: '7rem',
-    }
-    
+    }    
     const center = {
         lat: props.lat,
         lng: props.long
     }
     const mapRef = useRef();
+
     const onMapLoad = useCallback((map) => {
         mapRef.current = map;
     });
@@ -42,8 +41,7 @@ export function ResumenTab(props){
         styles: MapStyles,
         disableDefaultUI: true,
     };
-
-
+    
     return(
         <div className="container">
             <AdoptionCard name={props.name} city={props.city} gender={props.gender} img={props.img} id={props.id}></AdoptionCard>

@@ -1,11 +1,14 @@
-import React, { useContext} from 'react'
-import PopUp from '../../../../shared/PopUp/PopUp'
-import video from '../../../../assets/video/adopcion'
-import './PopUpAdoption.scss'
-import { PopUpContext } from '../../../../shared/Context/PopUpContext';
-import poster from '../../../../assets/img/logo.png'
+import React, { useContext} from 'react';
 import { useHistory, useParams } from 'react-router';
 
+import PopUp from '../../../../shared/PopUp/PopUp';
+
+import { PopUpContext } from '../../../../shared/Context/PopUpContext';
+
+import video from '../../../../assets/video/adopcion';
+import poster from '../../../../assets/img/logo.png';
+
+import './PopUpAdoption.scss';
 
 export default function PopUpAdoption() {
     
@@ -29,10 +32,8 @@ export default function PopUpAdoption() {
                 btnPlay.style.visibility = 'hidden';
             }else{
                 
-            } 
-            
-        }
-               
+            }           
+        }               
     }
 
     const stopVideo = ()=>{
@@ -41,13 +42,11 @@ export default function PopUpAdoption() {
         video.load();
         btnPlay.style.visibility = 'visible';
     }
-    const history = useHistory();
-    
+    const history = useHistory();    
     
     return (
         
-        <div className="c-popupAdoption">
-        
+        <div className="c-popupAdoption">        
             <PopUp onClose={()=> setShow(false)} show={show} title="Solicitud de adopción">
                 <p className="c-popupAdoption__parra">Adoptar es un acto de amor, pero sobre todo responsabilidad de por vida</p><br></br>
                 <p className="c-popupAdoption__parra">Por este motivo es importante que veas el siguiente video donde te explicamos cómo va a ser todo el proceso de adopción</p>
@@ -58,9 +57,7 @@ export default function PopUpAdoption() {
                 <button onClick={()=> {setShow(false); stopVideo()}} className="c-popupAdoption__cancel">Cancelar</button>
                 <button  disabled className="c-popupAdoption__continue">Continuar</button>
                 </div>
-            </PopUp>
-
-        
+            </PopUp>        
         </div>
     )
 }

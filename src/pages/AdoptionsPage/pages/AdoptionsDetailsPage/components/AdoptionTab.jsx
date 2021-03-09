@@ -1,38 +1,37 @@
-import { MenuItem, TextField } from '@material-ui/core';
 import React, { useCallback, useRef, useState } from 'react';
+import { useParams } from 'react-router';
+import { MenuItem, TextField } from '@material-ui/core';
+import localization from 'moment/locale/es';
+import moment from 'moment';
+import {GoogleMap, Marker, useLoadScript} from "@react-google-maps/api";
+
 import { AddressCard } from './AddressCard';
-import localization from 'moment/locale/es'
+import { PopUpAdoptionSent } from './PopUpAdoptionSent/PopUpAdoptionSent';
+
+import { PopUpContext } from '../../../../../shared/Context/PopUpContext';
+
+import { API } from '../../../../../shared/consts/api.consts';
+
 import calendar from '../../../../../assets/img/calendar-r.svg';
 
 import './AdoptionTab.scss';
-import moment from 'moment';
-
-import { API } from '../../../../../shared/consts/api.consts';
-import { useParams } from 'react-router';
-
-import { PopUpContext } from '../../../../../shared/Context/PopUpContext';
-import { PopUpAdoptionSent } from './PopUpAdoptionSent/PopUpAdoptionSent';
-import {GoogleMap, Marker, useLoadScript} from "@react-google-maps/api";
-
 import MapStyles from '../../../../MapsPage/components/MapStyles';
 
 export function AdoptionTab(props){
     const [show, setShow] = useState(false);
     const [pop, setPop] = useState(false);
-
-    const param = useParams();
-    const petId = param.petId; 
-
     const [data, setData] = useState({
         petId: petId
     });
+
+    const param = useParams();
+    const petId = param.petId; 
 
     const dropdown = () => {
         show ? setShow(false) : setShow(true);
     }
 
     const today = moment(new Date());
-    console.log(today);
     moment.locale('es', localization);
     
     const capitalizeFirstLetter = (string) => {
@@ -88,16 +87,15 @@ export function AdoptionTab(props){
             {isLoaded && <div className={"tab__map"}>
                     <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={16} options={options}
                                onLoad={onMapLoad}>
-
                         <Marker
-                                                                position={{lat: location.lat, lng: location.lng}}
-                                                                icon={{
-                                                                    url: 'https://cdn.zeplin.io/5e2888579d7785572934fb93/assets/F29C25E8-57BD-47CE-852F-0674F0EDD1D6.png',
-                                                                    scaledSize: new window.google.maps.Size(32, 32),
-                                                                    origin: new window.google.maps.Point(0, 0),
-                                                                    anchor: new window.google.maps.Point(15, 15),
-                                                                }}
-                                                                />)}
+                            position={{lat: location.lat, lng: location.lng}}
+                            icon={{
+                                    url: 'https://cdn.zeplin.io/5e2888579d7785572934fb93/assets/F29C25E8-57BD-47CE-852F-0674F0EDD1D6.png',
+                                    scaledSize: new window.google.maps.Size(32, 32),
+                                    origin: new window.google.maps.Point(0, 0),
+                                    anchor: new window.google.maps.Point(15, 15),
+                                }}
+                        />)}
                     </GoogleMap>
                 </div>}
             <form noValidate className="appointment-form">

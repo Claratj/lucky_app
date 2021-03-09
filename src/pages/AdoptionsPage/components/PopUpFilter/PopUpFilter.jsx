@@ -1,49 +1,59 @@
-import React, { useContext, useState } from 'react';
-import { PopUpContext } from '../../../../shared/Context/PopUpContext';
+import React, { useContext } from 'react';
+
 import PopUp from '../../../../shared/PopUp/PopUp';
 
-import '../../../PetsPage/components/FilterPets/FilterPets.scss';
+import { PopUpContext } from '../../../../shared/Context/PopUpContext';
+
+import './PopUpFilter.scss';
 
 export function PopUpFilter(props) {
     const {pop, setPop} = useContext(PopUpContext);
 
-    const clearFilter = () => {
-        const inputs = document.querySelectorAll('input')
-        inputs.forEach(input => {
-            input.disabled = false;
-            input.checked = false;
-        });
-    }
-
     return(
         <PopUp show={pop} onClose={props.onClose}>
-        <div>
-            Filtros
-            <input id='accepted' name='accepted' className="c-input-img__input" value='accepted' onClick={props.filter} 
-            // onClick={inputSelected} 
-            type="checkbox" alt="Submit" />
-                        <label htmlFor='accepted' className="c-input-img__label" >
-                            {/* <span className="icon-dog size" />  */}
-                            Completado
-                        </label>
+        <div className="c-app-filter">
+            <p className="s-text-style">Filtros</p>            
+            <div className="flex justify-context-center align-items-center c-app-filter__filter">
+            <input 
+                id='accepted' 
+                name='accepted' 
+                className="c-app-filter__input" 
+                value='accepted' onClick={props.filter} 
+                type="checkbox" alt="Submit" />
+                <label htmlFor='accepted' className="c-app-filter__label" >
+                    <span className="icon-tick size" /> 
+                    Completado
+                    </label>
 
-            <input id='process' name='process' className="c-input-img__input" value='process' onClick={props.filter} 
-            // onClick={inputSelected} 
-            type="checkbox" alt="Submit" />
-                        <label htmlFor='process' className="c-input-img__label" >
-                            {/* <span className="icon-dog size" />  */}
-                            En proceso
-                        </label>
+            <input 
+                id='process' 
+                name='process' 
+                className="c-app-filter__input" 
+                value='process' 
+                onClick={props.filter} 
+                type="checkbox" 
+                alt="Submit" />
+                <label htmlFor='process' className="c-app-filter__label" >
+                    <span className="icon-stethoscope size" /> 
+                    En proceso
+                    </label>
 
-            <input id='rejected' name='rejected' className="c-input-img__input" value='rejected' onClick={props.filter} 
-            // onClick={inputSelected} 
-            type="checkbox" alt="Submit" />
-                        <label htmlFor='rejected' className="c-input-img__label" >
-                            {/* <span className="icon-dog size" />  */}
-                            Rechazado
-                        </label>
-                        <button type="reset" onClick={clearFilter}>Borrar filtros</button>
-                        <button type="submit" onClick={props.submit}>Enviar filtros</button>
+            <input 
+                id='rejected' 
+                name='rejected' 
+                className="c-app-filter__input" 
+                value='rejected' 
+                onClick={props.filter} 
+                type="checkbox" alt="Submit" />
+                <label htmlFor='rejected' className="c-app-filter__label" >
+                    <span className="icon-cancel-1 size" /> 
+                    Rechazado
+                    </label>
+            </div>
+            <div>
+                <button className="c-app-filter__btn" type="reset" onClick={props.clear}>Borrar filtros</button>
+                <button className="c-app-filter__btn" type="submit" onClick={props.submit}>Aceptar</button>        
+            </div>
         </div>
         </PopUp>
     );

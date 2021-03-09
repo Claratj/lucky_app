@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './Footer.scss';
+import {NavLink} from "react-router-dom";
+
+import '../../pages/HomePage/HomeCard/HomeCard';
 
 import perfil from '../../assets/img/avatar-default.svg';
 import mS from '../../assets/img/mS.svg';
-import '../../pages/HomePage/HomeCard/HomeCard';
-import {NavLink} from "react-router-dom";
 
+import './Footer.scss';
 
 export function Footer() {
     const [user, setUser] = useState({});
@@ -24,8 +25,7 @@ export function Footer() {
             {user  ? 
                 <img src={user.image} alt={"Perfil"} className="c-footer__img"/>
                 :
-                <img src={perfil} alt={"Perfil"} className="c-footer__img"/>
-            
+                <img src={perfil} alt={"Perfil"} className="c-footer__img"/>            
             }</NavLink>
             <NavLink to='/menu'><img src={mS} alt={"mS"}/></NavLink>
         </div>

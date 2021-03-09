@@ -1,29 +1,30 @@
 import React, { useContext, useEffect, useState } from 'react';
-
 import { useHistory, useParams } from 'react-router-dom';
+
+import { ResumenTab } from './components/ResumenTab';
+import { InfoTab } from './components/InfoTab';
+import { AdoptionTab } from './components/AdoptionTab';
+
+import { LoadingContext } from '../../../../core/Loading/contexts/LoadingContext';
+
+import { API } from '../../../../shared/consts/api.consts';
 
 import iconBack from '../../../../assets/img/atras.png';
 
 import './AdoptionsDetailPage.scss';
 import '../../../../styles/elements/_tab.elements.scss';
-import { ResumenTab } from './components/ResumenTab';
-import { InfoTab } from './components/InfoTab';
-import { AdoptionTab } from './components/AdoptionTab';
-import { API } from '../../../../shared/consts/api.consts';
-import { LoadingContext } from '../../../../core/Loading/contexts/LoadingContext';
-
 
 export function AdoptionsDeatilPage() {
-
-    const history = useHistory(); // para volver atrás
-
-    const {setIsLoading} = useContext(LoadingContext);
 
     const [pet, setPet] = useState({
         images:[],
         adoption: {},
         shelter: {}
     });
+    
+    const {setIsLoading} = useContext(LoadingContext);
+
+    const history = useHistory(); 
         
     const param = useParams();
     const petId = param.id;  
@@ -38,8 +39,6 @@ export function AdoptionsDeatilPage() {
     }
 
     useEffect(getPet, []);
-
-    console.log(pet);
 
     function handleClick(e, text){
         console.log(text);
