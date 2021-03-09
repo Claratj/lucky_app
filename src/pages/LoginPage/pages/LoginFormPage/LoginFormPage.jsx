@@ -7,14 +7,17 @@ import './LoginFormPage.scss';
 import logo from "../../../../assets/img/logo@3x.png";
 
 export function LoginFormPage() {
-
-
     const [showPassword, setShowPassword] = useState(false);
     const [formValues, setFormValues] = useState({
         'email': '',
         'password': '',
     });
+
+
+    const [show, setshow] = useState(false);
  
+
+
     const handleClickShowPassword = () => {
         showPassword ? setShowPassword(false) : setShowPassword(true);
         console.log(showPassword);
@@ -27,20 +30,23 @@ export function LoginFormPage() {
     
     const handleSubmit = (event) => {
         event.preventDefault();
+        
         API.post('login', formValues).then((res)=>{
             console.log(res);
             localStorage.setItem('userData', JSON.stringify(res.data.userData));
             localStorage.setItem('token', res.data.token);
             let user = localStorage.getItem('userData');
-    
+           
             if(user){
                 window.location.href = "/home";
-
+                setshow(false);
             }
-
         });
+
+        setshow(true);
     }
     let userToken = localStorage.getItem('token');
+   
  
 
     return (
@@ -53,6 +59,12 @@ export function LoginFormPage() {
             <img src={logo} alt={"Lucky"} className={"p-login-form__logo"}/>
             <p className={"s-text-style"}>¡Hola! para continuar, inicia sesión o crea una cuenta</p>
             <form onSubmit={handleSubmit}>
+ 
+               { show  ? <p  id="error" className={"s-text-style"}>Datos incorrectos</p> : null }
+
+            
+               
+
                 <FormControl className={"p-login-form__input"}>
                     <InputLabel htmlFor="email">Correo electrónico</InputLabel>
                     <Input
