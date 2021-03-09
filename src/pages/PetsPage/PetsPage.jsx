@@ -38,14 +38,16 @@ export default function PetsPage() {
     const user = JSON.parse(localStorage.getItem('userData'));
 
     const handleInputChange = (e) => {
-        console.log(e);
+        // console.log(e);
         const value = e.target.value;
         setData({
             ...data,
             [e.target.name]: value
         });
-        
 
+        let number = Object.keys(data).length;
+        console.log(number);
+        setCount(number);
         console.log(data);
     }
     const close = () => {
@@ -53,10 +55,10 @@ export default function PetsPage() {
     }
 
     const submitFilter = () => {
-        console.log(data);
+        // console.log(data);
 
         let filterPets = allPets;
-        console.log(data);
+        // console.log(data);
         if (data.city) {
             filterPets = filterPets.filter((pet) => {
                 if (pet.city === data.city) {
@@ -100,7 +102,7 @@ export default function PetsPage() {
         }
 
         setPets(filterPets);
-        console.log(filterPets);
+        // console.log(filterPets);
 
         close();
     }
