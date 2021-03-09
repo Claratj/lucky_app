@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './FilterPets.scss';
 import { Link } from 'react-router-dom';
-
+import { FilterContext } from '../../../../shared/Context/FilterContext';
 
 export function FilterPets(props) {
-
+    const { inFilter, setFilter } = useContext(FilterContext);
     const [data, setData] = useState({
 
     });
@@ -123,7 +123,7 @@ export function FilterPets(props) {
 
 
     return (
-        <div className="fig-c">
+        inFilter && <div className="fig-c">
             <div>
                 <h5 className="fig-c__filter-title">Filtros</h5>
 
