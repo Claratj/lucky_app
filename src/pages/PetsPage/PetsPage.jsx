@@ -43,7 +43,7 @@ export default function PetsPage() {
             ...data,
             [e.target.name]: value
         });
-
+        
         console.log(data);
     }
     const close = () => {

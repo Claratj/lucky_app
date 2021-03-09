@@ -14,13 +14,14 @@
 
 
 .fig-c {
-    // padding: 2.2rem 0.5rem;
-    // width: 100%;
-    // overflow-x: hidden;
-    
+
+    // padding: 0 2rem;
+
     &__filter-title {
         font-family: Barlow-med;
+        font-size: 20px;
         color: $color-blue-text;
+        text-align: center;
     }   
 }
 
@@ -34,15 +35,13 @@
 
     &-especie {
         margin-bottom: 10px;
-        & p {
-            padding: 0 14px;
-        }
     }
-
+    
     &__title {
         color: $color-ocean;
         font-size: 16px;
-        padding: 0 8px;
+        padding: 0 8px 0 ;
+        margin-bottom: 10px;
     }
     .MuiTextField-root {
         font-family: Barlow;
@@ -62,21 +61,6 @@
     .MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button {
         font-family: Barlow;
     }
-
-    // &__select {
-    //     padding: 5px 8px;
-    //     width: 16.25rem;
-    //     margin-bottom: 10px;
-    //     border: none;
-    //     border-bottom: 1px $color-cloud-blue solid;
-    //     font-size: 12px;
-    //     // background-color: transparent;
-    //     appearance: none;
-    
-    //     &.p-filter__select:focus{
-    //         outline: none;
-    //     }
-    // }
 
     &-btn-box {
         width: 100%;
@@ -130,13 +114,24 @@
         cursor: pointer;
     }
     .size {
+        font-size: 1.8rem;
+    }
+
+    .small {
+        font-size: 1.3rem;
+    }
+
+    .medium {
         font-size: 1.5rem;
     }
 
+    .big {
+        font-size: 2rem;
+    }
+    
     :disabled + &__label {
         color: lightgrey;
     }
-        
     :checked + &__label {
         border: 2px $color-pink solid;
         color:  $color-pink;
@@ -144,6 +139,7 @@
         //     fill:  $color-pink;
         // }
     }
+
     // :checked + svg {
     //     fill: $color-pink;
         
