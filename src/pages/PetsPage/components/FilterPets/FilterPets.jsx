@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { MenuItem, TextField } from '@material-ui/core';
 import './FilterPets.scss';
 import { Link } from 'react-router-dom';
 import { FilterContext } from '../../../../shared/Context/FilterContext';
@@ -74,48 +75,48 @@ export function FilterPets(props) {
     switch (selected !== null) {
         case (selected === 'perro'):
             listType = species.perro.map((type, i) =>
-                <option key={i} value={type}>{type}</option>
+                <MenuItem key={i} value={type}>{type}</MenuItem>
             );
             break;
 
         case (selected === 'gato'):
             listType = species.gato.map((type, i) =>
-                <option key={i} value={type}>{type}</option>
+                <MenuItem key={i} value={type}>{type}</MenuItem>
             );
             break;
         case (selected === 'conejo'):
             listType = species.conejo.map((type, i) =>
-                <option key={i} value={type}>{type}</option>
+                <MenuItem key={i} value={type}>{type}</MenuItem>
             );
             break;
         case (selected === 'cobaya'):
             listType = species.cobaya.map((type, i) =>
-                <option key={i} value={type}>{type}</option>
+                <MenuItem key={i} value={type}>{type}</MenuItem>
             );
             break;
         case (selected === 'pez'):
             listType = species.pez.map((type, i) =>
-                <option key={i} value={type}>{type}</option>
+                <MenuItem key={i} value={type}>{type}</MenuItem>
             );
             break;
         case (selected === 'reptil'):
             listType = species.reptil.map((type, i) =>
-                <option key={i} value={type}>{type}</option>
+                <MenuItem key={i} value={type}>{type}</MenuItem>
             );
             break;
         case (selected === 'anfibio'):
             listType = species.anfibio.map((type, i) =>
-                <option key={i} value={type}>{type}</option>
+                <MenuItem key={i} value={type}>{type}</MenuItem>
             );
             break;
         case (selected === 'aracnido'):
             listType = species.aracnido.map((type, i) =>
-                <option key={i} value={type}>{type}</option>
+                <MenuItem key={i} value={type}>{type}</MenuItem>
             );
             break;
         case (selected === 'ave'):
             listType = species.ave.map((type, i) =>
-                <option key={i} value={type}>{type}</option>
+                <MenuItem key={i} value={type}>{type}</MenuItem>
             );
             break;
 
@@ -133,25 +134,25 @@ export function FilterPets(props) {
                 <form>
                     <div className="p-filter">
                         <p className="p-filter__title">Ciudad</p>
-                        <select class="p-filter__select" name="city" value={data.city} onChange={handleInputChange} >
-                            <option value="Madrid">Madrid</option>
-                            <option value="Barcelona">Barcelona</option>
-                            <option value="Valencia">Valencia</option>
-                            <option value="Sevilla">Sevilla</option>
-                            <option value="Zaragoza">Zaragoza</option>
-                            <option value="Málaga">Málaga</option>
-                            <option value="Murcia">Murcia</option>
-                            <option value="Palma">Palma</option>
-                            <option value="Gran Canaria">Gran Canaria</option>
-                            <option value="Bilbao">Bilbao</option>
-                            <option value="Alicante">Alicante</option>
-                            <option value="Córdoba">Córdoba</option>
-                            <option value="Valladolid">Valladolid</option>
-                            <option value="Vitoria">Vitoria</option>
-                            <option value="La Coruña">La Coruña</option>
-                            <option value="Granada">Granada</option>
-                            <option value="Oviedo">Oviedo</option>
-                        </select>
+                        <TextField name="city" defaultValue={data.city} select onChange={handleInputChange} >
+                            <MenuItem value="Madrid">Madrid</MenuItem>
+                            <MenuItem value="Barcelona">Barcelona</MenuItem>
+                            <MenuItem value="Valencia">Valencia</MenuItem>
+                            <MenuItem value="Sevilla">Sevilla</MenuItem>
+                            <MenuItem value="Zaragoza">Zaragoza</MenuItem>
+                            <MenuItem value="Málaga">Málaga</MenuItem>
+                            <MenuItem value="Murcia">Murcia</MenuItem>
+                            <MenuItem value="Palma">Palma</MenuItem>
+                            <MenuItem value="Gran Canaria">Gran Canaria</MenuItem>
+                            <MenuItem value="Bilbao">Bilbao</MenuItem>
+                            <MenuItem value="Alicante">Alicante</MenuItem>
+                            <MenuItem value="Córdoba">Córdoba</MenuItem>
+                            <MenuItem value="Valladolid">Valladolid</MenuItem>
+                            <MenuItem value="Vitoria">Vitoria</MenuItem>
+                            <MenuItem value="La Coruña">La Coruña</MenuItem>
+                            <MenuItem value="Granada">Granada</MenuItem>
+                            <MenuItem value="Oviedo">Oviedo</MenuItem>
+                        </TextField>
                     </div>
                     <div className="p-filter-especie">
                         <p className="p-filter__title">Especie</p>
@@ -228,19 +229,19 @@ export function FilterPets(props) {
                         {selected && selected !== 'huron' && selected !== 'Pequeño mamífero' &&
                             < div className="p-filter">
                                 <p className="p-filter__title">Tipo</p>
-                                <select class="p-filter__select" name="typePet" value={data.type} onChange={handleInputChange}>
+                                <TextField name="typePet" defaultValue={data.type} select onChange={handleInputChange}>
                                     {listType}
-                                </select>
+                                </TextField>
                             </div>
                         }
                     </div>
                     <div className="p-filter">
                         <p className="p-filter__title">Edad</p>
-                        <select class="p-filter__select" name="age" value={data.age} onChange={handleInputChange}>
-                            <option value="Cachorro">Cachorro</option>
-                            <option value="Joven">Joven</option>
-                            <option value="Adulto">Adulto</option>
-                        </select>
+                        <TextField name="age" defaultValue={data.age} select onChange={handleInputChange}>
+                            <MenuItem value="Cachorro">Cachorro</MenuItem>
+                            <MenuItem value="Joven">Joven</MenuItem>
+                            <MenuItem value="Adulto">Adulto</MenuItem>
+                        </TextField>
                     </div>
                     <div className="p-filter">
                         <p className="p-filter__title">Sexo</p>
@@ -284,7 +285,7 @@ export function FilterPets(props) {
                     <div className="p-filter-btn-box">
                         <button className="c-button c-button__pink" type="reset" onClick={clearFilter}>Borrar filtros</button>
                         <Link to="/pets">
-                            <button className="c-button c-button__pink" type="">Aplicar</button>
+                            <button className="c-button c-button__pink" type="submit">Aplicar</button>
                         </Link>
                     </div>
                 </form>
