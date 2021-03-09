@@ -11,13 +11,18 @@ export function FilterPets(props) {
     const inputSelected = (e) => {
         const name = e.target.name;
         const inputsName = document.getElementsByName(name);
+        console.log(e);
 
-        for (let i = 0; i < inputsName.length; i++) {
-            const input = inputsName[i];
-            if (input.checked === false) {
-                input.disabled = true;
-            }
-        }
+        // for (let i = 0; i < inputsName.length; i++) {
+        //     const input = inputsName[i];
+        //     if (input.checked === false) {
+        //         input.disabled = true;
+        //     }
+        // }
+        // const inputs = document.querySelectorAll('input');
+        inputsName.forEach(input => {  
+            input.disabled = true;            
+        });
 
     }
 
@@ -88,6 +93,7 @@ export function FilterPets(props) {
                 <MenuItem key={i} value={type}>{type}</MenuItem>
             );
             break;
+        default: break;
 
     }
     // console.log(show);
@@ -105,7 +111,7 @@ export function FilterPets(props) {
 
                 <div className="p-filter">
                     <p className="p-filter__title">Ciudad</p>
-                    <TextField name="city" select defaultValue="Madrid" onChange={props.handleInputChange} >
+                    <TextField name="city" defaultValue="" select onChange={props.handleInputChange} >
                         <MenuItem value="Madrid">Madrid</MenuItem>
                         <MenuItem value="Barcelona">Barcelona</MenuItem>
                         <MenuItem value="Valencia">Valencia</MenuItem>

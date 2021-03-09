@@ -30,13 +30,14 @@ export default function PetsPage() {
     const { setIsLoading } = useContext(LoadingContext);
     const [show, setShow] = useState(false);
     const [data, setData] = useState({
-        species: {}
+        species: ""
     });
 
 
     const user = JSON.parse(localStorage.getItem('userData'));
 
     const handleInputChange = (e) => {
+        console.log(e);
         const value = e.target.value;
         setData({
             ...data,
@@ -52,43 +53,53 @@ export default function PetsPage() {
     const submitFilter = () => {
         console.log(data);
 
-        if (data !== null) {
-
-            let filterPets = allPets.filter((pet) => {
+            let filterPets = [];
+        console.log(data);
+            if(data.city) {
+                filterPets = allPets.filter((pet) => {
                 if (pet.city === data.city) {
                     return pet;
                 }
-            });
-            console.log(filterPets);
-            filterPets = filterPets.filter((pet) => {
+                });
+            }
+            if (data.species !== "") {
+                filterPets = filterPets.filter((pet) => {
                 if (pet.species.species.toLowerCase() === data.species) {
                     return pet;
                 }
-            });
-            filterPets = filterPets.filter((pet) => {
+                });
+            }
+            if (data.typePet) {
+                filterPets = filterPets.filter((pet) => {
                 if (pet.species.typePet === data.typePet) {
                     return pet;
                 }
-            });
+                }); 
+            }
+
             // filterPets = filterPets.filter((pet) => {
             //     if (pet.age === data.age) {
             //         return pet;
             //     }
             // });
-            console.log(filterPets);
-            filterPets = filterPets.filter((pet) => {
+            if(data.gender) {
+                filterPets = filterPets.filter((pet) => {
                 if (pet.gender.toLowerCase() === data.gender) {
                     return pet;
                 }
             });
-            // filterPets = filterPets.filter((pet) => {
-            //     if (pet.size === data.size) {
-            //         return pet;
-            //     }
-            // });
+            }
+            if(data.size) {
+                filterPets = filterPets.filter((pet) => {
+                if (pet.size.toLowerCase() === data.size) {
+                    return pet;
+                    }
+                });
+            }
+
             setPets(filterPets);
             console.log(filterPets);
-        }
+        
         close();
     }
 
@@ -138,6 +149,7 @@ export default function PetsPage() {
         inputs.forEach(input => {
             input.disabled = false;
             input.checked = false;
+            // input.target.value = "";
         });
 
         // setData({ species: {} });

@@ -20,12 +20,13 @@ import MapStyles from '../../../../MapsPage/components/MapStyles';
 export function AdoptionTab(props){
     const [show, setShow] = useState(false);
     const [pop, setPop] = useState(false);
-    const [data, setData] = useState({
-        petId: petId
-    });
 
     const param = useParams();
     const petId = param.petId; 
+
+    const [data, setData] = useState({
+        petId: petId
+    });
 
     const dropdown = () => {
         show ? setShow(false) : setShow(true);
