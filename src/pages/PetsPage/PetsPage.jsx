@@ -16,6 +16,7 @@ import { FilterContext } from '../../shared/Context/FilterContext';
 import { API } from '../../shared/consts/api.consts';
 import { computeHeadingLevel } from '@testing-library/dom';
 import { FilterPets } from './components/FilterPets/FilterPets';
+import Badge from "@material-ui/core/Badge/Badge";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 let allPets = [];
@@ -208,11 +209,12 @@ export default function PetsPage() {
             <div className="c-pets-page__petsadop">
                 <h4 className="c-pets-page__titleadop">Animales en adopción</h4>
                 <FilterContext.Provider value={{ show, setShow }}>
-
-                    <div onClick={clickTrue}>
-                        <img className="c-pets-page__filter" src={iconFilter} alt="" />
-                    </div>
-                    <FilterPets show={show} handleInputChange={handleInputChange} submitFilter={submitFilter} clear={clearFilter} data={data}></FilterPets>
+                    <Badge badgeContent={4} color="primary">
+                        <div onClick={clickTrue}>
+                            <img className="c-pets-page__filter" src={iconFilter} alt="" />
+                        </div>
+                        <FilterPets show={show} handleInputChange={handleInputChange} submitFilter={submitFilter} clear={clearFilter} data={data}></FilterPets>
+                    </Badge>
                 </FilterContext.Provider>
             </div>
 
