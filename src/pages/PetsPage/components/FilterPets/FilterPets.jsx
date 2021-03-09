@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { MenuItem, TextField } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
 import './FilterPets.scss';
 import { Link } from 'react-router-dom';
 import { FilterContext } from '../../../../shared/Context/FilterContext';
@@ -127,6 +128,9 @@ export function FilterPets(props) {
     return (
         <PopUp onClose={() => setShow(false)} show={show} >
             <div className="fig-c">
+                <NavLink to={"/pets"}>
+                    <div className="close">x</div>
+                </NavLink>
                 <div>
                     <h5 className="fig-c__filter-title">Filtros</h5>
 

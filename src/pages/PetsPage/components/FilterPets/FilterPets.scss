@@ -2,7 +2,9 @@
 
 .c-popUp {
     &__content{
+        height: 100vh;
         width: 100%;
+        border-radius: 0;
         padding: 2.2rem 0.5rem;
         overflow-y: scroll;
         // position: fixed;
@@ -103,9 +105,6 @@
 }
 
 .c-input-img {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
 
     &__input {
         width: 48px;
