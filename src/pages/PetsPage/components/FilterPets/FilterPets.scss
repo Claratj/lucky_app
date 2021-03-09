@@ -114,9 +114,24 @@
         cursor: pointer;
     }
     .size {
+        font-size: 1.8rem;
+    }
+
+    .small {
+        font-size: 1.3rem;
+    }
+
+    .medium {
         font-size: 1.5rem;
     }
+
+    .big {
+        font-size: 2rem;
+    }
     
+    :disabled + &__label {
+        color: lightgrey;
+    }
     :checked + &__label {
         border: 2px $color-pink solid;
         color:  $color-pink;
@@ -125,9 +140,6 @@
         // }
     }
 
-    :disabled + &__label {
-        color: lightgrey;
-    }
     // :checked + svg {
     //     fill: $color-pink;
         

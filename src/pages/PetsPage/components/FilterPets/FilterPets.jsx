@@ -237,19 +237,19 @@ export function FilterPets(props) {
                         <input id="pequeño" className="c-input-img__input" name="size" value="pequeño" onChange={props.handleInputChange
                         } onClick={inputSelected} type="checkbox" alt="Submit" />
                         <label htmlFor='pequeño' className="c-input-img__label" >
-                            <span className="icon-dog size" />
+                            <span className="icon-dog small" />
                         </label>
 
                         <input id="mediano" className="c-input-img__input" name="size" value="mediano" onChange={props.handleInputChange
                         } onClick={inputSelected} type="checkbox" alt="Submit" />
                         <label htmlFor='mediano' className="c-input-img__label" >
-                            <span className="icon-dog size" />
+                            <span className="icon-dog medium" />
                         </label>
 
                         <input id="grande" className="c-input-img__input" name="size" value="grande" onChange={props.handleInputChange
                         } onClick={inputSelected} type="checkbox" alt="Submit" />
                         <label htmlFor='grande' className="c-input-img__label" >
-                            <span className="icon-dog size" />
+                            <span className="icon-dog big" />
                         </label>
 
                     </div>
