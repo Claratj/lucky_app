@@ -12,11 +12,16 @@ export function RegisterFormPage() {
     const [showPassword, setShowPassword] = useState(false);
 
     const [showPassword2, setShowPassword2] = useState(false);
+
     const [formValues, setFormValues] = useState({
         'email': '',
         'password': '',
     });
+    const [checkpass, setcheckpass] = useState(false);
+    const [checkmail, setcheckmail] = useState(false);
+    const [checkfield, setcheckfield] = useState(false);
  
+
     const handleClickShowPassword = () => {
         showPassword ? setShowPassword(false) : setShowPassword(true);
      
@@ -33,37 +38,53 @@ export function RegisterFormPage() {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        //console.log(formValues.email);
-        
+            
   
         if(formValues.password == formValues.password2){
-            console.log("pass iguales");
+            setcheckpass(false);
+            setcheckmail(false);
+            setcheckfield(false);
 
             API.post('register', formValues).then((res)=>{
                 if(res.data.saved){
                     window.location.href = "/login-form";
+                }else if (res.data.error==true){
+                    setcheckmail(true);
                 }else if (res.data.error){
-                    console.log("Email ya registrado");
+
+                    setcheckfield(true);
+                    
+
                 }
 
             });
 
+      }else{
+
+        setcheckpass(true);
+        setcheckmail(false);
+        setcheckfield(false);
       }
 
 
     }
-    let userToken = localStorage.getItem('token');
+   
  
 
     return (
         <div className={"p-login-form"}>
 
-        {userToken && 
-            <Redirect to="/home"/>
-
-        };
+       
             <img src={logo} alt={"Lucky"} className={"p-login-form__logo"}/>
             <p className={"s-text-style"}>Registrar usuario </p>
+
+            { checkpass  ? <p className={"s-text-style"}>Las contraseñas no coinciden </p> : null }
+
+            { checkmail  ? <p className={"s-text-style"}>El email ya esta en uso </p> : null}
+
+            { checkfield  ?  <p className={"s-text-style"}>Todos los campos son obligatorios </p>: null }
+
+
             <form onSubmit={handleSubmit}>
                 <FormControl className={"p-login-form__input"}>
                     <InputLabel htmlFor="Nombre">Nombre</InputLabel>
@@ -126,8 +147,6 @@ export function RegisterFormPage() {
                             </InputAdornment>
                         }
                     />
-
-
                 </FormControl>
 
               <div> &nbsp;</div>
