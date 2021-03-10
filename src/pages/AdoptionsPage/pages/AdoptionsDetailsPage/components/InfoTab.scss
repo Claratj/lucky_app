@@ -51,7 +51,9 @@
       height: 8rem;
       width: 6rem;
       display: flex;
-    content: 'Subir foto';
+    content: url('../../../../../assets/img/group7.png');
+    white-space:normal;
+    text-align: center;
     display: inline-block;
     background-color: white;
     border: 1px solid $color-background-pink;

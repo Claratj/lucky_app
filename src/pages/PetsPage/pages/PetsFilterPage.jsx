@@ -20,7 +20,7 @@ export default function PetsFilterPage() {
     const [data, setData] = useState({
         species: ""
     });
-    const [count, setCount] = useState(Object.keys(data).length);
+    const [count, setCount] = useState(Object.keys(data).length-1);
     const handleInputChange = (e) => {
         
         const value = e.target.value;
