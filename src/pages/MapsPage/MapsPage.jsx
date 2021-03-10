@@ -193,6 +193,11 @@ export function MapsPage() {
         </Combobox>
     }
 
+    const clearSearch = () => {
+        const searchBar = document.querySelector('input');
+        searchBar.value = '';
+    }
+
     return (
         <div className={"p-maps-page"}>
 
@@ -200,7 +205,7 @@ export function MapsPage() {
 
                 <div className={"p-maps-page__search"}>
                     <Search panTo={panTo}/>
-                    <p className={"p-maps-page__clear"}>x</p>
+                    <p className={"p-maps-page__clear"} onClick={clearSearch}>x</p>
                 </div>
 
                 {isLoaded && <div className={"p-maps-page__map"}>
