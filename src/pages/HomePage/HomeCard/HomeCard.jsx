@@ -31,13 +31,13 @@ export function HomeCard() {
     
     return (
         <div className="container flex flex-column align-items-center mt-5">
-            <CardMenu icon={protectora} title='Asociaciones protectoras' link='/'></CardMenu>
-            <CardMenu icon={eventos} title='Eventos' link='/'></CardMenu>
-            <CardMenu icon={blogCopy} title='Curiosidades' link='/'></CardMenu>
+            <CardMenu icon={protectora} title='Asociaciones protectoras' link='/shelters'></CardMenu>
+            <CardMenu icon={eventos} title='Eventos' link='/events'></CardMenu>
+            <CardMenu icon={blogCopy} title='Curiosidades' link='/curiosities'></CardMenu>
             <div className="flex flex-column align-items-center full-width">
-            <CardMenu icon={ayuda} title='Ayuda' link='/'></CardMenu>
+            <CardMenu icon={ayuda} title='Ayuda' link='/help'></CardMenu>
             {user && 
-            <CardMenu icon={confi} title='Configuración' link='/'></CardMenu>}
+            <CardMenu icon={confi} title='Configuración' link='/config'></CardMenu>}
             </div>
             {user &&
             <div className="flex flex-column align-items-center session">
