@@ -205,16 +205,16 @@ export function FilterPets(props) {
                                 <span className="icon-parrot size" /> Ave
                         </label>
                         </div>
-
                     </div>
-                    {selected && selected !== 'huron' && selected !== 'Pequeño mamífero' &&
-                        < div className="p-filter">
-                            <p className="p-filter__title">Tipo</p>
-                            <TextField name="typePet" select onChange={props.handleInputChange}>
-                                {listType}
-                            </TextField>
-                        </div>}
                 </div>
+                {selected && selected !== 'huron' && selected !== 'Pequeño mamífero' &&
+                    < div className="p-filter">
+                        <p className="p-filter__title">Tipo</p>
+                        <TextField name="typePet" select onChange={props.handleInputChange}>
+                            {listType}
+                        </TextField>
+                    </div>}
+
                 <div className="p-filter">
                     <p className="p-filter__title">Edad</p>
                     <TextField name="age" select onChange={props.handleInputChange}>
