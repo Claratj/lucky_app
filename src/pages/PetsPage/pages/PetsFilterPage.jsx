@@ -21,7 +21,7 @@ export default function PetsFilterPage() {
     const [data, setData] = useState({
         species: ""
     });
-    const [count, setCount] = useState(Object.keys(data).length-1);
+    const [count, setCount] = useState(Object.keys(data).length - 1);
     const handleInputChange = (e) => {
 
         const value = e.target.value;
@@ -60,6 +60,8 @@ export default function PetsFilterPage() {
             filterPets = filterPets.filter((pet) => {
 
                 if (pet.species.species.toLowerCase() === data.species) {
+                    console.log(data.species);
+                    console.log(pet);
                     return pet;
                 }
             });
@@ -71,10 +73,10 @@ export default function PetsFilterPage() {
                 }
             });
         }
-        if (data.age !== "") {
+        if (data.age) {
             var d = new Date();
             var thisYear = d.getFullYear();
-            console.log(thisYear);
+            // console.log(thisYear);
             let birthDate = 1;
             for (let i = 0; i < filterPets.length; i++) {
                 const pet = filterPets[i];
@@ -89,7 +91,6 @@ export default function PetsFilterPage() {
 
                 } else {
                     pet.birthDate = "Adulto";
-
                 }
                 console.log(pet.birthDate);
             }
