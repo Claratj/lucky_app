@@ -4,7 +4,7 @@ import '../AdoptionForm.scss';
 import {Checkbox, FormControlLabel, TextField} from "@material-ui/core";
 
 export function AdoptionFormStep1(props) {
-    const user = props.user;
+    const user = JSON.parse(localStorage.getItem('userData'));
     return (
         <div>
             <p className={"p-adoption-form__title"}>Formulario de adopción</p>
