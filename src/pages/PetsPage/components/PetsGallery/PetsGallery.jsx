@@ -59,7 +59,7 @@ function addfav(idPet) {
 
     
 return (
-        <div className="c-galleryPets">
+        <div className="c-galleryPets row flex justify-content-center align-items-center">
         {props.pets.map((item, i)=>
        
             <div className="c-galleryPets__card">
