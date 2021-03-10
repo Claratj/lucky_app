@@ -1,0 +1,63 @@
+@import '../../../styles/tools/variable.tools';
+.c-favsPets{
+    margin-top: 3rem;
+    margin-bottom: 8rem;
+    &__card{
+        margin: 1rem;
+        border: 2px solid $color-cloud-blue;
+        border-radius: 0.33rem;
+        overflow: hidden;
+        height: 17rem;
+    }
+    &__img{
+        width: 21.2rem; 
+        
+       
+    }
+
+    &__pet{
+        width: 100%;
+        height: 14rem;
+        border-bottom: 2px solid $color-cloud-blue;
+        object-fit:initial;
+    }
+
+
+    &__text{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0.3rem;
+        margin-top: 0.1rem;
+    }
+
+    &__name{
+        color: $color-dark-blue;
+        font-size: 23px;
+        font-weight: bolder;
+        margin-left: 0.7rem;
+       
+    }
+
+    &__location{
+        text-align: right;
+        font-size: 12px;
+        margin-right: 0.7rem;
+    }
+
+    &__title{
+        text-align: center;
+        color: $color-dark-blue;
+    }
+    
+
+    &__subtitle{
+        color: $color-pink;
+    }
+
+    &__imgFav{
+        margin-left: 9.3rem;
+        margin-bottom: 1rem;
+    }
+
+    
+}

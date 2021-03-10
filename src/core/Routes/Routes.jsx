@@ -18,11 +18,11 @@ import {LoginFormPage} from "../../pages/LoginPage/pages/LoginFormPage/LoginForm
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
 import {AdoptionForm} from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
-import {FilterPets} from '../../pages/PetsPage/components/FilterPets/FilterPets';
 import {MapsPage} from "../../pages/MapsPage/MapsPage";
 import Page404 from '../../shared/Page404/Page404';
 import {SplashContext} from '../../pages/OnBoardingPage/SplashContext/SplashContext';
 import PetsFilterPage from '../../pages/PetsPage/pages/PetsFilterPage';
+import PetsFavPage from '../../pages/PetsPage/pages/PetsFavPage';
 
 export function Routes() {
 
@@ -35,6 +35,9 @@ export function Routes() {
             </Route>
             <Route path="/pet/:id">
                 <PetsDetailPage/>
+            </Route>
+            <Route path="/pets/fav">
+                <PetsFavPage/>
             </Route>
             <Route path="/pets">
                 <PetsPage/>

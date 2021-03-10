@@ -71,7 +71,7 @@ export default function PetsFilterPage() {
                 }
             });
         }
-        if (data.age !== "") {
+        if (data.age) {
             var d = new Date();
             var thisYear = d.getFullYear();
             console.log(thisYear);
