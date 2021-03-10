@@ -55,6 +55,9 @@
     background-size: cover;
     background-position: center;
   }
+  .MuiInput-underline:after {
+    border-bottom: 0.1rem solid $color-background-pink; 
+}
 
   .c-button {
     margin-bottom: 1rem;
