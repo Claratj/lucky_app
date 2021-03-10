@@ -90,7 +90,7 @@ export function MapsPage() {
     const cleanLocations = async (data) => {
         let theseLocations = [];
         for (let i = 0; i < data.length; i++) {
-            await API.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=${data[i].place_id}&fields=name,rating,geometry,reviews,address_component,photo&key=${process.env.REACT_APP_MAPS_API_KEY}`).then((r) => {
+            await API.get(`https://murmuring-shelf-62465.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=${data[i].place_id}&fields=name,rating,geometry,reviews,address_component,photo&key=${process.env.REACT_APP_MAPS_API_KEY}`).then((r) => {
                 const currentLocation = r.data.result;
                 console.log(currentLocation);
                 let fullInfo = {
@@ -123,7 +123,7 @@ export function MapsPage() {
                 fullInfo.address2 = `${address.locality} ${address.postal_code}`;
 
                 if (currentLocation.photos) {
-                    API.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${currentLocation.photos[0].photo_reference}&key=${process.env.REACT_APP_MAPS_API_KEY}`)
+                    API.get(`https://murmuring-shelf-62465.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${currentLocation.photos[0].photo_reference}&key=${process.env.REACT_APP_MAPS_API_KEY}`)
                         .then((res) => fullInfo.img = res.headers['x-final-url']);
                 }
 
