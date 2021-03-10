@@ -49,6 +49,9 @@
       flex: 2;
     }
   }
+  .MuiInput-underline:after {
+    border-bottom: 0.1rem solid $color-background-pink; 
+}
 
   .c-button {
     margin-top: 2rem;
