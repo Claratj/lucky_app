@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
     Switch,
     Route
 } from "react-router-dom";
 
-import { LoginPage } from "../../pages/LoginPage/LoginPage";
-import { SplashPage } from '../../pages/OnBoardingPage/SplashPage/SplashPage';
-import { OnBoardingPage } from '../../pages/OnBoardingPage/OnBoardingPage';
-import { AdoptionsPage } from '../../pages/AdoptionsPage/AdoptionsPage';
-import { AdoptionsDeatilPage } from '../../pages/AdoptionsPage/pages/AdoptionsDetailsPage/AdoptionsDetailPage';
+import {LoginPage} from "../../pages/LoginPage/LoginPage";
+import {SplashPage} from '../../pages/OnBoardingPage/SplashPage/SplashPage';
+import {OnBoardingPage} from '../../pages/OnBoardingPage/OnBoardingPage';
+import {AdoptionsPage} from '../../pages/AdoptionsPage/AdoptionsPage';
+import {AdoptionsDeatilPage} from '../../pages/AdoptionsPage/pages/AdoptionsDetailsPage/AdoptionsDetailPage';
 import PetsPage from '../../pages/PetsPage/PetsPage';
-import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
+import {ProfilePage} from '../../pages/ProfilePage/ProfilePage';
 import PetsDetailPage from '../../pages/PetsPage/pages/PetsDetailPage';
-import { RegisterFormPage } from "../../pages/LoginPage/pages/RegisterFormPage/RegisterFormPage";
+import {RegisterFormPage} from "../../pages/LoginPage/pages/RegisterFormPage/RegisterFormPage";
 
-import { LoginFormPage } from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
+import {LoginFormPage} from "../../pages/LoginPage/pages/LoginFormPage/LoginFormPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import HomeCard from '../../pages/HomePage/HomeCard/HomeCard';
-import { AdoptionForm } from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
-import { FilterPets } from '../../pages/PetsPage/components/FilterPets/FilterPets';
-import { MapsPage } from "../../pages/MapsPage/MapsPage";
+import {AdoptionForm} from "../../pages/AdoptionsPage/components/AdoptionForm/AdoptionForm";
+import {FilterPets} from '../../pages/PetsPage/components/FilterPets/FilterPets';
+import {MapsPage} from "../../pages/MapsPage/MapsPage";
 import Page404 from '../../shared/Page404/Page404';
-import { SplashContext } from '../../pages/OnBoardingPage/SplashContext/SplashContext';
+import {SplashContext} from '../../pages/OnBoardingPage/SplashContext/SplashContext';
 import PetsFilterPage from '../../pages/PetsPage/pages/PetsFilterPage';
 
 export function Routes() {
@@ -31,55 +31,55 @@ export function Routes() {
     return (
         <Switch>
             <Route path="/pets/filter">
-                <PetsFilterPage></PetsFilterPage>
+                <PetsFilterPage/>
             </Route>
             <Route path="/pet/:id">
-                <PetsDetailPage />
+                <PetsDetailPage/>
             </Route>
             <Route path="/pets">
-                <PetsPage />
+                <PetsPage/>
             </Route>
             <Route path="/profile">
-                <ProfilePage />
+                <ProfilePage/>
             </Route>
             <Route path={"/maps"}>
-                <MapsPage />
+                <MapsPage/>
             </Route>
             <Route path="/adoption-form/:petId">
-                <AdoptionForm />
+                <AdoptionForm/>
             </Route>
             <Route exact path="/adoptions/pet/:id">
-                <AdoptionsDeatilPage />
+                <AdoptionsDeatilPage/>
             </Route>
             <Route path="/adoptions">
-                <AdoptionsPage />
+                <AdoptionsPage/>
             </Route>
             <Route exact path="/boarding">
-                <OnBoardingPage />
+                <OnBoardingPage/>
             </Route>
             <Route path={"/login"}>
-                <LoginPage />
+                <LoginPage/>
             </Route>
             <Route path={"/register"}>
-                <RegisterFormPage />
+                <RegisterFormPage/>
             </Route>
             <Route path={"/login-form"}>
-                <LoginFormPage />
+                <LoginFormPage/>
             </Route>
             <Route path={"/menu"}>
-                <HomeCard></HomeCard>
+                <HomeCard/>
             </Route>
             <Route exact path="/home">
-                <HomePage />
+                <HomePage/>
             </Route>
-            <SplashContext.Provider value={{ isSplash, setSplash }}>
-                <SplashPage></SplashPage>
-                <Route exact path={"/"}>
-                    <OnBoardingPage></OnBoardingPage>
-                </Route>
-            </SplashContext.Provider>
+            <Route exact path={"/"}>
+                <SplashContext.Provider value={{isSplash, setSplash}}>
+                    <SplashPage/>
+                    <OnBoardingPage/>
+                </SplashContext.Provider>
+            </Route>
             <Route path="*">
-                <Page404></Page404>
+                <Page404/>
             </Route>
         </Switch>
     );
