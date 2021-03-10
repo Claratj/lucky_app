@@ -117,7 +117,6 @@ export default function PetsFilterPage() {
         }
 
         setPets(filterPets);
-        // console.log(moment(filterPets[0].birthDate).fromNow());
         close();
     }
 

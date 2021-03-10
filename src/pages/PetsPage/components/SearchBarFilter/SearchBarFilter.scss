@@ -1,6 +1,11 @@
 @import '../../../../styles/tools/variable.tools';
 
+
 .c-searchBarFilter{
+    .MuiBadge-colorPrimary {
+        color: #fff;
+        background-color: $color-ocean;
+    }
     display: flex;
     justify-content: center;
     margin-top: 3.58rem;
