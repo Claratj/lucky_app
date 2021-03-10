@@ -88,6 +88,7 @@ export function InfoTab(props){
             </div>
             <div className="file-container">
             <div className="file">
+            
             {!imgPreview1 && 
                 <input
                     type="file"
@@ -96,6 +97,7 @@ export function InfoTab(props){
                     onChange={onFileSelect1}
                     accept="image/png, image/jpg, image/jpeg"
                     className="file-input"
+                    
                 />
             }
 

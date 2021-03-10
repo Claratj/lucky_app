@@ -40,7 +40,9 @@
     font-size: 0.75rem;
     font-family: Barlow-Regular, sans-serif;
   }
-
+  .MuiInput-underline:after {
+    border-bottom: 0.1rem solid $color-background-pink; 
+}
   .MuiIconButton-root {
     background-image: url("../../../../assets/img/ojo-a.svg");
     background-size: cover;

@@ -9,6 +9,7 @@ import Pet from '../../assets/img/mascota@2x.png';
 import Apadrina from '../../assets/img/apadrina@2x.png';
 import Donar from '../../assets/img/donar@2x.png';
 import { LoadingContext } from '../../core/Loading/contexts/LoadingContext';
+import { NavLink } from 'react-router-dom';
 
 export function HomePage() {
   SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -59,7 +60,8 @@ export function HomePage() {
             <SwiperSlide className="home">
             <div className="c-home-page__item">
             <div><img src={Pet} alt="" className="c-home-page__imgswiper"></img></div>
-            <div className="c-home-page__figcap"><h4>Estado de la adopcion</h4><p className="c-home-page__par">Revisa el proceso de tus adpciones en curso</p> </div></div> 
+            <NavLink to="/adoptions" className="c-home-page__imgswiper--link"><div className="c-home-page__figcap"><h4>Estado de la adopcion</h4><p className="c-home-page__par">
+            Revisa el proceso de tus adpciones en curso</p> </div></NavLink></div> 
             </SwiperSlide>
             
             <SwiperSlide className="home">
