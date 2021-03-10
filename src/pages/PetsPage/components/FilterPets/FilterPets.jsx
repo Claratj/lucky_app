@@ -3,6 +3,7 @@ import { MenuItem, TextField } from '@material-ui/core';
 import './FilterPets.scss';
 import { FilterContext } from '../../../../shared/Context/FilterContext';
 import PopUp from '../../../../shared/PopUp/PopUp';
+import { Link } from 'react-router-dom';
 
 export function FilterPets(props) {
     const { show, setShow } = useContext(FilterContext);
@@ -101,7 +102,7 @@ export function FilterPets(props) {
 
     return (
         <div className="fig-c">
-            <PopUp onClose={() => setShow(false)} show={show} >
+            <PopUp onClose={() => <Link to="/pets"></Link> } show={show} >
 
                 <div onClick={() => setShow(false)} className="close">x</div>
 

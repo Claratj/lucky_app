@@ -7,8 +7,8 @@ import './SearchBar.scss';
 import { PopUpContext } from '../Context/PopUpContext';
 
 export default function SearchBar(props) {
-    const {pop, setPop} = useContext(PopUpContext);
-    console.log(pop);
+    /* const {pop, setPop} = useContext(PopUpContext);
+    console.log(pop); */
 
     return (
         <div className="c-searchBar">
