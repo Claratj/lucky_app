@@ -12,13 +12,11 @@ import SearchBarPets from './components/SearchBarPets/SearchBarPets';
 import './PetsPage.scss';
 import Footer from '../../core/Footer/Footer';
 import { LoadingContext } from '../../core/Loading/contexts/LoadingContext';
-import { FilterContext } from '../../shared/Context/FilterContext';
 import { API } from '../../shared/consts/api.consts';
-import { computeHeadingLevel } from '@testing-library/dom';
-import { FilterPets } from './components/FilterPets/FilterPets';
-import Badge from "@material-ui/core/Badge/Badge";
+
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
 let allPets = [];
 
 export default function PetsPage() {
@@ -29,91 +27,14 @@ export default function PetsPage() {
         }
     }]);
     const { setIsLoading } = useContext(LoadingContext);
-    const [show, setShow] = useState(false);
-    const [data, setData] = useState({
-        species: ""
-    });
-    const [count, setCount] = useState(0);
-
+    
     const user = JSON.parse(localStorage.getItem('userData'));
 
-    const handleInputChange = (e) => {
-        // console.log(e);
-        const value = e.target.value;
-        setData({
-            ...data,
-            [e.target.name]: value
-        });
-
-        let number = Object.keys(data).length;
-        console.log(number);
-        setCount(number);
-        console.log(data);
-    }
-    const close = () => {
-        setShow(false);
-    }
-
-    const submitFilter = () => {
-        // console.log(data);
-
-        let filterPets = allPets;
-        // console.log(data);
-        if (data.city) {
-            filterPets = filterPets.filter((pet) => {
-                if (pet.city === data.city) {
-                    return pet;
-                }
-            });
-        }
-        if (data.species !== "") {
-            filterPets = filterPets.filter((pet) => {
-                if (pet.species.species.toLowerCase() === data.species) {
-                    return pet;
-                }
-            });
-        }
-        if (data.typePet) {
-            filterPets = filterPets.filter((pet) => {
-                if (pet.species.typePet === data.typePet) {
-                    return pet;
-                }
-            });
-        }
-
-        // filterPets = filterPets.filter((pet) => {
-        //     if (pet.age === data.age) {
-        //         return pet;
-        //     }
-        // });
-        if (data.gender) {
-            filterPets = filterPets.filter((pet) => {
-                if (pet.gender.toLowerCase() === data.gender) {
-                    return pet;
-                }
-            });
-        }
-        if (data.size) {
-            filterPets = filterPets.filter((pet) => {
-                if (pet.size.toLowerCase() === data.size) {
-                    return pet;
-                }
-            });
-        }
-
-        setPets(filterPets);
-        // console.log(filterPets);
-
-        close();
-    }
-
-
-
+    
     const getPets = () => {
         setIsLoading(true);
         API.get('/pet').then((res) => {
             setIsLoading(false);
-            console.log(res.data.results)
             allPets = res.data.results;
             setPets(res.data.results);
 
@@ -140,34 +61,6 @@ export default function PetsPage() {
     }, [search]);
 
 
-    const clickTrue = () => {
-        // document.getElementsByClassName('c-pets-page').style.overflow = 'hidden';
-        setShow(true);
-
-    }
-
-    const clearFilter = () => {
-
-        const inputs = document.querySelectorAll('input');
-        const inputsSelect = document.querySelectorAll("[id^='mui-component-select-']");
-
-
-        inputs.forEach(input => {
-            input.disabled = false;
-            input.checked = false;
-            // input.target.value = "";
-        });
-
-        inputsSelect.forEach(input => {
-            input.innerHTML = '';
-        })
-
-        setData({ species: "" });
-        setPets(allPets);
-    }
-
-
-    // console.log(search)
     return (
         <div className="c-pets-page">
             <SearchBarPets handleChange={(inp) => setSearch(inp.value)}></SearchBarPets>
@@ -211,14 +104,11 @@ export default function PetsPage() {
                 </div>}
             <div className="c-pets-page__petsadop">
                 <h4 className="c-pets-page__titleadop">Animales en adopción</h4>
-                <FilterContext.Provider value={{ show, setShow }}>
-                    <Badge badgeContent={count} color="primary">
-                        <div onClick={clickTrue}>
+                    
+                    <Link to="/pets/filter">
                             <img className="c-pets-page__filter" src={iconFilter} alt="" />
-                        </div>
-                        <FilterPets show={show} handleInputChange={handleInputChange} submitFilter={submitFilter} clear={clearFilter} data={data}></FilterPets>
-                    </Badge>
-                </FilterContext.Provider>
+                    </Link>    
+                   
             </div>
 
             <PetsGallery pets={pets}></PetsGallery>
@@ -226,3 +116,4 @@ export default function PetsPage() {
         </div>
     )
 }
+

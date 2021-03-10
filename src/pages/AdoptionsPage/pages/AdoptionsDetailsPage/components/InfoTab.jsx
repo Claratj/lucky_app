@@ -128,6 +128,7 @@ export function InfoTab(props){
                     onChange={onFileSelect3}
                     accept="image/png, image/jpg, image/jpeg"
                     className="file-input"
+                    
                 />
             }
 

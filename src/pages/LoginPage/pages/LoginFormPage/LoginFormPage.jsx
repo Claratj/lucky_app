@@ -56,11 +56,13 @@ export function LoginFormPage() {
             <Redirect to="/home"/>
 
         }
+        { show  ? <p  id="error" className={"s-text-style-error"}>Email o contraseña incorrectos</p> : null }
+
             <img src={logo} alt={"Lucky"} className={"p-login-form__logo"}/>
             <p className={"s-text-style"}>¡Hola! para continuar, inicia sesión o crea una cuenta</p>
             <form onSubmit={handleSubmit}>
  
-               { show  ? <p  id="error" className={"s-text-style"}>Datos incorrectos</p> : null }
+               
 
             
                
