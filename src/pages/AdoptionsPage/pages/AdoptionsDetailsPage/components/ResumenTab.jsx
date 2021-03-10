@@ -67,8 +67,8 @@ export function ResumenTab(props){
 
                     <div className="e-resumenTab__map__contact">
                         <p className="e-resumenTab__map__contact__copy">Contacta con nosotros</p>
-                        <Link mailto={props.email} obfuscate={true}><img src={email} alt="" className="e-resumenTab__map__contact__logo"/></Link>                        
-                        <Link><img src={whatsapp} alt="" className="e-resumenTab__map__contact__logo"/></Link>
+                        <a href={`mailto:${props.email}`}><img src={email} alt="" className="e-resumenTab__map__contact__logo"/></a>
+                        <a href={`https://api.whatsapp.com/send?phone=${props.phone}`}><img src={whatsapp} alt="" className="e-resumenTab__map__contact__logo"/></a>
                     </div>
                 </div>
         </div>

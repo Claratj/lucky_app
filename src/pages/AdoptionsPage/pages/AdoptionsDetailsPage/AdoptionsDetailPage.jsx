@@ -67,13 +67,13 @@ export function AdoptionsDeatilPage() {
                 <div className="detail-tab__link" onClick={(e) => handleClick(e, 'adoption')}>Adopción</div>
             </div>
             <div id="resumen" className="p-adoptions-detail__main flex">
-                <ResumenTab name={pet.name} city={pet.city} gender={pet.gender} img={pet.images[0]} id={pet._id} organization={pet.shelter.name} address={pet.shelter.address} email={pet.shelter.email} lat={pet.shelter.lat} long={pet.shelter.long}></ResumenTab>
+                <ResumenTab name={pet.name} city={pet.city} gender={pet.gender} img={pet.images[0]} id={pet._id} organization={pet.shelter.name} address={pet.shelter.address} email={pet.shelter.email} phone={pet.shelter.phone} lat={pet.shelter.lat} long={pet.shelter.long}/>
             </div>
             <div id="info" className="p-adoptions-detail__main">
-                <InfoTab price={pet.adoption.rates}></InfoTab>
+                <InfoTab price={pet.adoption.rates}/>
             </div>
             <div id="adoption" className="p-adoptions-detail__main">
-                <AdoptionTab organization={pet.shelter.name} address={pet.shelter.address} lat={pet.shelter.lat} long={pet.shelter.long}></AdoptionTab>
+                <AdoptionTab organization={pet.shelter.name} address={pet.shelter.address} lat={pet.shelter.lat} long={pet.shelter.long}/>
             </div>
         </div>
     );
