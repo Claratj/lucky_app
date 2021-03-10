@@ -36,11 +36,6 @@ function addfav(idPet) {
 
     });
 
- /* API.post('fav/add', valuesFav).then((res)=>{
-
-    
-
-    });*/
 }
     
     return (
