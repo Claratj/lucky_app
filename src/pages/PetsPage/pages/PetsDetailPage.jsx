@@ -17,6 +17,7 @@ import { PopUpContext } from '../../../shared/Context/PopUpContext';
 import PopUpAdoption from '../components/PopUpAdoption/PopUpAdoption';
 import { API } from '../../../shared/consts/api.consts';
 import { LoadingContext } from '../../../core/Loading/contexts/LoadingContext';
+import PopUpApadrina from '../components/PopUpApadrina/PopUpApadrina';
 
 
 
@@ -58,6 +59,7 @@ function addfav(idPet) {
 }
     
     const [show, setShow] = useState(false);
+    const [apadrina, setApadrina]= useState(false);
     const [pet, setPet] = useState({images: [], species: [], data: [], health: [], adoption: [] });
     const  param  = useParams();
     const petId = param.id;
@@ -95,7 +97,7 @@ function addfav(idPet) {
         <div className="c-petsDetailPage">
         
         <Link to="/pets"><img src={iconBack} alt="" className="c-petsDetailPage__back"/></Link>
-        <Swiper spaceBetween={50} slidesPerView={1} pagination={{ clickable: true, clickableClass:'swiper-pagination-clickable pets', bulletClass: 'swiper-pagination-bullet pets'}}>
+        <Swiper slidesPerView={1} pagination={{ clickable: true, clickableClass:'swiper-pagination-clickable pets', bulletClass: 'swiper-pagination-bullet pets'}}>
         <SwiperSlide><img src={pet.images[0]} alt="" className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
         <SwiperSlide><img src={pet.images[0]} alt="" className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
         <SwiperSlide><img src={pet.images[0]} alt="" className="c-petsDetailPage__imgswiper"></img></SwiperSlide>
@@ -136,10 +138,10 @@ function addfav(idPet) {
 
         <PopUpContext.Provider value={{show, setShow}}>
         <div className="c-petsDetailPage__button">
-        <button className="c-petsDetailPage__buttonAp">Apadrinar</button>
+        <button className="c-petsDetailPage__buttonAp" onClick={()=> setApadrina(true)} >Apadrinar</button>
         <button className="c-petsDetailPage__buttonAdop" onClick={()=> setShow(true)}>Adoptar</button>
         <PopUpAdoption show={show}></PopUpAdoption>
-
+        <PopUpApadrina apadrina={apadrina}></PopUpApadrina>
         </div> 
         </PopUpContext.Provider>
         </div>   
