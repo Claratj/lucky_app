@@ -4,6 +4,7 @@ import '../AdoptionForm.scss';
 import {Checkbox, FormControlLabel, TextField} from "@material-ui/core";
 
 export function AdoptionFormStep1(props) {
+    const user = props.user;
     return (
         <div>
             <p className={"p-adoption-form__title"}>Formulario de adopción</p>
@@ -13,20 +14,20 @@ export function AdoptionFormStep1(props) {
                 <rect className={"p-adoption-form__progress-part"} width={"33%"} height={7} fill={"rgb(255,156,147)"}/>
             </svg>
             <p className={"p-adoption-form__subtitle"}>Tus datos</p>
-            <TextField name={"name"} label={"Nombre y apellidos"} value={props.getState('name', '')}
+            <TextField name={"name"} label={"Nombre y apellidos"} value={props.getState('name', `${user.name} ${user.lastname}`)}
                        onChange={props.handleChange} fullWidth/>
-            <TextField name={"email"} label={"Email"} type={"email"} value={props.getState('email', '')}
+            <TextField name={"email"} label={"Email"} type={"email"} value={props.getState('email', user.email)}
                        onChange={props.handleChange} fullWidth/>
-            <TextField name={"tel"} label={"Teléfono"} value={props.getState('tel', '')}
+            <TextField name={"tel"} label={"Teléfono"} value={props.getState('tel', user.phone)}
                        onChange={props.handleChange} fullWidth/>
             <TextField name={"DNI"} label={"DNI"} value={props.getState('DNI', '')} onChange={props.handleChange}
                        fullWidth/>
             <p className={"p-adoption-form__subtitle"}>Dirección</p>
-            <TextField name={"street"} label={"Calle, número, piso"} value={props.getState('street', '')}
+            <TextField name={"street"} label={"Calle, número, piso"} value={props.getState('street', user.address)}
                        onChange={props.handleChange} fullWidth/>
             <TextField name={"code"} label={"Código postal"} value={props.getState('code', '')}
                        onChange={props.handleChange} fullWidth/>
-            <TextField name={"city"} label={"Ciudad"} value={props.getState('city', '')} onChange={props.handleChange}
+            <TextField name={"city"} label={"Ciudad"} value={props.getState('city', user.city)} onChange={props.handleChange}
                        fullWidth/>
             <FormControlLabel control={<Checkbox name="terms" onChange={props.handleChange} checked={props.getState('terms', '') === true}/> }
                               label="Acepto los términos y condiciones de la adopción" />
