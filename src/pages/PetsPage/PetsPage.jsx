@@ -16,6 +16,7 @@ import { FilterContext } from '../../shared/Context/FilterContext';
 import { API } from '../../shared/consts/api.consts';
 import { computeHeadingLevel } from '@testing-library/dom';
 import { FilterPets } from './components/FilterPets/FilterPets';
+import Badge from "@material-ui/core/Badge/Badge";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 let allPets = [];
@@ -32,18 +33,21 @@ export default function PetsPage() {
     const [data, setData] = useState({
         species: ""
     });
-
+    const [count, setCount] = useState(0);
 
     const user = JSON.parse(localStorage.getItem('userData'));
 
     const handleInputChange = (e) => {
-        console.log(e);
+        // console.log(e);
         const value = e.target.value;
         setData({
             ...data,
             [e.target.name]: value
         });
 
+        let number = Object.keys(data).length;
+        console.log(number);
+        setCount(number);
         console.log(data);
     }
     const close = () => {
@@ -51,10 +55,10 @@ export default function PetsPage() {
     }
 
     const submitFilter = () => {
-        console.log(data);
+        // console.log(data);
 
         let filterPets = allPets;
-        console.log(data);
+        // console.log(data);
         if (data.city) {
             filterPets = filterPets.filter((pet) => {
                 if (pet.city === data.city) {
@@ -98,7 +102,7 @@ export default function PetsPage() {
         }
 
         setPets(filterPets);
-        console.log(filterPets);
+        // console.log(filterPets);
 
         close();
     }
@@ -208,11 +212,12 @@ export default function PetsPage() {
             <div className="c-pets-page__petsadop">
                 <h4 className="c-pets-page__titleadop">Animales en adopción</h4>
                 <FilterContext.Provider value={{ show, setShow }}>
-
-                    <div onClick={clickTrue}>
-                        <img className="c-pets-page__filter" src={iconFilter} alt="" />
-                    </div>
-                    <FilterPets show={show} handleInputChange={handleInputChange} submitFilter={submitFilter} clear={clearFilter} data={data}></FilterPets>
+                    <Badge badgeContent={count} color="primary">
+                        <div onClick={clickTrue}>
+                            <img className="c-pets-page__filter" src={iconFilter} alt="" />
+                        </div>
+                        <FilterPets show={show} handleInputChange={handleInputChange} submitFilter={submitFilter} clear={clearFilter} data={data}></FilterPets>
+                    </Badge>
                 </FilterContext.Provider>
             </div>
 
