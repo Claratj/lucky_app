@@ -3,7 +3,8 @@ import { API } from '../../../shared/consts/api.consts';
 import { FilterContext } from '../../../shared/Context/FilterContext';
 import SearchBarFilter from '../../PetsPage/components/SearchBarFilter/SearchBarFilter';
 import { FilterPets } from '../components/FilterPets/FilterPets';
-import PetsGallery from '../components/PetsGallery/PetsGallery'
+import PetsGallery from '../components/PetsGallery/PetsGallery';
+import moment from 'moment';
 
 
 let allPets = [];
@@ -22,7 +23,7 @@ export default function PetsFilterPage() {
     });
     const [count, setCount] = useState(Object.keys(data).length);
     const handleInputChange = (e) => {
-        
+
         const value = e.target.value;
         setData({
             ...data,
@@ -30,19 +31,24 @@ export default function PetsFilterPage() {
         });
 
         let number = Object.keys(data).length;
-    
+
         setCount(number);
-        
+
     }
     const close = () => {
         setShow(false);
     }
 
+
+
+
+
+
     const submitFilter = () => {
-        
+
 
         let filterPets = allPets;
-        
+
         if (data.city) {
             filterPets = filterPets.filter((pet) => {
                 if (pet.city === data.city) {
@@ -52,7 +58,7 @@ export default function PetsFilterPage() {
         }
         if (data.species !== "") {
             filterPets = filterPets.filter((pet) => {
-            
+
                 if (pet.species.species.toLowerCase() === data.species) {
                     return pet;
                 }
@@ -61,6 +67,35 @@ export default function PetsFilterPage() {
         if (data.typePet) {
             filterPets = filterPets.filter((pet) => {
                 if (pet.species.typePet === data.typePet) {
+                    return pet;
+                }
+            });
+        }
+        if (data.age !== "") {
+            var d = new Date();
+            var thisYear = d.getFullYear();
+            console.log(thisYear);
+            let birthDate = 1;
+            for (let i = 0; i < filterPets.length; i++) {
+                const pet = filterPets[i];
+                pet.birthDate = moment(pet.birthDate).format('YYYY');
+                birthDate = parseInt(pet.birthDate);
+
+                if (thisYear - birthDate <= 1) {
+                    pet.birthDate = "Cachorro";
+
+                } else if (thisYear - birthDate >= 2 && thisYear - birthDate <= 3) {
+                    pet.birthDate = "Joven";
+
+                } else {
+                    pet.birthDate = "Adulto";
+
+                }
+                console.log(pet.birthDate);
+            }
+
+            filterPets = filterPets.filter((pet) => {
+                if (pet.birthDate === data.age) {
                     return pet;
                 }
             });
@@ -82,16 +117,19 @@ export default function PetsFilterPage() {
         }
 
         setPets(filterPets);
+        // console.log(moment(filterPets[0].birthDate).fromNow());
         close();
     }
 
 
 
+
+
     const getPets = () => {
-       
+
         API.get('/pet').then((res) => {
-            
-            console.log(res.data.results)
+
+            // console.log(res.data.results);
             allPets = res.data.results;
             setPets(res.data.results);
 
@@ -127,7 +165,7 @@ export default function PetsFilterPage() {
         inputs.forEach(input => {
             input.disabled = false;
             input.checked = false;
-            
+
         });
 
         inputsSelect.forEach(input => {
@@ -142,13 +180,13 @@ export default function PetsFilterPage() {
 
     return (
         <div>
-        <FilterContext.Provider value={{ show, setShow }}>
-        <FilterPets show={show} handleInputChange={handleInputChange} submitFilter={submitFilter} clear={clearFilter} data={data}></FilterPets>
-        <SearchBarFilter handleChange={(inp) => setSearch(inp.value)} count={count}></SearchBarFilter>
-            
-        
-        <PetsGallery pets={pets}></PetsGallery>
-        </FilterContext.Provider> 
+            <FilterContext.Provider value={{ show, setShow }}>
+                <FilterPets show={show} handleInputChange={handleInputChange} submitFilter={submitFilter} clear={clearFilter} data={data}></FilterPets>
+                <SearchBarFilter handleChange={(inp) => setSearch(inp.value)} count={count}></SearchBarFilter>
+
+
+                <PetsGallery pets={pets}></PetsGallery>
+            </FilterContext.Provider>
         </div>
     )
 

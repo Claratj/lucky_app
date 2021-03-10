@@ -12,7 +12,7 @@ export function FilterPets(props) {
     const inputSelected = (e) => {
         const name = e.target.name;
         const inputsName = document.getElementsByName(name);
-        console.log(e);
+        // console.log(e);
 
         // for (let i = 0; i < inputsName.length; i++) {
         //     const input = inputsName[i];
@@ -44,7 +44,7 @@ export function FilterPets(props) {
 
     let selected = props.data.species;
     // selected.toLowerCase();
-    console.log(selected);
+    // console.log(selected);
     let listType = []
 
     switch (selected !== null) {
@@ -102,7 +102,7 @@ export function FilterPets(props) {
 
     return (
         <div className="fig-c">
-            <PopUp onClose={() => <Link to="/pets"></Link> } show={show} >
+            <PopUp onClose={() => <Link to="/pets"></Link>} show={show} >
 
                 <div onClick={() => setShow(false)} className="close">x</div>
 
