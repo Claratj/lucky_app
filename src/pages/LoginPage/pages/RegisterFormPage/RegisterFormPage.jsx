@@ -16,6 +16,7 @@ export function RegisterFormPage() {
     const [formValues, setFormValues] = useState({
         'email': '',
         'password': '',
+        'image': 'https://www.labicok.com/wp-content/uploads/2020/06/default-user-image.png',
     });
     const [checkpass, setcheckpass] = useState(false);
     const [checkmail, setcheckmail] = useState(false);
@@ -44,7 +45,7 @@ export function RegisterFormPage() {
             setcheckpass(false);
             setcheckmail(false);
             setcheckfield(false);
-
+        
             API.post('register', formValues).then((res)=>{
                 if(res.data.saved){
                     window.location.href = "/login-form";
