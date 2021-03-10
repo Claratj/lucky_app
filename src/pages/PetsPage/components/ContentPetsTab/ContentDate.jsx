@@ -8,7 +8,7 @@ import './ContentDate.scss';
 export default function ContentDate(props) {
 
     const personality = props.pet.data.personality;
-    const birth = moment(props.pet.birthDate);
+    const birth = moment(props.pet.birthDate).format('YYYY');
     moment.locale('es', localization);
     
     

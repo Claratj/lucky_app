@@ -23,13 +23,13 @@ export function ProfilePage() {
     useEffect(getUser, []);
 
     const cards = [
-        {title: 'Mi perfil', img: chica, link: '/'},
-        {title: 'Direcciones', img: direccion, link: '/'},
-        {title: 'Favoritos', img: favorito, link: '/'},
-        {title: 'Notificaciones', img: notificacion, link: '/'},
+        {title: 'Mi perfil', img: chica, link: '/edit-profile'},
+        {title: 'Direcciones', img: direccion, link: '/locations'},
+        {title: 'Favoritos', img: favorito, link: '/favorites'},
+        {title: 'Notificaciones', img: notificacion, link: '/notifications'},
         {title: 'Estado de la adopción', img: mascota, link: '/adoptions'}, 
-        {title: 'Apadrinar', img: apadrina, link: '/'},
-        {title: 'Donar', img: donar, link: '/'}
+        {title: 'Apadrinar', img: apadrina, link: '/godfather'},
+        {title: 'Donar', img: donar, link: '/donate'}
     ];
 
     return(

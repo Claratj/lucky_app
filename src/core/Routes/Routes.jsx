@@ -22,6 +22,7 @@ import { FilterPets } from '../../pages/PetsPage/components/FilterPets/FilterPet
 import { MapsPage } from "../../pages/MapsPage/MapsPage";
 import Page404 from '../../shared/Page404/Page404';
 import { SplashContext } from '../../pages/OnBoardingPage/SplashContext/SplashContext';
+import PetsFilterPage from '../../pages/PetsPage/pages/PetsFilterPage';
 
 export function Routes() {
 
@@ -29,9 +30,9 @@ export function Routes() {
 
     return (
         <Switch>
-            {/* <Route path="/pets/filter">
-                <FilterPets />
-            </Route> */}
+            <Route path="/pets/filter">
+                <PetsFilterPage></PetsFilterPage>
+            </Route>
             <Route path="/pet/:id">
                 <PetsDetailPage />
             </Route>
