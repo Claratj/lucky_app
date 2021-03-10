@@ -34,7 +34,7 @@ export function PopUpFilter(props) {
                 type="checkbox" 
                 alt="Submit" />
                 <label htmlFor='process' className="c-app-filter__label" >
-                    <span className="icon-stethoscope size" /> 
+                    <span className="icon-nut size" /> 
                     En proceso
                     </label>
 
