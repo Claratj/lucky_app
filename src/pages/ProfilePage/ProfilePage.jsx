@@ -33,13 +33,13 @@ export function ProfilePage() {
     ];
 
     return(
-        <div className="p-profile">
+        <div className="p-profile container flex flex-column align-items-center mt-5">
             {user == null?
-                <img src={avatar} alt="" className="p-profile__photo"/>            
+                <img src={avatar} alt="" className="c-profile-photo"/>            
             :
-                <img src={user.image} alt="" className="p-profile__photo"/>
+                <img src={user.image} alt="" className="c-profile-photo"/>
             }            
-            <div className="p-profile__details">
+            <div className="flex flex-column align-items-center full-width">
             {cards.map((obj, i)=>
                 <CardMenu icon={obj.img} title={obj.title} link={obj.link}></CardMenu>
             )}
