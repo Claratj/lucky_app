@@ -1,7 +1,7 @@
 @import '../../styles/tools/variable.tools';
 
 .c-pets-page{
-
+    overflow-x: hidden;
     &__mypets{
         text-decoration: none;
         font-size: 1rem;
