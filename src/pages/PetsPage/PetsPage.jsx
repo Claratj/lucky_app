@@ -93,6 +93,7 @@ export default function PetsPage() {
                                 <figure><img src={bird} alt="" className="c-pets-page__imgswiper"></img></figure>
                                 <figcaption className="c-pets-page__figcap">Dali</figcaption></div>
                         </SwiperSlide>
+                        
 
                     </Swiper>
 
