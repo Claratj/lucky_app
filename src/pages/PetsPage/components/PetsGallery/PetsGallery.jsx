@@ -61,21 +61,21 @@ function addfav(idPet) {
 return (
         <div className="c-galleryPets row flex justify-content-center align-items-center">
         {props.pets.map((item, i)=>
-       
+            <Link to={"/pet/" + item._id} className="c-galleryPets__link" key={i}>
             <div className="c-galleryPets__card">
             <div className="c-galleryPets__img">
                 <img src={item.images} className="c-galleryPets__pet"></img>
-              { favorites.some((res)=> res.petId === item._id) ? 
+              {favorites.some((res)=> res.petId === item._id) ? 
               
-                <img src={favIconCheck}  onClick={() => addfav(item._id)} className="c-galleryPets__fav"></img>
-              :  <img src={favIcon}  onClick={() => addfav(item._id)} className="c-galleryPets__fav"></img>
+                <Link to="/pets"><img src={favIconCheck}  onClick={() => {addfav(item._id)}} className="c-galleryPets__fav"></img></Link> 
+              : <Link to="/pets"> <img src={favIcon}  onClick={() => addfav(item._id)} className="c-galleryPets__fav"></img></Link>
 
-             }
+               }
               
 
             </div> 
             
-        <Link to={"/pet/" + item._id} className="c-galleryPets__link" key={i}>
+        
             <div className="c-galleryPets__text">
             <div className="c-galleryPets__name">
                 <h3>{item.name}</h3>
@@ -85,9 +85,9 @@ return (
                 <p>{item.km}</p>
             </div>
             </div>
-            </Link>
+            
             </div>
-       
+            </Link>
 
         )}
             
