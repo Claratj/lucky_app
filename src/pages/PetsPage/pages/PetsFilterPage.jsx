@@ -182,7 +182,7 @@ export default function PetsFilterPage() {
         <div>
             <FilterContext.Provider value={{ show, setShow }}>
                 <FilterPets show={show} handleInputChange={handleInputChange} submitFilter={submitFilter} clear={clearFilter} data={data}></FilterPets>
-                <SearchBarFilter handleChange={(inp) => setSearch(inp.value)} count={count}></SearchBarFilter>
+                <SearchBarFilter handleChange={(inp) => setSearch(inp.value)} count={count} clear={clearFilter} show={()=>{setShow(true)}}></SearchBarFilter>
 
 
                 <PetsGallery pets={pets}></PetsGallery>

@@ -21,7 +21,7 @@ export default function SearchBar(props) {
                     props.handleChange(input)
                 }}><img src={iconSearch} alt="" /></button>
             </div>
-            <Badge badgeContent={props.count} color="primary">
+            <Badge badgeContent={props.count} color="primary" onClick={()=>{props.clear();props.show();}}>
                 <div className="c-searchBarFilter__filter">
                     <img src={iconFilter} className="c-search__imgFilter" alt="" /></div>
             </Badge>
