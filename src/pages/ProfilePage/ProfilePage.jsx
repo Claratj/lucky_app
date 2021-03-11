@@ -25,7 +25,7 @@ export function ProfilePage() {
     const cards = [
         {title: 'Mi perfil', img: chica, link: '/edit-profile'},
         {title: 'Direcciones', img: direccion, link: '/locations'},
-        {title: 'Favoritos', img: favorito, link: '/favorites'},
+        {title: 'Favoritos', img: favorito, link: '/pets/fav'},
         {title: 'Notificaciones', img: notificacion, link: '/notifications'},
         {title: 'Estado de la adopción', img: mascota, link: '/adoptions'}, 
         {title: 'Apadrinar', img: apadrina, link: '/godfather'},

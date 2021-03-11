@@ -10,7 +10,7 @@ export default function PetsFavPage() {
     const [favs, setFavs] = useState([{petId: {images:[]}}]);
     
     const getFavs = ()=>{
-        API.get('fav/list/'+user._id).then((res)=>{
+        API.get('fav/favs/'+user._id).then((res)=>{
                setFavs(res.data.Favs)
         });
 
