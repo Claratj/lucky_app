@@ -6,12 +6,14 @@
     
     .c-popUp {
         &__content{
-            height: 100vh;
+            height: 100%;
             width: 100%;
             border-radius: 0;
             padding: 2.2rem 0.5rem;
             overflow-y: scroll;
-    
+            overflow-x: hidden;
+            position: fixed;
+            top:0;
         }
     }
 
