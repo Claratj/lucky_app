@@ -118,6 +118,7 @@ export default function PetsFilterPage() {
         }
 
         setPets(filterPets);
+        console.log(pets);
         close();
     }
 
@@ -183,8 +184,6 @@ export default function PetsFilterPage() {
             <FilterContext.Provider value={{ show, setShow }}>
                 <FilterPets show={show} handleInputChange={handleInputChange} submitFilter={submitFilter} clear={clearFilter} data={data}></FilterPets>
                 <SearchBarFilter handleChange={(inp) => setSearch(inp.value)} count={count}></SearchBarFilter>
-
-
                 <PetsGallery pets={pets}></PetsGallery>
             </FilterContext.Provider>
         </div>
