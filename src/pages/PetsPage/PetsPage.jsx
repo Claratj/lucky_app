@@ -66,7 +66,7 @@ export default function PetsPage() {
             <SearchBarPets handleChange={(inp) => setSearch(inp.value)}></SearchBarPets>
             {user &&
                 <div>
-                    <Link to="" className="c-pets-page__link"><div className="c-pets-page__mypets"><h4>Mis mascotas</h4><img src={more} className="c-pets-page__more" alt="" /></div>  </Link>
+                    <Link to="/pets/fav" className="c-pets-page__link"><div className="c-pets-page__mypets"><h4>Mis mascotas</h4><img src={more} className="c-pets-page__more" alt="" /></div>  </Link>
                     <p className="c-pets-page__par">Accede al perfil de tus mascotas</p>
 
                     <Swiper className="pets"
